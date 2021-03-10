@@ -1,0 +1,24 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		Beta
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB2STD Toolbox Main -> Changelog
+#
+###########################################################################################
+screen Changelog MIB2STD_Toolbox
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.11 Slighty restructured and added placeholder pages for future features"
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.1 Initial version by YOX"
+	poll 	0
+	

@@ -1,10 +1,18 @@
-FileName = "/tsd/etc/persistence/esd/TOOLBOX.esd"
-FileSize = "637"
-Checksum = "19eaa79bc60d8944ff4e58a85950bcb96bd5f0c2"
+FileName = "/tsd/etc/persistence/esd/mib2std-main.esd"
+FileSize = "1080"
+Checksum = "3cb73ec6489bf904863ad680207f4ac4e91206fc"
 
-FileName = "/tsd/etc/persistence/esd/mibstd2_yox.esd"
-FileSize = "1168"
-Checksum = "e11fce706b05e1e2cf3b2da3fc0d00668fe635af"
+FileName = "/tsd/etc/persistence/esd/mib2std-changelog.esd"
+FileSize = "761"
+Checksum = "b6107bd89180988d6fde6e1613e2d9978c73bd0f"
+
+FileName = "/tsd/etc/persistence/esd/mib2std-customization.esd"
+FileSize = "630"
+Checksum = "9c1c497e06c164873f1524a6f7e63fea6cdeb77c"
+
+FileName = "/tsd/etc/persistence/esd/mib2std-patching.esd"
+FileSize = "1963"
+Checksum = "34930af97b3bdd4e462093c22b1bb78985be7122"
 
 FileName = "/tsd/scripts/backup.sh"
 FileSize = "538"
@@ -29,3 +37,7 @@ Checksum = "ebf2382fe9530ae9897636b76ed63531135e7384"
 FileName = "/tsd/scripts/swdl_patch.sh"
 FileSize = "312"
 Checksum = "c8fdffe561a5cc5a4e0785652b1110ef84f3494a"
+
+FileName = "/tsd/scripts/update.sh"
+FileSize = "439"
+Checksum = "e7f8757dc6a2dc364d74a5ba02938f86609a36b8"

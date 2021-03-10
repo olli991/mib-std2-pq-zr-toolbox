@@ -1,0 +1,37 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		Beta
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB2STD Toolbox Main
+#
+###########################################################################################
+screen MIB2STD_Toolbox Main
+
+keyvalue
+	value 	String sys 0x00000000 0
+	label 	"[MIB2STD Toolbox by YOX v0.1]"
+	poll 	0
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Warning: This toolbox has the potential to break your unit and void your"
+    poll     0
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "warranty. Be careful!"
+    poll     0
+
+script
+   value    sys 1 0x0100 "/tsd/scripts/update.sh"
+   label    "Update Toolbox"
+
+keyValue
+    value   String sys 0x00000000 0
+	label	"_________________________________________________________________________"
+	poll    0

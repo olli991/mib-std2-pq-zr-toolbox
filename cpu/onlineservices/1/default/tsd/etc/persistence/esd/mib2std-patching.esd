@@ -1,0 +1,73 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		Beta
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB2STD Toolbox Main -> Patching
+#
+###########################################################################################
+screen Patching MIB2STD_Toolbox
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "NOTE: NEVER interrupt the process with -Back- button or removing SD Card!!!"
+	poll 	0
+	
+keyValue
+    value   String sys 0x00000000 0
+    label	"CAUTION: Ensure that a external power is connected to the car on during any"
+	poll 	0
+	
+keyValue
+    value   String sys 0x00000000 0
+	label 	"flash or programming process! Power failure during flasing/programming will"
+	poll 	0
+	
+keyValue
+    value   String sys 0x00000000 0
+	label 	"brick your unit! - All you do and use at your own risk!"
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+	label	"_________________________________________________________________________"
+	poll    0
+
+script
+	value 	sys 1 0x0100 "/tsd/scripts/backup.sh"
+	label 	"Dump/Backup SWAP, SWDL and HMI"
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/mount.sh"
+	label 	"Mount system as read/write"
+	
+script
+	value 	sys 1 0x0100 "/bin/shutdown"
+	label 	"Hard reboot unit"
+
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/fec_all_sd.sh"
+	label 	"Copy FEC to unit from SD"
+
+script
+	value 	sys 1 0x0100 "/tsd/scripts/swap_patch.sh"
+	label 	"Copy SWAP to unit from SD"
+
+script
+	value 	sys 1 0x0100 "/tsd/scripts/swdl_patch.sh"
+	label 	"Copy SWDL to unit from SD"
+
+script
+	value 	sys 1 0x0100 "/tsd/scripts/hmi_cp_patch.sh"
+	label 	"Copy HMI to unit from SD"
+	
+
