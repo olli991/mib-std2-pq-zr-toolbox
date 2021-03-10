@@ -1,0 +1,35 @@
+#######################
+screen "TOOLBOX" mibstd2_yox
+#######################
+
+
+############### HACKING TECHNISAT BASTARD ;))) ##################
+
+script
+value sys 1 0x0100 "/tsd/scripts/mount.sh"
+label "MOUNT"
+
+script
+value sys 1 0x0100 "/tsd/scripts/fec_all_sd.sh"
+label "ACTIVE_FEC_SD"
+
+script
+value sys 1 0x0100 "/bin/shutdown"
+label "REBOOT"
+
+script
+value sys 1 0x0100 "/tsd/scripts/backup.sh"
+label "BACKUP"
+
+script
+value sys 1 0x0100 "/tsd/scripts/swap_patch.sh"
+label "SWAP_PATCH"
+
+script
+value sys 1 0x0100 "/tsd/scripts/swdl_patch.sh"
+label "SWDL_PATCH"
+
+script
+value sys 1 0x0100 "/tsd/scripts/hmi_cp_patch.sh"
+label "CP_OFF"
+

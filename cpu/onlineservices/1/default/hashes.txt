@@ -1,0 +1,31 @@
+FileName = "/tsd/etc/persistence/esd/TOOLBOX.esd"
+FileSize = "637"
+Checksum = "19eaa79bc60d8944ff4e58a85950bcb96bd5f0c2"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2_yox.esd"
+FileSize = "1168"
+Checksum = "e11fce706b05e1e2cf3b2da3fc0d00668fe635af"
+
+FileName = "/tsd/scripts/backup.sh"
+FileSize = "538"
+Checksum = "d52fd467a2c5f4af46cff1826bc9a82198275307"
+
+FileName = "/tsd/scripts/fec_all_sd.sh"
+FileSize = "215"
+Checksum = "30db38a80a62c4ac5d1e1e83c3386fb072b65870"
+
+FileName = "/tsd/scripts/hmi_cp_patch.sh"
+FileSize = "325"
+Checksum = "632e6925ac1218ddc58bda28b738a356f54fc2da"
+
+FileName = "/tsd/scripts/mount.sh"
+FileSize = "98"
+Checksum = "478a74c41f7f714f1d157c19025b0230fdb48e71"
+
+FileName = "/tsd/scripts/swap_patch.sh"
+FileSize = "318"
+Checksum = "ebf2382fe9530ae9897636b76ed63531135e7384"
+
+FileName = "/tsd/scripts/swdl_patch.sh"
+FileSize = "312"
+Checksum = "c8fdffe561a5cc5a4e0785652b1110ef84f3494a"
