@@ -14,7 +14,12 @@ screen Changelog MIB2STD_Toolbox
 
 keyValue
     value   String sys 0x00000000 0
-    label   "v0.11 Slighty restructured and added placeholder pages for future features"
+    label   "v0.2 Added installer, updater and uninstaller to GreenMenu. New install method"
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.11 Slightly restructured and added placeholder pages for future features"
 	poll 	0
 
 keyValue
