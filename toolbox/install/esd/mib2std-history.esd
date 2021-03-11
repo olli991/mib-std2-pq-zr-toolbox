@@ -7,10 +7,15 @@
 #
 ###########################################################################################
 #
-# Main -> MIB2STD Toolbox Main -> Changelog
+# Main -> MIB2STD Toolbox Main -> History
 #
 ###########################################################################################
-screen Changelog MIB2STD_Toolbox
+screen History MIB2STD_Toolbox
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.3 Utilities added for global usage. Dump menu added. Update seperated."
+	poll 	0
 
 keyValue
     value   String sys 0x00000000 0

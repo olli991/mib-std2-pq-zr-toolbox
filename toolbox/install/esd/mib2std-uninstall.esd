@@ -7,13 +7,23 @@
 #
 ###########################################################################################
 #
-# Main -> MIB2STD Toolbox Main -> Customization
+# Main -> MIB2STD Toolbox Main -> Uninstall
 #
 ###########################################################################################
-screen Customization MIB2STD_Toolbox
+screen Uninstall MIB2STD_Toolbox
+
+keyvalue
+	value 	String sys 0x00000000 0
+	label 	"Here you can cleanup and uninstall the Toolbox"
+	poll 	0
 
 keyValue
-    value   String sys 0x00000000 0
-    label   "Placeholder site for future features."
-	poll 	0
-	
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0
+
+script
+   value    sys 1 0x0100 "/tsd/scripts/util_uninstall.sh"
+   label    "Uninstall Toolbox"
+
+

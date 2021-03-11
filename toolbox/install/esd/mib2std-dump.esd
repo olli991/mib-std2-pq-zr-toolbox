@@ -1,0 +1,59 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		Beta
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB2STD Toolbox Main -> Dump
+#
+###########################################################################################
+screen Dump MIB2STD_Toolbox
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Make sure there is a SD card inserted"
+    poll     0
+
+script
+   value    sys 1 0x0100 "/tsd/scripts/dump_all.sh"
+   label    "Dump everything to SD card (This will take a while)"
+ 
+ 
+keyValue
+    value   String sys 0x00000000 0
+	label	"__________________________________________________________________"
+	poll    0
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Standalone dump scripts:"
+    poll     0  	
+
+#### System dump scripts #####
+keyValue
+    value    String sys 0x00000000 0
+    label    "--- System dump scripts ---"
+    poll     0  
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/dump_swap.sh"
+	label 	"Dump SWAP to SD card"
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/dump_swdl.sh"
+	label 	"Dump SWDL to SD card"
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/dump_hmi.sh"
+	label 	"Dump HMI to SD card"
+
+script
+	value 	sys 1 0x0100 "/tsd/scripts/dump_mirrorlink.sh"
+	label 	"Dump Mirrorlink config to SD card"
+
+script
+	value 	sys 1 0x0100 "/tsd/scripts/dump_nav.sh"
+	label 	"Dump Navigation config to SD card"

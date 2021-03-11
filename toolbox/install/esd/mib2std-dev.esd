@@ -25,29 +25,3 @@ keyValue
 script
    value    sys 1 0x0100 "/tsd/scripts/startup_main.sh"
    label    "Activate Telnet and more"
-
-keyValue
-    value   String sys 0x00000000 0
-    label   ""
-    poll    0 	
-	
-script
-   value    sys 1 0x0100 "/tsd/scripts/mirrorlink_dump.sh"
-   label    "Dump mirrorlink.config.common.xml"
-   
-script
-   value    sys 1 0x0100 "/tsd/scripts/mirrorlink_patch.sh"
-   label    "Import mirrorlink.config.common.xml"
-
-keyValue
-    value   String sys 0x00000000 0
-    label   ""
-    poll    0 	
-	
-script
-   value    sys 1 0x0100 "/tsd/scripts/nav_dump.sh"
-   label    "Dump mibstd2_nav_target.ini"
-   
-script
-   value    sys 1 0x0100 "/tsd/scripts/nav_patch.sh"
-   label    "Import mibstd2_nav_target.ini"

@@ -7,10 +7,10 @@
 #
 ###########################################################################################
 #
-# Main -> MIB2STD Toolbox Main -> Patching
+# Main -> MIB2STD Toolbox Main -> Customization -> Patching
 #
 ###########################################################################################
-screen Patching MIB2STD_Toolbox
+screen Patching Customization
 
 keyValue
     value   String sys 0x00000000 0
@@ -38,11 +38,7 @@ keyValue
 	poll    0
 
 script
-	value 	sys 1 0x0100 "/tsd/scripts/backup.sh"
-	label 	"Dump/Backup SWAP, SWDL and HMI"
-	
-script
-	value 	sys 1 0x0100 "/tsd/scripts/mount.sh"
+	value 	sys 1 0x0100 "/tsd/scripts/util_mount.sh"
 	label 	"Mount system as read/write"
 	
 script
@@ -55,19 +51,25 @@ keyValue
 	poll 	0
 	
 script
-	value 	sys 1 0x0100 "/tsd/scripts/fec_all_sd.sh"
-	label 	"Copy FEC to unit from SD"
-
-script
-	value 	sys 1 0x0100 "/tsd/scripts/swap_patch.sh"
-	label 	"Copy SWAP to unit from SD"
-
-script
-	value 	sys 1 0x0100 "/tsd/scripts/swdl_patch.sh"
-	label 	"Copy SWDL to unit from SD"
-
-script
-	value 	sys 1 0x0100 "/tsd/scripts/hmi_cp_patch.sh"
-	label 	"Copy HMI to unit from SD"
+	value 	sys 1 0x0100 "/tsd/scripts/copy_swap.sh"
+	label 	"Copy SWAP to unit"
 	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/copy_swdl.sh"
+	label 	"Copy SWDL to unit"
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/copy_hmi.sh"
+	label 	"Copy HMI to unit"
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/copy_fec.sh"
+	label 	"Copy FEC config to unit"
 
+script
+	value 	sys 1 0x0100 "/tsd/scripts/copy_mirrorlink.sh"
+	label 	"Copy Mirrorlink config to unit"
+
+script
+	value 	sys 1 0x0100 "/tsd/scripts/copy_nav.sh"
+	label 	"Copy Navigation config to unit"
