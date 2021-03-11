@@ -4,3 +4,5 @@
 *.sh text eol=lf
 */hashes.txt text eol=crlf
 */Update.txt text eol=crlf
+*.xml text eol=lf
+*.ini text eol=lf
