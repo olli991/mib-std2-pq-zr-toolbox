@@ -1,5 +1,7 @@
 # MIB2 Standard Toolbox
 
+**Currently only working on Technisat devices!**
+
 ## How to install
 1. Copy everything to SD card
 2. Put SD card into slot 1
