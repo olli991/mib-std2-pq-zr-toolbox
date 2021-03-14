@@ -3,7 +3,7 @@
 
 ![SCREENSHOT_(Sdl_7DD2(Tg))_TIME_2021_02_26_05_50_03_GEOCOORD_LAT_53 945_LONG_9 1393_865799_Nr_1](https://user-images.githubusercontent.com/55631413/111074712-8c870180-84e4-11eb-9f87-7215fdbf0dde.png)
 
-Note: this screens has the potential to ruin your MIB2 STD unit. The developers are not responsible for any troubles to anyone or anything caused by this toolbox. It's never our intention to harm any person, car or brand. Use the tools wisely, don't be a douche.
+Note: This screens has the potential to ruin your MIB2 STD unit. The developers are not responsible for any troubles to anyone or anything caused by this toolbox. It's never our intention to harm any person, car or brand. Use the tools wisely, don't be a douche.
 
 ## Requirements
 - Read the entire readme
@@ -66,7 +66,7 @@ Example: `extract_mcf.py images.mcf .\extracted\`
 
 ### compress-mcf.py (by jille)
 This is the script to compress the MCF-container.<br>
-Usage for instance: `compress-mcf.py <ORIGINAL-BASEFILE> <NEWFILE> <FOLDER-WHERE-TO-COMPRESS-FROM>`
+Usage for instance: `compress-mcf.py <ORIGINAL-BASEFILE> <NEWFILE> <FOLDER-WHERE-TO-COMPRESS-FROM>`<br>
 Example: `compress-mcf.py images.mcf images2.mcf .\extracted\`
 
 ### extract-startup_x.boot.py (by jille)
@@ -76,7 +76,7 @@ Example: `extract-startup_x.boot.py startup_x.boot .\extracted\`
 
 ### compress-startup_x.boot.py (by jille)
 This is the script to compress the BOOT-container.<br>
-Usage for instance: `compress-startup_x.boot.py <ORIGINAL-BASEFILE> <NEWFILE> <FOLDER-WHERE-TO-COMPRESS-FROM>`
+Usage for instance: `compress-startup_x.boot.py <ORIGINAL-BASEFILE> <NEWFILE> <FOLDER-WHERE-TO-COMPRESS-FROM>`<br>
 Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\`
 
 ## Supported firmwares
