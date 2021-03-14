@@ -1,0 +1,39 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		Beta
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB2STD Toolbox Main -> Privacy
+#
+###########################################################################################
+screen Privacy MIB2STD_Toolbox
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Deleteing several privacy related files from the unit"
+	poll 	0
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/privacy_cleanhistory.sh"
+	label 	"Cleanup SWDL history"
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/privacy_cleanphonedata.sh"
+	label 	"Cleanup stored contact infos"	
+
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/privacy_shadow.sh"
+	label 	"Copy custom shadow file to unit"
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/restore_shadow.sh"
+	label 	"Restore shadow file from backup"

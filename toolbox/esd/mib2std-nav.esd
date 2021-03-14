@@ -1,0 +1,49 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		Beta
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB2STD Toolbox Main -> Customization -> Navigation
+#
+###########################################################################################
+screen Navi Customization
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Patching navigation config to allow usage of SD cards from other brands"
+	poll 	0
+	
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/patch_nav.sh"
+	label 	"Patch navigation config"
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/install_nav.sh"
+	label 	"Manually copy mibstd2_nav_target.ini to unit"
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/restore_nav.sh"
+	label 	"Restore navigation config from backup"
+
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/install_mapcfg.sh"
+	label 	"Install custom navigation graphics"
+	
+script
+	value 	sys 1 0x0100 "/tsd/scripts/restore_mapcfg.sh"
+	label 	"Restore navigation graphics from backup"
+	

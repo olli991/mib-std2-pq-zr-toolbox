@@ -1,0 +1,45 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		Beta
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB2STD Toolbox Main -> DEV
+#
+###########################################################################################
+screen DEV MIB2STD_Toolbox
+
+keyValue
+    value	String sys 0x00000000 0
+    label   "Development screen with special scripts and stuff. Not for public release!"
+    poll    0
+    
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0 	
+
+script
+   value    sys 1 0x0100 "/tsd/scripts/dev_startup_main.sh"
+   label    "Activate Telnet and more"
+   
+script
+   value    sys 1 0x0100 "/tsd/scripts/dev_copy_tsd.sh"
+   label    "Copy /tsd path to SD"
+   
+script
+   value    sys 1 0x0100 "/tsd/scripts/dev_copy_dev.sh"
+   label    "Copy /dev path to SD"
+   
+script
+   value    sys 1 0x0100 "/tsd/scripts/dev_copy_all.sh"
+   label    "Copy whole filesystem to SD"
+   
+
+   
+script
+   value    sys 1 0x0100 "/tsd/scripts/util_install.sh"
+   label    "Run initial Install Toolbox script again"

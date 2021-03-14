@@ -12,21 +12,26 @@
 ###########################################################################################
 screen MIB2STD_Toolbox Main
 
+keyvalue
+	value 	String sys 0x00000000 0
+	label 	"[MIB2STD Toolbox v0.5]"
+	poll 	0
+
 keyValue
     value    String sys 0x00000000 0
-    label    "Welcome to the MIB2STD Toolbox intallation screen"
-    poll     0
-	
-keyValue
-    value    String sys 0x00000000 0
-    label    "Please run 'Install Toolbox' to install the full toolbox!"
-    poll     0
-	
-keyValue
-    value    String sys 0x00000000 0
-    label    ""
+    label    "Warning: This toolbox has the potential to break your unit and void your"
     poll     0
 
+keyValue
+    value    String sys 0x00000000 0
+    label    "warranty. Be careful!"
+    poll     0
+	
 script
-   value    sys 1 0x0100 "/tsd/scripts/util_install.sh"
-   label    "Install Toolbox"
+   value    sys 1 0x0100 "/tsd/scripts/util_update.sh"
+   label    "Update Toolbox"
+
+keyValue
+    value   String sys 0x00000000 0
+	label	"__________________________________________________________________"
+	poll    0

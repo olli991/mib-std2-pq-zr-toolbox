@@ -1,7 +1,7 @@
 FileName = "/tsd/etc/persistence/esd/mib2std-main.esd"
-FileSize = "1307"
-Checksum = "388134ab24b83969983bcb534c0b1ac8cb299e66"
+FileSize = "944"
+Checksum = "9b39003543cf0985c45a88396ab33a92fa3312b9"
 
-FileName = "/tsd/scripts/install.sh"
-FileSize = "824"
-Checksum = "d6218423d729cd840d9aab91683ac757a8cf7bc1"
+FileName = "/tsd/scripts/util_install.sh"
+FileSize = "1030"
+Checksum = "e6e81c78cea5c27016589c28496ca83179961e62"

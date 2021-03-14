@@ -6,3 +6,4 @@
 */Update.txt text eol=crlf
 *.xml text eol=lf
 *.ini text eol=lf
+*.py text eol=lf
