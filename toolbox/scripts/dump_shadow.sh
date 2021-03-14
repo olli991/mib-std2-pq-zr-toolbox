@@ -2,7 +2,7 @@
 # Info
 export TOPIC=shadow
 export MIBPATH=/etc/shadow
-export SDPATH=$TOPIC/shadow.txt
+export SDPATH=$TOPIC
 export TYPE="file"
 DESCRIPTION="This script will dump shadow file"
 
@@ -22,9 +22,8 @@ sleep 2
 echo Listing file:
 sleep 1
 
-cat $DUMPFOLDER
+cat $DUMPFOLDER/shadow
 
-echo
 echo "Done"
 
 exit 0 

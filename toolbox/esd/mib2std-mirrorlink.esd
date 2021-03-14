@@ -32,7 +32,7 @@ script
 	label 	"Patch Mirrorlink"
 	
 script
-	value 	sys 1 0x0100 "/tsd/scripts/install_mirrorlink.sh"
+	value 	sys 1 0x0100 "/tsd/scripts/copy_mirrorlink.sh"
 	label 	"Manually copy mirrorlink.config.common.xml to unit"
 	
 keyValue

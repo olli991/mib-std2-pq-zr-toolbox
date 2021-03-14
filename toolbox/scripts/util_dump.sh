@@ -13,10 +13,10 @@ if [ -d "$DUMPFOLDER" ]; then
 	if [ "$TYPE" == "folder" ]; then
 		echo "Dumping content recursively to dump folder on SD card"
 		echo "This can take some time. Please wait"
-        cp -r "$MIBPATH" "$DUMPFOLDER"
+        cp -r ${MIBPATH}/* ${DUMPFOLDER}
     else 
 		echo "Dumping file to dump folder on SD card"
-        cp "$MIBPATH" "$DUMPFOLDER"
+        cp ${MIBPATH} ${DUMPFOLDER}
     fi 
 else
 	echo "Making dump folder"
@@ -24,10 +24,10 @@ else
 	if [ "$TYPE" == "folder" ]; then
 		echo "Dumping content recursively to dump folder on SD card"
 		echo "This can take some time. Please wait"
-        cp -r "$MIBPATH" "$DUMPFOLDER"
+        cp -r ${MIBPATH}/* ${DUMPFOLDER}
     else 
 		echo "Dumping file to dump folder on SD card"
-        cp "$MIBPATH" "$DUMPFOLDER"
+        cp ${MIBPATH} ${DUMPFOLDER}
     fi 
 fi
 

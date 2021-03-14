@@ -1,10 +1,10 @@
 #!/bin/sh
 # Info
-export TOPIC=sounds
-export MIBPATH=/tsd/etc/waveplayer/sound
-export SDPATH=$TOPIC/
-export TYPE="folder"
-DESCRIPTION="This script will install custom sounds"
+export TOPIC=skins/skin0
+export MIBPATH=/tsd/hmi/Resources/skin0/images.mcf
+export SDPATH=$TOPIC/images.mcf
+export TYPE="file"
+DESCRIPTION="This script will install custom skin0 images.mcf"
 
 echo $DESCRIPTION
 echo

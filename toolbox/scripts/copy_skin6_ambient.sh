@@ -1,10 +1,10 @@
 #!/bin/sh
 # Info
-export TOPIC=skins
-export MIBPATH=/tsd/hmi/Resources/skin2/images.mcf
-export SDPATH=$TOPIC/skin2/images.mcf
+export TOPIC=skins/skin6
+export MIBPATH=/tsd/hmi/Resources/skin6/ambienceColorMap.res
+export SDPATH=$TOPIC/ambienceColorMap.res
 export TYPE="file"
-DESCRIPTION="This script will install custom skin2 images.mcf"
+DESCRIPTION="This script will install custom skin6 ambienceColorMap.res"
 
 echo $DESCRIPTION
 echo
@@ -16,6 +16,8 @@ sleep 2
 . /tsd/scripts/util_checksd.sh
 
 # Make backup folder
+export BACKUPFOLDER=$VOLUME/backup/$TOPIC
+
 . /tsd/scripts/util_backup.sh
 sleep 1
 

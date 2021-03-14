@@ -1,8 +1,8 @@
 #!/bin/sh
 # Info
-export TOPIC=skins
+export TOPIC=skins/skin3
 export MIBPATH=/tsd/hmi/Resources/skin3/images.mcf
-export SDPATH=$TOPIC/skin3/images.mcf
+export SDPATH=$TOPIC/images.mcf
 export TYPE="file"
 DESCRIPTION="This script will install custom skin3 images.mcf"
 

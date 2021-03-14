@@ -2,7 +2,7 @@
 # Info
 export TOPIC=mapcfg
 export MIBPATH=/tsd/var/nav/cfg/mapcfg
-export SDPATH=$TOPIC/
+export SDPATH=$TOPIC
 export TYPE="folder"
 DESCRIPTION="This script will dump navigation graphics"
 

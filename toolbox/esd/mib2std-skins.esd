@@ -33,55 +33,55 @@ keyValue
     poll    0    
     
 script
-   value    sys 1 0x0100 "/tsd/scripts/install_skin0.sh"
+   value    sys 1 0x0100 "/tsd/scripts/copy_skin0.sh"
    label    "Install new graphics for Skin0 from skins/Skin0/ on SD"
 
 script
-   value    sys 1 0x0100 "/tsd/scripts/install_skin1.sh"
+   value    sys 1 0x0100 "/tsd/scripts/copy_skin1.sh"
    label    "Install new graphics for Skin1 from skins/Skin1/ on SD"
    
 script
-   value    sys 1 0x0100 "/tsd/scripts/install_skin1_ambient.sh"
+   value    sys 1 0x0100 "/tsd/scripts/copy_skin1_ambient.sh"
    label    "Install new ambient colors for Skin1 from skins/Skin1/ on SD"
 
 script
-   value    sys 1 0x0100 "/tsd/scripts/install_skin2.sh"
+   value    sys 1 0x0100 "/tsd/scripts/copy_skin2.sh"
    label    "Install new graphics for Skin2 from skins/Skin2/ on SD"
    
 script
-   value    sys 1 0x0100 "/tsd/scripts/install_skin2_ambient.sh"
+   value    sys 1 0x0100 "/tsd/scripts/copy_skin2_ambient.sh"
    label    "Install new ambient colors for Skin2 from skins/Skin2/ on SD"
 
 script
-   value    sys 1 0x0100 "/tsd/scripts/install_skin3.sh"
+   value    sys 1 0x0100 "/tsd/scripts/copy_skin3.sh"
    label    "Install new graphics for Skin3 from skins/Skin3/ on SD"
    
 script
-   value    sys 1 0x0100 "/tsd/scripts/install_skin3_ambient.sh"
+   value    sys 1 0x0100 "/tsd/scripts/copy_skin3_ambient.sh"
    label    "Install new ambient colors for Skin3 from skins/Skin3/ on SD"
 
 script
-   value    sys 1 0x0100 "/tsd/scripts/install_skin4.sh"
+   value    sys 1 0x0100 "/tsd/scripts/copy_skin4.sh"
    label    "Install new graphics for Skin4 from skins/Skin4/ on SD"
    
 script
-   value    sys 1 0x0100 "/tsd/scripts/install_skin4_ambient.sh"
+   value    sys 1 0x0100 "/tsd/scripts/copy_skin4_ambient.sh"
    label    "Install new ambient colors for Skin4 from skins/Skin4/ on SD"
 
 script
-   value    sys 1 0x0100 "/tsd/scripts/install_skin5.sh"
+   value    sys 1 0x0100 "/tsd/scripts/copy_skin5.sh"
    label    "Install new graphics for Skin5 from skins/Skin5/ on SD"
    
 script
-   value    sys 1 0x0100 "/tsd/scripts/install_skin5_ambient.sh"
+   value    sys 1 0x0100 "/tsd/scripts/copy_skin5_ambient.sh"
    label    "Install new ambient colors for Skin5 from skins/Skin5/ on SD"
 
 script
-   value    sys 1 0x0100 "/tsd/scripts/install_skin6.sh"
+   value    sys 1 0x0100 "/tsd/scripts/copy_skin6.sh"
    label    "Install new graphics for Skin6 from skins/Skin6/ on SD"
    
 script
-   value    sys 1 0x0100 "/tsd/scripts/install_skin4_ambient.sh"
+   value    sys 1 0x0100 "/tsd/scripts/copy_skin4_ambient.sh"
    label    "Install new ambient colors for Skin6 from skins/Skin6/ on SD"
  
 keyValue

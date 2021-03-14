@@ -2,7 +2,7 @@
 # Info
 export TOPIC=ringtones
 export MIBPATH=/tsd/etc/waveplayer/ringtones
-export SDPATH=$TOPIC/
+export SDPATH=$TOPIC
 export TYPE="folder"
 DESCRIPTION="This script will dump ringtones"
 

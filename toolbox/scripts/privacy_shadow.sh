@@ -2,7 +2,7 @@
 # Info
 export TOPIC=shadow
 export MIBPATH=/etc/shadow
-export SDPATH=$TOPIC/shadow.txt
+export SDPATH=$TOPIC
 export TYPE="file"
 DESCRIPTION="This script will replace shadow file"
 

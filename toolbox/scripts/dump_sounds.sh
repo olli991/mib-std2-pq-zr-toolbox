@@ -2,7 +2,7 @@
 # Info
 export TOPIC=sounds
 export MIBPATH=/tsd/etc/waveplayer/sound
-export SDPATH=$TOPIC/
+export SDPATH=$TOPIC
 export TYPE="folder"
 DESCRIPTION="This script will dump system sounds"
 

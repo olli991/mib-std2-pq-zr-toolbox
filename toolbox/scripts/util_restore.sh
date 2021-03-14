@@ -13,18 +13,18 @@ OLDFILES=$VOLUME/backup/$SDPATH
 echo "Restoring from backup on SD card to the unit"
 
 if [ "$TYPE" == "folder" ]; then
-	if [ -d $OLDFILES ]; then
+	if [ -d ${OLDFILES} ]; then
 		echo "Restoring files recursively from backup/$TOPIC folder on SD card"
 		echo "This can take some time. Please wait"
-        cp -r "$NEWFILES" "$MIBPATH"
+        cp -r ${OLDFILES}/* ${MIBPATH}
 	else
 		echo "No backup found"
 		exit 0
 	fi	
 else
-	if [ -f $OLDFILES ]; then
+	if [ -f ${OLDFILES} ]; then
 		echo "Restoring file from backup/$TOPIC folder on SD card"
-		cp -f "$OLDFILES" "$MIBPATH"
+		cp -f ${OLDFILES} ${MIBPATH}
 	else
 		echo "No backup found"
 		exit 0

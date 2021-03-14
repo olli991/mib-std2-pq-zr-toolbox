@@ -1,10 +1,10 @@
 #!/bin/sh
 # Info
-export TOPIC=skins
-export MIBPATH=/tsd/hmi/Resources/skin1/ambienceColorMap.res
-export SDPATH=$TOPIC/skin1/ambienceColorMap.res
-export TYPE="file"
-DESCRIPTION="This script will install custom skin1 ambienceColorMap.res"
+export TOPIC=mapcfg
+export MIBPATH=/tsd/var/nav/cfg/mapcfg
+export SDPATH=$TOPIC
+export TYPE="folder"
+DESCRIPTION="This script will install custom navigation grapics"
 
 echo $DESCRIPTION
 echo

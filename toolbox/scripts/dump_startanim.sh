@@ -2,8 +2,8 @@
 # Info
 export TOPIC=startanim
 export MIBPATH=/tsd/etc/startanim
-export SDPATH=$TOPIC/
-export TYPE="file"
+export SDPATH=$TOPIC
+export TYPE="folder"
 DESCRIPTION="This script will dump startup animations / bootscreens"
 
 echo $DESCRIPTION

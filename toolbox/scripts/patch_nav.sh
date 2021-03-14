@@ -4,6 +4,7 @@ export TOPIC=navigation
 export MIBPATH=/tsd/etc/nav/mibstd2_nav_target.ini 
 export SDPATH=$TOPIC/mibstd2_nav_target.ini 
 export FILE=mibstd2_nav_target.ini 
+export TYPE="file"
 DESCRIPTION="This script will backup and patch Navigation config file"
 
 echo $DESCRIPTION
@@ -37,7 +38,7 @@ if [ -f $BACKUPFOLDER/$FILE ]; then
 	else
 		# Patching
 		echo "Patching mibstd2_nav_target.ini"
-		echo  >> $MIBPATH
+		echo "" >> $MIBPATH
 		echo $PATCHLINE1 >> $MIBPATH
 		echo $PATCHLINE2 >> $MIBPATH
 		sleep 1			

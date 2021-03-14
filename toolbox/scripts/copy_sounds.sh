@@ -1,10 +1,10 @@
 #!/bin/sh
 # Info
-export TOPIC=skins
-export MIBPATH=/tsd/hmi/Resources/skin2/ambienceColorMap.res
-export SDPATH=$TOPIC/skin2/ambienceColorMap.res
-export TYPE="file"
-DESCRIPTION="This script will install custom skin2 ambienceColorMap.res"
+export TOPIC=sounds
+export MIBPATH=/tsd/etc/waveplayer/sound
+export SDPATH=$TOPIC
+export TYPE="folder"
+DESCRIPTION="This script will install custom sounds"
 
 echo $DESCRIPTION
 echo

@@ -1,10 +1,10 @@
 #!/bin/sh
 # Info
-export TOPIC=skins
-export MIBPATH=/tsd/hmi/Resources/skin1/images.mcf
-export SDPATH=$TOPIC/skin1/images.mcf
+export TOPIC=skins/skin6
+export MIBPATH=/tsd/hmi/Resources/skin6/images.mcf
+export SDPATH=$TOPIC/images.mcf
 export TYPE="file"
-DESCRIPTION="This script will install custom skin1 images.mcf"
+DESCRIPTION="This script will install custom skin6 images.mcf"
 
 echo $DESCRIPTION
 echo

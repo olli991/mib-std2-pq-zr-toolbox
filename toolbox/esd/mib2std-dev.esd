@@ -38,8 +38,14 @@ script
    value    sys 1 0x0100 "/tsd/scripts/dev_copy_all.sh"
    label    "Copy whole filesystem to SD"
    
-
-   
 script
    value    sys 1 0x0100 "/tsd/scripts/util_install.sh"
    label    "Run initial Install Toolbox script again"
+   
+script
+   value    sys 1 0x0100 "/tsd/scripts/dev_cleanup_mapcfg.sh"
+   label    "Cleanup mapcfg failure"
+   
+script
+   value    sys 1 0x0100 "/tsd/scripts/dev_copy_swdllog.sh"
+   label    "Copy SWDLlog folder"

@@ -13,18 +13,18 @@ NEWFILES=$VOLUME/custom/$SDPATH
 echo "Copying data from SD card to unit"
 
 if [ "$TYPE" == "folder" ]; then
-	if [ -d $NEWFILES ]; then
+	if [ -d ${NEWFILES} ]; then
     	echo "Copying files recursively from custom/$TOPIC folder on SD card"
 		echo "This can take some time. Please wait"
-        cp -r "$NEWFILES" "$MIBPATH"
+        cp -r ${NEWFILES}/* ${MIBPATH}
 	else
 		echo "No files found"
 		exit 0
 	fi	
 else
-	if [ -f $NEWFILES ]; then
+	if [ -f ${NEWFILES} ]; then
 		echo "Copying file from custom/$TOPIC folder on SD card"
-        cp -f "$NEWFILES" "$MIBPATH"
+        cp -f ${NEWFILES} ${MIBPATH}
 	else
 		echo "No files found"
 		exit 0

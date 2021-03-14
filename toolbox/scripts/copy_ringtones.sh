@@ -1,10 +1,10 @@
 #!/bin/sh
 # Info
-export TOPIC=skins
-export MIBPATH=/tsd/hmi/Resources/skin5/images.mcf
-export SDPATH=$TOPIC/skin5/images.mcf
-export TYPE="file"
-DESCRIPTION="This script will install custom skin5 images.mcf"
+export TOPIC=ringtones
+export MIBPATH=/tsd/etc/waveplayer/ringtones
+export SDPATH=$TOPIC
+export TYPE="folder"
+DESCRIPTION="This script will install custom ringtones"
 
 echo $DESCRIPTION
 echo

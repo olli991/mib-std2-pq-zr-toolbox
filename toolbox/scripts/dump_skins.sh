@@ -2,7 +2,7 @@
 # Info
 export TOPIC=skins
 export MIBPATH=/tsd/hmi/Resources
-export SDPATH=$TOPIC/
+export SDPATH=$TOPIC
 export TYPE="folder"
 DESCRIPTION="This script will dump skins"
 

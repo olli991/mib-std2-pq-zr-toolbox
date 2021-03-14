@@ -1,10 +1,10 @@
 #!/bin/sh
 # Info
-export TOPIC=skins
-export MIBPATH=/tsd/hmi/Resources/skin4/images.mcf
-export SDPATH=$TOPIC/skin4/images.mcf
+export TOPIC=skins/skin4
+export MIBPATH=/tsd/hmi/Resources/skin4/ambienceColorMap.res
+export SDPATH=$TOPIC/ambienceColorMap.res
 export TYPE="file"
-DESCRIPTION="This script will install custom skin4 images.mcf"
+DESCRIPTION="This script will install custom skin4 ambienceColorMap.res"
 
 echo $DESCRIPTION
 echo

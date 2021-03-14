@@ -1,10 +1,10 @@
 #!/bin/sh
 # Info
-export TOPIC=ringtones
-export MIBPATH=/tsd/etc/waveplayer/ringtones
-export SDPATH=$TOPIC/
-export TYPE="folder"
-DESCRIPTION="This script will install custom ringtones"
+export TOPIC=skins/skin1
+export MIBPATH=/tsd/hmi/Resources/skin1/ambienceColorMap.res
+export SDPATH=$TOPIC/ambienceColorMap.res
+export TYPE="file"
+DESCRIPTION="This script will install custom skin1 ambienceColorMap.res"
 
 echo $DESCRIPTION
 echo

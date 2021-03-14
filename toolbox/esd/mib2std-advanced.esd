@@ -47,7 +47,7 @@ keyValue
 	poll 	0
 	
 script
-	value 	sys 1 0x0100 "/tsd/scripts/install_swap.sh"
+	value 	sys 1 0x0100 "/tsd/scripts/copy_swap.sh"
 	label 	"Copy SWAP to unit"
 	
 script
@@ -60,7 +60,7 @@ keyValue
 	poll 	0
 	
 script
-	value 	sys 1 0x0100 "/tsd/scripts/install_swdl.sh"
+	value 	sys 1 0x0100 "/tsd/scripts/copy_swdl.sh"
 	label 	"Copy SWDL to unit"
 
 script
@@ -73,7 +73,7 @@ keyValue
 	poll 	0
 	
 script
-	value 	sys 1 0x0100 "/tsd/scripts/install_hmi.sh"
+	value 	sys 1 0x0100 "/tsd/scripts/copy_hmi.sh"
 	label 	"Copy HMI to unit"
 	
 script

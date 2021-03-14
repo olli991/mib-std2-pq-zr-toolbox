@@ -33,7 +33,7 @@ keyValue
     poll    0      
 
 script
-   value    sys 1 0x0100 "/tsd/scripts/install_ringtones.sh"
+   value    sys 1 0x0100 "/tsd/scripts/copy_ringtones.sh"
    label    "Install new ringtones from custom/ringtones on SD"
    
 script
@@ -46,7 +46,7 @@ keyValue
     poll    0     
    
 script
-   value    sys 1 0x0100 "/tsd/scripts/install_sounds.sh"
+   value    sys 1 0x0100 "/tsd/scripts/copy_sounds.sh"
    label    "Install new system sounds from custom/sounds on SD"
    
 script

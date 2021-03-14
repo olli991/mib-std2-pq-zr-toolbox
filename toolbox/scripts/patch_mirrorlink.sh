@@ -4,6 +4,7 @@ export TOPIC=mirrorlink
 export MIBPATH=/tsd/etc/mirrorlink/mirrorlink.config.common.xml
 export SDPATH=$TOPIC/mirrorlink.config.common.xml
 export FILE=mirrorlink.config.common.xml
+export TYPE="file"
 DESCRIPTION="This script will backup and patch Mirrorlink config file"
 
 echo $DESCRIPTION
