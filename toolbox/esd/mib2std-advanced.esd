@@ -86,6 +86,20 @@ keyValue
 	poll 	0
 	
 script
+	value 	sys 1 0x0100 "/tsd/scripts/activate_telnet.sh"
+	label 	"Activate telnet (till next reboot)"
+
+keyValue
+	value 	String per 0x01c100e7 76
+	label 	"Current MU IP adress:"
+	poll 	100
+	
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+	
+script
 	value 	sys 1 0x0100 "/bin/shutdown"
 	label 	"Reboot unit"
 	
