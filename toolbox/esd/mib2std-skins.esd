@@ -7,10 +7,10 @@
 #
 ###########################################################################################
 #
-# Main -> MIB2STD Toolbox Main -> Customization -> Skins
+# Main -> MIB2STD Toolbox Main -> Customization -> skins
 #
 ###########################################################################################
-screen Skins Customization
+screen skins Customization
 
 keyValue
     value	String sys 0x00000000 0
@@ -34,55 +34,55 @@ keyValue
     
 script
    value    sys 1 0x0100 "/tsd/scripts/copy_skin0.sh"
-   label    "Install new graphics for Skin0 from skins/Skin0/ on SD"
+   label    "Install new graphics for skin0 from skins/skin0/ on SD"
 
 script
    value    sys 1 0x0100 "/tsd/scripts/copy_skin1.sh"
-   label    "Install new graphics for Skin1 from skins/Skin1/ on SD"
+   label    "Install new graphics for skin1 from skins/skin1/ on SD"
    
 script
    value    sys 1 0x0100 "/tsd/scripts/copy_skin1_ambient.sh"
-   label    "Install new ambient colors for Skin1 from skins/Skin1/ on SD"
+   label    "Install new ambient colors for skin1 from skins/skin1/ on SD"
 
 script
    value    sys 1 0x0100 "/tsd/scripts/copy_skin2.sh"
-   label    "Install new graphics for Skin2 from skins/Skin2/ on SD"
+   label    "Install new graphics for skin2 from skins/skin2/ on SD"
    
 script
    value    sys 1 0x0100 "/tsd/scripts/copy_skin2_ambient.sh"
-   label    "Install new ambient colors for Skin2 from skins/Skin2/ on SD"
+   label    "Install new ambient colors for skin2 from skins/skin2/ on SD"
 
 script
    value    sys 1 0x0100 "/tsd/scripts/copy_skin3.sh"
-   label    "Install new graphics for Skin3 from skins/Skin3/ on SD"
+   label    "Install new graphics for skin3 from skins/skin3/ on SD"
    
 script
    value    sys 1 0x0100 "/tsd/scripts/copy_skin3_ambient.sh"
-   label    "Install new ambient colors for Skin3 from skins/Skin3/ on SD"
+   label    "Install new ambient colors for skin3 from skins/skin3/ on SD"
 
 script
    value    sys 1 0x0100 "/tsd/scripts/copy_skin4.sh"
-   label    "Install new graphics for Skin4 from skins/Skin4/ on SD"
+   label    "Install new graphics for skin4 from skins/skin4/ on SD"
    
 script
    value    sys 1 0x0100 "/tsd/scripts/copy_skin4_ambient.sh"
-   label    "Install new ambient colors for Skin4 from skins/Skin4/ on SD"
+   label    "Install new ambient colors for skin4 from skins/skin4/ on SD"
 
 script
    value    sys 1 0x0100 "/tsd/scripts/copy_skin5.sh"
-   label    "Install new graphics for Skin5 from skins/Skin5/ on SD"
+   label    "Install new graphics for skin5 from skins/skin5/ on SD"
    
 script
    value    sys 1 0x0100 "/tsd/scripts/copy_skin5_ambient.sh"
-   label    "Install new ambient colors for Skin5 from skins/Skin5/ on SD"
+   label    "Install new ambient colors for skin5 from skins/skin5/ on SD"
 
 script
    value    sys 1 0x0100 "/tsd/scripts/copy_skin6.sh"
-   label    "Install new graphics for Skin6 from skins/Skin6/ on SD"
+   label    "Install new graphics for skin6 from skins/skin6/ on SD"
    
 script
    value    sys 1 0x0100 "/tsd/scripts/copy_skin4_ambient.sh"
-   label    "Install new ambient colors for Skin6 from skins/Skin6/ on SD"
+   label    "Install new ambient colors for skin6 from skins/skin6/ on SD"
  
 keyValue
     value   String sys 0x00000000 0

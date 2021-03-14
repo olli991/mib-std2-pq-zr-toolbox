@@ -64,6 +64,6 @@ keyValue
     
 keyValue
     value   String sys 0x00000000 0
-    label   "Initial toolbox by YOX. Thanks to Jille, Olli and more for further development."
+    label   "Based on the initial idea from YOX, build and modified by Olli. Thanks to Jille."
     poll    0
 

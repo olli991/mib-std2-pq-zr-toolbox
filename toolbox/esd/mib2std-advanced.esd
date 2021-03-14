@@ -31,21 +31,12 @@ keyValue
     value   String sys 0x00000000 0
 	label 	"brick your unit! - All you do and use at your own risk!"
 	poll 	0
-
-keyValue
-    value   String sys 0x00000000 0
-	label	"_________________________________________________________________________"
-	poll    0
-
-script
-	value 	sys 1 0x0100 "/bin/shutdown"
-	label 	"Hard reboot unit"
-
+	
 keyValue
     value   String sys 0x00000000 0
 	label 	""
 	poll 	0
-	
+
 script
 	value 	sys 1 0x0100 "/tsd/scripts/copy_swap.sh"
 	label 	"Copy SWAP to unit"
@@ -88,3 +79,13 @@ keyValue
 script
 	value 	sys 1 0x0100 "/tsd/scripts/copy_fec.sh"
 	label 	"Copy FEC to unit"
+	
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+	
+script
+	value 	sys 1 0x0100 "/bin/shutdown"
+	label 	"Reboot unit"
+	

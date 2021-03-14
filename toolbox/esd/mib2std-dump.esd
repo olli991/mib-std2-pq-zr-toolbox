@@ -21,11 +21,10 @@ script
    value    sys 1 0x0100 "/tsd/scripts/dump_all.sh"
    label    "Dump everything to SD card (This will take a while)"
  
- 
 keyValue
-    value   String sys 0x00000000 0
-	label	"__________________________________________________________________"
-	poll    0
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0
 
 keyValue
     value    String sys 0x00000000 0
@@ -51,9 +50,9 @@ script
    label    "Dump navigation graphic files to SD card"	
 
 keyValue
-    value   String sys 0x00000000 0
-	label	"__________________________________________________________________"
-	poll    0	
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0	
 
 #### Sound dump scripts #####
 keyValue
@@ -70,9 +69,9 @@ script
    label    "Dump system sounds to SD card"	
 
 keyValue
-    value   String sys 0x00000000 0
-	label	"__________________________________________________________________"
-	poll    0
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0
 	
 #### System dump scripts #####
 keyValue

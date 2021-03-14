@@ -16,6 +16,11 @@ keyValue
     value   String sys 0x00000000 0
     label   "Deleteing several privacy related files from the unit"
 	poll 	0
+
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0
 	
 script
 	value 	sys 1 0x0100 "/tsd/scripts/privacy_cleanhistory.sh"
