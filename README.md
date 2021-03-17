@@ -69,12 +69,12 @@ This is the script to compress the MCF-container.<br>
 Usage for instance: `compress-mcf.py <ORIGINAL-BASEFILE> <NEWFILE> <FOLDER-WHERE-TO-COMPRESS-FROM>`<br>
 Example: `compress-mcf.py images.mcf images2.mcf .\extracted\`
 
-### extract-startup_x.boot.py (by jille)
+### extract-startup_x.boot.py (by jille) *currently not fully working"
 This a python script to extract startup screen containers (.boot).<br>
 Usage for instance: `extract-startup_x.boot.py <INPUTFILE> <EXTRACTIONFOLDER>`<br>
 Example: `extract-startup_x.boot.py startup_x.boot .\extracted\`
 
-### compress-startup_x.boot.py (by jille)
+### compress-startup_x.boot.py (by jille) *currently not fully working"
 This is the script to compress the BOOT-container.<br>
 Usage for instance: `compress-startup_x.boot.py <ORIGINAL-BASEFILE> <NEWFILE> <FOLDER-WHERE-TO-COMPRESS-FROM>`<br>
 Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\`
