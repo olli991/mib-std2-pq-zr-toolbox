@@ -1,5 +1,5 @@
 # MIB2 Standard Toolbox
-⚠️ **Currently only working on Technisat devices with navigation and GEM 4.1!!** ⚠️
+⚠️ **Currently only working on Technisat devices with navigation and GEM 4.1 and higher!!** ⚠️
 
 ![SCREENSHOT_(Sdl_7DD2(Tg))_TIME_2021_02_26_10_00_11_GEOCOORD_LAT_53 945_LONG_9 1393_7038007_Nr_1](https://user-images.githubusercontent.com/55631413/111087129-1607f500-8520-11eb-835e-f9d2760ce891.png)
 
