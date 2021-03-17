@@ -1,5 +1,5 @@
 # MIB2 Standard Toolbox
-⚠️ **Currently only working on Technisat devices with navigation!!** ⚠️
+⚠️ **Currently only working on Technisat devices with navigation and GEM 4.1!!** ⚠️
 
 ![SCREENSHOT_(Sdl_7DD2(Tg))_TIME_2021_02_26_10_00_11_GEOCOORD_LAT_53 945_LONG_9 1393_7038007_Nr_1](https://user-images.githubusercontent.com/55631413/111087129-1607f500-8520-11eb-835e-f9d2760ce891.png)
 
@@ -80,8 +80,8 @@ Usage for instance: `compress-startup_x.boot.py <ORIGINAL-BASEFILE> <NEWFILE> <F
 Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\`
 
 ## Supported firmwares
-Currently this toolbox should work on all Technisat units.
-Attention: It will **not** work on MIB2STD units with hardware H50 and newer (currently Seat units which came with firmware 05xx from factory)
+- This toolbox currently is only working with GEM 4.1 and above. **GEM 3.5 isn't compatible**. We're working on a possible fix to this.
+- It will **not** work on MIB2STD units with hardware H50 and newer (currently Seat units which came with firmware 05xx from factory) because the variant is missing in our backdoor and we can't add this because of file integrity. But you can install it manually if you activated telnet on your unit with BDM pins or something in the first place. Just run `util_install.sh` from SD  `toolbox/scripts`
 
 ## Disclaimer
 WE'RE NOT RESPONSABLE FOR ANY DAMAGE OF YOUR UNIT. YOU'RE DOING EVERYTHING AT YOUR OWN RISK! USE YOUR BRAIN AND BE CAREFUL!
