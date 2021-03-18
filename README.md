@@ -11,6 +11,7 @@ Note: This screens has the potential to ruin your MIB2 STD unit. The developers 
 - An MIB2 STD by Technisat with navigation. It will not work ob MIB2 High or Delphi units!
 - 1 empty, FAT32 formatted SD card, with enough space. Everything bigger than 1GB is fine
 - Some place to save your backups
+- Diagnostic software to activate developer mode on the unit to get acces to the GreenMenu
 
 ## Optional requirements
 - Python 3, if you want to extract/compress graphics containers (boot/mcf)
@@ -80,8 +81,13 @@ Usage for instance: `compress-startup_x.boot.py <ORIGINAL-BASEFILE> <NEWFILE> <F
 Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\`
 
 ## Supported firmwares
-- This toolbox currently is only working with GEM 4.1 and above. **GEM 3.5 isn't compatible**. We're working on a possible fix to this.
-- It will **not** work on MIB2STD units with hardware H50 and newer (currently Seat units which came with firmware 05xx from factory) because the variant is missing in our backdoor and we can't add this because of file integrity. But you can install it manually if you activated telnet on your unit with BDM pins or something in the first place. Just run `util_install.sh` from SD  `toolbox/scripts`
+- It should run on all Technisat Nav units. If you have a really old firmware and GEM 3.5 is present you have to use the dedicated installer for that case. Please read the next part for more informations.
+- It will **not** work on MIB2STD units with hardware H50 and newer (currently Seat units which came with firmware 05xx from factory) because the variant is missing in our backdoor and we can't add this because of file integrity. But you can install it manually if you activated telnet on your unit with BDM pins or something in the first place. Just run `util_install.sh` from SD `toolbox/scripts` manually.
+
+### Support and how to for older devices with GEM 3.5
+We've built a special installer package for this older devices because this toolbox only works with GEM 4.1 and higher.
+If you have a unit with GEM 3.5, then please download the dedicated release bundle `MIB2STD-Toolbox-vX.X-GEM-Update.zip` from latest release.
+Don't panic within the update process, it will take longer and the bootscreen will be shown for quite some time. It seems like nothing is happening. This is correct! Please just wait until it proceeds. The update could take up to 5 minutes.
 
 ## Disclaimer
 WE'RE NOT RESPONSABLE FOR ANY DAMAGE OF YOUR UNIT. YOU'RE DOING EVERYTHING AT YOUR OWN RISK! USE YOUR BRAIN AND BE CAREFUL!
