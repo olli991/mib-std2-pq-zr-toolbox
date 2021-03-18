@@ -14,7 +14,7 @@ screen MIB2STD_Toolbox Main
 
 keyvalue
 	value 	String sys 0x00000000 0
-	label 	"[MIB2STD Toolbox v0.5]"
+	label 	"[MIB2STD Toolbox v0.51]"
 	poll 	0
 
 keyValue
