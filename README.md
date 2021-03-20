@@ -61,22 +61,22 @@ MIB2STD Toolbox Main
 Currently there are four tools included.
 
 ### extract-mcf.py (by jille)
-This a python script to extract skinfile containers (.mcf).<br>
-Usage for instance: `exctrct_mcf.py <INPUTFILE> <EXTRACTIONFOLDER>`<br>
-Example: `extract_mcf.py images.mcf .\extracted\`
+This is a python script to extract skinfile containers (.mcf).<br>
+Usage for instance: `extract-mcf.py <INPUTFILE> <EXTRACTIONFOLDER>`<br>
+Example: `extract-mcf.py images.mcf .\extracted\`
 
 ### compress-mcf.py (by jille)
-This is the script to compress the MCF-container.<br>
+This is a script to compress the MCF-container.<br>
 Usage for instance: `compress-mcf.py <ORIGINAL-BASEFILE> <NEWFILE> <FOLDER-WHERE-TO-COMPRESS-FROM>`<br>
 Example: `compress-mcf.py images.mcf images2.mcf .\extracted\`
 
 ### extract-startup_x.boot.py (by jille) *currently not fully working"
-This a python script to extract startup screen containers (.boot).<br>
+This is a python script to extract startup screen containers (.boot).<br>
 Usage for instance: `extract-startup_x.boot.py <INPUTFILE> <EXTRACTIONFOLDER>`<br>
 Example: `extract-startup_x.boot.py startup_x.boot .\extracted\`
 
 ### compress-startup_x.boot.py (by jille) *currently not fully working"
-This is the script to compress the BOOT-container.<br>
+This is a script to compress the BOOT-container.<br>
 Usage for instance: `compress-startup_x.boot.py <ORIGINAL-BASEFILE> <NEWFILE> <FOLDER-WHERE-TO-COMPRESS-FROM>`<br>
 Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\`
 
@@ -84,10 +84,10 @@ Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\
 - It should run on all Technisat Nav units. If you have a really old firmware and GEM 3.5 is present you have to use the dedicated installer for that case. Please read the next part for more informations.
 - It will **not** work on MIB2STD units with hardware H50 and newer (currently Seat units which came with firmware 05xx from factory) because the variant is missing in our backdoor and we can't add this because of file integrity. But you can install it manually if you activated telnet on your unit with BDM pins or something in the first place. Just run `util_install.sh` from SD `toolbox/scripts` manually.
 
-### Support and how to for older devices with GEM 3.5
+### Support and how-to for older devices with GEM 3.5
 We've built a special installer package for this older devices because this toolbox only works with GEM 4.1 and higher.
-If you have a unit with GEM 3.5, then please download the dedicated release bundle `MIB2STD-Toolbox-vX.X-GEM-Update.zip` from latest release.
-Don't panic within the update process, it will take longer and the bootscreen will be shown for quite some time. It seems like nothing is happening. This is correct! Please just wait until it proceeds. The update could take up to 5 minutes.
+If you have an unit with GEM 3.5, then please download the dedicated release bundle `MIB2STD-Toolbox-vX.X-GEM-Update.zip` from latest release.
+Don't panic within the update process, it will take longer and the bootscreen will be shown several times  for quite some time. It seems like nothing is happening. This is correct! Please just wait until it proceeds. The update could take up to 5 minutes.
 
 ## Disclaimer
 WE'RE NOT RESPONSABLE FOR ANY DAMAGE OF YOUR UNIT. YOU'RE DOING EVERYTHING AT YOUR OWN RISK! USE YOUR BRAIN AND BE CAREFUL!
