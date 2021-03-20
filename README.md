@@ -8,10 +8,10 @@ Note: This screens has the potential to ruin your MIB2 STD unit. The developers 
 ## Requirements
 - Read the entire readme
 - At least 1 healthy set of brains
-- An MIB2 STD by Technisat with navigation. It will not work ob MIB2 High or Delphi units!
+- A MIB2 STD by Technisat with navigation. It will not work on MIB2 High or Delphi units!
 - 1 empty, FAT32 formatted SD card, with enough space. Everything bigger than 1GB is fine
 - Some place to save your backups
-- Diagnostic software to activate developer mode on the unit to get acces to the GreenMenu
+- Diagnostic software to activate developer mode on the unit to get access to the GreenMenu
 
 ## Optional requirements
 - Python 3, if you want to extract/compress graphics containers (boot/mcf)
@@ -28,7 +28,7 @@ Note: This screens has the potential to ruin your MIB2 STD unit. The developers 
 ## How to use
 1. Make dumps of the files you want to modify via `dump` menu
 2. Dumps will be placed in the corresponding `dump` folder on SD
-3. Modify the files how you'd like and place them in the according folder inside `custom` on SD
+3. Modify the files how you'd like and place them in the corresponing folder inside `custom` on SD
 4. Import modified files via `customization` menu
 
 Notice: Every time you copy files to the unit the script will check if there is a backup. If not, it will make a backup of the original files from to unit to `backup` folder. This way you can always use the `restore` functions to roll back to original. 
