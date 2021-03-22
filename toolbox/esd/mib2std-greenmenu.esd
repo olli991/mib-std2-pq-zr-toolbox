@@ -24,7 +24,7 @@ keyValue
 
 keyValue
     value   String sys 0x00000000 0
-    label   "scripts in your ESD-files to /scripts/*"
+    label   "scripts in your ESD-files to /tsd/etc/persistence/esd/scripts"
     poll    0   
 
 keyValue

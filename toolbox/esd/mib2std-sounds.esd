@@ -34,7 +34,7 @@ keyValue
 
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_ringtones.sh"
-   label    "Install new ringtones from custom/ringtones on SD"
+   label    "Copy new ringtones from custom/ringtones on SD"
    
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_ringtones.sh"
@@ -47,7 +47,7 @@ keyValue
    
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_sounds.sh"
-   label    "Install new system sounds from custom/sounds on SD"
+   label    "Copy new system sounds from custom/sounds on SD"
    
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_sounds.sh"
