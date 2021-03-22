@@ -11,14 +11,14 @@ echo
 sleep 2
 
 # Mount system as read/write
-. /tsd/scripts/util_mount.sh
+. /tsd/etc/persistence/esd/scripts/util_mount.sh
 sleep 1
 
 # Deleting GreenMenu screens
 echo "Deleting GreenMenus"
 rm -r /tsd/etc/persistence/esd/mib2std-*.esd
 
-# Delete old toolbox GreenMenu screens
+# Delete old toolbox GreenMenu screens if present
 OLD_1=/tsd/etc/persistence/esd/mibstd2_yox.esd
 OLD_2=/tsd/etc/persistence/esd/TOOLBOX.esd
 OLD_3=/tsd/etc/persistence/esd/mib2std_yox.esd
@@ -36,9 +36,16 @@ sleep 2
 
 # Deleting scripts
 echo "Deleting scripts"
-rm -r /tsd/scripts
+rm -r /tsd/etc/persistence/esd/scripts
 echo
-sleep 2
+
+# Delete old script folder if present
+OLD_SCRIPTS_FOLDER=/tsd/scripts
+
+if [ -d $OLD_SCRIPTS_FOLDER ]; then
+	rm -r /tsd/scripts
+fi
+sleep 1
 
 echo "Uninstall done. Please restart GreenMenu!"
 

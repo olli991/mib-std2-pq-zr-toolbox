@@ -14,12 +14,17 @@ screen Dump MIB2STD_Toolbox
 
 keyValue
     value    String sys 0x00000000 0
-    label    "Make sure there is a SD card inserted"
+    label    "This screen is for dumping several files from to unit to your SD card."
+    poll     0
+
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
     poll     0
 
 script
-   value    sys 1 0x0100 "/tsd/scripts/dump_all.sh"
-   label    "Dump everything to SD card (This will take a while)"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_all.sh"
+   label    "Dump everything to SD card (This will take some time)"
  
 keyValue
     value    String sys 0x00000000 0
@@ -38,15 +43,15 @@ keyValue
     poll     0  	
 	
 script
-   value    sys 1 0x0100 "/tsd/scripts/dump_skins.sh"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_skins.sh"
    label    "Dump skins to SD card"	
    
 script
-   value    sys 1 0x0100 "/tsd/scripts/dump_startanim.sh"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_startanim.sh"
    label    "Dump startup screens to SD card"	
    
 script
-   value    sys 1 0x0100 "/tsd/scripts/dump_mapcfg.sh"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_mapcfg.sh"
    label    "Dump navigation graphic files to SD card"	
 
 keyValue
@@ -61,11 +66,11 @@ keyValue
     poll     0  	
 	
 script
-   value    sys 1 0x0100 "/tsd/scripts/dump_ringtones.sh"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_ringtones.sh"
    label    "Dump ringtones to SD card"	
    
 script
-   value    sys 1 0x0100 "/tsd/scripts/dump_sounds.sh"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_sounds.sh"
    label    "Dump system sounds to SD card"	
 
 keyValue
@@ -80,29 +85,48 @@ keyValue
     poll     0  
 	
 script
-	value 	sys 1 0x0100 "/tsd/scripts/dump_swap.sh"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_swap.sh"
 	label 	"Dump SWAP to SD card"
 	
 script
-	value 	sys 1 0x0100 "/tsd/scripts/dump_swdl.sh"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_swdl.sh"
 	label 	"Dump SWDL to SD card"
 	
 script
-	value 	sys 1 0x0100 "/tsd/scripts/dump_hmi.sh"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_hmi.sh"
 	label 	"Dump HMI to SD card"
 
 script
-	value 	sys 1 0x0100 "/tsd/scripts/dump_fec.sh"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_fec.sh"
 	label 	"Dump FEC to SD card"
 
 script
-	value 	sys 1 0x0100 "/tsd/scripts/dump_mirrorlink.sh"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_shadow.sh"
+	label 	"Dump shadow file to SD card"
+	
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0
+	
+#### Development dump scripts #####
+keyValue
+    value    String sys 0x00000000 0
+    label    "--- Development dump scripts (not included in dump all) ---"
+    poll     0 
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_mirrorlink.sh"
 	label 	"Dump Mirrorlink config to SD card"
 
 script
-	value 	sys 1 0x0100 "/tsd/scripts/dump_nav.sh"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_nav.sh"
 	label 	"Dump Navigation config to SD card"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_esd.sh"
+	label 	"Dump engdefs to SD card"	
 	
 script
-	value 	sys 1 0x0100 "/tsd/scripts/dump_shadow.sh"
-	label 	"Dump shadow file to SD card"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_root.sh"
+	label 	"Dump root to SD card without /dev (will take hours!)"	

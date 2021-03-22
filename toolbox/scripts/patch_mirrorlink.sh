@@ -14,10 +14,10 @@ sleep 2
 #. /eso/hmi/engdefs/scripts/mqb/util_info.sh # for later
 
 # Check if SD card is inserted
-. /tsd/scripts/util_checksd.sh
+. /tsd/etc/persistence/esd/scripts/util_checksd.sh
 
 # Make Backup
-. /tsd/scripts/util_backup.sh
+. /tsd/etc/persistence/esd/scripts/util_backup.sh
 sleep 1
 
 # Patching - Only start patching when a backup is there
@@ -27,7 +27,7 @@ if [ -f $BACKUPFOLDER/$FILE ]; then
     echo "Start patching"
 	
 	# Mount system volume   
-	. /tsd/scripts/util_mount.sh
+	. /tsd/etc/persistence/esd/scripts/util_mount.sh
 	
 	# Check if it's already patched
 	if grep -q "$PATCHCHECK" "$MIBPATH"; then

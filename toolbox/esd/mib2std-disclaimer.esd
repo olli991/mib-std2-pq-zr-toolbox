@@ -14,27 +14,27 @@ screen Disclaimer MIB2STD_Toolbox
 
 keyValue
     value	String sys 0x00000000 0
-    label   "Warning: These screens have the potential to break your unit and void your"
+    label   "WARNING: These screens have the potential to break your unit and void your"
     poll    0
     
 keyValue
     value   String sys 0x00000000 0
-    label   "warranty. Be careful! We're not responsible for any troubles to you,"
+    label   "warranty. Be careful! We're not responsible for any troubles to you, your car"
     poll    0
     
 keyValue
     value   String sys 0x00000000 0
     poll    0
-    label   "your car or software. We're always looking for cool hacks and"
+    label   "or software. We're always looking for cool hacks and retrofits to increase"
 	
 keyValue
     value   String sys 0x00000000 0
-    label   "retrofits to increase the potential of the MQB platform. It's never our"
+    label   "the potential of the MQB platform. It's never our intention to harm any"
     poll    0 
 
 keyValue
     value   String sys 0x00000000 0
-    label   "intention to harm any person, car or brand."
+    label   "person, car or brand."
     poll    0 
 
 keyValue
@@ -64,6 +64,6 @@ keyValue
     
 keyValue
     value   String sys 0x00000000 0
-    label   "Based on the initial idea from YOX, build and modified by Olli. Thanks to Jille."
+    label   "Based on the initial idea from YOX, build and modified by Olli with help from Jille."
     poll    0
 

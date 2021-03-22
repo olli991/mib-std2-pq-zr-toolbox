@@ -1,0 +1,231 @@
+###########################################################################################
+#
+# Custom Green Engineering Menu screen
+# Author:       Olli
+# Version:      Beta
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB2STD Toolbox Main -> Customization -> Adaptation -> CarBAPDeviceList
+#
+###########################################################################################
+screen  Car_BAP_Device_List Adaptation
+
+choice
+   value	per 27263191 400
+   label    "Air conditioning (master): "
+
+choice
+   value    per 27263191 402
+   label    "Air conditioning (slave1): "
+
+choice
+   value    per 27263191 404
+   label    "Auxiliary heating: "
+
+choice
+   value    per 27263191 406
+   label    "Headup display (HUD): "
+
+choice
+   value    per 27263191 408
+   label    "Adaptive cruise control (ACC): "
+
+choice
+   value    per 27263191 410
+   label    "Air suspension: "
+
+choice
+   value    per 27263191 412
+   label    "Tyre pressure system (RKA/RDK): "
+
+choice
+   value    per 27263191 414
+   label    "Interior light: "
+
+choice
+   value    per 27263191 416
+   label    "Exterior light: "
+
+choice
+   value    per 27263191 418
+   label    "Parking system (PDC/OPS): "
+
+choice
+   value    per 27263191 420
+   label    "Video parking system (VPS/RVC): "
+
+choice
+   value    per 27263191 422
+   label    "Wiper: "
+
+choice
+   value    per 27263191 424
+   label    "Central locking (ZV): "
+
+choice
+   value    per 27263191 426
+   label    "Mirror: "
+   
+choice
+   value    per 27263191 428
+   label    "On-board computer (BCMFA): "
+   
+choice
+   value    per 27263191 430
+   label    "Driver seat (master): "
+   
+choice
+   value    per 27263191 432
+   label    "Clock: "
+
+choice
+   value    per 27263191 434
+   label    "Service interval (SIA): "
+
+choice
+   value    per 27263191 436
+   label    "Unitmaster (ZEM): "
+
+choice
+   value    per 27263191 438
+   label    "Uni. garage door opener (UGDO): "
+
+choice
+   value    per 27263191 440
+   label    "Compass: "
+
+choice
+   value    per 27263191 442
+   label    "Air conditioning (slave2): "   
+
+choice
+   value    per 27263191 444
+   label    "FPA (Charisma): "
+
+choice
+   value    per 27263191 446
+   label    "Nightvision: "
+
+choice
+   value    per 27263191 448
+   label    "Lane dep. warning (LDW/HCA): "
+
+choice
+   value    per 27263191 450
+   label    "Lane change assist (SWA): "
+
+choice
+   value    per 27263191 452
+   label    "Front assist (AWV): "
+
+choice
+   value    per 27263191 454
+   label    "Hybrid: "
+
+choice
+   value   	per 27263191 456
+   label   	"Sideview camera: "
+
+choice
+   value    per 27263191 458
+   label    "Reversible belt tightener (RGS): "
+
+choice
+   value    per 27263191 460
+   label    "Passanger seat (slave): "
+
+choice
+   value    per 27263191 462
+   label    "Traffic sign detection (VZE): "
+
+choice
+   value   	per 27263191 464
+   label   	"Weariness recognition (MKE): "
+
+choice
+   value   	per 27263191 466
+   label   	"Think.blue (BCmE): "
+
+choice
+   value   	per 27263191 468
+   label   	"Tilt angle: "
+
+choice
+   value   	per 27263191 470
+   label   	"Battery management: "
+
+choice
+   value   	per 27263191 472
+   label   	"Brake: "
+
+choice
+   value   	per 27263191 474
+   label   	"Start-Stop: "
+
+choice
+   value   	per 27263191 476
+   label   	"TV-Tuner: "
+
+choice
+   value   	per 27263191 478
+   label   	"Amplifier: "
+
+choice
+   value   	per 27263191 480
+   label   	"Rear seat entertainment (RSE): "
+
+choice
+   value   	per 27263191 482
+   label   	"eCall: "
+
+choice
+   value   	per 27263191 484
+   label   	"MFL-joker-key: "
+
+choice
+   value   	per 27263191 486
+   label   	"Special functions: "
+
+choice
+   value   	per 27263191 488
+   label   	"Trailer assist (ARA): "
+
+choice
+   value   	per 27263191 490
+   label   	"Extended network interface (ENI): "
+
+choice
+   value   	per 27263191 492
+   label	"Range data: "
+
+choice
+   value   	per 27263191 494
+   label   	"Pedestrian assist: "
+
+choice
+   value   	per 27263191 496
+   label   	"Seat pneumatic: "
+
+choice
+   value   	per 27263191 498
+   label   	"Efficiency assist (PEA): "
+
+choice
+   value   	per 27263191 500
+   label   	"ExBox: "
+
+choice
+   value   	per 27263191 502
+   label   	"Display configuration: "
+ 
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+	poll 	0
+	
+script
+	value 	sys 1 0x0100 "/bin/shutdown"
+	label 	"Reboot unit"	
+	

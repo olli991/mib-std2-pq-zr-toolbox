@@ -14,12 +14,12 @@ screen MIB2STD_Toolbox Main
 
 keyvalue
 	value 	String sys 0x00000000 0
-	label 	"[MIB2STD Toolbox v0.51]"
+	label 	"[MIB2STD Toolbox v0.6]"
 	poll 	0
 
 keyValue
     value    String sys 0x00000000 0
-    label    "Warning: This toolbox has the potential to break your unit and void your"
+    label    "WARNING: This toolbox has the potential to break your unit and void your"
     poll     0
 
 keyValue
@@ -28,7 +28,7 @@ keyValue
     poll     0
 	
 script
-   value    sys 1 0x0100 "/tsd/scripts/util_update.sh"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_update.sh"
    label    "Update Toolbox"
 
 keyValue

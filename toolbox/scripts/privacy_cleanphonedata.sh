@@ -11,7 +11,7 @@ sleep 2
 # . /eso/hmi/engdefs/scripts/mqb/util_info.sh # for later
 
 # Mount system as read/write
-. /tsd/scripts/util_mount.sh
+. /tsd/etc/persistence/esd/scripts/util_mount.sh
 sleep 1
 
 # Deleting

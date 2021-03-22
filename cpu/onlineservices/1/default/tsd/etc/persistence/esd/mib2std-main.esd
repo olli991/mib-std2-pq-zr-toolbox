@@ -26,7 +26,42 @@ keyValue
     value    String sys 0x00000000 0
     label    ""
     poll     0
+	
+keyValue
+    value   String sys 0x00000000 0
+    label   "If you've paid for this toolbox, you've been scammed."
+    poll    0 
+
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0
 
 script
-   value    sys 1 0x0100 "/tsd/scripts/util_install.sh"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_install.sh"
    label    "Install Toolbox"
+   
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0
+   
+keyValue
+    value	String sys 0x00000000 0
+    label   "WARNING: This toolbox have the potential to break your unit and void your"
+    poll    0
+    
+keyValue
+    value   String sys 0x00000000 0
+    label   "warranty. Be careful! We're not responsible for any troubles to you, your car"
+    poll    0
+    
+keyValue
+    value   String sys 0x00000000 0
+    poll    0
+    label   "or software."
+	
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0

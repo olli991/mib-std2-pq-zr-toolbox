@@ -11,3 +11,23 @@
 #
 ###########################################################################################
 screen Customization MIB2STD_Toolbox
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Instructions: Make sure to first use the 'dump' menu to dump files from the"
+	poll 	0
+	
+keyValue
+    value   String sys 0x00000000 0
+    label   "unit. Modify those files and use this screen to import them. Place the files"
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "you want to import in the corresponing folder on SD inside /custom/."
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+	poll 	0

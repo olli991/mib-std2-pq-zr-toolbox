@@ -23,7 +23,7 @@ keyValue
     poll     0
 
 script
-   value    sys 1 0x0100 "/tsd/scripts/util_uninstall.sh"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_uninstall.sh"
    label    "Uninstall Toolbox"
 
 

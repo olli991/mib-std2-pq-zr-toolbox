@@ -5,7 +5,7 @@
 # Based on the copy script by Jille from MIB2 High Toolbox. Modified for MIB2STD Toolbox by Olli
 
 # Mount system as read/write
-. /tsd/scripts/util_mount.sh
+. /tsd/etc/persistence/esd/scripts/util_mount.sh
 sleep 1
 
 OLDFILES=$VOLUME/backup/$SDPATH

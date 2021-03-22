@@ -19,7 +19,7 @@ keyValue
 
 keyValue
     value   String sys 0x00000000 0
-    label   "Wav-files go into the according custom/ folder on SD card."
+    label   "Wav-files go into the corresponing custom/ folder on SD card."
     poll    0  
 
 keyValue
@@ -33,11 +33,11 @@ keyValue
     poll    0      
 
 script
-   value    sys 1 0x0100 "/tsd/scripts/copy_ringtones.sh"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_ringtones.sh"
    label    "Install new ringtones from custom/ringtones on SD"
    
 script
-   value    sys 1 0x0100 "/tsd/scripts/restore_ringtones.sh"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_ringtones.sh"
    label    "Recover ringtones from backup"
   
 keyValue
@@ -46,9 +46,9 @@ keyValue
     poll    0     
    
 script
-   value    sys 1 0x0100 "/tsd/scripts/copy_sounds.sh"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_sounds.sh"
    label    "Install new system sounds from custom/sounds on SD"
    
 script
-   value    sys 1 0x0100 "/tsd/scripts/restore_sounds.sh"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_sounds.sh"
    label    "Recover systemsounds from backup"

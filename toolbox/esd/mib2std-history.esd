@@ -14,6 +14,16 @@ screen History MIB2STD_Toolbox
 
 keyValue
     value   String sys 0x00000000 0
+    label   "v0.6 Scripts now in factory folder. Added adaptation features. Added"
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "        MIB informations. Added additional features to the menus. Bugfixing."
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
     label   "v0.51 Added alternative installer for old units with GEM 3.5"
 	poll 	0
 

@@ -12,10 +12,10 @@ sleep 2
 # Is there any SD card inserted?
 if [ -d /media/mp000/toolbox ]; then
     echo "Toolbox SD found"
-    export VOLUME=/media/mp000
+    VOLUME=/media/mp000
 elif [ -d /media/mp001/toolbox ]; then
     echo "Toolbox SD found"
-    export VOLUME=/media/mp001
+    VOLUME=/media/mp001
 else 
     echo "No toolbox SD card found"
     exit 0
@@ -33,13 +33,22 @@ sleep 1
 
 # Copy scripts
 echo "Installing scripts"
-if [ -d /tsd/scripts ]; then
-	cp -r $VOLUME/toolbox/scripts/*.sh /tsd/scripts
+if [ -d /tsd/etc/persistence/esd/scripts ]; then
+	cp -r $VOLUME/toolbox/scripts/*.sh /tsd/etc/persistence/esd/scripts
 else
-	mkdir -p /tsd/scripts
-	cp -r $VOLUME/toolbox/scripts/*.sh /tsd/scripts
+	mkdir -p /tsd/etc/persistence/esd/scripts
+	cp -r $VOLUME/toolbox/scripts/*.sh /tsd/etc/persistence/esd/scripts
 fi	
-chmod a+rwx /tsd/scripts/*.sh
+chmod a+rwx /tsd/etc/persistence/esd/scripts/*.sh
+sleep 1
+
+# Check for old script folder
+OLD_SCRIPTS_FOLDER=/tsd/scripts
+
+if [ -d $OLD_SCRIPTS_FOLDER ]; then
+	echo "Old script folder found in /tsd/scripts. Removing it..."
+	rm -r /tsd/scripts
+fi
 sleep 1
 
 echo "Installation done. Please restart GreenMenu!"

@@ -5,7 +5,7 @@
 # Modified for MIB2STD toolbox by Olli
 
 # Mount system as read/write
-. /tsd/scripts/util_mount.sh
+. /tsd/etc/persistence/esd/scripts/util_mount.sh
 sleep 1
 
 NEWFILES=$VOLUME/custom/$SDPATH

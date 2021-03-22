@@ -14,7 +14,7 @@ screen Privacy MIB2STD_Toolbox
 
 keyValue
     value   String sys 0x00000000 0
-    label   "Deleteing several privacy related files from the unit"
+    label   "Deleting several privacy related files from the unit"
 	poll 	0
 
 keyValue
@@ -23,11 +23,11 @@ keyValue
     poll     0
 	
 script
-	value 	sys 1 0x0100 "/tsd/scripts/privacy_cleanhistory.sh"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/privacy_cleanhistory.sh"
 	label 	"Cleanup SWDL history"
 	
 script
-	value 	sys 1 0x0100 "/tsd/scripts/privacy_cleanphonedata.sh"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/privacy_cleanphonedata.sh"
 	label 	"Cleanup stored contact infos"	
 
 keyValue
@@ -36,9 +36,9 @@ keyValue
 	poll 	0
 	
 script
-	value 	sys 1 0x0100 "/tsd/scripts/privacy_shadow.sh"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/privacy_shadow.sh"
 	label 	"Copy custom shadow file to unit"
 	
 script
-	value 	sys 1 0x0100 "/tsd/scripts/restore_shadow.sh"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_shadow.sh"
 	label 	"Restore shadow file from backup"

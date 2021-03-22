@@ -7,10 +7,10 @@
 #
 ###########################################################################################
 #
-# Main -> MIB2STD Toolbox Main -> Customization -> Mirrorlink
+# Main -> MIB2STD Toolbox Main -> Customization -> MirrorLink
 #
 ###########################################################################################
-screen Mirrorlink Customization
+screen Mirror-Link Customization
 
 keyValue
     value   String sys 0x00000000 0
@@ -28,18 +28,14 @@ keyValue
 	poll 	0
 	
 script
-	value 	sys 1 0x0100 "/tsd/scripts/patch_mirrorlink.sh"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/patch_mirrorlink.sh"
 	label 	"Patch Mirrorlink"
-	
-script
-	value 	sys 1 0x0100 "/tsd/scripts/copy_mirrorlink.sh"
-	label 	"Manually copy mirrorlink.config.common.xml to unit"
-	
+
 keyValue
     value   String sys 0x00000000 0
 	label 	""
 	poll 	0
 	
 script
-	value 	sys 1 0x0100 "/tsd/scripts/restore_mirrorlink.sh"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_mirrorlink.sh"
 	label 	"Restore Mirrorlink from backup"
