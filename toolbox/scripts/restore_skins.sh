@@ -21,6 +21,10 @@ sleep 2
 # Restore file(s) to unit
 BACKUP=$VOLUME/backup/$TOPIC
 
+# Mount system as read/write
+. /tsd/etc/persistence/esd/scripts/util_mount.sh
+sleep 1
+
 echo "Copying all skin files from backup folder to the unit"
 echo "Please be patient"
 sleep 1
