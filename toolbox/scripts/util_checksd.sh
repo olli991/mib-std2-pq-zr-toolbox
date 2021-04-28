@@ -20,6 +20,6 @@ elif [ -d /media/mp004/toolbox ]; then
     echo "Toolbox USB found"
     export VOLUME=/media/mp004
 else 
-    echo "No toolbox SD card found"
+    echo "No toolbox SD card or USB found"
     exit 0
 fi
