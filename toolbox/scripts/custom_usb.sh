@@ -19,7 +19,7 @@ echo "Looking for custom toolbox.sh script on USB"
 sleep 1
 
 if [ -f $VOLUME/toolbox.sh ]; then
-	echo "Script found, executing..."
+	echo "Script found at $VOLUME. Executing..."
 	. $VOLUME/toolbox.sh
 else
 	echo "Custom script not found. Aborting"
