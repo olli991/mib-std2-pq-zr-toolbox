@@ -82,6 +82,12 @@ echo "Dumping startup screens"
 echo "Startup screens dump done"
 sleep 1
 
+## Database dump scripts ##
+echo "Dumping radio station logo db"
+. /tsd/etc/persistence/esd/scripts/dump_stationdb.sh > /dev/null & wait $!
+echo "Radio station logo db dump done"
+sleep 1
+
 # Done
 echo 
 echo "All dumps done. You can now start tweaking the dumped stuff!"

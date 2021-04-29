@@ -77,6 +77,16 @@ keyValue
     value    String sys 0x00000000 0
     label    ""
     poll     0
+
+#### Database dump scripts #####
+keyValue
+    value    String sys 0x00000000 0
+    label    "--- Database dump scripts ---"
+    poll     0  
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_stationdb.sh"
+	label 	"Dump radio station db to SD card"
 	
 #### System dump scripts #####
 keyValue
