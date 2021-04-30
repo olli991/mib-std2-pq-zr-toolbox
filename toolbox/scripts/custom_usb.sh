@@ -20,7 +20,8 @@ sleep 1
 
 if [ -f $VOLUME/toolbox.sh ]; then
 	echo "Script found at $VOLUME. Executing..."
-	. $VOLUME/toolbox.sh
+	. $VOLUME/toolbox.sh & wait $!
+	echo "Custom script finished"
 else
 	echo "Custom script not found. Aborting"
 	exit 0
