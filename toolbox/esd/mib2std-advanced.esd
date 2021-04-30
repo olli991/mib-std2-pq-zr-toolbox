@@ -100,7 +100,7 @@ keyValue
 	
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/move_screenshotsToUSB.sh"
-	label 	"Copy screenshots from SD card to USB"
+	label 	"Move screenshots from SD card to USB"
 	
 keyValue
     value   String sys 0x00000000 0
