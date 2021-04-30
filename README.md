@@ -28,15 +28,16 @@ Note: This screens has the potential to ruin your MIB2 STD unit. The developers 
 ## How to install (manual method)
 If you have already access to your unit via telnet you can always install the toolbox manually.
 1. Login via telnet
-2. Place the SD card into a slot
-3. Run the `until_install.sh` from SD `/toolbox/scripts/`
+2. Unplug every SD card or USB
+3. Place the toolbox SD card into a slot
+4. Run the `until_install.sh` from SD `/toolbox/scripts/` like `ksh /media/mp000/toolbox/scripts/util_install.sh`
 
 If you can't run this script from SD because of missing permissions, copy the file to the unit:
 1. Mount the volume writeable: `mount -t qnx6 -o remount,rw /dev/hd0t177 /`
 2. Create scripts folder: `mkdir -p /tsd/etc/persistence/esd/scripts`
 3. Copy script to folder: `cp /media/mp000/toolbox/scripts/until_install.sh tsd/etc/persistence/esd/scripts`
 4. Set chmod (just to be safe): `chmod a+rwx /tsd/etc/persistence/esd/scripts/until_install.sh`
-5. Run the script 
+5. Run the script: `ksh /tsd/etc/persistence/esd/scripts/until_install.sh`
 
 ## How to use
 1. Make dumps of the files you want to modify via `dump` menu
