@@ -32,10 +32,17 @@ echo "Setting execution attributes to scripts..."
 chmod a+rwx /tsd/etc/persistence/esd/scripts/*.sh
 echo "Setting execution attributes is done."
 
+# Delete legacy toolbox screens and scripts
+rm -rf /tsd/etc/persistence/esd/mib2std-*.esd
+rm -f /tsd/etc/persistence/esd/mibstd2_yox.esd
+rm -f /tsd/etc/persistence/esd/TOOLBOX.esd
+rm -f /tsd/etc/persistence/esd/mib2std_yox.esd
+rm -rf /tsd/scripts
+
 sync
 mount -t qnx6 -o remount,ro /dev/hd0t177 /
 echo "System partition is remounted in read/only mode"
 
 echo
 echo "The update is completed. Please reopen Green Engineering Menu!"
-exit 0
+exit 0 

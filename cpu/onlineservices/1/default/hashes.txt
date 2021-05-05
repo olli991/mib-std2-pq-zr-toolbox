@@ -371,5 +371,5 @@ FileSize = "967"
 Checksum = "5a5fc168f93640a05e182335d47424919237bb5f"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_update.sh"
-FileSize = "1181"
-Checksum = "11c15633a4a90571346ff52a0acfcffe078d5b51"
+FileSize = "1429"
+Checksum = "6bc6df5f50222e2c16cc0dac448b2d846019381e"
