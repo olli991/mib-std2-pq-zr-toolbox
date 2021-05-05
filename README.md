@@ -10,7 +10,8 @@ WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT 
 
 ## How to install from SD card via "Service Mode" on supported units with navigation
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of SD card. 
-NOTE: Additionally, ONLY for firmwares 02xx with GEM 3.5, replace `cpu` folder in the root of the SD card with `cpu` folder from \toolbox\gem folder.
+
+NOTE: Additionally, **ONLY** for firmwares 02xx with GEM 3.5, replace `cpu` folder in the root of the SD card with `cpu` folder from `\toolbox\gem` folder.
 2. Turn on ignition and insert SD card into slot 1 of the unit
 3. Press and hold MENU button to open `Service Mode -> Software Update` and install `MIBStd2_Online_Approval`.
 4. Open Green Engineering Menu and have fun 🙂
@@ -59,7 +60,7 @@ MIB STD2 Toolbox Main
 |
 +---MIB_info                            # Hardware infos and such
 |
-+---Network                         	# Telnet activation and more
++---Network                         	  # Telnet activation and more
 |
 +---Privacy                             # Privacy related functions
 |
