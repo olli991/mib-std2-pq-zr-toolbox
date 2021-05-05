@@ -1,3 +1,15 @@
+FileName = "/tsd/bin/system/startup"
+FileSize = "2704"
+Checksum = "c4c9ca1f855412ddb9638dff44cf5846d39633b5"
+
+FileName = "/tsd/bin/system/GEM.jar"
+FileSize = "242383"
+Checksum = "11f18fa2a97dbd7a90fc8e84b73bc4a1ed0a1bad"
+
+FileName = "/tsd/bin/system/SOP2"
+FileSize = "2433"
+Checksum = "ed14e46fedbd78d3855495f266b81de7dd7f71c0"
+
 FileName = "/tsd/etc/persistence/esd/mib2std-about.esd"
 FileSize = "492"
 Checksum = "f3c887e857b185a98651f04ca14e58fc2bbc9251"

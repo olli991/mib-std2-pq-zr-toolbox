@@ -1,0 +1,552 @@
+##############################################
+# Author:	Andreas Vogel (IAV GmbH)
+# Date:		2015-08-25
+# Version:	V1.0 (based on AnalogTuner_V3.1)
+##############################################
+
+##############################################
+screen AnalogTuner_Asia Main
+##############################################
+
+
+##############################################
+screen Tuner_1_2_3 AnalogTuner_Asia
+##############################################
+
+table
+content per 0x02c80122 1
+label "Tuner_1_2_3"
+poll 600
+maxrows 3
+orientation horizontal
+columns ( "FRQ" int 75 ) ( "PI" String 70 ) ( "PS" String 130 ) ( "Q" int 40 1 "#;'       -                 '" ) ( "FS" int 40 1 "#;'       -          '" ) ( "RDQ" int 60 1 "#;'       -        '" ) ( "MP" int 40 1 "#;'       -        '" ) ( "AP" int 40 1 "#;'   -        '" ) ( "M" int 40 1 "#;'   -       '" ) 
+
+table
+content per 0x02c80122 2
+label "Tuner measurement"
+poll 600
+maxrows 3
+orientation horizontal
+# format "#;'-        '" only to disable display of negative values!!!
+columns ( "AC" int 50 1 "##" ) ( "CO" int 40 1 "#;'     -        '" ) ( "SD" int 40 1 "#;'     -        '" ) ( "RD" int 40 1 "#;'   -        '" ) ( "RO" int 50 1 "##" ) ( "SO" int 50 1 "##" ) ( "IB" int 50 1 "#;'        -        '" ) ( "GC" int 40 1 "#;'     -        '" ) ( "TP" int 40 1 "#;'   -        '" ) ( "TA" int 40 1 "#;'   -        '" ) ( "TM" int 40 1 "#;'   -        '" ) ( "OI" int 40 1 "#;'   -        '") 
+
+
+keyValue
+value String per 0x02c80122 54
+label "Radiotext"
+poll 1200
+
+table
+content per 0x02c80122 3
+label "Common"
+poll 600
+maxrows 1
+orientation horizontal
+columns ( "DIV" String 40 ) ( "ST" int 40 ) ( "HCDS" String 80 ) ( "AF" int 40 ) ( "ANT" String 50 ) ( "REAL-PS" String 130 ) ( "T-PI" String 120 ) ( "SCPS" int 70 )
+
+keyValue
+value String per 0x02c80122 11000
+label ""
+poll 0
+
+choice
+value per 0x02c80122 80
+label "Seek_Up"
+poll 600
+
+choice
+value per 0x02c80122 81
+label "Seek_Down"
+poll 600
+
+choice
+value per 0x02c80122 74
+label "FRQ_Up"
+poll 600
+
+choice
+value per 0x02c80122 75
+label "FRQ_Down"
+poll 600
+
+
+##############################################
+screen Tuner_1 AnalogTuner_Asia
+##############################################
+
+table
+content per 0x02c80122 1
+label "Tuner 1"
+poll 600
+maxrows 1
+orientation horizontal
+columns ( "FRQ" int 75 ) ( "PI" String 70 ) ( "PS" String 130 ) ( "Q" int 40 1 "#;'       -                 '" ) ( "FS" int 40 1 "#;'       -          '" ) ( "RDQ" int 60 1 "#;'       -        '" ) ( "MP" int 40 1 "#;'       -        '" ) ( "AP" int 40 1 "#;'   -        '" ) ( "M" int 40 1 "#;'   -       '" ) 
+ 
+table
+content per 0x02c80122 2
+label "Tuner 1 measurement"
+poll 600
+maxrows 1
+orientation horizontal
+# format "#;'-        '" only to disable display of negative values!!!
+columns ( "AC" int 50 1 "##" ) ( "CO" int 40 1 "#;'     -        '" ) ( "SD" int 40 1 "#;'     -        '" ) ( "RD" int 40 1 "#;'   -        '" ) ( "RO" int 50 1 "##" ) ( "SO" int 50 1 "##" ) ( "IB" int 50 1 "#;'        -        '" ) ( "GC" int 40 1 "#;'     -        '" ) ( "TP" int 40 1 "#;'   -        '" ) ( "TA" int 40 1 "#;'   -        '" ) ( "TM" int 40 1 "#;'   -        '" ) ( "OI" int 40 1 "#;'   -        '") 
+
+
+keyValue
+value String per 0x02c80122 54
+label "Radiotext"
+poll 1200
+
+
+choice
+value per 0x02c80122 80
+label "Seek_Up"
+poll 600
+
+choice
+value per 0x02c80122 81
+label "Seek_Down"
+poll 600
+
+choice
+value per 0x02c80122 74
+label "FRQ_Up"
+poll 600
+
+choice
+value per 0x02c80122 75
+label "FRQ_Down"
+poll 600
+
+
+
+##############################################
+screen StationList AnalogTuner_Asia
+##############################################
+
+slider
+value per 0x02c80122 34
+limits absolute 0 15
+label "Select Page:"
+poll 1200
+
+slider
+value per 0x02c80122 35
+limits absolute 1 99
+label "Pos. of tuned Frq."
+poll 1200
+
+keyValue
+value String per 0x02c80122 11000
+label ""
+poll 0
+
+table
+content per 0x02c80122 36
+label "StationList"
+poll 1200
+maxrows 7
+orientation horizontal
+columns ( "Pos" int 40 ) ( "FRQ" int 80 ) ( "PI" String 80 ) ( "PS" String 150 ) ( "Q" int 40 ) ( "FS" int 40 )
+
+
+##############################################
+screen AF_List AnalogTuner_Asia
+##############################################
+
+slider
+value per 0x02c80122 30
+limits absolute 1 7
+label "Select Page:"
+poll 1200
+
+slider
+value per 0x02c80122 31
+limits absolute 1 99
+label "Pos. of tuned Frq."
+
+slider
+value per 0x02c80122 32
+limits absolute 1 99
+label "Inhibit AF Pos.:"
+
+keyValue
+value String per 0x02c80122 11000
+label ""
+poll 0
+
+table
+content per 0x02c80122 33
+label "AFList"
+poll 2400
+maxrows 6
+orientation horizontal
+columns ( " Pos" int 80 ) ( " FRQ" int 80 ) ( " PI" String 80 ) ( " Q" int 50 ) ( " FS" int 40 ) ( " BER" int 60 ) ( " BFL" int 60 ) ( "INH" int 60 )
+
+
+
+##############################################
+screen Tuner_Setup AnalogTuner_Asia
+##############################################
+
+##############################################
+screen Tune_Frequency Tuner_Setup
+##############################################
+
+choice
+value per 0x02c80122 6
+label "Backgroundscan:"
+poll 1200
+
+choice
+value per 0x02c80122 7
+label "Phase div.:"
+poll 1200
+
+choice
+value per 0x02c80122 8
+label "AF switch:"
+poll 1200
+
+slider
+value per 0x02c80122 14
+limits absolute 1 3
+label "Audible tuner (3-auto):"
+poll 1200
+
+keyValue
+value String per 0x02c80122 11000
+label ""
+poll 0
+
+keyValue
+value String per 0x02c80122 11000
+label ""
+poll 0
+
+keyValue
+value String per 0x02c80122 11000
+label "AM (522 - 1629 kHz)"
+poll 0
+
+slider
+value per 0x02c80122 76
+limits absolute 522 1629
+label "Tuner 1:"
+poll 1200
+
+slider
+value per 0x02c80122 77
+limits absolute 522 1629
+label "Tuner 2:"
+poll 1200
+
+slider
+value per 0x02c80122 78
+limits absolute 522 1629
+label "Tuner 3:"
+poll 1200
+
+keyValue
+value String per 0x02c80122 11000
+label ""
+poll 0
+
+keyValue
+value String per 0x02c80122 11000
+label "FM. China (87.0 - 108.0 MHz)"
+poll 0
+
+slider
+value per 0x02c80122 76
+limits absolute 870 1080
+label "Tuner 1:"
+poll 1200
+
+slider
+value per 0x02c80122 77
+limits absolute 870 1080
+label "Tuner 2:"
+poll 1200
+
+slider
+value per 0x02c80122 78
+limits absolute 870 1080
+label "Tuner 3:"
+poll 1200
+
+keyValue
+value String per 0x02c80122 11000
+label ""
+poll 0
+
+keyValue
+value String per 0x02c80122 11000
+label "FM. Japan (76.0 - 95.0 MHz)"
+poll 0
+
+slider
+value per 0x02c80122 76
+limits absolute 760 950
+label "Tuner 1:"
+poll 1200
+
+slider
+value per 0x02c80122 77
+limits absolute 760 950
+label "Tuner 2:"
+poll 1200
+
+slider
+value per 0x02c80122 78
+limits absolute 760 950
+label "Tuner 3:"
+poll 1200
+
+##############################################
+screen STL_Quality Tuner_Setup
+##############################################
+
+slider
+value per 0x02c80122 15
+limits absolute 25 75
+label "Q_In list:"
+poll 1200
+
+slider
+value per 0x02c80122 16
+limits absolute 25 75
+label "Q_Out list:"
+poll 1200
+
+##############################################
+screen Treshold_HC_Noise Tuner_Setup
+##############################################
+
+slider
+value per 0x02c80122 21
+limits absolute -5 5
+label "Stereo Threshold"
+poll 1200
+
+slider
+value per 0x02c80122 22
+limits absolute 0 10
+label "HC dynamic"
+poll 1200
+
+slider
+value per 0x02c80122 23
+limits absolute 0 12
+label "HC static"
+poll 1200
+
+slider
+value per 0x02c80122 24
+limits absolute 0 15
+label "-3dB Threshold"
+poll 1200
+
+slider
+value per 0x02c80122 25
+limits absolute -35 -15
+label "Noise Level"
+poll 1200
+
+slider
+value per 0x02c80122 27
+limits absolute -5 5
+label "Noise Cancel"
+poll 1200
+
+BIOSCtrl
+value int per 0x02c80122 28
+label "Threshold AGC"
+entry "73"   73
+entry "75"   75
+entry "77"   77
+entry "79"   79
+entry "81"   81
+entry "83"   83
+entry "85"   85
+entry "87"   87
+poll 1200
+
+##############################################
+screen Bandwidth Tuner_Setup
+##############################################
+
+keyValue
+value int per 0x02c80122 29
+label "Curr. Bandwidth"
+poll 1200
+
+choice
+value per 0x02c80122 55
+label "incr. BW"
+poll 1200
+
+choice
+value per 0x02c80122 56
+label "decr. BW"
+poll 1200
+
+choice
+value per 0x02c80122 57
+label "set BW auto"
+poll 1200
+
+
+##############################################
+screen AMFM-Timer Tuner_Setup
+##############################################
+
+#RQ_TUN_3010
+slider
+value per 0x02c80122 61
+limits absolute 0 180
+label "Non RDS detect:"
+poll 1200
+
+#RQ_TUN_3010 	
+slider
+value per 0x02c80122 62
+limits absolute 0 180
+label "WrongPI accept:"
+poll 1200
+
+#RQ_TUN_2923
+slider
+value per 0x02c80122 65
+limits absolute 0 30
+label "AF inhibit after man tune:"
+poll 1200
+
+#RQ_TUN_2923
+slider
+value per 0x02c80122 70
+limits absolute 0 5
+label "tun_n_PS_changes_scroll_detect "
+poll 1200
+
+#RQ_TUN_1861
+slider
+value per 0x02c80122 71
+limits absolute 0 3600
+label "no_PS_changes"
+poll 1200
+
+
+##############################################
+screen TMC AnalogTuner_Asia
+##############################################
+
+##############################################
+screen TMC_Tuner TMC
+##############################################
+
+choice
+value per 0x02c80122 37
+label "delete all msgs"
+
+keyValue
+value String per 0x02c80122 11000
+label ""
+poll 0
+
+table
+content per 0x02c80122 38
+label "TMC Tun 1 Stat TMC1/TMC2/Audio"
+poll 1000
+maxrows 3
+orientation horizontal
+columns ( "FRQ" int 80 ) ( "PI" String 80 ) ( "PS" String 160 ) ( "SID"	String 60 ) ( "SPN"	String 1 ) ( "LTN"	int 60 ) ( "CC" int 40 ) ( "FS" int 45 ) ( "Q" int 45 )
+
+table
+content per 0x02c80122 39
+label "TMC Tun 2 Stat"
+poll 600
+maxrows 2
+orientation horizontal
+columns ( "ECC" String 80 ) ( "SID"	String 80 ) ( "SPN"	String 120 ) ( "LTN"	int 60 ) ( "MSGS"	int 70 ) 
+
+table
+content per 0x02c80122 40
+label "Target_stations"
+poll 1000
+maxrows 2
+orientation horizontal
+columns ( "row" int 40 ) ( "FRQ" int 80 ) ( "PI" String	100 ) ( "PS" String 160 ) ( "SPN" String 1 ) ( "SID" String 60 ) ( "STN" String 1 ) ( "LTN" int 60 ) ( "Q" int 45 )
+
+
+##############################################
+screen TMC_List TMC
+##############################################
+
+table
+content per 0x02c80122 9068
+label "available TMC stations"
+poll 2400
+maxrows 15
+orientation horizontal
+columns ( "PS" String 112 ) ( "SID" String 48 ) ( "Q" int 40 ) ( "U" String 20 ) ( "PI" String 72 ) ( "Pro" String 48 ) ( "cc" String 36 ) ( "ecc" String 48 ) ( "iso" String 64 ) ( "ltn" int 40 ) ( "sup" String 48 )
+
+
+##############################################
+screen TMC_State TMC
+##############################################
+
+table
+content per 0x02c80122 53
+label "TMC List"
+poll 1000
+maxrows 3
+orientation horizontal
+columns 	( "tuner" String 60 ) ( "a_pi" String 60 ) ( "a_sid" String 60 ) ( "a_qual" int 65 ) ( "a_cnt" int 60 ) ( "a_time" String 100 ) ( "a_tot_cnt" int 95 ) ( "a_tot_time" String 100 )
+ 
+choice
+value per 0x02c80122 46 
+label "resets all counter"
+
+choice
+value per 0x02c80122 47 
+label "reset  all audio"
+
+choice
+value per 0x02c80122 48 
+label "reset total tmc"
+
+choice
+value per 0x02c80122 49 
+label "reset audio counter"
+
+choice
+value per 0x02c80122 50 
+label "resets tmc1 counter"
+
+choice
+value per 0x02c80122 51 
+label "resets tmc2 counter"
+
+
+##############################################
+screen TMC_Setup TMC
+##############################################
+
+slider
+value per 0x02c80122 9061
+label "Q-Threshold, TMC serv. receivable"
+poll 1200
+limits absolute 20 80
+
+slider
+value per 0x02c80122 9062
+label "Q-Threshold, TMC service dropped"
+poll 1200
+limits absolute 20 80
+
+slider
+value per 0x02c80122 9067
+label "Circle count on pri Service"
+poll 1200
+limits absolute 0 1

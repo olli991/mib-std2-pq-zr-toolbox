@@ -1,0 +1,87 @@
+#######################
+screen Version Navigation
+#######################
+# ns:  		0x01c500e6
+# Author:	Olaf Schmidt (EECF/2), Sebastian Salzer (EECF/2)
+# Email:	extern.olaf.schmidt@volkswagen.de; extern.sebastian.salzer@volkswagen.de
+# Date:		20140604
+
+# Version	3
+#######################
+
+
+keyvalue
+
+value String per 0x01c500e6 5
+
+label "Nav Kernel Version:"
+
+poll 5000
+
+keyvalue
+
+value String per 0x01c500e6 6
+
+label "Nav SW Version:"
+
+poll 5000
+
+keyvalue
+value String per 0x01c500e6 10
+label "Version Hardware:"
+poll 5000
+
+keyvalue
+value String per 0x01c500e6 11
+label "Version Software:"
+poll 5000
+
+keyvalue
+value String per 0x01c500e6 1
+label "Version DB Main:"
+poll 5000
+
+keyvalue
+value String per 0x01c500e6 148
+label "Incremental Update Version DB:"
+poll 5000
+
+keyvalue
+value String per 0x01c500e6 3
+label "Version DB Intern Travelguide :"
+poll 5000
+
+table
+content per 0x01c500e6 2
+
+label "Nav DB Component Version Information:"
+
+poll 5000
+maxrows 15
+
+orientation horizontal
+
+columns ( "Product" String 75 ) ( "Major" String 75 ) ( "Minor" String 75 ) ( "FS-ID" String 350 )
+
+table
+content per 0x01c500e6 16
+label "available travel guides"
+poll 5000
+maxrows 15
+orientation horizontal
+columns ( "TRVG Name" String 400 ) ( "Version" String 200 )
+
+keyvalue
+value String per 0x01c500e6 9
+label "Version Map Viewer:" 
+poll 5000
+
+keyvalue
+value String per 0x01c500e6 7
+label "Version DSI: "
+poll 5000
+
+keyvalue
+value String per 0x01c500e6 15
+label "NAV SD Card CID:" 
+poll 5000

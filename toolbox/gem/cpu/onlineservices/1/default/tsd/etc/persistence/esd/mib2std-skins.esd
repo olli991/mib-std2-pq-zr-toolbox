@@ -1,0 +1,98 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		Beta
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB2STD Toolbox Main -> Customization -> Skins
+#
+###########################################################################################
+screen Skins Customization
+
+keyValue
+    value	String sys 0x00000000 0
+    label   "This screen can be used to replace skin-graphics of the MIB."
+    poll    0  
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "images.mcf and ambienceColorMap.res go into the custom/skins/skinX folder"
+    poll    0  
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Reboot after copy of a new skin or ambienceColorMap."
+    poll    0      
+	
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0    
+    
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin0.sh"
+   label    "Copy new graphics for skin0 from skins/skin0/ on SD"
+
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin1.sh"
+   label    "Copy new graphics for skin1 from skins/skin1/ on SD"
+   
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin1_ambient.sh"
+   label    "Copy new ambient colors for skin1 from skins/skin1/ on SD"
+
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin2.sh"
+   label    "Copy new graphics for skin2 from skins/skin2/ on SD"
+   
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin2_ambient.sh"
+   label    "Copy new ambient colors for skin2 from skins/skin2/ on SD"
+
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin3.sh"
+   label    "Copy new graphics for skin3 from skins/skin3/ on SD"
+   
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin3_ambient.sh"
+   label    "Copy new ambient colors for skin3 from skins/skin3/ on SD"
+
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin4.sh"
+   label    "Copy new graphics for skin4 from skins/skin4/ on SD"
+   
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin4_ambient.sh"
+   label    "Copy new ambient colors for skin4 from skins/skin4/ on SD"
+
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin5.sh"
+   label    "Copy new graphics for skin5 from skins/skin5/ on SD"
+   
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin5_ambient.sh"
+   label    "Copy new ambient colors for skin5 from skins/skin5/ on SD"
+
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin6.sh"
+   label    "Copy new graphics for skin6 from skins/skin6/ on SD"
+   
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin4_ambient.sh"
+   label    "Copy new ambient colors for skin6 from skins/skin6/ on SD"
+ 
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0    
+
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_skins.sh"
+   label    "Restore all skins and ambienceColorMaps from backup"   
+   
+script
+	value 	sys 1 0x0100 "/bin/shutdown"
+	label 	"Reboot"

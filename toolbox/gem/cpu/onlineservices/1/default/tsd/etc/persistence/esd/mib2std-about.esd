@@ -1,0 +1,13 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		lprot
+# Version: 		0.7
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB STD2 Toolbox Main -> About
+#
+###########################################################################################
+screen About MIBSTD2_Toolbox

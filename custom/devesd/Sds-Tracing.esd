@@ -1,0 +1,56 @@
+#######################
+screen SDSTracing SDS
+#######################
+#  Author:	Struhs, Stefan (EEFH/1)
+#  Email:	stefan.struhs@volkswagen.de
+#  Date:	20130124
+#  Version:	150
+#######################
+
+BIOSCtrl
+	value			int per 0x01d700eb 1
+	label			"SDS target medium"
+	entry			"SD1"	0
+	entry			"SD2"	1
+	entry			"USB"	2
+
+#button
+#	value			per 0x01d700eb 22 1
+#	label			"Create new/inc. snapshot no."
+#	poll			0
+
+choice
+	value			per 0x01d700eb 22
+	label			"Create new/inc. snapshot no."
+	poll			0
+
+	
+keyValue
+	value			int per 0x01d700eb 23
+	label			"Last saved snapshot dir no."
+	poll			750
+
+choice
+	value			per 0x01d700eb 17
+	label			"Enable logging"
+	poll			0
+
+choice
+	value			per 0x01d700eb 18
+	label			"Enable MIC 1 rec."
+	poll			0
+
+choice
+	value			per 0x01d700eb 19
+	label			"Enable MIC 2 rec."
+	poll			0
+
+choice
+	value			per 0x01d700eb 20
+	label			"Enable REF rec."
+	poll			0
+
+choice
+	value			per 0x01d700eb 21
+	label			"Enable AEC rec."
+	poll			0

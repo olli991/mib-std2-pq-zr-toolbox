@@ -1,0 +1,29 @@
+#######################
+screen IRC Main
+#######################
+#######################
+
+choice
+value per 0x01c500df 2 
+label "Backup Logfiles"
+poll 500
+
+choice
+value per 0x01c500df 3 
+label "Delete Logfiles"
+poll 500
+
+choice
+value per 0x01c500df 4 
+label "Save Data"
+poll 500
+
+choice
+value per 0x01c500df 1
+label "Enable IRC"
+poll 500
+
+choice
+value per 0x01c500df 11
+label "Enable UDP Server"
+poll 500

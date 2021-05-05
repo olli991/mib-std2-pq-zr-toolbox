@@ -1,0 +1,50 @@
+#######################
+screen "Backend" "Online Services"
+#######################
+# Autor:    Timo Brenningmeyer
+# Email:    extern.timo.brenningmeyer@volkswagen.de
+# Date:     20141028
+# Version:  09
+#######################
+
+### Backends ###
+BIOSCtrl
+   value String per 0x01b900e1 2000
+   label "Active Backend"  
+   entry "TuI DEV SOP1" "tui-project-cai-mbbservices.audi-connect.de"
+   entry "TuI DEV SOP2" "tui-project-cai-ca09-mbbservices.audi-connect.de"
+   entry "TuI DEV SOP1 Test" "tui-project-cai-dev-mbbservices.audi-connect.de"
+   entry "TuI DEV SOP2 Test" "tui-project-cai-ca09-dev-mbbservices.audi-connect.de"
+   entry "TuI DEMO SOP1" "tui-demo-cai-mbbservices.audi-connect.de"
+   entry "TuI DEMO SOP2" "tui-demo-cai-ca09-mbbservices.audi-connect.de"
+   entry "TuI DEMO SOP1 Test" "tui-demo-cai-dev-mbbservices.audi-connect.de"
+   entry "TuI DEMO SOP2 Test" "tui-demo-cai-ca09-dev-mbbservices.audi-connect.de"
+   entry "Pre APPROVAL SOP1 CP" "pre-approval-cai-mbbservices.audi-connect.de"
+   entry "Pre APPROVAL SOP2 CP" "pre-approval-cai-ca0d-mbbservices.audi-connect.de"
+   entry "Pre APPROVAL SOP1" "pre-approval-cai-dev-mbbservices.audi-connect.de"
+   entry "Pre APPROVAL SOP2" "pre-approval-cai-dev-ca0c-mbbservices.audi-connect.de"
+   entry "Pre NEXT SOP1 CP" "pre-project-cai-mbbservices.audi-connect.de"
+   entry "Pre NEXT SOP2 CP" "pre-project-cai-ca0d-mbbservices.audi-connect.de"
+   entry "Pre NEXT SOP1" "pre-project-cai-dev-mbbservices.audi-connect.de"
+   entry "Pre NEXT SOP2" "pre-project-cai-dev-ca0c-mbbservices.audi-connect.de"
+   entry "Live NEXT SOP1" "live-project-cai-mbbservices.audi-connect.de"
+   entry "Live NEXT SPO2" "live-project-cai-ca0d-mbbservices.audi-connect.de"
+   entry "TuI KUNDE SOP1" "tui-kunde-cai-mbbservices.audi-connect.de"
+   entry "TuI KUNDE SOP2" "tui-kunde-cai-ca09-mbbservices.audi-connect.de"
+   entry "TuI KUNDE SOP1 Test" "tui-kunde-cai-dev-mbbservices.audi-connect.de"
+   entry "TuI KUNDE SOP2 Test" "tui-kunde-cai-ca09-dev-mbbservices.audi-connect.de"
+   entry "Pre KUNDE SOP1 CP" "pre-kunde-cai-mbbservices.audi-connect.de"
+   entry "Pre KUNDE SOP2 CP" "pre-kunde-cai-ca0d-mbbservices.audi-connect.de"
+   entry "Pre KUNDE SOP1" "pre-kunde-cai-dev-mbbservices.audi-connect.de"
+   entry "Pre KUNDE SOP2" "pre-kunde-cai-dev-ca0c-mbbservices.audi-connect.de"
+   entry "Live KUNDE SOP1" "er-mib2std-mbbservices.audi-connect.de"
+   entry "Live KUNDE SOP2" "er-mib2std-ca0d-mbbservices.audi-connect.de"
+   entry "China Test" "dev-cai.vw-cn.mbb6.valtech.de"
+   entry "China TuI" "int-vw-mbbservices.audi-connect.cn"
+   poll 0
+
+### Host ##
+keyvalue
+   value String per 0x01b900e1 2001
+   label "Host Address"
+   poll 1000

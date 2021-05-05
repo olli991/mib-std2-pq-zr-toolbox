@@ -1,0 +1,49 @@
+#######################
+screen Position-Calibration Navigation
+#######################
+# ns:  		0x01c500e6
+# Author:	Olaf Schmidt (EECF/2), Sebastian Salzer (EECF/2)
+# Email:	extern.olaf.schmidt@volkswagen.de; extern.sebastian.salzer@volkswagen.de
+# Date:		20140604
+
+# version 3
+#######################
+
+keyvalue
+value int per 0x01c500e6 106
+label "nav_status_length_calibration" 
+poll 1000
+
+keyvalue
+value int per 0x01c500e6 107
+label "nav_status_rotray_calibration"
+poll 1000
+
+keyvalue
+value int per 0x01c500e6 168
+label "nav_speed_confidence" 
+poll 1000
+
+keyvalue
+value int per 0x01c500e6 169
+label "nav_angle_confidence"
+poll 1000
+
+keyvalue
+value int per 0x01c500e6 97 
+label "nav_wheel_circumfence"
+poll 1000
+
+keyvalue
+value int per 0x01c500e6 98
+label "nav_wheel_impulse_per_rotation"
+poll 1000
+
+keyvalue
+value int per 0x01c500e6 99
+label "nav_driving_direction" 
+poll 1000
+
+Button
+value  per 0x01c500e6 20 1
+label "nav_set_calibration_to_car_default"

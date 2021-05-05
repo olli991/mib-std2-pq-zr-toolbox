@@ -1,0 +1,41 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		Beta
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB2STD Toolbox Main -> Customization -> MirrorLink
+#
+###########################################################################################
+screen Mirror-Link Customization
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Patching Mirrorlink compatibility to unlock the usage of every app while"
+	poll 	0
+	
+keyValue
+    value   String sys 0x00000000 0
+    label	"driving. Don't be a dick an watch movies while driving!"
+	poll 	0
+	
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/patch_mirrorlink.sh"
+	label 	"Patch Mirrorlink"
+
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_mirrorlink.sh"
+	label 	"Restore Mirrorlink from backup"

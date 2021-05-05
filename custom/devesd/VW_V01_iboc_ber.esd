@@ -1,0 +1,30 @@
+# Author:	Jorge Mariano
+# Date:	15.10.2014
+# Version:	V03 (last change by Marc Hoffmann)
+# Based on: MIB_Engineering_Diag_Key_Value_Pairs_v151.xls (from Gen1)
+
+#######################
+screen BER iboc
+#######################
+
+keyValue
+value int per 0x02c80122 10000
+label "Refreshing"
+poll 700
+
+################
+#Bit Error Rate#
+################
+
+choice
+value per 0x02c80122 101
+label "BER Mode Active"
+poll 700
+
+table
+content per 0x02c80122 102
+label "BER Audio/Data"
+poll 700
+maxrows 2
+orientation horizontal
+columns ( "BER_P1   " String 120 ) ( "BER_P2   " String 120 ) ( "BER_P3   " String 120 ) ( "BER_P4  " String 120 ) ( "BER_PIDS  " String 120 )

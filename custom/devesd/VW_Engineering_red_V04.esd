@@ -1,0 +1,37 @@
+#######################
+screen Engineering Main
+#######################
+#author1: Marc Hoffmann (IAV, VW EECF/1) (extern.marc.hoffmann@volkswagen.de)
+#author2: Hussein Karajoli (Bertrandt, VW EECF/1) (extern.hussein.karajoli@volkswagen.de)
+#version: 4
+#date: 20150416
+#######################
+
+table
+content per 0x01c100e7 53
+label "Display unit"
+poll 2000
+maxrows 1
+orientation horizontal
+columns ( "part no" String 300 ) ( "SW version" String 100 ) ( "HW version" String 100 )
+
+table
+content per 0x01c100e7 2
+label "Hardware"
+poll 2000
+maxrows 5
+orientation horizontal
+columns ( "Name" String 150 ) ( "Status" String 120 ) ( "n/a" String 50 ) ( "n/a" String 50 ) ( "Temp" int 80 )
+
+table
+content per 0x01c100e7 21
+label "emmc: Memory in kB"
+poll 1000
+maxrows 1
+orientation horizontal
+columns ( "free" int 140 ) ( "used" int 140 ) ( "max" int 140 ) 
+
+choice
+value per 0x01c100e7 503
+label "manual SWDL:"
+poll 1000

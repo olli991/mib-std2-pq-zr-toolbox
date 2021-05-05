@@ -1,0 +1,453 @@
+#######################
+screen MirrorLink Connectivity
+#######################
+# Autor:	Stefan Bosse (EEFH/2)
+# Email:	stefan.bosse1@volkswagen.de
+# Date:		20131216
+# Version:	06
+#######################
+
+keyValue
+value String per 0x01b800e1 130
+label "Mirror Link SW version"
+poll 0
+
+BIOSCtrl
+value int per 0x01b800e1 174
+label "Pixel format"
+entry "RGB565" 0
+entry "ARGB888" 1
+poll 1000
+
+#BIOSCtrl #deprecated
+#value int per 0x01b800e1 132
+#label "Signature type"
+#entry "No signature" 0
+#entry "HMAC-SHA-256" 1
+#poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 139
+label "Audio preference"
+entry "BT" 0
+entry "RTP" 1
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 175
+label "Device Certificate"
+entry "CCC" 0
+entry "CTS" 1
+poll 1000
+
+choice
+value per 0x01b800e1 140
+label "Multi-touch support"
+
+choice
+value per 0x01b800e1 149
+label "DAP activ"
+
+choice
+value per 0x01b800e1 131
+label "Ignore restricted access"
+
+choice
+value per 0x01b800e1 133
+label "Frame buffer blocking notification"
+
+choice
+value per 0x01b800e1 134
+label "Audio blocking notification"
+
+choice
+value per 0x01b800e1 135
+label "RTP server for telephony"
+
+choice
+value per 0x01b800e1 136
+label "RTP server for voice control"
+
+choice
+value per 0x01b800e1 137
+label "RTP client for telephony"
+
+choice
+value per 0x01b800e1 138
+label "RTP client for voice control"
+
+choice
+value per 0x01b800e1 143
+label "Device lock"
+
+choice
+value per 0x01b800e1 144
+label "Screen saver"
+
+slider
+value per 0x01b800e1 145
+limits absolute 0 127
+label "RTP payload type:"
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 146
+label "Video upscaling"
+entry "Phone" 0
+entry "HU" 1
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 147
+label "Video downscaling"
+entry "Phone" 0
+entry "HU" 1
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 148
+label "Video interpolation"
+entry "Mode 1" 0
+entry "Mode 2" 1
+entry "Mode 3" 2
+poll 1000
+
+#######################
+screen "Softkey Priority" MirrorLink
+######################
+
+BIOSCtrl
+value int per 0x01b800e1 150
+label "Priority 01"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 151
+label "Priority 02"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 152
+label "Priority 03"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 153
+label "Priority 04"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 154
+label "Priority 05"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 155
+label "Priority 06"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 156
+label "Priority 07"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 157
+label "Priority 08"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 158
+label "Priority 09"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 159
+label "Priority 10"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 160
+label "Priority 11"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 161
+label "Priority 12"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 162
+label "Priority 13"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 163
+label "Priority 14"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 164
+label "Priority 15"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000
+
+BIOSCtrl
+value int per 0x01b800e1 165
+label "Priority 16"
+entry "Delete" 805306887
+entry "Home" 805306893
+entry "Menu" 805306895
+entry "Application" 805306885
+entry "Clear" 805306890
+entry "Backward" 805306892
+entry "Ok" 805306886
+entry "Search" 805306894
+entry "Phone Call" 805306880
+entry "Phone End" 805306881
+entry "Soft Left" 805306882
+entry "Soft Middle" 805306883
+entry "Soft Right" 805306884
+entry "Forward" 805306891
+entry "Zoom In" 805306888
+entry "Zoom Out" 805306889
+poll 1000

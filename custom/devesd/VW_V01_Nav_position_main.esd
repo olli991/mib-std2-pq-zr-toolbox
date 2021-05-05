@@ -1,0 +1,51 @@
+#######################
+screen Position-Main Navigation
+#######################
+# ns:  		0x01c500e6
+# Author:	Olaf Schmidt (EECF/2), Sebastian Salzer (EECF/2)
+# Email:	extern.olaf.schmidt@volkswagen.de; extern.sebastian.salzer@volkswagen.de
+# Date:		20140604
+# Version:	3
+#######################
+
+table
+content per 0x01c500e6 110
+label "Map Matched Position"
+poll 1000
+maxrows 1
+orientation vertical
+columns ( "Longitude" String 400 ) ( "Latitude" String 400 ) ( "Heading" int 400 ) ( "Z-Level" int 400 ) ( "Height" String 400 )
+
+table
+content per 0x01c500e6 111
+label "Position Street Network"
+poll 1000
+maxrows 1
+orientation vertical
+columns ( "Streetname" String 500 ) ( "Segment Lenght" int 500 ) ( "Next Turn" int 500 ) ( "Turn2Street" String 500 )
+
+table
+content per 0x01c500e6 112
+label "Position Street Additional Attributes"
+poll 1000
+maxrows 1
+orientation vertical
+columns ( "Signpost" String 500 ) ( "Direction2Dest" int 500 ) ( "Distance2Destination" int 500 ) ( "Segment ID" String 500 )
+
+keyvalue
+value String per 0x01c500e6 161
+label "GNSS Speed:"
+poll 1000
+
+keyvalue
+value String per 0x01c500e6 108
+label "DR Speed:"
+poll 1000
+
+choice
+value  per 0x01c500e6 142
+label "Disconnect GNSS"
+
+choice
+value  per 0x01c500e6 143
+label "Show Multible Position im Map"

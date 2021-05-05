@@ -1,0 +1,131 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		Beta
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB STD2 Toolbox Main -> Dump
+#
+###########################################################################################
+screen Dump MIBSTD2_Toolbox
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Here you can dump(copy) different files from unit onto SD card/USB drive."
+    poll    0
+ 
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0
+
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_all.sh"
+   label    "Dump all sections beside Developer files"
+
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0
+	
+#### Graphic files #####
+keyValue
+    value   String sys 0x00000000 0
+    label   "--- Graphic files  ---"
+    poll    0  	
+	
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_skins.sh"
+   label    "Skins"
+   
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_startanim.sh"
+   label    "Startup screens"	
+   
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_mapcfg.sh"
+   label    "Navigation graphic files"	
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_stationdb.sh"
+	label 	"Radio station logo DB (RSDB)"
+
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0	
+
+#### Sound files #####
+keyValue
+    value   String sys 0x00000000 0
+    label   "--- Sound files ---"
+    poll    0  	
+	
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_ringtones.sh"
+   label    "Ringtones"	
+   
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_sounds.sh"
+   label    "System sounds"	
+
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0
+		
+#### System files #####
+keyValue
+    value   String sys 0x00000000 0
+    label   "--- System files ---"
+    poll    0  
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_swap.sh"
+	label 	"SWAP manager"
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_swdl.sh"
+	label 	"SWDL manager"
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_hmi.sh"
+	label 	"HMI"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_fec.sh"
+	label 	"FEC (signed_exceptions_list)"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_shadow.sh"
+	label 	"/etc/shadow"
+	
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0
+	
+#### Developer files #####
+keyValue
+    value   String sys 0x00000000 0
+    label   "--- Developer's files (not included in dump all) ---"
+    poll    0 
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_mirrorlink.sh"
+	label 	"Mirrorlink config"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_nav.sh"
+	label 	"Navigation config"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_devesd.sh"
+	label 	"Green Engineering Menu screens *.esd files (engdefs)"	
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_root.sh"
+	label 	"root without /dev (will take hours!)"	

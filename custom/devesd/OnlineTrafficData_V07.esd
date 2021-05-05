@@ -1,0 +1,54 @@
+#######################
+screen "Traffic Data" "Online Services"
+#######################
+# Autor:	Martin Wöhler
+# Email:	extern.martin.woehler@volkswagen.de
+# Date:		20141001
+# Version:	07
+#######################
+
+
+
+### TPEGContentProviderSource ###
+BIOSCtrl
+   value String per 0x01b900e1 140
+   label "TPEG Content Provider Source"  
+   entry "Inrix Live" "A"                  
+   entry "Inrix Beta" "B"
+   entry "Inrix Canned" "C"
+   entry "Here intern" "D"
+   entry "Here LIVE" "E"
+   entry "TomTom DEV" "F"
+   entry "TomTom Live" "H"
+   entry "VW Test" "I"
+   entry "CHN CenNavi" "J"
+   entry "Asien Autonavi" "Y"
+   entry "Asien VICS" "Z"
+   poll 3000
+
+
+### Number of received TPEG Files ####
+keyValue
+   value int per 0x01b900e1 120 
+   label "Number of received TPEG Files"
+   poll 3000
+
+
+### Number of TPEG Files which should be kept ####
+slider
+   value per 0x01b900e1 130
+   label "Number of TPEG Files which should be kept"
+   poll 0
+   limits absolute 0 20
+
+### Consumed data Traffic [kBytes] ####
+keyValue
+   value int per 0x01b900e1 110
+   label "Consumed data Traffic [kBytes]"
+   poll 3000
+
+### Reset consumed data traffic ####
+button
+   value per 0x01b900e1 150 0
+   label "Reset consumed data traffic"
+

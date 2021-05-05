@@ -1,0 +1,60 @@
+#!/bin/ksh
+# This script installs esd files and scripts of the toolbox
+# Coded by Olli
+
+echo "This script will inject mibstd2_toolbox to Green Engineering Menu"
+echo
+
+TOOLBOX_FOLDER=/cpu/onlineservices/1/default/tsd/etc/persistence/esd
+VOLUME=""
+
+# Search toolbox folder on all available volumes
+for i in 0 1 2 3 4
+do
+	if [ -d /media/mp00$i$TOOLBOX_FOLDER ]; then
+		VOLUME=/media/mp00$i
+		echo "Toolbox is found on" $VOLUME
+		break
+	fi
+done
+
+if [ -z $VOLUME ]; then
+	echo "ERROR: No SD card or USB drive with toolbox folder were found"
+	exit 1
+fi
+
+# Mount system volume in read/write mode
+echo "Mounting system volume in read/write mode"
+mount -t qnx6 -o remount,rw /dev/hd0t177 /
+
+# Copy toolbox screens and scripts
+echo "Copying toolbox Green Engineering Menu screens and scripts..."
+cp -r $VOLUME$TOOLBOX_FOLDER/* /tsd/etc/persistence/esd
+echo "Copying of toolbox Green Engineering Menu screens and scripts is done."
+
+echo "Setting execution attributes to scripts..."
+chmod a+rwx /tsd/etc/persistence/esd/scripts/*.sh
+echo "Setting execution attributes to scripts is done."
+
+# Check and remove old script folder
+OLD_SCRIPTS_FOLDER=/tsd/scripts
+
+if [ -d $OLD_SCRIPTS_FOLDER ]; then
+	echo "Old $OLD_SCRIPTS_FOLDER folder is found. Removing it..."
+	rm -r ${OLD_SCRIPTS_FOLDER}
+fi
+
+# Upgrage GEM 3.5 to 4.3 if found
+if [[ $(ls -la "/tsd/hmi/HMI/jar/GEM.jar" | awk '{print $5}') == "187234" ]]; then
+	echo "GEM 3.5 is found. Updating to version 4.3..."
+	cp -v -f $VOLUME/toolbox/GEM/cpu/onlineservices/1/default/tsd/bin/system/GEM.jar /tsd/hmi/HMI/jar/GEM.jar
+	echo "GEM update is finished."
+fi
+
+sync
+# Mount system volume in read/only mode
+echo "Mounting system volume in read/only mode"
+mount -t qnx6 -o remount,ro /dev/hd0t177 /
+
+echo
+echo "Installation of the toolbox is done. Now you can open Green Engineering Menu :)"

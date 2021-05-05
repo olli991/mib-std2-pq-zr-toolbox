@@ -1,0 +1,97 @@
+#######################
+screen SDSPromptFilePlay SDS
+#######################
+#  Author:	Struhs, Stefan (EEFH/1)
+#  Email:	stefan.struhs@volkswagen.de
+#  Date:	20130507
+#  Version:	153
+#######################
+
+# STS, 03.04.2013: changes from 99 to 302 on request of Marc Hofmann/Tobias Boettger
+choice
+	value			hmi 0x01be00df 302
+	label			"HMI-TTS-Channel"
+	poll			0
+
+#button
+#	value			per 0x01d700eb 39 1
+#	label			"Play prompt in file"
+#	poll			0
+
+#button
+#	value			per 0x01d700eb 40 1
+#	label			"Stop prompt in file"
+#	poll			0
+
+#button
+#	value			per 0x01d700eb 41 1
+#	label			"Prev prompt in file"
+#	poll			0
+
+#button
+#	value			per 0x01d700eb 42 1
+#	label			"Next prompt in file"
+#	poll			0
+
+#button
+#	value			per 0x01d700eb 43 1
+#	label			"Select prev file"
+#	poll			0
+
+#button
+#	value			per 0x01d700eb 44 1
+#	label			"Select next file"
+#	poll			0
+	
+	
+choice
+	value			per 0x01d700eb 39
+	label			"Play prompt in file"
+	poll			0
+
+choice
+	value			per 0x01d700eb 40
+	label			"Stop prompt in file"
+	poll			0
+
+# STS, 07.05.2013: added after discussion with supplier Delphsince this was missing according to requirements
+choice
+	value			per 0x01d700eb 47
+	label			"First prompt in file"
+	poll			0	
+	
+choice
+	value			per 0x01d700eb 41
+	label			"Prev prompt in file"
+	poll			0
+
+choice
+	value			per 0x01d700eb 42
+	label			"Next prompt in file"
+	poll			0
+
+# STS, 07.05.2013: added after discussion with supplier Delphsince this was missing according to requirements
+choice
+	value			per 0x01d700eb 48
+	label			"Last prompt in file"
+	poll			0		
+	
+choice
+	value			per 0x01d700eb 43
+	label			"Select prev file"
+	poll			0
+
+choice
+	value			per 0x01d700eb 44
+	label			"Select next file"
+	poll			0	
+	
+keyValue
+	value			String per 0x01d700eb 46
+	label			"Selected file"
+	poll			750
+
+keyValue
+	value			String per 0x01d700eb 45
+	label			"Selected prompt in file"
+	poll			750

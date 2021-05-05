@@ -1,0 +1,42 @@
+#######################
+screen Traffic Navigation
+#######################
+# ns:  		0x01c500e6
+# Author:	Alexander Witzel (EECF/2)
+# Email:	alexander.witzel@volkswagen.de
+# Date:		20141021
+# Version:	5
+#######################
+
+choice
+value  per 0x01c500e6 186
+label "Enable traffic message detail view in HMI"
+
+table
+content per 0x01c500e6 127
+label "Traffic Messages All"
+poll 1000
+maxrows 1
+orientation vertical
+columns ( "In System (TMC / TPEG / Online):" String 400 ) ( "In Horizon (TMC / TPEG / Online):" String 400 ) ( "On Route (TMC / TPEG / Online):" String 400 ) ( "Off Route (TMC / TPEG / Online):" String 400 ) ( "Caused Recalc (TMC / TPEG / Online):" String 400 )
+
+keyvalue
+value int per 0x01c500e6 129
+label "Config Table:"
+poll 1000
+
+keyvalue
+value String per 0x01c500e6 131
+label "Traffic dynamic routing range:"
+poll 1000
+
+keyvalue
+value String per 0x01c500e6 132
+label "Traffic horizon range:"
+poll 1000
+
+Button
+value  per 0x02c80122 37 1
+label "Delete All TMC Messages"
+
+

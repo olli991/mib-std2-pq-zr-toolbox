@@ -1,0 +1,18 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		Beta
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB STD2 Toolbox Main -> Customization -> Update
+#
+###########################################################################################
+screen Update Customization
+
+choice
+	value 	per 0x01c100e7 503
+	label 	"Manual SWDL:"
+	poll 	1000
