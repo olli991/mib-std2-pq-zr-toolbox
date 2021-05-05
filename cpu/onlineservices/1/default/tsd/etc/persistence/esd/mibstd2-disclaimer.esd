@@ -1,0 +1,68 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		0.7
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB STD2 Toolbox Main -> About -> Disclaimer
+#
+###########################################################################################
+screen Disclaimer About
+
+keyValue
+    value	String sys 0x00000000 0
+    label   "WARNING: These screens have the potential to break your unit and void your"
+    poll    0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "warranty. Be careful! We're not responsible for any troubles to you, your car"
+    poll    0
+
+keyValue
+    value   String sys 0x00000000 0
+    poll    0
+    label   "or software. We're always looking for cool hacks and retrofits to increase"
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "the potential of the MQB platform. It's never our intention to harm any"
+    poll    0 
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "person, car or brand."
+    poll    0 
+
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0 	
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "If you've paid for this toolbox, you've been scammed."
+    poll    0 
+	
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0 	
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Knowledge is power, but only when shared."
+    poll    0 
+
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0    
+    
+keyValue
+    value   String sys 0x00000000 0
+    label   "Based on the initial idea from YOX, build and modified by Olli with help from Jille."
+    poll    0

@@ -36,13 +36,12 @@ echo "Setting execution attributes to scripts..."
 chmod a+rwx /tsd/etc/persistence/esd/scripts/*.sh
 echo "Setting execution attributes to scripts is done."
 
-# Check and remove old script folder
-OLD_SCRIPTS_FOLDER=/tsd/scripts
-
-if [ -d $OLD_SCRIPTS_FOLDER ]; then
-	echo "Old $OLD_SCRIPTS_FOLDER folder is found. Removing it..."
-	rm -r ${OLD_SCRIPTS_FOLDER}
-fi
+# Remove old script folders and files
+rm -rf /tsd/etc/persistence/esd/mib2std-*.esd
+rm -f /tsd/etc/persistence/esd/mibstd2_yox.esd
+rm -f /tsd/etc/persistence/esd/TOOLBOX.esd
+rm -f /tsd/etc/persistence/esd/mib2std_yox.esd
+rm -rf /tsd/scripts
 
 # Upgrage GEM 3.5 to 4.3 if found
 if [[ $(ls -la "/tsd/hmi/HMI/jar/GEM.jar" | awk '{print $5}') == "187234" ]]; then
