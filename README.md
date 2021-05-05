@@ -61,7 +61,7 @@ MIB STD2 Toolbox Main
 |
 +---MIB_info                            # Hardware infos and such
 |
-+---Network                         	  # Telnet activation and more
++---Network                             # Telnet activation and more
 |
 +---Privacy                             # Privacy related functions
 |
