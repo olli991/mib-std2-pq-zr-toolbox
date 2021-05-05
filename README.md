@@ -14,6 +14,7 @@ NOTE: Additionally, ONLY for firmwares 02xx with GEM 3.5, replace `cpu` folder i
 2. Turn on ignition and insert SD card into slot 1 of the unit
 3. Press and hold MENU button to open `Service Mode -> Software Update` and install `MIBStd2_Online_Approval`.
 4. Open Green Engineering Menu and have fun 🙂
+
 Note: This installation method is NOT possible on Seat Navi units with HW H50+ (firmwares 05xx) as metainfo2.txt does not contain variants 47213, 47214, 47215, 47216 and cannot just be edited (because of digital signature at the end of the file).
 
 ## How to install via serial console or telnet
