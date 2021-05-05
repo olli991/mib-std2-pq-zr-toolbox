@@ -43,6 +43,7 @@ MIB STD2 Toolbox Main
 +---About
 |   +---Disclaimer                      # Disclaimer and mentioning of involved people
 |   +---History                         # Version history of the toolbox
+|
 +---Customization                       # Customization features
 |   +---Adaptation                      # View and change adaptation of the unit
 |       +---Car_BAP_device_list   
