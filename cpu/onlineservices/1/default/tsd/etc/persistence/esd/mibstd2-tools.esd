@@ -1,0 +1,80 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		0.7
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB STD2 Toolbox Main -> Tools
+#
+###########################################################################################
+screen Tools MIBSTD2_Toolbox
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Here you can find different tools sorted by categories:"
+	poll 	0
+
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+	label 	"--- Development ---"
+	poll 	0
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/move_screenshotsToUSB.sh"
+	label 	"Move screenshots from root of all drives to the Toolbox drive"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/custom_script.sh"
+	label 	"Run toolbox.sh script from the root of the Toolbox drive"
+
+choice
+	value 	per 0x01c100e7 503
+	label 	"Manual SWDL:"
+	poll 	1000
+
+script
+	value 	sys 1 0x0100 "/bin/shutdown"
+	label 	"Reboot unit via /bin/shutdown"
+
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "--- Privacy & security related ---"
+    poll    0
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/privacy_swdl_keep_fws.sh"
+	label 	"Clean SWDL history and keep only non-duplicated FW updates"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/privacy_swdl_keep_last.sh"
+	label 	"Clean SWDL history and keep only the last FW update"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/privacy_cleanphonedata.sh"
+	label 	"Delete stored contact infos (phone data)"
+
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/privacy_shadow.sh"
+	label 	"Copy custom shadow file to unit"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_shadow.sh"
+	label 	"Restore shadow file from backup"

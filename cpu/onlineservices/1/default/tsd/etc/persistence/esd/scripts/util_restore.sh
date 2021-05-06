@@ -1,8 +1,8 @@
 #!/bin/ksh
-# MIB2 utility script, part of the MIB STD2 toolbox.
+# MIB2 utility script, part of the MIB STD2 Toolbox.
 # Coded by Olli
 # This script will restore files from backup.
-# Based on the copy script by Jille from MIB2 High Toolbox. Modified for MIB2STD Toolbox by Olli
+# Based on the copy script by Jille from MIB2 High Toolbox. Modified for MIB STD2 Toolbox by Olli
 
 # Locate Toolbox drive
 . /tsd/etc/persistence/esd/scripts/util_checksd.sh

@@ -125,7 +125,11 @@ script
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_devesd.sh"
 	label 	"Green Engineering Menu screens *.esd files (engdefs)"	
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_swdlhistory.sh"
+	label 	"SWDL history"
 	
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_root.sh"
-	label 	"root without /dev (will take hours!)"	
+	label 	"Root without /dev (will take hours!)"	

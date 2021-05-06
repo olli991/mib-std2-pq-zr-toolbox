@@ -6,10 +6,9 @@
 unset VOLUME
 
 # Find the volume with Toolbox folder
-for i in 0 1 2 3 4
-do
-	if [ -d /media/mp00$i/toolbox ]; then
-		export VOLUME=/media/mp00$i
+for i in /media/mp00*; do
+	if [ -d $i/toolbox ]; then
+		export VOLUME=$i
 		echo "Toolbox is found on" $VOLUME
 		break
 	fi

@@ -14,7 +14,7 @@ screen Network MIBSTD2_Toolbox
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_telnet.sh"
-	label 	"Activate telnet (until next reboot)"
+	label 	"Activate telnet, ftp and console access until next reboot"
 	
 choice
 	value 	per 0x01c100e7 54

@@ -56,7 +56,6 @@ MIB STD2 Toolbox Main
 |   +---Navi                            # Unlock SD card usage from every brand and more
 |   +---Skins                           # Modify skins
 |   +---Sounds                          # Modify ringtones and system sounds
-|   +---Update                          # Enable manual SWDL
 |
 +---Dump                                # Dump various data to SD card
 |
@@ -64,7 +63,8 @@ MIB STD2 Toolbox Main
 |
 +---Network                             # Telnet activation and more
 |
-+---Privacy                             # Privacy related functions
++---Tools                               # Tools and privacy related functions
+|   +---Update                          # Enable manual SWDL
 |
 +---Update_and_Uninstall                # Allows to update & uninstall the Toolbox
 ```
@@ -90,3 +90,6 @@ Example: `extract-startup_x.boot.py startup_x.boot .\extracted\`
 Compresses files from extracted folder back into *.boot container<br>
 Syntax: `compress-startup_x.boot.py <ORIGINAL-BASEFILE> <NEWFILE> <FOLDER-WITH-EXTRACTED-FILES>`<br>
 Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\`
+
+### generate_shadow.py (by lprot)
+Converts password to shadow file

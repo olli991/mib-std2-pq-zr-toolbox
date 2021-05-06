@@ -14,28 +14,48 @@ screen GreenMenu Customization
 
 keyValue
     value	String sys 0x00000000 0
-    label   "Instructions: Put new .esd files into the custom/greenmenu folder on your"
+    label   "Instructions: Put *.esd files into the custom/greenmenu folder on the Toolbox"
     poll    0    
 
 keyValue
     value   String sys 0x00000000 0
-    label   "SD card. Custom scripts go into custom/greenmenu/scripts. Make sure to point"
+    label   "drive. Custom scripts go into custom/greenmenu/scripts. Make sure that scripts"
     poll    0    
 
 keyValue
     value   String sys 0x00000000 0
-    label   "scripts in your ESD-files to /tsd/etc/persistence/esd/scripts"
+    label   "in your *.esd files are referenced as /tsd/etc/persistence/esd/scripts"
     poll    0   
 
 keyValue
     value   String sys 0x00000000 0
     label   ""
-    poll    0   
+    poll    0  
 
+keyValue
+    value   String sys 0x00000000 0
+    label   "NOTICE: Currently you have to reinstall your custom menus and scripts again"
+    poll    0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "after every toolbox update. If you use this custom feature often please open"
+    poll    0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "up an issue on git to let us know and if we need to work on this here. THX :-)"
+    poll    0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0  
+	
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_esd.sh"
-   label    "Copy custom GreenMenu screens and scripts" 
-   
+   label    "Copy custom Green Engineering Menu screens and scripts" 
+
 keyValue
     value   String sys 0x00000000 0
     label   ""
@@ -48,9 +68,8 @@ keyValue
 
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_devesd.sh"
-   label    "Install developer GreenMenu"    
+   label    "Install extended Green Engeneering Menu"
 
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_devesd.sh"
-   label    "Restore production GreenMenu"    
-	
+   label    "Restore reduced Green Engineering Menu"

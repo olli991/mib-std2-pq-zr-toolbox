@@ -1,5 +1,5 @@
 #!/bin/ksh
-# MIB2 utility script, part of the MIB2STD toolbox.
+# MIB2 utility script, part of the MIB STD2 Toolbox.
 # Coded by Olli
 # This script remounts system partition in read/write mode
 

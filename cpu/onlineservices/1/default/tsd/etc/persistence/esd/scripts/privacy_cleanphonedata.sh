@@ -1,13 +1,19 @@
 #!/bin/ksh
 # Coded by Jille for MIB2 High Toolbox
 # Modified by Olli for MIB STD2 Toolbox
+export TOPIC=phonedata
+export MIBPATH=/tsd/var/organizer
+export SDPATH=$TOPIC
+export TYPE="folder"
 
 echo "This script removes contacts database and photos from organizer"
 echo
 
-PHONEPATH=/tsd/var/organizer
+# Make backup folder
+. /tsd/etc/persistence/esd/scripts/util_backup.sh
 
-if [ -d $PHONEPATH/database ]; then
+# Deleting phone data
+if [ -d $MIBPATH/database ]; then
 	echo "Deleting contacts database at $PHONEPATH/database"
 	rm -r -f $PHONEPATH/database/*
 	echo "Done. Stored phone contacts are deleted"

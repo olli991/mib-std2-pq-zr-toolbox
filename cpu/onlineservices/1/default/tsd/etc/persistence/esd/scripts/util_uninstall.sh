@@ -11,14 +11,14 @@ echo
 
 # Delete Toolbox Green Engineering Menu screens
 echo "Deleting Toolbox Green Engineering Menu screens..."
-rm -r /tsd/etc/persistence/esd/mibstd2-*.esd
+rm -f /tsd/etc/persistence/esd/mibstd2-*.esd
 
 # Delete Toolbox scripts
 echo "Deleting Toolbox scripts..."
 rm -r /tsd/etc/persistence/esd/scripts
 
 # Delete legacy toolbox screens and scripts
-rm -rf /tsd/etc/persistence/esd/mib2std-*.esd
+rm -f /tsd/etc/persistence/esd/mib2std-*.esd
 rm -f /tsd/etc/persistence/esd/mibstd2_yox.esd
 rm -f /tsd/etc/persistence/esd/TOOLBOX.esd
 rm -f /tsd/etc/persistence/esd/mib2std_yox.esd

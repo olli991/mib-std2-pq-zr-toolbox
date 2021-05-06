@@ -1,3 +1,4 @@
+#!/bin/ksh
 echo "Date:"
 date
 

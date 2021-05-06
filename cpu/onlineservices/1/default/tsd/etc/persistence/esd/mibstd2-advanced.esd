@@ -14,12 +14,12 @@ screen Advanced Customization
 
 keyValue
     value   String sys 0x00000000 0
-    label   "NOTE: Use the funtions in this screen only if you know what you're doing!"
+    label   "NOTE: Use the functions in this screen only if you know what you're doing!"
 	poll 	0
 	
 keyValue
     value   String sys 0x00000000 0
-    label	"CAUTION: Ensure that a external power is connected to the car during any"
+    label	"CAUTION: Ensure that external power is connected to the car during any"
 	poll 	0
 	
 keyValue
@@ -92,35 +92,3 @@ script
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_stationdb.sh"
 	label 	"Restore radio station logo DB from backup"
-	
-keyValue
-    value   String sys 0x00000000 0
-	label 	""
-	poll 	0
-	
-script
-	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/move_screenshotsToUSB.sh"
-	label 	"Move screenshots to Toolbox drive"
-	
-keyValue
-    value   String sys 0x00000000 0
-	label 	""
-	poll 	0
-	
-script
-	value 	sys 1 0x0100 "/bin/shutdown"
-	label 	"Reboot unit via /bin/shutdown"
-
-keyValue
-    value   String sys 0x00000000 0
-	label 	"--- Development ---"
-	poll 	0
-	
-script
-	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/custom_script.sh"
-	label 	"Run custom toolbox.sh script from root of SD card or USB drive"
-	
-keyValue
-    value   String sys 0x00000000 0
-	label 	""
-	poll 	0
