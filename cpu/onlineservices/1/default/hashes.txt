@@ -82,10 +82,6 @@ FileName = "/tsd/etc/persistence/esd/mibstd2-uninstall.esd"
 FileSize = "1058"
 Checksum = "9a4202883378be866d9a8e0233606a229102d577"
 
-FileName = "/tsd/etc/persistence/esd/mibstd2-update.esd"
-FileSize = "589"
-Checksum = "ef8c4745c4557928318ff901f361a9278c81e20d"
-
 FileName = "/tsd/etc/persistence/esd/scripts/activate_telnet.sh"
 FileSize = "948"
 Checksum = "a3129c78e47d87fa634fec2daffd7bc91a72a6f3"
