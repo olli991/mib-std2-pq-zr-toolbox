@@ -4,7 +4,7 @@ echo "Date:" $(date)
 #INFO=$(awk -F "" '{for(i=1;i<=NF;i++) if($i~/[A-Z0-9]/) {printf $i} else {printf " "}}' /tsd/var/itr.timer.log 2>/dev/null | sed 's/\b\w\{1,3\}\b\s*//g')
 INFO=$(sloginfo | grep ".devinfo" | tail -1 | sed 's/.*DevInfo: //')
 echo "SW-Version:" $(echo $INFO | awk -F " |=" '{print $2}' 2>/dev/null) "HW-Version:" $(echo $INFO | awk -F " |=" '{print $4}' 2>/dev/null) "PartNum:" $(echo $INFO | awk -F " |=" '{print $6}' 2>/dev/null)
-echo "SerNum:" $(echo $INFO |awk -F " |=" '{print $9}' 2>/dev/null) "Mileage:" $(echo $INFO |awk -F " |=" '{print $13}' 2>/dev/null) "VIN:" $(echo $INFO |awk -F " |=" '{print $15}' 2>/dev/null)
+echo "SerNum:" $(echo $INFO |awk -F " |=" '{print $8}' 2>/dev/null) "Mileage:" $(echo $INFO |awk -F " |=" '{print $12}' 2>/dev/null) "VIN:" $(echo $INFO |awk -F " |=" '{print $14}' 2>/dev/null)
 echo "Train:" $(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g')
 
 addr=$((0x020D8000 + 0x024))
@@ -19,15 +19,15 @@ echo "hwVersion: $hwVersion hwVariant: $hwVariant SWDL variant: $swdlVariant SWD
 GEM_SIZE=$(ls -la '/tsd/hmi/HMI/jar/GEM.jar' | awk '{print $5}' 2>/dev/null)
 GEM_VERSION="Unknown, size $GEM_SIZE"
 if [ "$GEM_SIZE" = "187047" ]; then
-	GEM_VERSION="3.4"
+	GEM_VERSION="3.4t"
 elif [ "$GEM_SIZE" = "187234" ]; then
-	GEM_VERSION="3.5"
+	GEM_VERSION="3.5t"
 elif [ "$GEM_SIZE" = "242383" ]; then
-	GEM_VERSION="4.3"
+	GEM_VERSION="4.3t"
 elif [ "$GEM_SIZE" = "250770" ]; then
-	GEM_VERSION="4.11"
+	GEM_VERSION="4.11t"
 elif [ "$GEM_SIZE" = "250996" ]; then
-	GEM_VERSION="4.12"
+	GEM_VERSION="4.12t"
 fi
 echo "GEM version: $GEM_VERSION"
 
@@ -74,3 +74,5 @@ ifconfig
 echo
 echo "USB info:"
 usb
+
+echo "Collection of the information is finished."

@@ -363,8 +363,8 @@ FileSize = "677"
 Checksum = "8bb2a61fe3e3dcc51a8f230d94c2d6b5b899b962"
 
 FileName = "/tsd/etc/persistence/esd/scripts/sysinfo.sh"
-FileSize = "2185"
-Checksum = "59001dcde8ecae696574a98c2010adc4e7980069"
+FileSize = "2241"
+Checksum = "6a12eb4b3718973da088de9e7fb266c53a057398"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_backup.sh"
 FileSize = "868"
