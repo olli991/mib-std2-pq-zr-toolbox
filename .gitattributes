@@ -1,6 +1,5 @@
 # Declare files that will always have LF line endings on checkout.
 /metainfo2.txt text eol=crlf
-*.esd text eol=crlf
 *.sh text eol=lf
 */hashes.txt text eol=crlf
 */Update.txt text eol=crlf
