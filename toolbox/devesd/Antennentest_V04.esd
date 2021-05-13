@@ -1,0 +1,327 @@
+#######################
+screen Antennentests Main
+#######################
+# Responsible:	Thorsten Schönfelder
+# Email:	extern.thorsten.schoenfelder@volkswagen.de
+# Date:		20131213
+# Version:	04
+#######################
+
+
+
+#######################
+screen FM-Tracing Antennentests
+#######################
+BIOSCtrl
+value int per 0x01c100e7 72
+label "debug destination"
+entry "off" 0
+entry "SD1" 1
+poll 5000
+
+table
+content per 0x02c80122 1
+label "FM Tuner 1-2"
+poll 100
+maxrows 2
+
+orientation horizontal
+
+columns ( "FRQ" int 75 ) ( "PI" String 70 ) ( "PS" String 130 ) ( "Q %" int 60 1 "#;'       -                 '" ) ( "FS dBµV" int 100 1 "#;'       -          '" ) ( "RDQ" int 60 1 "#;'       -        '" ) ( "MP" int 40 1 "#;'       -        '" ) ( "AP" int 40 1 "#;'   -        '" ) ( "M" int 40 1 "#;'   -       '" ) 
+ 
+
+keyvalue
+value String per 0x01c500e6 151
+label "GNSS Longitude"
+poll 100
+
+keyvalue
+value String per 0x01c500e6 152
+label "GNSS Latitude"
+poll 100
+
+keyvalue
+value int per 0x01c500e6 161
+label "GNSS Speed"
+poll 100
+
+keyvalue
+value String per 0x01c500e6 156
+label "GNSS Date"
+poll 100
+
+keyvalue
+value String per 0x01c500e6 157
+label "GNSS Time"
+poll 100
+
+choice
+value per 0x02c80122 6
+label "Backgroundscan:"
+poll 500
+
+
+
+choice
+value per 0x02c80122 7
+label "Phase div.:"
+poll 500
+
+choice
+value per 0x02c80122 8
+label "AF switch:"
+poll 500
+
+slider
+value per 0x02c80122 76
+limits absolute 875 1080
+label "TUN1 FRQ (FM):"
+poll 1000
+
+
+
+slider
+value per 0x02c80122 77
+limits absolute 875 1080
+
+label "TUN2 FRQ (FM):"
+poll 1000
+
+
+slider
+value per 0x02c80122 78
+limits absolute 875 1080
+label "TUN3 FRQ (FM):"
+poll 1000
+
+
+slider
+value per 0x02c80122 14
+limits absolute 1 3
+label "Audible tuner (3-auto):"
+poll 1000
+
+#######################
+screen DAB-Tracing Antennentests
+#######################
+BIOSCtrl
+value int per 0x01c100e7 72
+label "debug destination"
+entry "off" 0
+entry "SD1" 1
+poll 5000
+
+table
+content per 26411208 1
+label "Current DAB-Station Info"
+poll 100
+maxrows 1
+orientation horizontal
+columns ( "FRQ" int 90 0.001 "###.###" ) ( "CHID" String 60 ) ( "cCHID" String 80 ) ( "SID" String 70 ) ( "SCIDS" int 70 ) ( "EID" String 70 ) ( "SubCh" int 70 )
+
+table
+content per 26411208 8
+label "Bit Error Rates"
+poll 100
+maxrows 1
+orientation horizontal
+columns ( "MSC" int 120 ) ( "FIC" int 120 ) 
+
+table
+content per 26411208 2
+label "Tuner Source and current Quality"
+poll 100
+maxrows 1
+orientation horizontal
+columns ( "TP SRC DAB" int 100 ) ( "Cur Serv TP" int 115 ) ( "SRC DAB" int 96 ) ( "QA %" int 55 ) ( "QS %" int 55 ) ( "FS dBm" int 78 ) ( "SNR dB" int 78 ) ( "CODEC" String 80 )
+
+keyValue
+value int per 26411208 13
+label "SYNC"
+poll 100
+
+keyvalue
+value String per 0x01c500e6 151
+label "GNSS Longitude"
+poll 100
+
+keyvalue
+value String per 0x01c500e6 152
+label "GNSS Latitude"
+poll 100
+
+keyvalue
+value int per 0x01c500e6 161
+label "GNSS Speed"
+poll 100
+
+keyvalue
+value String per 0x01c500e6 156
+label "GNSS Date"
+poll 100
+
+keyvalue
+value String per 0x01c500e6 157
+label "GNSS Time"
+poll 100
+
+choice
+value per 26411208 92
+label "Channel Seek UP"
+poll 1000
+
+choice
+value per 26411208 93
+label "Channel Seek DOWN"
+poll 1000
+
+choice
+value per 26411208 69
+label "Skip NEXT Service"
+poll 1000
+
+choice
+value per 26411208 70
+label "Skip PREV Service"
+poll 1000
+
+choice
+value per 26411208 58
+label "Audio-Mute/Concealment ON/OFF"
+poll 1000
+
+slider
+value per 26411208 88
+limits absolute 0 10
+label "Concealment Level"
+poll 1000
+
+keyValue
+value String per 26411208 10
+label "Protection Level"
+poll 100
+
+#######################
+screen AM-Tracing Antennentests
+#######################
+BIOSCtrl
+value int per 0x01c100e7 72
+label "debug destination"
+entry "off" 0
+entry "SD1" 1
+poll 5000
+
+table
+content per 0x02c80122 1
+label "AM-Tuner 1-2"
+poll 100
+maxrows 2
+
+orientation horizontal
+columns ( "FRQ" int 75 ) ( "PI" String 70 ) ( "PS" String 130 ) ( "Q %" int 60 1 "#;'       -                 '" ) ( "FS dBµV" int 100 1 "#;'       -          '" ) ( "RDQ" int 60 1 "#;'       -        '" ) ( "MP" int 40 1 "#;'       -        '" ) ( "AP" int 40 1 "#;'   -        '" ) ( "M" int 40 1 "#;'   -       '" )
+
+keyvalue
+value String per 0x01c500e6 151
+label "GNSS Longitude"
+poll 100
+
+keyvalue
+value String per 0x01c500e6 152
+label "GNSS Latitude"
+poll 100
+
+keyvalue
+value int per 0x01c500e6 161
+label "GNSS Speed"
+poll 100
+
+keyvalue
+value String per 0x01c500e6 156
+label "GNSS Date"
+poll 100
+
+keyvalue
+value String per 0x01c500e6 157
+label "GNSS Time"
+poll 100
+
+choice
+value per 0x02c80122 74
+label "FRQ_Up"
+poll 1000
+choice
+
+value per 0x02c80122 75
+label "FRQ_Down"
+poll 1000
+ 
+choice
+value per 0x02c80122 80
+label "Seek_Up"
+poll 1000
+
+
+
+choice
+value per 0x02c80122 81
+label "Seek_Down"
+poll 1000
+
+choice
+value per 0x02c80122 6
+label "Backgroundscan:"
+poll 1000
+
+
+choice
+value per 0x02c80122 8
+label "AF switch:"
+poll 1000
+
+
+
+slider
+
+value per 0x02c80122 11
+
+limits absolute 153 1720
+
+label "TUN1 FRQ (AM):"
+
+poll 1000
+
+
+
+slider
+
+value per 0x02c80122 12
+
+limits absolute 153 1720
+
+label "TUN2 FRQ (AM):"
+
+poll 1000
+
+
+
+slider
+
+value per 0x02c80122 13
+
+limits absolute 153 1720
+
+label "TUN3 FRQ(AM):"
+
+poll 1000
+
+
+
+slider
+
+value per 0x02c80122 14
+
+limits absolute 1 3
+
+label "Audible tuner (3-auto):"
+
+poll 1000

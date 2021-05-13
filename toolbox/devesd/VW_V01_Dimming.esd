@@ -1,0 +1,92 @@
+#######################
+screen Dimming Main
+#######################
+#  Author:	Tomasi, Bodo
+#  Email:	bodo.tomasi@volkswagen.de
+#  Date:	20130201
+#  Version:	01
+#######################
+
+slider
+value per 0x01c100e7 100
+label "dim_P_Poti"
+poll 100
+limits absolute 0 500
+
+slider
+value per 0x01c100e7 101
+label "dim_P_Ambi"
+poll 100
+limits absolute 0 10000
+
+slider
+value per 0x01c100e7 102
+label "dim_Tau_auf"
+poll 100
+limits absolute 0 1000
+
+slider
+value per 0x01c100e7 103
+label "dim_Tau_ab"
+poll 100
+limits absolute 0 1000
+
+slider
+value per 0x01c100e7 104
+label "dim_display_brightness_step1"
+poll 100
+limits absolute 0 500
+
+slider
+value per 0x01c100e7 105
+label "dim_display_brightness_step2"
+poll 100
+limits absolute 0 500
+
+slider
+value per 0x01c100e7 106
+label "dim_display_brightness_step3"
+poll 100
+limits absolute 0 500
+
+slider
+value per 0x01c100e7 107
+label "dim_display_brightness_step4"
+poll 100
+limits absolute 0 500
+
+slider
+value per 0x01c100e7 108
+label "dim_display_brightness_step5"
+poll 100
+limits absolute 0 500
+
+choice
+value per 0x01c100e7 109
+label "dim_PT1_HMI on/off"
+
+choice
+value per 0x01c100e7 110
+label "dim_PT1_On_Off_Display"
+
+slider
+value per 0x01c100e7 111
+label "dim_PWM_calc"
+poll 100
+limits absolute 0 5000
+
+slider
+value per 0x01c100e7 112
+label "dim_PWM_output"
+poll 100
+limits absolute 0 1000
+
+keyValue
+value int per 0x01c100e7 113
+label "dim_DI1_Display"
+poll 100
+
+keyValue
+value int per 0x01c100e7 114
+label "dim_DI1_Sensor"
+poll 100

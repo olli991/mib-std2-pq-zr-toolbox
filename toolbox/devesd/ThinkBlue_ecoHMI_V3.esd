@@ -1,0 +1,23 @@
+# Author:	Elisabeth Eichhorn, Miriam Stump-Sadowski
+# Email:	elisabeth.eichhorn@carmeq.com
+# Date:		20.08.2013
+# Version:	03 #correction by: Elisabeth Eichhorn
+
+###########################
+screen ecoHMI Car
+###########################
+
+keyValue
+value String hmi 0x01be00df 501
+label "CURRENT_DRIVING_STATE"
+poll 1000
+
+keyValue
+value int hmi 0x01be00df 502
+label "LAST_BLUE_SCORE"
+poll 1000
+
+keyValue
+value int hmi 0x01be00df 503
+label "VEHICLE_ACCELERATION"
+poll 500
