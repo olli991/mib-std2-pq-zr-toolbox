@@ -1,11 +1,9 @@
 #!/bin/ksh
-
 export TOPIC=fec
 export MIBPATH=/tsd/etc/slist/signed_exception_list.txt
 export SDPATH=patch/$TOPIC/signed_exception_list.txt
 export TYPE="file"
 
-# Info
 echo "This script will copy signed_exception_list.txt"
 echo
 
@@ -17,7 +15,9 @@ fi
 # Copy file(s) to unit
 . /tsd/etc/persistence/esd/scripts/util_copy.sh
 
-echo
-echo "Done. Now restart the unit"
+# Mount system partition in read/only mode
+. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
 
+echo
+echo "Done. Please restart the unit."
 exit 0

@@ -44,10 +44,11 @@ echo "Setting execution attributes to scripts..."
 chmod a+rwx /tsd/etc/persistence/esd/scripts/*.sh
 echo "Setting execution attributes to scripts is done."
 
-# Upgrage GEM 3.5 to 4.3 if found
-if [[ $(ls -la "/tsd/hmi/HMI/jar/GEM.jar" | awk '{print $5}') == "187234" ]]; then
-	echo "GEM 3.5 is found. Updating to version 4.3..."
-	cp -v -f $VOLUME/toolbox/gem/cpu/onlineservices/1/default/tsd/bin/system/GEM.jar /tsd/hmi/HMI/jar/GEM.jar
+# Upgrage GEM 3.4/3.5 to 4.3 if found
+GEM_SIZE=$(ls -la '/tsd/hmi/HMI/jar/GEM.jar' | awk '{print $5}' 2>/dev/null)
+if [[ "$GEM_SIZE" = "187047" || "$GEM_SIZE" = "187234" ]]; then
+	echo "Old GEM is found. Updating to version 4.3..."
+	cp -fv $VOLUME/toolbox/gem/cpu/onlineservices/1/default/tsd/bin/system/GEM.jar /tsd/hmi/HMI/jar/GEM.jar
 	echo "GEM update is finished."
 fi
 

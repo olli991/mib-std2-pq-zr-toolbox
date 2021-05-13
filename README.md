@@ -11,7 +11,7 @@ WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT 
 ## How to install from SD card via "Service Mode" on supported units with navigation
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of SD card. 
 
-NOTE: Additionally, **ONLY** for firmwares 02xx with GEM 3.5, replace `cpu` folder in the root of the SD card with `cpu` folder from `\toolbox\gem` folder.
+NOTE: Additionally, **ONLY** for firmwares 01xx with GEM 3.4 and 02xx with GEM 3.5, replace `cpu` folder in the root of the SD card with `cpu` folder from `\toolbox\gem` folder.
 
 2. Turn on ignition and insert SD card into slot 1 of the unit
 3. Press and hold MENU button to open `Service Mode -> Software Update` and install `MIBStd2_Online_Approval`.
@@ -25,7 +25,7 @@ Note: This installation method is NOT possible on Seat Navi units with HW H50+ (
 3. Login via console/telnet as root/root
 4. Insert SD card or connect USB drive to the unit
 5. Enter `mount` to see where inserted card/connected drive is mounted. Usually /media/mp000 is slot SD1, /media/mp001 slot SD2, /media/mp002 port USB1 and so on.
-6. Run `ksh /media/mp000/install.sh` to install the toolbox. GEM 3.5 will be automatically updated if found.
+6. Run `ksh /media/mp000/install.sh` to install the toolbox. Old GEM will be automatically updated if found.
 7. Open Green Engineering Menu and have fun 🙂
 
 ## How to use the toolbox to do customizations
@@ -81,15 +81,31 @@ Compresses files from extracted folder back into *.mcf container<br>
 Syntax: `compress-mcf.py <ORIGINAL-BASEFILE> <NEWFILE> <FOLDER-WITH-EXTRACTED-FILES>`<br>
 Example: `compress-mcf.py images.mcf images2.mcf .\extracted\`
 
-### extract-startup_x.boot.py (by jille) *currently not fully working*
+### extract-startup_x.boot.py (by jille)
 Extracts files from *.boot startup screen containers<br>
 Syntax: `extract-startup_x.boot.py <INPUTFILE> <EXTRACTION-FOLDER>`<br>
 Example: `extract-startup_x.boot.py startup_x.boot .\extracted\`
 
-### compress-startup_x.boot.py (by jille) *currently not fully working*
+### compress-startup_x.boot.py (by jille)
 Compresses files from extracted folder back into *.boot container<br>
 Syntax: `compress-startup_x.boot.py <ORIGINAL-BASEFILE> <NEWFILE> <FOLDER-WITH-EXTRACTED-FILES>`<br>
 Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\`
 
 ### generate_shadow.py (by lprot)
 Converts password to shadow file
+
+## Frequently asked questions
+Q: I got unit with part number X how to know is that Technisat/Preh/Delphi/Harman?
+A: Google that part number in picture mode and take a look at the label or look for the letter in software version string. For example MST2_EU_SK_ZR_P0478T. Letter T at the end means it's Technisat. If there is no letter it's Harman.
+
+Q: Where to find GEM (Green Egineering Menu) version?
+A: In the top left corner of the Green Engineering Menu screen.
+
+Q: Why Toolbox is not compatible with GEM 3.5 or lower?
+A: GEM 3.5 and lower cannot run scripts
+
+Q: How to make screenshots?
+A: Press and hold MEDIA key until you hear confirmation sound
+
+Q: Where to find screenshots?
+A: In the root folder of SD card. You can also use `Toolbox -> Tools -> Move screenshots from root of all drives to the Toolbox drive` function to collect them in screenshots folder of Toolbox drive.

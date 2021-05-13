@@ -1,9 +1,10 @@
 #######################
 screen Engineering Main
 #######################
-#author: Marc Hoffmann (IAV, VW EECF/1) (extern.marc.hoffmann@volkswagen.de)
-#version: 11
-#date: 20131202
+#author1: Marc Hoffmann (IAV, VW EECF/1) (extern.marc.hoffmann@volkswagen.de)
+#author2: Hussein Karajoli (Bertrandt, VW EECF/1) (extern.hussein.karajoli@volkswagen.de)
+#version: 12
+#date: 20141208
 #######################
 
 table
@@ -77,6 +78,11 @@ columns ( "free" int 140 ) ( "used" int 140 ) ( "max" int 140 )
 keyValue
 value String per 0x01c100e7 25
 label "Gateway_time"
+
+choice
+value per 0x01c100e7 503
+label "manual SWDL:"
+poll 1000
 
 choice
 value per 0x01c100e7 28

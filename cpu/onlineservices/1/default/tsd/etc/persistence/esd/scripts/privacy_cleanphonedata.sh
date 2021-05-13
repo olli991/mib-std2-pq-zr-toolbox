@@ -14,20 +14,22 @@ echo
 
 # Deleting phone data
 if [ -d $MIBPATH/database ]; then
-	echo "Deleting contacts database at $PHONEPATH/database"
-	rm -r -f $PHONEPATH/database/*
+	echo "Deleting contacts database at $MIBPATH/database"
+	rm -rf $MIBPATH/database/*
+	sync
 	echo "Done. Stored phone contacts are deleted"
+	echo "Please restart the unit."
 else
 	echo "No contacts database found"
 fi
-if [ -d $PHONEPATH/photo ]; then
-	echo "Deleting contacts photos at $PHONEPATH/photo"
-	rm -r -f $PHONEPATH/photo/*
+if [ -d $MIBPATH/photo ]; then
+	echo "Deleting contacts photos at $MIBPATH/photo"
+	rm -rf $MIBPATH/photo/*
+	sync
 	echo "Done. Stored contact photos are deleted"
+	echo "Please restart the unit."
 else
 	echo "No contact photos found"
 fi
-
-sync
 
 exit 0

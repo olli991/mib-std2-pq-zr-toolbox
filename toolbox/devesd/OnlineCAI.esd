@@ -1,9 +1,9 @@
 #CAI GEM screen
 #stubs only until settings are exposed
 
-#Author: Alexander Tschache
-#Email: alexander.tschache@escrypt.com
-#Version: V0.5
+#Author: Dennis Ludewig
+#Email: dennis.ludewig@escrypt.com
+#Version: V2.1
 #Version history:
 # V0.5
 #  - Initial version, stubs only
@@ -13,6 +13,8 @@
 #  - removed R&P retrigger script (will be handled in coreservices menu)
 # V2.0
 # - adapted keys and corrected syntax errors
+# V2.1
+# - added SHA256 certificates for EU and China
 
 screen CAI "Core Services"
 
@@ -23,8 +25,15 @@ screen CAI "Core Services"
 BIOSCtrl
 value String per 0x01b900e1 1000
 label "CA-Certificate"
-entry "QS" "ca_qs.pem"
-entry "Live" "ca.pem"
+entry "EU QS SOP 1" "ca_qs.pem"
+entry "EU QS SOP 2" "ca09.pem"
+entry "EU Live SOP 1" "ca.pem"
+entry "EU Live SOP 2" "ca0c.pem"
+entry "EU Live SOP 2 CP" "ca0d.pem"
+entry "CN QS SHA1" "ca_cn_qs.pem"
+entry "CN QS SHA2" "ca11qs_MBB_CN_SHA256_DEV_kryptoQS.pem"
+entry "CN Live SHA2" "ca0f_MBB_CN_SHA256_DEV_kryptoProd.pem"
+entry "CN Live SHA2 CP" "ca10_MBB_CN_SHA256_PROD_kryptoProd.pem"
 entry "OpenSynergy" "ca_os.pem"
 
 #CAI Phase choice

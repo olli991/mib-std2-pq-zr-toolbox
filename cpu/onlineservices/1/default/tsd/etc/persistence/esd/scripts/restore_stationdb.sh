@@ -1,7 +1,7 @@
 #!/bin/ksh
 export TOPIC=stationdb
 export MIBPATH=/tsd/etc/stationdb/VW_STL_DB.sqlite
-export SDPATH=$TOPIC
+export SDPATH=$TOPIC/VW_STL_DB.sqlite
 export TYPE="file"
 
 echo "This script will restore the radio station logo database from backup"

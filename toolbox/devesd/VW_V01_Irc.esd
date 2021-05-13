@@ -23,7 +23,7 @@ value per 0x01c500df 1
 label "Enable IRC"
 poll 500
 
-choice
-value per 0x01c500df 11
-label "Enable UDP Server"
-poll 500
+#choice
+#value per 0x01c500df 11
+#label "Enable UDP Server"
+#poll 500

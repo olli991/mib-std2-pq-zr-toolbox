@@ -1,11 +1,11 @@
 #################################
 screen CarDeviceBusAssignment Car
 #################################
-#  Author:    ?
-#  Modified: Wenske, Jens (EEFI/4)
-#  Email:    extern.jens.wenske@volkswagen.de
-#  Date:    20110824
-#  Version:    1
+#  Author:   ?
+#  Modified: May, Stefan (EECF/1)
+#  Email:	 extern.stefan.may@volkswagen.de
+#  Date:	 20160629
+#  Version:  2
 #################################
 
 # CAN based features:
@@ -700,7 +700,7 @@ BIOSCtrl
 
 BIOSCtrl
         value           int per 27263191 499
-        label           "Curve warner: "
+        label           "Efficiency assist (PEA): "
         entry           "CAN Comfort" 0
         entry           "CAN Antrieb" 1
         entry           "CAN Infotainment" 2
@@ -710,15 +710,27 @@ BIOSCtrl
         entry           "Clamp15" 6
         entry           "not available" 15
 
-##StM: Not available in diagnosis
-#BIOSCtrl
-#        value           int per 27263191 491
-#        label           "Efficiency assist (PEA): "
-#        entry           "CAN Comfort" 0
-#        entry           "CAN Antrieb" 1
-#        entry           "CAN Infotainment" 2
-#        entry           "CAN Extended" 3
-#        entry           "CAN Fahrwerk" 4
-#        entry           "Flexray" 5
-#        entry           "Clamp15" 6
-#        entry           "not available" 15
+BIOSCtrl
+        value           int per 27263191 501
+        label           "ExBox: "
+        entry           "CAN Comfort" 0
+        entry           "CAN Antrieb" 1
+        entry           "CAN Infotainment" 2
+        entry           "CAN Extended" 3
+        entry           "CAN Fahrwerk" 4
+        entry           "Flexray" 5
+        entry           "Clamp15" 6
+        entry           "not available" 15
+
+BIOSCtrl
+        value           int per 27263191 503
+        label           "Display configuration: "
+        entry           "CAN Comfort" 0
+        entry           "CAN Antrieb" 1
+        entry           "CAN Infotainment" 2
+        entry           "CAN Extended" 3
+        entry           "CAN Fahrwerk" 4
+        entry           "Flexray" 5
+        entry           "Clamp15" 6
+        entry           "not available" 15
+

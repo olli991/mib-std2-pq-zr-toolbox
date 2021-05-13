@@ -7,47 +7,43 @@ echo
 # Locate Toolbox drive
 . /tsd/etc/persistence/esd/scripts/util_checksd.sh
 
-export DUMPFOLDER=$VOLUME/dump/$SDPATH
-
-#Make dump folder if needed
-if [ ! -d "$VOLUME/dump" ]; then
-	echo "$VOLUME/dump not found, making a new one..."
-	mkdir -p $VOLUME/dump
-fi
-
+DUMPFOLDER=$VOLUME/dump/$SDPATH
 echo "Source $TYPE: $MIBPATH"
-echo "Destination folder: $DUMPFOLDER"
-echo
+echo "Destination: $DUMPFOLDER"
 
-# Create destination folder if needed
-if [ ! -d "$DUMPFOLDER" ]; then
-	echo "Creating folder" $DUMPFOLDER
-	mkdir -p $DUMPFOLDER
-fi
-
-# Copying file(s)/folders
-if [ -d "$DUMPFOLDER" ]; then
-	echo "Copying file(s)/folder(s). This can take a while, please wait..."
-	if [ "$TYPE" == "folder" ]; then
-		cp -r ${MIBPATH}/* ${DUMPFOLDER}
-		sync
-		echo "Copying is completed." 
-	elif [ -f $MIBPATH ]; then
+if [ "$TYPE" = "file" ]; then
+	if [ -f $MIBPATH ]; then
+		# Create destination and all intermediate folders if needed
+		if [ ! -d "$DUMPFOLDER" ]; then
+			echo "Creating folder $DUMPFOLDER..."
+			mkdir -p $DUMPFOLDER
+		fi
+		echo "Copying to: $DUMPFOLDER, please wait..."
 		cp ${MIBPATH} ${DUMPFOLDER}
 		sync
 		echo "Copying is completed."
-		if [[ "$TOPIC" == "fec" || "$TOPIC" == "shadow" ]]; then
+		if [[ $TOPIC = "fec" || $TOPIC = "shadow" ]]; then
 			# Show the content of the copied file
-			echo "Content of the copied file:"
-			cat $DUMPFOLDER/*
+			echo "Content of the file:"
+			cat ${MIBPATH}
 		fi
 	else
-		echo "Cannot find: $MIBPATH, skipping..."
+		echo "ERROR: Cannot open $MIBPATH"
 	fi
+elif [ -d $MIBPATH ]; then
+	# Create destination and all intermediate folders if needed
+	if [ ! -d "$DUMPFOLDER" ]; then
+		echo "Creating folder $DUMPFOLDER..."
+		mkdir -p $DUMPFOLDER
+	fi
+	echo "Copying to $DUMPFOLDER, please wait..."
+	cp -r ${MIBPATH}/. ${DUMPFOLDER}
+	sync
+	echo "Copying is completed." 
 else
-	echo "ERROR: Cannot create " $DUMPFOLDER
+	echo "ERROR: Cannot open $MIBPATH"
 fi
 
 echo
-echo "Script execution is finished."
+echo "Script execution has finished."
 exit 0

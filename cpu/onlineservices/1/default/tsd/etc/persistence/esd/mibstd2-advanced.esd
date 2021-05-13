@@ -79,7 +79,11 @@ keyValue
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_fec.sh"
 	label 	"Copy FEC to unit"
-	
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/delete_fec.sh"
+	label 	"Delete FEC in unit"
+
 keyValue
     value   String sys 0x00000000 0
 	label 	""
@@ -92,3 +96,12 @@ script
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_stationdb.sh"
 	label 	"Restore radio station logo DB from backup"
+
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+	
+script
+	value 	sys 1 0x0100 "/bin/shutdown"
+	label 	"Reboot unit"

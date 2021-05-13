@@ -1,4 +1,4 @@
-# ----------------------------------------------------------
+# ------------------------------------------------------------------
 # --- Quick 'n' dirty startup_x.boot file extractor
 #
 # File:        	extract-startup_x.boot.py
@@ -7,7 +7,7 @@
 # Purpose:     	startup_x.boot file extractor
 # Comments:    	Usage: extract-startup_x.boot.py <filename> <outdir>
 # Changelog:	First edition
-# ----------------------------------------------------------
+# ------------------------------------------------------------------
 
 import os
 import struct
@@ -15,17 +15,21 @@ import sys
 import zlib
 
 if sys.version_info[0] < 3:
-    sys.exit("You need to run this with Python 3")
+    raw_input("You need to run this with Python 3!\nPress Enter to exit...")
+    sys.exit(1)
 
 try:
     from PIL import Image
 except ImportError:
-    sys.exit("  You are missing the PIL module!\n"
-             "  install it by running: \n"
-             "  pip install image")
+    print("  You are missing the PIL module!\n"
+          "  install it by running:\n"
+          "  pip install image")
+    input("\nPress Enter to exit...")
+    sys.exit(1)
 
 if len(sys.argv) != 3:
     print("usage: extract-startup_x.boot.py <filename> <outdir>")
+    input("\nPress Enter to exit...")
     sys.exit(1)
 
 out_dir = sys.argv[2]
@@ -79,7 +83,7 @@ while j < num_files:
     # create path
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
-    out_path = os.path.join(out_dir, 'img_%d.png' % j)
+    out_path = os.path.join(out_dir, 'img_' + str(j).zfill(2) + '.png')
 
     print("Extracting", out_path, width, height)
     im = Image.frombuffer('LA', (width, height), image_decompressed, 'raw', 'LA', 0, 1)

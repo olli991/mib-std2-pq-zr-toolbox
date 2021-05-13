@@ -2,7 +2,6 @@
 export TOPIC=mirrorlink
 export MIBPATH=/tsd/etc/mirrorlink/mirrorlink.config.common.xml
 export SDPATH=$TOPIC/mirrorlink.config.common.xml
-export FILE=mirrorlink.config.common.xml
 export TYPE="file"
 
 echo "This script will backup and patch Mirrorlink config file"
@@ -11,6 +10,7 @@ echo
 # Make Backup
 . /tsd/etc/persistence/esd/scripts/util_backup.sh
 
+FILE=mirrorlink.config.common.xml
 # Patch only if backup was successful
 if [ -f $BACKUPFOLDER/$FILE ]; then
 	# Check if it's already patched

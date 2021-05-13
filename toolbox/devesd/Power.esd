@@ -3,8 +3,8 @@ screen Power Main
 #######################
 #  Author:	Hille, Frank (extern, EECF/1)
 #  Email:	extern.frank.hille@volkswagen.de
-#  Date:	20131210
-#  Version:	8
+#  Date:	20141205
+#  Version:	10
 #######################
 
 #*	pwr_Enable timer
@@ -65,7 +65,7 @@ poll 3000
 slider
 value per 0x01f300fa 9
 limits absolute 0 3600
-label "BEM shutdown susp. (S)"
+label "BEM shutdown susp. (s)"
 poll 3000
 
 #*	pwr_time_phone_call_limitation

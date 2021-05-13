@@ -2,7 +2,6 @@
 export TOPIC=navigation
 export MIBPATH=/tsd/etc/nav/mibstd2_nav_target.ini 
 export SDPATH=$TOPIC/mibstd2_nav_target.ini 
-export FILE=mibstd2_nav_target.ini 
 export TYPE="file"
 
 echo "This script will backup and patch Navigation config file"
@@ -11,6 +10,7 @@ echo
 # Make Backup
 . /tsd/etc/persistence/esd/scripts/util_backup.sh
 
+FILE=mibstd2_nav_target.ini 
 # Patch only if backup was successful
 if [ -f $BACKUPFOLDER/$FILE ]; then
 	# Check if it's already patched

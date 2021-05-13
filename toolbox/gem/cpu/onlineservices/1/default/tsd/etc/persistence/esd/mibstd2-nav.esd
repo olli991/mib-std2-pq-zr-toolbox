@@ -37,7 +37,7 @@ keyValue
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_mapcfg.sh"
-	label 	"Copy custom navigation graphics"
+	label 	"Copy custom navigation graphics to unit"
 	
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_mapcfg.sh"

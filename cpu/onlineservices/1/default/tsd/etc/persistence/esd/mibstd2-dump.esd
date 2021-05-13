@@ -14,9 +14,9 @@ screen Dump MIBSTD2_Toolbox
 
 keyValue
     value   String sys 0x00000000 0
-    label   "Here you can dump(copy) different files from unit onto SD card/USB drive."
+    label   "Here you can dump (copy) different files from unit onto SD card/USB drive."
     poll    0
- 
+
 keyValue
     value   String sys 0x00000000 0
     label   ""
@@ -24,30 +24,30 @@ keyValue
 
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_all.sh"
-   label    "Dump all sections beside Developer files"
+   label    "Dump all sections (without the Developer files section)"
 
 keyValue
     value   String sys 0x00000000 0
     label   ""
     poll    0
-	
+
 #### Graphic files #####
 keyValue
     value   String sys 0x00000000 0
     label   "--- Graphic files  ---"
-    poll    0  	
-	
+    poll    0
+
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_skins.sh"
    label    "Skins"
-   
+
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_startanim.sh"
-   label    "Startup screens"	
-   
+   label    "Startup screens"
+
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_mapcfg.sh"
-   label    "Navigation graphic files"	
+   label    "Navigation graphic files"
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_stationdb.sh"
@@ -56,41 +56,41 @@ script
 keyValue
     value   String sys 0x00000000 0
     label   ""
-    poll    0	
+    poll    0
 
 #### Sound files #####
 keyValue
     value   String sys 0x00000000 0
     label   "--- Sound files ---"
-    poll    0  	
-	
+    poll    0
+
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_ringtones.sh"
-   label    "Ringtones"	
-   
+   label    "Ringtones"
+
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_sounds.sh"
-   label    "System sounds"	
+   label    "System sounds"
 
 keyValue
     value   String sys 0x00000000 0
     label   ""
     poll    0
-		
+
 #### System files #####
 keyValue
     value   String sys 0x00000000 0
     label   "--- System files ---"
-    poll    0  
-	
+    poll    0
+
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_swap.sh"
 	label 	"SWAP manager"
-	
+
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_swdl.sh"
 	label 	"SWDL manager"
-	
+
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_hmi.sh"
 	label 	"HMI"
@@ -102,18 +102,18 @@ script
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_shadow.sh"
 	label 	"/etc/shadow"
-	
+
 keyValue
     value   String sys 0x00000000 0
     label   ""
     poll    0
-	
+
 #### Developer files #####
 keyValue
     value   String sys 0x00000000 0
     label   "--- Developer's files (not included in dump all) ---"
-    poll    0 
-	
+    poll    0
+
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_mirrorlink.sh"
 	label 	"Mirrorlink config"
@@ -123,13 +123,21 @@ script
 	label 	"Navigation config"
 
 script
-	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_devesd.sh"
-	label 	"Green Engineering Menu screens *.esd files (engdefs)"	
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_esd.sh"
+	label 	"Green Engineering Menu screens *.esd files (engdefs)"
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_swdlhistory.sh"
 	label 	"SWDL history"
-	
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_pvault.sh"
+	label 	"Persistence vault"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_var.sh"
+	label 	"/tsd/var partition"
+
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_root.sh"
-	label 	"Root without /dev (will take hours!)"	
+	label 	"Root without /dev (will take hours!)"

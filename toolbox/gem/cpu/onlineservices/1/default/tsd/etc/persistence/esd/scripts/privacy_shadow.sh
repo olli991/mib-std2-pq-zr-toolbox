@@ -1,7 +1,7 @@
 #!/bin/ksh
 export TOPIC=shadow
 export MIBPATH=/etc/shadow
-export SDPATH=$TOPIC
+export SDPATH=$TOPIC/shadow
 export TYPE="file"
 
 echo "This script will replace shadow file"
@@ -17,6 +17,5 @@ echo
 . /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
 
 echo
-echo "Done. Please restart the unit"
-
+echo "Shadow file is replaced."
 exit 0

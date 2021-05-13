@@ -1,5 +1,5 @@
 #!/bin/ksh
-export TOPIC=devesd
+export TOPIC=greenmenu
 export MIBPATH=/tsd/etc/persistence/esd
 export SDPATH=$TOPIC
 export TYPE="folder"

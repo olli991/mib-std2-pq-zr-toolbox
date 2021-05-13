@@ -1,11 +1,11 @@
 ###########################
 screen CarMenuOperation Car
 ###########################
-#  Author:	?
+#  Author:	 ?
 #  Modified: May, Stefan (EECF/1)
-#  Email:	extern.stefan.may@volkswagen.de
-#  Date:	20130603
-#  Version:	2
+#  Email:	 extern.stefan.may@volkswagen.de
+#  Date:	 20160629
+#  Version:	 3
 ###########################
 
 # the values are from 0 to 31 because there are 5 bits information that can be coded
@@ -285,3 +285,12 @@ slider
    limits   absolute 0 31
    label    "Think blue trainer: "
 
+slider
+   value    per 27263191 255
+   limits   absolute 0 31
+   label    "Efficiency assist (PEA): "
+
+slider
+   value    per 27263191 256
+   limits   absolute 0 31
+   label    "Display configuration: "

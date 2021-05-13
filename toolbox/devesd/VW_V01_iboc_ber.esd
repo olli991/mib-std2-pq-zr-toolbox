@@ -2,6 +2,9 @@
 # Date:	15.10.2014
 # Version:	V03 (last change by Marc Hoffmann)
 # Based on: MIB_Engineering_Diag_Key_Value_Pairs_v151.xls (from Gen1)
+# Delphi: 01.10.2014 Initial file for High Scale project
+# Delphi: 24.11.2014 Added PIDS_BLK and BER Counters Reset
+# Delphi: 27.05.2015 Update GEM for AUDI requirements
 
 #######################
 screen BER iboc
@@ -27,4 +30,13 @@ label "BER Audio/Data"
 poll 700
 maxrows 2
 orientation horizontal
-columns ( "BER_P1   " String 120 ) ( "BER_P2   " String 120 ) ( "BER_P3   " String 120 ) ( "BER_P4  " String 120 ) ( "BER_PIDS  " String 120 )
+columns ( "BER_P1" String 112 ) ( "BER_P2" String 112 ) ( "BER_P3" String 112 ) ( "BER_P4" String 112 ) ( "BER_PIDS" String 112 ) ( "PIDS_BLK" String 112 )
+
+################
+#Reset Timers  #
+################
+
+choice
+value per 0x02c80122 100006
+label "BER Counters Reset"
+poll 1200

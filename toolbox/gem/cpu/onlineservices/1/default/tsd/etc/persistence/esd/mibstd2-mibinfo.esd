@@ -16,6 +16,15 @@ script
 	value 			sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/sysinfo.sh"
 	label 			"Show system info"
 
+script
+	value 			sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/save_sysinfo.sh"
+	label 			"Save system info to Toolbox drive"
+	
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0 
+
 table
 	content 		per 0x01c100e7 2
 	label 			"Hardware"

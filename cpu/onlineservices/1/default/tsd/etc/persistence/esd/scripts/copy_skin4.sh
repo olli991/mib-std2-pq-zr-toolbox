@@ -18,5 +18,4 @@ echo
 
 echo
 echo "Done. Please restart the unit."
-
 exit 0

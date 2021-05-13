@@ -1,10 +1,10 @@
 #######################
 screen "Backend" "Online Services"
 #######################
-# Autor:    Timo Brenningmeyer
-# Email:    extern.timo.brenningmeyer@volkswagen.de
-# Date:     20141028
-# Version:  09
+# Autor:    Clemens Wandt
+# Email:    extern.clemens.wandt@volkswagen.de
+# Date:     20151012
+# Version:  12
 #######################
 
 ### Backends ###
@@ -39,8 +39,13 @@ BIOSCtrl
    entry "Pre KUNDE SOP2" "pre-kunde-cai-dev-ca0c-mbbservices.audi-connect.de"
    entry "Live KUNDE SOP1" "er-mib2std-mbbservices.audi-connect.de"
    entry "Live KUNDE SOP2" "er-mib2std-ca0d-mbbservices.audi-connect.de"
-   entry "China Test" "dev-cai.vw-cn.mbb6.valtech.de"
-   entry "China TuI" "int-vw-mbbservices.audi-connect.cn"
+   entry "China TuI 3 22/15" "int-vw-mbbservices.audi-connect.cn"
+   entry "China Pre-Live 22/15" "pre-vw-mbbservices.audi-connect.cn"
+   entry "China Live 22/15" "vw-mbbservices.audi-connect.cn"
+   entry "China TuI 6 22/16" "int-vw-mbbservices03.audi-connect.cn"
+   entry "China Pre-Live Shadow" "pre-vw-mbbservices03.audi-connect.cn"
+   entry "China Live Shadow" "vw-mbbservices03.audi-connect.cn"
+   entry "China Live" "vw-mbbservices01.audi-connect.cn"
    poll 0
 
 ### Host ##

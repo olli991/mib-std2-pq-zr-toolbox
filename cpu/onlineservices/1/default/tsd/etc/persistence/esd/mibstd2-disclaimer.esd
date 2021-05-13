@@ -64,5 +64,5 @@ keyValue
     
 keyValue
     value   String sys 0x00000000 0
-    label   "Based on the initial idea from YOX, build and modified by Olli with help from Jille."
+    label   "Based on the initial idea from YOX, rebuild and modified by Olli, lprot and Jille."
     poll    0

@@ -7,27 +7,27 @@
 # Locate Toolbox drive
 . /tsd/etc/persistence/esd/scripts/util_checksd.sh
 
-export BACKUPFOLDER=$VOLUME/backup/$SDPATH
+export BACKUPFOLDER=$VOLUME/backup/$TOPIC
 
-echo "Backup type: $TYPE"
+echo "Making $TYPE backup..."
 echo "Source: $MIBPATH"
 echo "Destination: $BACKUPFOLDER"
 
-if [ "$TYPE" == "folder" ]; then
+if [ "$TYPE" = "folder" ]; then
 	if [ -d "${BACKUPFOLDER}" ]; then
 		echo "Backup already exists. Skipping..."
 	else
-		echo "Making backup. This can take some time, please wait..."
+		echo "Copying files, please wait..."
 		mkdir -p ${BACKUPFOLDER}
-		cp -r ${MIBPATH}/* ${BACKUPFOLDER}
+		cp -r ${MIBPATH}/. ${BACKUPFOLDER}
 		echo "Backup is done."
 	fi
 else
-	if [ -f "${BACKUPFOLDER}" ]; then
+	if [ -f "$VOLUME/backup/$SDPATH" ]; then
 		echo "Backup already exists. Skipping..."
 	else
-		echo "Making backup. This can take some time, please wait..."
-		mkdir -p $VOLUME/backup/$TOPIC
+		echo "Copying file, please wait..."
+		mkdir -p ${BACKUPFOLDER}
 		cp ${MIBPATH} ${BACKUPFOLDER}
 		echo "Backup is done."
 	fi

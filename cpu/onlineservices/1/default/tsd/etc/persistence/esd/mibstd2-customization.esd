@@ -14,17 +14,17 @@ screen Customization MIBSTD2_Toolbox
 
 keyValue
     value   String sys 0x00000000 0
-    label   "Instructions: Make sure to first use the 'dump' menu to dump files from the"
-	poll 	0
-	
-keyValue
-    value   String sys 0x00000000 0
-    label   "unit. Modify those files and use this screen to import them. Place the files"
+    label   "INSTRUCTION: Use 'dump' menu to copy files from the unit onto Toolbox drive."
 	poll 	0
 
 keyValue
     value   String sys 0x00000000 0
-    label   "you want to import in the corresponing folder on SD inside /custom/."
+    label   "Modify those files, put to corresponding /custom subfolder and use this menu"
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "to copy (import) them back to unit."
 	poll 	0
 
 keyValue

@@ -1,10 +1,10 @@
 #!/bin/ksh
-export TOPIC=filesystem
+export TOPIC=root
 export MIBPATH=/
 export SDPATH=$TOPIC
 export TYPE="folder"
 
-echo "This script will dump the whole filesystem without /dev to SD card or USB drive"
+echo "This script will dump root filesystem without /dev to SD card or USB drive"
 echo
 
 # Locate Toolbox drive

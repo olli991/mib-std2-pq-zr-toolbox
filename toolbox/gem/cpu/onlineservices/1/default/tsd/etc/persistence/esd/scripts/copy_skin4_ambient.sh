@@ -17,6 +17,5 @@ echo
 . /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
 
 echo
-echo "Done. Please restart the unit"
-
+echo "Done. Please restart the unit."
 exit 0

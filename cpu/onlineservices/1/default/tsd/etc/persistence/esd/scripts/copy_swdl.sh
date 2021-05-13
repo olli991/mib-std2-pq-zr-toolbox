@@ -5,6 +5,7 @@ export SDPATH=patch/$TOPIC/tsd.mibstd2.system.swdownload
 export TYPE="file"
 
 echo "This script will copy tsd.mibstd2.system.swdownload"
+echo
 
 # Make backup folder
 . /tsd/etc/persistence/esd/scripts/util_backup.sh
@@ -16,6 +17,5 @@ echo "This script will copy tsd.mibstd2.system.swdownload"
 . /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
 
 echo
-echo "Done. Please restart the unit"
-
+echo "Done. Please restart the unit."
 exit 0
