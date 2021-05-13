@@ -87,8 +87,8 @@ FileSize = "893"
 Checksum = "e385ae5216889ff076919a6e04d69cedfaabc5cb"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_devesd.sh"
-FileSize = "924"
-Checksum = "f436a4debbc8f95b794ab0240c7ae0a432b5084e"
+FileSize = "945"
+Checksum = "9fd01474380544563736b8bf2efc7fb4151af3d1"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_esd.sh"
 FileSize = "499"

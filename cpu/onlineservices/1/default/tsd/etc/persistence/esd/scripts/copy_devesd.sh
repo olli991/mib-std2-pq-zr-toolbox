@@ -12,6 +12,7 @@ echo
 
 # Copy file(s) to unit
 export TOPIC=devesd
+export SDPATH=$TOPIC
 . /tsd/etc/persistence/esd/scripts/util_copy.sh
 
 if [ -f $MIBPATH/VW_V01_Debugging.esd ]; then
