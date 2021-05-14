@@ -13,7 +13,7 @@ echo
 . /tsd/etc/persistence/esd/scripts/util_info.sh
 
 OLDFILES=$VOLUME/backup/$VERSION/$SERIAL/$SDPATH
-echo "Source: $OLDFILES"
+echo "Source: backup/$VERSION/$SERIAL/$SDPATH"
 echo "Destination: $MIBPATH"
 
 if [ "$TYPE" = "folder" ]; then

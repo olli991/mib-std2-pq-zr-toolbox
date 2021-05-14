@@ -14,7 +14,7 @@ export BACKUPFOLDER=$VOLUME/backup/$VERSION/$SERIAL/$TOPIC
 
 echo "Making $TYPE backup..."
 echo "Source: $MIBPATH"
-echo "Destination: $BACKUPFOLDER"
+echo "Destination: backup/$VERSION/$SERIAL/$TOPIC"
 
 if [ "$TYPE" = "folder" ]; then
 	if [ -d "${BACKUPFOLDER}" ]; then

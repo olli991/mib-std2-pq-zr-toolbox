@@ -15,7 +15,6 @@ echo >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 echo "*********************************************" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 echo "****************** SLOGINFO *****************" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 echo "*********************************************" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
-echo "Time                 Sev Major Minor Args" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 sloginfo -t >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 
 sync

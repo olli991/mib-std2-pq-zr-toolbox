@@ -12,9 +12,9 @@ set -A RES $(in32 ${addr})
 gpio5=$((16#${RES[2]}))
 hwVersion=$((${gpio5}&(0x1f)))
 hwVariant=$((((${gpio5}&(1<<5))|((${gpio5}&(0x3f<<10))>>4))>>5))
-swdlVariant=$(awk '/Variant/{if ($NF) print $NF;}' /tsd/var/swdownload/.swdownload.conf 2>/dev/null)
-swdlHwVersion=$(awk '/HwVersion/{if ($NF) print $NF;}' /tsd/var/swdownload/.swdownload.conf 2>/dev/null)
-echo "hwVersion: $hwVersion hwVariant: $hwVariant SWDL variant: $swdlVariant SWDL ver: $swdlHwVersion" 
+swdlVariant=$(awk -F "\015| " '/Variant/{print $3}' /tsd/var/swdownload/.swdownload.conf 2>/dev/null)
+swdlHwVersion=$(awk -F "\015| " '/HwVersion/{print $3}' /tsd/var/swdownload/.swdownload.conf 2>/dev/null)
+echo "hwVersion: $hwVersion hwVariant: $hwVariant SWDL hwVersion: $swdlHwVersion SWDL Variant: $swdlVariant" 
 
 GEM_SIZE=$(ls -la '/tsd/hmi/HMI/jar/GEM.jar' | awk '{print $5}' 2>/dev/null)
 GEM_VERSION="Unknown, size $GEM_SIZE"

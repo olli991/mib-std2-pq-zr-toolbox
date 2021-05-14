@@ -25,7 +25,9 @@ rm -f /tsd/etc/persistence/esd/mib2std_yox.esd
 rm -rf /tsd/scripts
 
 # Mount system partition in read/only mode
-. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
+sync
+mount -t qnx6 -o remount,ro /dev/hd0t177 /
+echo "System partition is remounted in read/only mode"
 
 echo
 echo "Uninstallation is done. Please reopen Green Engineering Menu!"
