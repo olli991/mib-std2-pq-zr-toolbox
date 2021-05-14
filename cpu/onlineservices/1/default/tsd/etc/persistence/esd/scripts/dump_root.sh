@@ -10,8 +10,11 @@ echo
 # Locate Toolbox drive
 . /tsd/etc/persistence/esd/scripts/util_checksd.sh
 
+# Include info utility
+. /tsd/etc/persistence/esd/scripts/util_info.sh
+
 #Make dump folder
-DUMPFOLDER=$VOLUME/dump/$SDPATH
+DUMPFOLDER=$VOLUME/dump/$VERSION/$SERIAL/$SDPATH
 
 #Make dump folder if needed
 if [ ! -d "$DUMPFOLDER" ]; then

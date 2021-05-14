@@ -12,11 +12,14 @@ echo
 # Mount system in read/write mode
 . /tsd/etc/persistence/esd/scripts/util_mount.sh
 
+# Include info utility
+. /tsd/etc/persistence/esd/scripts/util_info.sh
+
 MIBPATH=/tsd/hmi/Resources
 
 # Restore file(s) to unit
 echo "Copying all skin files from backup folder to the unit, please wait..."
-for i in $VOLUME/backup/skins/skin*; do
+for i in $VOLUME/backup/$VERSION/$SERIAL/skins/skin*; do
 	#Extract skin folder name
 	FOLDER=${i##*/}
 	if [ -f $i/images.mcf ]; then

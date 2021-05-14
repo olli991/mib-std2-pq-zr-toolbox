@@ -231,8 +231,8 @@ FileSize = "210"
 Checksum = "be30415b5212da16947c8d386c1fb10069053411"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_root.sh"
-FileSize = "1139"
-Checksum = "3c5e7aa3146e104d42ed4cb8b4bef23826a55f0c"
+FileSize = "1228"
+Checksum = "c4bb908f90a393d1ced4dd1828799fd15345cb04"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_shadow.sh"
 FileSize = "196"
@@ -339,8 +339,8 @@ FileSize = "212"
 Checksum = "42d335b7b68a6699527edfc91ba67a4b0b5366e1"
 
 FileName = "/tsd/etc/persistence/esd/scripts/restore_skins.sh"
-FileSize = "1195"
-Checksum = "c95a59b3b7872751fc9d9c4e2d71eed45170910e"
+FileSize = "1284"
+Checksum = "78c2f1f96046bc9f4a1f7e6231d8fd44d925ec4a"
 
 FileName = "/tsd/etc/persistence/esd/scripts/restore_sounds.sh"
 FileSize = "223"
@@ -359,16 +359,16 @@ FileSize = "289"
 Checksum = "e38bdbe91223b5e7f80cbb881affbacbb23dbaac"
 
 FileName = "/tsd/etc/persistence/esd/scripts/save_sysinfo.sh"
-FileSize = "677"
-Checksum = "8bb2a61fe3e3dcc51a8f230d94c2d6b5b899b962"
+FileSize = "869"
+Checksum = "a658228ddb160644b287ff00370a8fbafd84158d"
 
 FileName = "/tsd/etc/persistence/esd/scripts/sysinfo.sh"
 FileSize = "2241"
 Checksum = "6a12eb4b3718973da088de9e7fb266c53a057398"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_backup.sh"
-FileSize = "868"
-Checksum = "265e3fa692404fbc0ae842becede12d867450619"
+FileSize = "957"
+Checksum = "4ae4447481236d6ec92564d4dc4a79d388c5791d"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_checksd.sh"
 FileSize = "461"
@@ -379,8 +379,12 @@ FileSize = "1085"
 Checksum = "1c896a3f9d5794f7366586032fbaf7c1e08c8656"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_dump.sh"
-FileSize = "1200"
-Checksum = "8cc4057bb85071b403b74ec4867c738b29e4b3f8"
+FileSize = "1289"
+Checksum = "3f9328bb0f167df6b9e7c7c58fac31e6f4454c57"
+
+FileName = "/tsd/etc/persistence/esd/scripts/util_info.sh"
+FileSize = "1631"
+Checksum = "554dc081b8ffa62d902ccae1a6344103334ee0c9"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_mount.sh"
 FileSize = "238"
@@ -391,8 +395,8 @@ FileSize = "245"
 Checksum = "d35ea99a7246c248564806c6f87fa7a5588f5d61"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_restore.sh"
-FileSize = "2094"
-Checksum = "dfcbf0b6f3fa3ba1f9ff2f8a6067ed101b0afd3c"
+FileSize = "2182"
+Checksum = "1277c752e0b0c819e53c1aa4fa993ffa6536aafe"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_uninstall.sh"
 FileSize = "966"

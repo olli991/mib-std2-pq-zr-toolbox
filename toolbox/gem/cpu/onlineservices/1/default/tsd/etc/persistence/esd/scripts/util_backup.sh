@@ -7,7 +7,10 @@
 # Locate Toolbox drive
 . /tsd/etc/persistence/esd/scripts/util_checksd.sh
 
-export BACKUPFOLDER=$VOLUME/backup/$TOPIC
+# Include info utility
+. /tsd/etc/persistence/esd/scripts/util_info.sh
+
+export BACKUPFOLDER=$VOLUME/backup/$VERSION/$SERIAL/$TOPIC
 
 echo "Making $TYPE backup..."
 echo "Source: $MIBPATH"

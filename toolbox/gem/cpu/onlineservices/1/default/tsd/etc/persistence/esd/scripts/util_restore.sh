@@ -9,8 +9,10 @@ echo
 # Locate Toolbox drive
 . /tsd/etc/persistence/esd/scripts/util_checksd.sh
 
-OLDFILES=$VOLUME/backup/$SDPATH
+# Include info utility
+. /tsd/etc/persistence/esd/scripts/util_info.sh
 
+OLDFILES=$VOLUME/backup/$VERSION/$SERIAL/$SDPATH
 echo "Source: $OLDFILES"
 echo "Destination: $MIBPATH"
 

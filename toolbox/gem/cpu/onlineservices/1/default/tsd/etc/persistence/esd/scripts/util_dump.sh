@@ -7,7 +7,10 @@ echo
 # Locate Toolbox drive
 . /tsd/etc/persistence/esd/scripts/util_checksd.sh
 
-DUMPFOLDER=$VOLUME/dump/$SDPATH
+# Include info utility
+. /tsd/etc/persistence/esd/scripts/util_info.sh
+
+DUMPFOLDER=$VOLUME/dump/$VERSION/$SERIAL/$SDPATH
 echo "Source $TYPE: $MIBPATH"
 echo "Destination: $DUMPFOLDER"
 
