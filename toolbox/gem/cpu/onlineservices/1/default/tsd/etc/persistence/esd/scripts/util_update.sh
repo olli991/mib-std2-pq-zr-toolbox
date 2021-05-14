@@ -35,10 +35,10 @@ rm -rf /tsd/etc/persistence/esd/scripts
 # Copy toolbox screens and scripts
 echo "Copying toolbox Green Engineering Menu screens and scripts..."
 cp -r $VOLUME$TOOLBOX_FOLDER/* /tsd/etc/persistence/esd
-echo "Done..."
+echo "Done."
 echo "Setting execution attributes to scripts..."
 chmod a+rwx /tsd/etc/persistence/esd/scripts/*.sh
-echo "Done..."
+echo "Done."
 
 sync
 mount -t qnx6 -o remount,ro /dev/hd0t177 /

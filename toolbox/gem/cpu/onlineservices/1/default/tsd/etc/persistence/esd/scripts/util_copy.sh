@@ -18,24 +18,24 @@ if [ "$TYPE" = "folder" ]; then
 	if [ -d ${NEWFILES} ]; then
 		# Mount system as read/write
 		. /tsd/etc/persistence/esd/scripts/util_mount.sh
-		echo "Copying folder, please wait"
+		echo "Copying folder, please wait..."
 		cp -rf ${NEWFILES}/. ${MIBPATH}
 	else
-		echo "No files found"
+		echo "ERROR: No files found"
 		exit 0
 	fi	
 else
 	if [ -f ${NEWFILES} ]; then
 		# Mount system as read/write
 		. /tsd/etc/persistence/esd/scripts/util_mount.sh
-		echo "Copying file, please wait"
+		echo "Copying file, please wait..."
 		cp -f ${NEWFILES} ${MIBPATH}
 		if [[ $TOPIC = "hmi" || $TOPIC = "mirrorlink" || $TOPIC = "navigation" || $TOPIC = "swap" || $TOPIC = "swdl" || $TOPIC = "shadow" ]]; then
 			echo "Setting attributes..."
 			chmod 777 ${MIBPATH}
 		fi
 	else
-		echo "No files found"
+		echo "ERROR: No files found"
 		exit 0
 	fi
 fi 

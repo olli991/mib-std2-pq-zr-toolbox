@@ -30,17 +30,17 @@ if [ "$TYPE" = "folder" ]; then
 		if [ "$TOPIC" = "greenmenu" ]; then
 			echo "Copying toolbox Green Engineering Menu screens and scripts..."
 			cp -rf $VOLUME/cpu/onlineservices/1/default/tsd/etc/persistence/esd/* /tsd/etc/persistence/esd
-			echo "Copying of toolbox Green Engineering Menu screens and scripts is done."
+			echo "Done."
 			echo "Setting execution attributes to scripts..."
 			chmod a+rwx /tsd/etc/persistence/esd/scripts/*.sh
-			echo "Setting execution attributes is done." 
+			echo "Done." 
 		fi
 		
 		# Mount system partition in read/only mode
 		. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh		
 	else
 		echo
-		echo "ERROR: backup is not found"
+		echo "ERROR: Backup is not found"
 		exit 0
 	fi	
 else
@@ -59,7 +59,7 @@ else
 		. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
 	else
 		echo
-		echo "ERROR: backup is not found"
+		echo "ERROR: Backup is not found"
 		exit 0
 	fi
 fi 

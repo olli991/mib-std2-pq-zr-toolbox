@@ -38,11 +38,11 @@ rm -rf /tsd/etc/persistence/esd/scripts
 # Copy toolbox screens and scripts
 echo "Copying toolbox Green Engineering Menu screens and scripts..."
 cp -r $VOLUME$TOOLBOX_FOLDER/* /tsd/etc/persistence/esd
-echo "Copying of toolbox Green Engineering Menu screens and scripts is done."
+echo "Done."
 
 echo "Setting execution attributes to scripts..."
 chmod a+rwx /tsd/etc/persistence/esd/scripts/*.sh
-echo "Setting execution attributes to scripts is done."
+echo "Done."
 
 # Upgrage GEM 3.4/3.5 to 4.3 if found
 GEM_SIZE=$(ls -la '/tsd/hmi/HMI/jar/GEM.jar' | awk '{print $5}' 2>/dev/null)

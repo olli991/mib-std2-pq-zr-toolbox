@@ -21,7 +21,7 @@ if [ "$TYPE" = "file" ]; then
 			echo "Creating folder $DUMPFOLDER..."
 			mkdir -p $DUMPFOLDER
 		fi
-		echo "Copying to: $DUMPFOLDER, please wait..."
+		echo "Copying, please wait..."
 		cp ${MIBPATH} ${DUMPFOLDER}
 		sync
 		echo "Copying is completed."
@@ -39,7 +39,7 @@ elif [ -d $MIBPATH ]; then
 		echo "Creating folder $DUMPFOLDER..."
 		mkdir -p $DUMPFOLDER
 	fi
-	echo "Copying to $DUMPFOLDER, please wait..."
+	echo "Copying, please wait..."
 	cp -r ${MIBPATH}/. ${DUMPFOLDER}
 	sync
 	echo "Copying is completed." 
