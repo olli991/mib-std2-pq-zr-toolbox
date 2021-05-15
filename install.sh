@@ -1,6 +1,6 @@
 #!/bin/ksh
 # This script installs esd files and scripts of the toolbox
-# Coded by Olli
+# Coded by Olli and lprot
 
 echo "This script will inject mibstd2_toolbox to Green Engineering Menu"
 echo
