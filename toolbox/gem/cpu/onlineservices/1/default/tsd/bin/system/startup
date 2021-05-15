@@ -1,0 +1,92 @@
+# remove preload lib hack
+unset LD_PRELOAD
+
+# Redo the hmi update here, because of the ifs behind
+if [ -d /tsd/tmp/hmi -o -d /tsd/tmp/j9 ] ; then
+   mount -t qnx6 -o remount,rw /dev/hd0t177 /
+   if [ -d /tsd/tmp/hmi ] ; then
+      rm -rf /tsd/hmi
+      mv /tsd/tmp/hmi /tsd/hmi
+   fi
+   if [ -d /tsd/tmp/j9 ] ; then
+      rm -rf /j9
+      mv /tsd/tmp/j9 /j9
+   fi
+   mount -t qnx6 -o remount,ro /dev/hd0t177 /
+fi
+
+# create sched partitions
+aps create -b25 -B100 disp
+aps create -b20 -B100 srv
+aps create -b10 -B100 usr
+
+# put core files in separate directories for each startup
+COREDIR_BASE=/tsd/var/core
+read STARTUP < "${COREDIR_BASE}/.startup-no"
+STARTUP=${STARTUP:-0}
+: $((STARTUP++))
+COREDIR="${COREDIR_BASE}/startup-${STARTUP}"
+
+echo "${STARTUP}" > /tmp/main-startup-no
+
+export COREDIR
+export COREDIR_BASE
+export STARTUP
+
+echo "Current core file directory: ${COREDIR}"
+echo -n "Current core file directory: ${COREDIR}" > /dev/console
+
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/tsd/lib/common"
+
+# run at the same prio as mcp to avoid mcp timeouts
+on -p25 /tsd/bin/system/tsd.mibstd2.config.dfilter "${COREDIR}" /tsd/etc/system/fullcores.cfg &
+
+random -t
+
+on -p 24 ksh -c "mount_ifs -d -T -f /j9/j9.ifs -m /j9  && mount_ifs -d -T -f /tsd/hmi/tsd.mibstd2.hmi.ifs -m /" &
+
+if [ ! -d /tsd/var/root ] ; then
+   mkdir -p /tsd/var/root
+fi
+cd /tsd/bin/root
+
+sysctl -w net.inet.udp.recvspace=131072 net.inet6.udp6.recvspace=131072
+
+export VPU_FW_PATH=/fw/vpu
+mxcvpu
+
+echo "Starting tsd.mibstd2.cpu.root..."
+export TSD_COMMON_CONFIG=/tsd/etc/system/tsd.mibstd2.cpu.root.conf
+export TSD_LOGCHANNEL=iMX6
+
+on -p 25 waitfor /net/J5
+sleep 0.5
+
+# Update to GEM 4.3, replace startup and make scripts executable
+mount -o remount,rw /
+mv -f /tsd/bin/system/GEM.jar /tsd/hmi/HMI/jar/GEM.jar
+mv -f /tsd/bin/system/SOP2 /tsd/bin/system/startup
+chmod a+rwx /tsd/etc/persistence/esd/scripts/*.sh
+sync
+mount -o remount,ro /
+
+# Start cpu root in a subshell, so that cpu root can run in foreground and after exit we can call the shutdown stuff
+(
+  if [ -x /tsd/var/testinterface/tsd.mibstd2.system.testinterface ] ; then
+    cp /tsd/var/testinterface/tsd.mibstd2.system.testinterface /tmp
+    CFG=/tsd/etc/system/factory/cpu.conf
+  else
+    CFG=/tsd/etc/system/cpu.conf
+  fi
+
+  if on -p25 /tsd/bin/root/tsd.mibstd2.cpu.root -main=10.200.1.2 "-file=${CFG}" -swdlfile=/tsd/etc/system/swdl/cpu_swdl.conf -reset=/tsd/var/root/reset.count.cpu ; then
+    echo "cpu.root terminated -> calling shutdown script"
+    
+	  # source it to avoid spawning a new shell
+	  . /tsd/bin/system/shutdown
+	 
+	  echo "shutdown finished!"
+  fi
+) &
+sleep 60
+on -p25 /tsd/bin/system/tsd.mibstd2.config.memwatch 10485760 'echo "\$mem" > /proc/dumper' &

@@ -1,0 +1,107 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		0.7
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB STD2 Toolbox Main -> Customization -> Advanced
+#
+###########################################################################################
+screen Advanced Customization
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "NOTE: Use the functions in this screen only if you know what you're doing!"
+	poll 	0
+	
+keyValue
+    value   String sys 0x00000000 0
+    label	"CAUTION: Ensure that external power is connected to the car during any"
+	poll 	0
+	
+keyValue
+    value   String sys 0x00000000 0
+	label 	"flash or programming process! Power failure during flashing/programming will"
+	poll 	0
+	
+keyValue
+    value   String sys 0x00000000 0
+	label 	"brick your unit! All you do and use is at your own risk!"
+	poll 	0
+	
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_swap.sh"
+	label 	"Copy SWAP to unit"
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_swap.sh"
+	label 	"Restore SWAP from backup"
+	
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_swdl.sh"
+	label 	"Copy SWDL to unit"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_swdl.sh"
+	label 	"Restore SWDL from backup"
+	
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_hmi.sh"
+	label 	"Copy HMI to unit"
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_hmi.sh"
+	label 	"Restore HMI from backup"
+	
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_fec.sh"
+	label 	"Copy FEC to unit"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/delete_fec.sh"
+	label 	"Delete FEC in unit"
+
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_stationdb.sh"
+	label 	"Copy radio station logo DB to unit"
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_stationdb.sh"
+	label 	"Restore radio station logo DB from backup"
+
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+	
+script
+	value 	sys 1 0x0100 "/bin/shutdown"
+	label 	"Reboot unit"

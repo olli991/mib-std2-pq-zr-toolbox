@@ -1,0 +1,54 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		0.7
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB STD2 Toolbox Main -> Customization -> Sounds
+#
+###########################################################################################
+screen Sounds Customization
+
+keyValue
+    value	String sys 0x00000000 0
+    label   "This screen can be used to replace ringtones and sounds of the MIB."
+    poll    0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "*.wav should be put into corresponding subfolder on the Toolbox drive."
+    poll    0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Reboot after installing new files."
+    poll    0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0
+
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_ringtones.sh"
+   label    "Copy new ringtones from /custom/ringtones to unit"
+
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_ringtones.sh"
+   label    "Restore ringtones from backup"
+
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0
+
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_sounds.sh"
+   label    "Copy new system sounds from /custom/sounds to unit"
+
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_sounds.sh"
+   label    "Restore systemsounds from backup"

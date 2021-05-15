@@ -1,0 +1,36 @@
+# Author:	Jorge Mariano
+# Date:	27.08.2012
+# Version:	V02
+# Based on: MIB_Engineering_Diag_Key_Value_Pairs_v151.xls
+
+#######################
+screen ARTIST_EXPERIENCE iboc
+#######################
+
+###################
+#Artist Experience#
+###################
+
+table
+content per 0x02c80122 146
+label "ID3 Commercial Frame"
+poll 700
+maxrows 1
+orientation vertical
+columns ( "PRICE" String 180 ) ( "VALID" String 180 ) ( "CONTACT" String 180 ) ( "RECEIVED" String 180 ) ( "SELLER" String 180 ) ( "DESCRIPTION" String 180 )
+
+table
+content per 0x02c80122 147
+label "ID3 XHDR Frame"
+poll 700
+maxrows 1
+orientation horizontal
+columns ( "XHDR_DATA" int 70 ) ( "LOT_ID" int 40 ) ( "MIME_HASH" int 70 ) ( "BLANK_DISP" int 70 ) ( "FLUSH_MEM" int 70 )
+
+table
+content per 0x02c80122 148
+label "SIG Data - Syncronized Image"
+poll 700
+maxrows 1
+orientation horizontal
+columns ( "SYNC_IMAGE_DATA" int 110 ) ( "LOT_MIME_TYPE" String 95 ) ( "IMAGE_SIZE(kB)" int 90 ) ( "LOT_ID" int 40 )

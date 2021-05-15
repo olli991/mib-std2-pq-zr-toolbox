@@ -1,4 +1,4 @@
-# ----------------------------------------------------------
+# -------------------------------------------------------------------------------------
 # --- Quick 'n' dirty startup_x.boot file compressor
 #
 # File:        compress-startup_x.boot.py
@@ -7,30 +7,34 @@
 # Purpose:     Compress MIB2 images in mcf file
 # Comments:    Usage: compress-startup_x.boot.py <original-file> <new-file> <imagesdir>
 # Changelog:   v1:      initial version
-# ----------------------------------------------------------
+# -------------------------------------------------------------------------------------
 
 import os
 import struct
 import sys
 import zlib
-
 if sys.version_info[0] < 3:
-    sys.exit("You need to run this with Python 3")
+    raw_input("You need to run this with Python 3!\nPress Enter to exit...")
+    sys.exit(1)
 
 try:
     from PIL import Image
 except ImportError:
-    sys.exit("  You are missing the PIL module!\n"
-             "  install it by running: \n"
-             "  pip install image")
+    print("  You are missing the PIL module!\n"
+          "  install it by running:\n"
+          "  pip install image")
+    input("\nPress Enter to exit...")
+    sys.exit(1)
 
 if len(sys.argv) != 4:
     print("Usage: compress-startup_x.boot.py <original-file> <new-file> <imagesdir>")
+    input("\nPress Enter to exit...")
     sys.exit(1)
 
 out_dir = sys.argv[3]
 if not os.path.exists(out_dir):
     print("Image folder does not exist.")
+    input("\nPress Enter to exit...")
     sys.exit(1)
 
 data = open(sys.argv[1], 'rb').read()
@@ -72,11 +76,12 @@ data_block_size_new = 0
 # loop through all the images and pack them into the cff
 for j in range(0, int(num_files)):
     offset = offset_new
-    fileimage_dir = os.path.join(out_dir, 'img_%d.png' % j)
+    fileimage_dir = os.path.join(out_dir, 'img_' + str(j).zfill(2) + '.png')
 
     print("importing img_%d.png to %s" % (j, sys.argv[2]))
     if not os.path.exists(fileimage_dir):
         print("file %s does not exist." % filepath_original.decode("utf-8"))
+        input("\nPress Enter to exit...")
         sys.exit(1)
     im = Image.open(fileimage_dir)
     if im.mode != "LA":

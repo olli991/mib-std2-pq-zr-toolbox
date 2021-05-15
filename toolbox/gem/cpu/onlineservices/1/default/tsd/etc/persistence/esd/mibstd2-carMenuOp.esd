@@ -1,0 +1,310 @@
+###########################################################################################
+#
+# Custom Green Engineering Menu screen
+# Author:       Olli
+# Version:      0.7
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB STD2 Toolbox Main -> Customization -> Adaptation -> CarMenuOperations
+#
+###########################################################################################
+screen  Car_Menu_Operations Adaptation
+
+# the values are from 0 to 31 because there are 5 bits information that can be coded
+
+slider
+   value    per 27263191 200
+   limits	absolute 0 31
+   label    "Adaptive cruise control (ACC): "
+
+slider
+   value    per 27263191 201
+   limits	absolute 0 31
+   label    "Interior light: "
+
+slider
+   value    per 27263191 202
+   limits	absolute 0 31
+   label    "Parking system (OPS/PDC): "
+
+slider
+   value    per 27263191 203
+   limits	absolute 0 31
+   label    "Front assist (AWV): "
+
+slider
+   value    per 27263191 204
+   limits	absolute 0 31
+   label    "Lane dep. warning (LDW/HCA): "
+
+slider
+   value    per 27263191 205
+   limits	absolute 0 31
+   label    "Lane change assist (SWA): "
+
+slider
+   value    per 27263191 206
+   limits	absolute 0 31
+   label    "Exterior light: "
+
+slider
+   value    per 27263191 207
+   limits	absolute 0 31
+   label    "Window: "
+
+slider
+   value    per 27263191 208
+   limits	absolute 0 31
+   label    "Air conditioning: "
+
+slider
+   value    per 27263191 209
+   limits	absolute 0 31
+   label    "Auxiliray heating: "
+
+slider
+   value    per 27263191 210
+   limits	absolute 0 31
+   label    "On-board computer (BCMFA): "
+
+slider
+   value    per 27263191 211
+   limits	absolute 0 31
+   label    "Tyre pressure control (RKA/RDK): "
+
+slider
+   value    per 27263191 212
+   limits	absolute 0 31
+   label    "Wiper: "
+
+slider
+   value    per 27263191 213
+   limits	absolute 0 31
+   label    "Service interval (SIA) : "
+
+slider
+   value    per 27263191 214
+   limits	absolute 0 31
+   label    "Seat memory: "
+
+slider
+   value    per 27263191 215
+   limits	absolute 0 31
+   label    "Central locking (ZV): "
+
+slider
+   value    per 27263191 216
+   limits	absolute 0 31
+   label    "Compass: "
+
+slider
+   value    per 27263191 217
+   limits	absolute 0 31
+   label    "FPA (Charisma): "
+
+slider
+   value    per 27263191 218
+   limits	absolute 0 31
+   label    "Oil level: "
+
+slider
+   value    per 27263191 219
+   limits	absolute 0 31
+   label    "Vehicle ID number (VIN): "
+
+slider
+   value    per 27263191 220
+   limits	absolute 0 31
+   label    "Clock: "
+
+slider
+   value    per 27263191 221
+   limits	absolute 0 31
+   label    "Air Suspension: "
+
+slider
+   value    per 27263191 222
+   limits	absolute 0 31
+   label    "Headup display (HUD): "
+
+slider
+   value    per 27263191 223
+   limits	absolute 0 31
+   label    "Unitmaster (ZEM): "
+
+slider
+   value    per 27263191 224
+   limits	absolute 0 31
+   label    "Hybrid: "
+
+slider
+   value    per 27263191 225
+   limits	absolute 0 31
+   label    "Uni. garage door opener (UGDO): "
+
+slider
+   value    per 27263191 226
+   limits	 absolute 0 31
+   label    "Nightvision: "
+
+slider
+   value    per 27263191 227
+   limits	absolute 0 31
+   label    "Sideview camera: "
+
+slider
+   value    per 27263191 228
+   limits	absolute 0 31
+   label    "Reversible belt tightener (RGS): "
+
+slider
+   value    per 27263191 229
+   limits	 absolute 0 31
+   label    "MFL-joker-key: "
+
+slider
+   value    per 27263191 230
+   limits	 absolute 0 31
+   label    "Traffic sign recognition (VZE): "
+
+slider
+   value    per 27263191 231
+   limits	 absolute 0 31
+   label    "Attention ident: "
+
+slider
+   value    per 27263191 232
+   limits	 absolute 0 31
+   label    "Adaptive keys: "
+
+slider
+   value    per 27263191 233
+   limits	absolute 0 31
+   label    "Mirror: "
+
+slider
+   value    per 27263191 234
+   limits	absolute 0 31
+   label    "Driving school: "  
+
+slider
+   value    per 27263191 235
+   limits	absolute 0 31
+   label    "Weariness recognition (MKE): "
+
+slider
+   value    per 27263191 236
+   limits	absolute 0 31
+   label    "Think-blue (BCmE): "
+
+slider
+   value    per 27263191 237
+   limits	absolute 0 31
+   label    "Eco rating: "
+
+slider
+   value    per 27263191 238
+   limits	 absolute 0 31
+   label    "Brake: "
+
+slider
+   value    per 27263191 239
+   limits	 absolute 0 31
+   label    "Start-Stop: "
+
+slider
+   value    per 27263191 240
+   limits	 absolute 0 31
+   label    "Tilt angle: "
+
+slider
+   value    per 27263191 241
+   limits   absolute 0 31
+   label    "Battery management: "
+
+slider
+   value    per 27263191 242
+   limits   absolute 0 31
+   label    "Rear seat entertainment (RSE): "
+
+slider
+   value    per 27263191 243
+   limits   absolute 0 31
+   label    "Special functions: "
+
+slider
+   value    per 27263191 244
+   limits   absolute 0 31
+   label    "Trailer assist (ARA): "
+
+slider
+   value    per 27263191 245
+   limits   absolute 0 31
+   label    "TV-Tuner: "
+
+slider
+   value    per 27263191 246
+   limits   absolute 0 31
+   label    "Parkheating: "
+
+slider
+   value    per 27263191 247
+   limits   absolute 0 31
+   label    "Pedestrian assist: "
+
+slider
+   value    per 27263191 248
+   limits   absolute 0 31
+   label    "Seat pneumatic: "
+
+slider
+   value    per 27263191 249
+   limits   absolute 0 31
+   label    "Curve warner: "
+
+slider
+   value    per 27263191 250
+   limits   absolute 0 31
+   label    "eCall: "
+
+slider
+   value    per 27263191 251
+   limits   absolute 0 31
+   label    "Extended network interface (ENI): "
+
+slider
+   value    per 27263191 252
+   limits   absolute 0 31
+   label    "Sport HMI: "
+
+slider
+   value    per 27263191 253
+   limits   absolute 0 31
+   label    "Adblue: "
+
+slider
+   value    per 27263191 254
+   limits   absolute 0 31
+   label    "Think blue trainer: "
+
+slider
+   value    per 27263191 255
+   limits   absolute 0 31
+   label    "Efficiency assist (PEA): "
+
+slider
+   value    per 27263191 256
+   limits   absolute 0 31
+   label    "Display configuration: "
+ 
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+	poll 	0
+	
+script
+	value 	sys 1 0x0100 "/bin/shutdown"
+	label 	"Reboot unit"	
+	

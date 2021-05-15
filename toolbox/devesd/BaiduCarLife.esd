@@ -1,0 +1,19 @@
+#######################
+screen BaiduCarLife Connectivity
+#######################
+# Autor:	Islam Moursy, Carmeq, VW EECM/1
+# Email:	islam.moursy@carmeq.com
+# Date:		20160405
+# Version:	01
+#######################
+
+keyValue
+value String per 0x01b800e1 186
+label "CarLife protovol version"
+poll 0
+
+choice
+value per 0x01b800e1 187
+label "CarLife Diagnosis off/on"
+
+#######################

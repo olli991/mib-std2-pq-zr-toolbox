@@ -1,7 +1,407 @@
-FileName = "/tsd/etc/persistence/esd/mib2std-main.esd"
-FileSize = "1763"
-Checksum = "e031b4e79d985eb6aa8f1d63a0690eaafaab48c5"
+FileName = "/tsd/etc/persistence/esd/mibstd2-about.esd"
+FileSize = "480"
+Checksum = "35085cadd30217874aac53985095df11bc9ad572"
 
-FileName = "/tsd/etc/persistence/esd/scripts/util_install.sh"
-FileSize = "1311"
-Checksum = "504ea6104a88d6977c1f23ebd974d76b3b02c405"
+FileName = "/tsd/etc/persistence/esd/mibstd2-adaptation.esd"
+FileSize = "777"
+Checksum = "b0ecb82803de53ca8332c3071470c08a8d4aced7"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-advanced.esd"
+FileSize = "2659"
+Checksum = "28e0474c38b80663890e8a909eaf5a4312ebb90f"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-carBAPdeviceList.esd"
+FileSize = "4421"
+Checksum = "8269c039ce5a8952d03eeb9a0f592dd1518a2e9f"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-carCANdeviceList.esd"
+FileSize = "1286"
+Checksum = "1905780c96ab7fc04cd96849823d6ff311096148"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-carDeviceBUS.esd"
+FileSize = "26276"
+Checksum = "685001fd878edc1faa39bddbef18b5cc706f0822"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-carMenuOp.esd"
+FileSize = "6189"
+Checksum = "c5e75dfb61dac9a28f85c1d90ed261995e99ce57"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-customization.esd"
+FileSize = "968"
+Checksum = "be1be78c35a681c0f7d623d1a87339242e7a94a0"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-disclaimer.esd"
+FileSize = "1828"
+Checksum = "8785acf737ab2ea9ecca2c060a561fe1a439b3e9"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-dump.esd"
+FileSize = "3655"
+Checksum = "0a9b9a270be024b12e7d510fd529ce1ed2233233"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-greenmenu.esd"
+FileSize = "2178"
+Checksum = "e86ca6cb7122af1624823e4d28ab18fcb6024faa"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-history.esd"
+FileSize = "2180"
+Checksum = "ff194a14a2f47027c8c57feff4c21be52ff9cf40"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-main.esd"
+FileSize = "930"
+Checksum = "431ec37f43864693875e5bf4be4f133da40e1008"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-mibinfo.esd"
+FileSize = "3472"
+Checksum = "6b0b61d00179f36409f9e81c8f1c7b05a3d55603"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-mirrorlink.esd"
+FileSize = "1149"
+Checksum = "9bf294078708cd07989bc0b2160b6c7de23defe2"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-nav.esd"
+FileSize = "1674"
+Checksum = "1587101c87f501494db06b042e1584f32ef0f5eb"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-network.esd"
+FileSize = "1100"
+Checksum = "1c12296eb4bfc0a1665cd94b383c71b4176fc4e8"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-skins.esd"
+FileSize = "3309"
+Checksum = "2cdc1caec062b0d19e64497bbb0443ade9408e92"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-sounds.esd"
+FileSize = "1611"
+Checksum = "1049376dc5ac199855e902083b38750cc84923e0"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-tools.esd"
+FileSize = "2319"
+Checksum = "8b39010a699c76fd68682beb28de8d75670381d0"
+
+FileName = "/tsd/etc/persistence/esd/mibstd2-uninstall.esd"
+FileSize = "1023"
+Checksum = "92f40d5963e1f54e4bd4be3f2841e156126fbf0c"
+
+FileName = "/tsd/etc/persistence/esd/scripts/activate_telnet.sh"
+FileSize = "893"
+Checksum = "e385ae5216889ff076919a6e04d69cedfaabc5cb"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_devesd.sh"
+FileSize = "945"
+Checksum = "9fd01474380544563736b8bf2efc7fb4151af3d1"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_esd.sh"
+FileSize = "499"
+Checksum = "89a73c72b03b4075b3b3a55f9477a980bb3a34e1"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_fec.sh"
+FileSize = "536"
+Checksum = "dd279b08b9debeb7ae014158fac521f248956cd1"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_hmi.sh"
+FileSize = "483"
+Checksum = "14e6ae0e840882a17dad25e4b199daaf3ab77fd7"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_mapcfg.sh"
+FileSize = "466"
+Checksum = "bb083657543442a115368cf8df07d5f8c9f23044"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_mirrorlink.sh"
+FileSize = "522"
+Checksum = "6a9649ef52c998323e90b412d069f5b583cc06fe"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_nav.sh"
+FileSize = "499"
+Checksum = "4155ea29b7133cb2978b684f18370700f7d37f63"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_ringtones.sh"
+FileSize = "466"
+Checksum = "5f75c492f3b5e66c6a1ca6f4e2c10601e3353bb4"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_skin0.sh"
+FileSize = "490"
+Checksum = "d65815ef1d67958cea88ab4e07998364d5a7f1f0"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_skin1.sh"
+FileSize = "490"
+Checksum = "3d43d6aac30e2d6a93f0b827d8fd7e9a4f10431e"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_skin1_ambient.sh"
+FileSize = "520"
+Checksum = "1cb84d579e0cc601f1fc79f4a30df24602844c17"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_skin2.sh"
+FileSize = "490"
+Checksum = "ab81fe6c33b56b119fd12ae42237f0ba26bbdda4"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_skin2_ambient.sh"
+FileSize = "520"
+Checksum = "f6e370e0fb25f5a0902d1ca058b8267ad92f21df"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_skin3.sh"
+FileSize = "490"
+Checksum = "bcbd764a270a5191a8234ba12094af9dfae0e2bd"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_skin3_ambient.sh"
+FileSize = "520"
+Checksum = "01e382e7dcfbf6ba7310cad7c23e16f6fea2b15e"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_skin4.sh"
+FileSize = "490"
+Checksum = "c2a158abc81da9ef360b99cc0f5124c2b7ab2f74"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_skin4_ambient.sh"
+FileSize = "520"
+Checksum = "63d09ed14168bc2b642c4984e1d1a98f32581d9e"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_skin5.sh"
+FileSize = "490"
+Checksum = "922af7b43e1abbfe57040a76b8cc9ff1facb36de"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_skin5_ambient.sh"
+FileSize = "520"
+Checksum = "02042ed3b1c92bf78ee95c5865d7d67677de49c0"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_skin6.sh"
+FileSize = "490"
+Checksum = "b56fbca5ea866d6ee3fdc0bd0c0ed1b143712d92"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_skin6_ambient.sh"
+FileSize = "520"
+Checksum = "da4d6625d416d3108ad2721847d678f5405245fd"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_sounds.sh"
+FileSize = "456"
+Checksum = "04f0fbe114de1a66642c477d8f15d028e50d635c"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_stationdb.sh"
+FileSize = "484"
+Checksum = "c5c34de06eb106d0ca440f2046008c37b22acaf9"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_swap.sh"
+FileSize = "501"
+Checksum = "0a7519fe9fe4ee5aad1f71cebacec954eb368b05"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_swdl.sh"
+FileSize = "525"
+Checksum = "a283585e90ecc9b9132010dea12f6cc304f84817"
+
+FileName = "/tsd/etc/persistence/esd/scripts/custom_script.sh"
+FileSize = "450"
+Checksum = "a9a9b8453414c70699ecaad9bb2339f4ac8d14ed"
+
+FileName = "/tsd/etc/persistence/esd/scripts/delete_fec.sh"
+FileSize = "668"
+Checksum = "71d87901a8e24fe1f9a5af50f85b0c32e27a9d2f"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_all.sh"
+FileSize = "2166"
+Checksum = "631e0f4d5016e6fa5e32f42c21bb1d948742a2f6"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_esd.sh"
+FileSize = "231"
+Checksum = "0ce805ab0186e239ebb332cd8e6e8b3e6a2c5b30"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_fec.sh"
+FileSize = "233"
+Checksum = "c8b173652d127db080f9288f187e6a2453abe2b7"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_hmi.sh"
+FileSize = "204"
+Checksum = "f699fa755d7b3af2aed3439c254a94b19fb8c7c7"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_mapcfg.sh"
+FileSize = "210"
+Checksum = "52aa547d5903ff2fe03fadeb1f74eb9ef8f3385a"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_mirrorlink.sh"
+FileSize = "239"
+Checksum = "5e860fe3809ad31c8002c7b09b9cca58f5046714"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_nav.sh"
+FileSize = "227"
+Checksum = "00c2eda0b816708eecf45494cff63a2ed95d319d"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_pvault.sh"
+FileSize = "210"
+Checksum = "c010be07dfdeb36db94a09012fd33e339df32712"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_ringtones.sh"
+FileSize = "210"
+Checksum = "be30415b5212da16947c8d386c1fb10069053411"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_root.sh"
+FileSize = "1228"
+Checksum = "c4bb908f90a393d1ced4dd1828799fd15345cb04"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_shadow.sh"
+FileSize = "196"
+Checksum = "a10485bc1ece1fa32c44a9b07aee75f7eea4bc00"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_skins.sh"
+FileSize = "189"
+Checksum = "b9197c0175209efe187edf04d6f35515d6a99e24"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_sounds.sh"
+FileSize = "205"
+Checksum = "2780a6bb9f8bce04035a1cd943ac7c1ded3c00dd"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_startanim.sh"
+FileSize = "220"
+Checksum = "4ee0bfd448cac9112b668df3d976494cb2c4697d"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_stationdb.sh"
+FileSize = "241"
+Checksum = "8ffc68d440024078268dcbf623c146d7745c1dd3"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_swap.sh"
+FileSize = "215"
+Checksum = "a8a57e8b5425295506d09c88a237262de5c55aff"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_swdl.sh"
+FileSize = "227"
+Checksum = "c652738ce154077ec1fa3047968048476e552e92"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_swdlhistory.sh"
+FileSize = "208"
+Checksum = "7f4030852b214da0631670202196755fb6949821"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_var.sh"
+FileSize = "190"
+Checksum = "4d76adffc2b5a4a7920bf414f69120b8b540507c"
+
+FileName = "/tsd/etc/persistence/esd/scripts/move_screenshots.sh"
+FileSize = "517"
+Checksum = "8bf0659ce14e0b4c052b5064f5578b4709c9ea17"
+
+FileName = "/tsd/etc/persistence/esd/scripts/patch_mirrorlink.sh"
+FileSize = "1132"
+Checksum = "28b2e5006520ba4e3f66498ebe8dde1c2b1b2c78"
+
+FileName = "/tsd/etc/persistence/esd/scripts/patch_nav.sh"
+FileSize = "1099"
+Checksum = "e810dfb10fb482526a602b6c84e1230a8ab6bffb"
+
+FileName = "/tsd/etc/persistence/esd/scripts/privacy_cleanphonedata.sh"
+FileSize = "850"
+Checksum = "fea462616709f229e282370f6394738d16a13565"
+
+FileName = "/tsd/etc/persistence/esd/scripts/privacy_clean_corelogs.sh"
+FileSize = "424"
+Checksum = "06c263f1aa9eccd74da42f6218fabb9ea11abc2c"
+
+FileName = "/tsd/etc/persistence/esd/scripts/privacy_shadow.sh"
+FileSize = "439"
+Checksum = "255ab9418f5e95a9c9d6a45de5ac9f3c02fdfe92"
+
+FileName = "/tsd/etc/persistence/esd/scripts/privacy_swdl_keep_fws.sh"
+FileSize = "1697"
+Checksum = "5fcdbb8c141080041aa308751e27841efabc939a"
+
+FileName = "/tsd/etc/persistence/esd/scripts/privacy_swdl_keep_last.sh"
+FileSize = "1720"
+Checksum = "84d5562ab1284c48e4bb14af17f9a577f2f28af4"
+
+FileName = "/tsd/etc/persistence/esd/scripts/reboot.sh"
+FileSize = "50"
+Checksum = "ef43fdf3f9a18196a040799bbd09fe2da52a3ecd"
+
+FileName = "/tsd/etc/persistence/esd/scripts/restore_esd.sh"
+FileSize = "235"
+Checksum = "330441391afdfffabf58bfa2efbbff27c0b0bf04"
+
+FileName = "/tsd/etc/persistence/esd/scripts/restore_fec.sh"
+FileSize = "277"
+Checksum = "82d67d2a085c46b7e0bb83b7ab0d73b8c29a92c3"
+
+FileName = "/tsd/etc/persistence/esd/scripts/restore_hmi.sh"
+FileSize = "248"
+Checksum = "e80044dc18a4db43d288ccb05ed657ff3c642268"
+
+FileName = "/tsd/etc/persistence/esd/scripts/restore_mapcfg.sh"
+FileSize = "226"
+Checksum = "2aa599c0631a483ce89183b9c8625b373881c621"
+
+FileName = "/tsd/etc/persistence/esd/scripts/restore_mirrorlink.sh"
+FileSize = "292"
+Checksum = "5b02ddee9c116975862155e667a119cc6eeec509"
+
+FileName = "/tsd/etc/persistence/esd/scripts/restore_nav.sh"
+FileSize = "269"
+Checksum = "1c9e638c43743394c18e7f4139a8bd94a3aaf89a"
+
+FileName = "/tsd/etc/persistence/esd/scripts/restore_ringtones.sh"
+FileSize = "226"
+Checksum = "a203b8cd507ff718b3a98a26ba089f321f0a4f35"
+
+FileName = "/tsd/etc/persistence/esd/scripts/restore_shadow.sh"
+FileSize = "212"
+Checksum = "42d335b7b68a6699527edfc91ba67a4b0b5366e1"
+
+FileName = "/tsd/etc/persistence/esd/scripts/restore_skins.sh"
+FileSize = "1284"
+Checksum = "78c2f1f96046bc9f4a1f7e6231d8fd44d925ec4a"
+
+FileName = "/tsd/etc/persistence/esd/scripts/restore_sounds.sh"
+FileSize = "223"
+Checksum = "7ce23356400fe45150aa029a0536835b1f872fa0"
+
+FileName = "/tsd/etc/persistence/esd/scripts/restore_stationdb.sh"
+FileSize = "269"
+Checksum = "aeeed803c54221caf64d3459552be04918c627a9"
+
+FileName = "/tsd/etc/persistence/esd/scripts/restore_swap.sh"
+FileSize = "266"
+Checksum = "0724a5a3ac7e7607e6bb4abc9726132c87e7111d"
+
+FileName = "/tsd/etc/persistence/esd/scripts/restore_swdl.sh"
+FileSize = "289"
+Checksum = "e38bdbe91223b5e7f80cbb881affbacbb23dbaac"
+
+FileName = "/tsd/etc/persistence/esd/scripts/save_sysinfo.sh"
+FileSize = "776"
+Checksum = "078329f5b0c743af6a275ebf2966c3951c8a4f45"
+
+FileName = "/tsd/etc/persistence/esd/scripts/sysinfo.sh"
+FileSize = "2249"
+Checksum = "c0004be389870ffd33e0a7bb2185c90d9e02bc41"
+
+FileName = "/tsd/etc/persistence/esd/scripts/util_backup.sh"
+FileSize = "974"
+Checksum = "efdbae9abe82d7895ca52f497ca902b28c8d2dd4"
+
+FileName = "/tsd/etc/persistence/esd/scripts/util_checksd.sh"
+FileSize = "461"
+Checksum = "c6c5ef6f561c6f3e4de452f365946212a87c38c3"
+
+FileName = "/tsd/etc/persistence/esd/scripts/util_copy.sh"
+FileSize = "1105"
+Checksum = "ad78dc34c071d4c369d92aa4a05a7f6f0a50eb9f"
+
+FileName = "/tsd/etc/persistence/esd/scripts/util_dump.sh"
+FileSize = "1276"
+Checksum = "d20d34d466929da8a7a7ec54be4887abead157da"
+
+FileName = "/tsd/etc/persistence/esd/scripts/util_info.sh"
+FileSize = "1631"
+Checksum = "554dc081b8ffa62d902ccae1a6344103334ee0c9"
+
+FileName = "/tsd/etc/persistence/esd/scripts/util_mount.sh"
+FileSize = "238"
+Checksum = "6b0cb02284dacbee647a89162e4e4a3de42908c7"
+
+FileName = "/tsd/etc/persistence/esd/scripts/util_mount_ro.sh"
+FileSize = "245"
+Checksum = "d35ea99a7246c248564806c6f87fa7a5588f5d61"
+
+FileName = "/tsd/etc/persistence/esd/scripts/util_restore.sh"
+FileSize = "2107"
+Checksum = "efa654eabc00a7d965b2e356985ca7a72f9ff804"
+
+FileName = "/tsd/etc/persistence/esd/scripts/util_uninstall.sh"
+FileSize = "1017"
+Checksum = "6658a5dd2ec614ccfc816a40a21c8a4d9bdc31b7"
+
+FileName = "/tsd/etc/persistence/esd/scripts/util_update.sh"
+FileSize = "1382"
+Checksum = "4cbaee093f31a5850a80949b68ed8943daa46377"

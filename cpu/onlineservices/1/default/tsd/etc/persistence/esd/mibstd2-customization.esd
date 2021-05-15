@@ -1,0 +1,33 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author: 		YOX & Olli
+# Version: 		0.7
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB STD2 Toolbox Main -> Customization
+#
+###########################################################################################
+screen Customization MIBSTD2_Toolbox
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "INSTRUCTION: Use 'dump' menu to copy files from the unit onto Toolbox drive."
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Modify those files, put to corresponding /custom subfolder and use this menu"
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "to copy (import) them back to unit."
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+	poll 	0
