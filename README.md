@@ -111,3 +111,6 @@ A: Press and hold MEDIA key until you hear confirmation sound
 
 Q: Where to find screenshots?
 A: In the root folder of SD card. You can also use `Toolbox -> Tools -> Move screenshots from root of all drives to the Toolbox drive` function to collect them in screenshots folder of Toolbox drive.
+
+Q: Is Toolbox compatible with non Navi (single SD slot) units? 
+A: Yes, but to install you need to use console/telnet installation method.
