@@ -8,6 +8,8 @@ echo
 # Include info utility
 . /tsd/etc/persistence/esd/scripts/util_info.sh
 
+mkdir -p $VOLUME/dump/$VERSION/$SERIAL
+
 echo
 echo "Collecting info, please wait..."
 . /tsd/etc/persistence/esd/scripts/sysinfo.sh >$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
