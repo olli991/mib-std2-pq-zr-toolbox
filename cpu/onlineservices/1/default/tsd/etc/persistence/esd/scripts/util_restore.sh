@@ -13,15 +13,16 @@ echo
 . /tsd/etc/persistence/esd/scripts/util_info.sh
 
 OLDFILES=$VOLUME/backup/$VERSION/$SERIAL/$SDPATH
-echo "Source: backup/$VERSION/$SERIAL/$SDPATH"
+echo "Source: backup/$VERSION/$SERIAL/"
+echo "        $SDPATH"
 echo "Destination: $MIBPATH"
 
 if [ "$TYPE" = "folder" ]; then
 	if [ -d ${OLDFILES} ]; then
-	
-		# Mount system partition in read/write mode
-		. /tsd/etc/persistence/esd/scripts/util_mount.sh
-		
+		if [ -z "$(echo $MIBPATH | grep '/tsd/var')" ]; then
+			# Mount system partition in read/write mode
+			. /tsd/etc/persistence/esd/scripts/util_mount.sh
+		fi
 		echo "Restoring, please wait..."
 		if [ "$TOPIC" = "greenmenu" ]; then
 			rm -rf /tsd/etc/persistence/esd/*
@@ -35,28 +36,30 @@ if [ "$TYPE" = "folder" ]; then
 			chmod a+rwx /tsd/etc/persistence/esd/scripts/*.sh
 			echo "Done." 
 		fi
-		
-		# Mount system partition in read/only mode
-		. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh		
+		if [ -z "$(echo $MIBPATH | grep '/tsd/var')" ]; then
+			# Mount system partition in read/only mode
+			. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
+		fi
 	else
 		echo
 		echo "ERROR: Backup is not found"
 		exit 0
-	fi	
+	fi
 else
 	if [ -f ${OLDFILES} ]; then
-	
-		# Mount system partition in read/write mode
-		. /tsd/etc/persistence/esd/scripts/util_mount.sh
-		
+		if [ -z "$(echo $MIBPATH | grep '/tsd/var')" ]; then
+			# Mount system partition in read/write mode
+			. /tsd/etc/persistence/esd/scripts/util_mount.sh
+		fi
 		echo "Restoring, please wait..."
 		cp -f ${OLDFILES} ${MIBPATH}
 		if [[ $TOPIC = "swdl" || $TOPIC = "swap" || $TOPIC = "hmi" || $TOPIC = "mirrorlink" || $TOPIC = "navigation" || $TOPIC = "shadow" ]]; then
 			chmod 777 ${MIBPATH}
 		fi
-		
-		# Mount system partition in read/only mode
-		. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
+		if [ -z "$(echo $MIBPATH | grep '/tsd/var')" ]; then
+			# Mount system partition in read/only mode
+			. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
+		fi
 	else
 		echo
 		echo "ERROR: Backup is not found"
