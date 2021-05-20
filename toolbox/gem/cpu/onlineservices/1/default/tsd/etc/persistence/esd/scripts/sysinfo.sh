@@ -3,9 +3,14 @@ echo "Date:" $(date)
 
 #INFO=$(awk -F "" '{for(i=1;i<=NF;i++) if($i~/[A-Z0-9]/) {printf $i} else {printf " "}}' /tsd/var/itr.timer.log 2>/dev/null | sed 's/\b\w\{1,3\}\b\s*//g')
 INFO=$(sloginfo | grep ".devinfo" | tail -1 | sed 's/.*DevInfo: //')
+VCRN=$(sloginfo | grep "VCRN:" | tail -1 | awk '{print $10}' 2>/dev/null)
+if [ -z "$VCRN" ]; then
+	VCRN='----------'
+fi
+
 echo "SW-Version:" $(echo $INFO | awk -F " |=" '{print $2}' 2>/dev/null) "HW-Version:" $(echo $INFO | awk -F " |=" '{print $4}' 2>/dev/null) "PartNum:" $(echo $INFO | awk -F " |=" '{print $6}' 2>/dev/null)
 echo "SerNum:" $(echo $INFO |awk -F " |=" '{print $8}' 2>/dev/null) "Mileage:" $(echo $INFO |awk -F " |=" '{print $12}' 2>/dev/null) "VIN:" $(echo $INFO |awk -F " |=" '{print $14}' 2>/dev/null)
-echo "Train:" $(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g')
+echo "Train:" $(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g') "VCRN: $VCRN" 
 
 addr=$((0x020D8000 + 0x024))
 set -A RES $(in32 ${addr})
