@@ -24,7 +24,7 @@ keyValue
 
 keyValue
     value   String sys 0x00000000 0
-    label   "Reboot after copy of a new skin or ambienceColorMap."
+    label   "To apply changes, reboot after copy."
     poll    0      
 
 keyValue
@@ -33,56 +33,8 @@ keyValue
     poll    0    
 
 script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin0.sh"
-   label    "Copy new graphics for skin0 from /custom/skins/skin0"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin1.sh"
-   label    "Copy new graphics for skin1 from /custom/skins/skin1"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin1_ambient.sh"
-   label    "Copy new ambient colors for skin1 from /custom/skins/skin1"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin2.sh"
-   label    "Copy new graphics for skin2 from /custom/skins/skin2"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin2_ambient.sh"
-   label    "Copy new ambient colors for skin2 from /custom/skins/skin2"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin3.sh"
-   label    "Copy new graphics for skin3 from /custom/skins/skin3"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin3_ambient.sh"
-   label    "Copy new ambient colors for skin3 from /custom/skins/skin3"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin4.sh"
-   label    "Copy new graphics for skin4 from /custom/skins/skin4"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin4_ambient.sh"
-   label    "Copy new ambient colors for skin4 from /custom/skins/skin4"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin5.sh"
-   label    "Copy new graphics for skin5 from /custom/skins/skin5"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin5_ambient.sh"
-   label    "Copy new ambient colors for skin5 from /custom/skins/skin5"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin6.sh"
-   label    "Copy new graphics for skin6 from /custom/skins/skin6"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin6_ambient.sh"
-   label    "Copy new ambient colors for skin6 from custom/skins/skin6"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skins.sh"
+   label    "Copy new graphics/ambient colors for skins from /custom/skins"
 
 keyValue
     value   String sys 0x00000000 0
