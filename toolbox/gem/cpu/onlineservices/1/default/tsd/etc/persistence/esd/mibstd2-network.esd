@@ -14,8 +14,20 @@ screen Network MIBSTD2_Toolbox
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_telnet.sh"
-	label 	"Activate telnet, ftp and console access until next reboot"
-	
+	label 	"Activate telnet and ftp access until the next reboot"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_qconn.sh"
+	label 	"Activate qconn access until the next reboot"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_console.sh"
+	label 	"Activate console access until the next reboot"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/deactivate_access.sh"
+	label 	"Deactivate telnet, ftp and qconn access until the next reboot"
+
 choice
 	value 	per 0x01c100e7 54
 	label 	"Ethernet:"
