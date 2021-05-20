@@ -135,6 +135,10 @@ script
 	label 	"Persistence vault"
 
 script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_onlineservices.sh"
+	label 	"Online services settings"
+
+script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_var.sh"
 	label 	"/tsd/var partition"
 
