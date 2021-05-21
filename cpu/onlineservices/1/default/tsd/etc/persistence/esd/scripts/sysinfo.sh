@@ -35,49 +35,30 @@ elif [ "$GEM_SIZE" = "250996" ]; then
 	GEM_VERSION="4.12t"
 fi
 echo "GEM version: $GEM_VERSION"
-
 echo
-echo "J5 OS version:"
-on -n J5 uname -a
-
+echo "J5 $(on -f J5 /net/imx6/bin/pidin info) "
+echo "$(on -n J5 uname -a)"
 echo
-echo "iMX6 OS version:"
-uname -a
-
+echo "iMX6 $(pidin info)"
+echo "$(uname -a)"
 echo
-echo "Shell version:"
-echo $KSH_VERSION
-
-echo
-echo "iMX6 memory:"
-showmem -S
-
-echo
-echo "J5 memory:"
-on -n J5 showmem -S
-
-echo
-echo "Processes running:"
-ps -A
-
+echo "Shell version: $KSH_VERSION"
 echo
 echo "Mounts:"
 mount
-
 echo
 echo "Filesystem                  Size      Used     Avail     Use%  Mounted on"
 df -h
-
 echo
-echo "Filesystem root:"
+echo "J5 root:"
+on -f J5 ls -C /
+echo
+echo "iMX6 root:"
 ls -C /
-
 echo
 echo "Interface config:"
 ifconfig
-
 echo
 echo "USB info:"
 usb
-
 echo "Collection of the information is finished."

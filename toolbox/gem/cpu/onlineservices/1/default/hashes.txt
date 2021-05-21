@@ -63,8 +63,8 @@ FileSize = "932"
 Checksum = "4bb7ff2e389425fb26b7ec06758506099c8d8d19"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-mibinfo.esd"
-FileSize = "3472"
-Checksum = "6b0b61d00179f36409f9e81c8f1c7b05a3d55603"
+FileSize = "3487"
+Checksum = "d0c7be552556111426cebbaac532257532dbc066"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-mirrorlink.esd"
 FileSize = "1149"
@@ -323,12 +323,12 @@ FileSize = "289"
 Checksum = "e38bdbe91223b5e7f80cbb881affbacbb23dbaac"
 
 FileName = "/tsd/etc/persistence/esd/scripts/save_sysinfo.sh"
-FileSize = "1375"
-Checksum = "5dae1470f2b902cb8ff8b0e7610a6080887407aa"
+FileSize = "2098"
+Checksum = "2d7d234202befee4d3555e997757aac1633f05b0"
 
 FileName = "/tsd/etc/persistence/esd/scripts/sysinfo.sh"
-FileSize = "2385"
-Checksum = "ee9cff468529834e118bc89be7689ead0350b3fd"
+FileSize = "2332"
+Checksum = "61f7e7a8699040b8018f41a0c1a106de319cf9a5"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_backup.sh"
 FileSize = "974"

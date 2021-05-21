@@ -1,5 +1,5 @@
 #!/bin/ksh
-echo "This script saves system info to sysinfo.txt"
+echo "This script saves extended system info to sysinfo.txt"
 echo
 
 # Locate Toolbox
@@ -19,6 +19,22 @@ echo "Collecting info, please wait..."
 . /tsd/etc/persistence/esd/scripts/sysinfo.sh >$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 
 echo >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+echo "Processes running on iMX6:" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+ps -A >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+
+echo >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+echo "Processes running on J5:" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+on -f J5 ps -A >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+
+echo >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+echo "Environment variables iMX6:" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+env >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+
+echo >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+echo "aps info:" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+aps show >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+
+echo >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 echo "*********************************************" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 echo "**************** SLOGINFO J5 ****************" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 echo "*********************************************" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
@@ -34,6 +50,6 @@ sloginfo -t >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 sync
 
 echo
-echo "Done. The file can be found at:"
-echo "/dump/$VERSION/$SERIAL/sysinfo.txt"
+echo "Done. The file can be found on $VOLUME"
+echo "in /dump/$VERSION/$SERIAL/sysinfo.txt"
 exit 0
