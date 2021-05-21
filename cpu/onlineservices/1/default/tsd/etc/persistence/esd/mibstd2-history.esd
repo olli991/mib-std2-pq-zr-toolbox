@@ -14,6 +14,27 @@ screen History About
 
 keyValue
     value   String sys 0x00000000 0
+    label   "v0.7.1 Sysinfo is extended, console, telnet + ftp and qconn activations"
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "        are separated. Skins are now imported via single menu item."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "        Online services settings support. Many other small fixes and"
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "        improvements."
+    poll     0
+
+ 
+keyValue
+    value   String sys 0x00000000 0
     label   "v0.7 Rearrangement of the main menu. Scripts optimisations and speed-ups."
     poll     0
 

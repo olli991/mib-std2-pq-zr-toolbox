@@ -19,12 +19,12 @@ echo "Collecting info, please wait..."
 . /tsd/etc/persistence/esd/scripts/util_sysinfo.sh >$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 
 echo >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
-echo "Processes running on iMX6:" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
-ps -A >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
-
-echo >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 echo "Processes running on J5:" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 on -f J5 ps -A >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+
+echo >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+echo "Processes running on iMX6:" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+ps -A >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 
 echo >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 echo "Environment variables iMX6:" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt

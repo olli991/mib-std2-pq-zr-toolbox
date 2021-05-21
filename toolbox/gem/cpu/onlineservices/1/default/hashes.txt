@@ -47,16 +47,16 @@ FileSize = "1837"
 Checksum = "df3aa3f20f4f309c5c27e1fa619e2256589af581"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-dump.esd"
-FileSize = "3786"
-Checksum = "27fe2721b154a8972f91a01e50fae66453955323"
+FileSize = "3912"
+Checksum = "5611d203cf98c50efd890ebcaa303ffc131e7c0f"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-greenmenu.esd"
 FileSize = "2180"
 Checksum = "d75e6049ebc81ea905b8f93d2f5c1b96bb5022ea"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-history.esd"
-FileSize = "2189"
-Checksum = "995d0cbf570c85c9493a3b92015fc76535c57b81"
+FileSize = "2722"
+Checksum = "bbe41a3590b6ac45fef4f2b32de2519084b6c02a"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-main.esd"
 FileSize = "941"
@@ -344,7 +344,7 @@ Checksum = "e38bdbe91223b5e7f80cbb881affbacbb23dbaac"
 
 FileName = "/tsd/etc/persistence/esd/scripts/save_sysinfo.sh"
 FileSize = "2103"
-Checksum = "f84f1db2cfbb0cb3e3cf62d9916bf70e494ea0db"
+Checksum = "cb4459114624f6a33ed9c366d7954d3815583510"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_backup.sh"
 FileSize = "974"
@@ -361,6 +361,10 @@ Checksum = "d9f63e7d92e93e5d54809dc49f1c86d7efe55313"
 FileName = "/tsd/etc/persistence/esd/scripts/util_dump.sh"
 FileSize = "1273"
 Checksum = "e42db3033ce8ce7a01107b25cdac077a9253b742"
+
+FileName = "/tsd/etc/persistence/esd/scripts/util_dump_emmc.sh"
+FileSize = "552"
+Checksum = "977bb251a3ba0b2e92a62086822de98046693dd9"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_info.sh"
 FileSize = "1631"
