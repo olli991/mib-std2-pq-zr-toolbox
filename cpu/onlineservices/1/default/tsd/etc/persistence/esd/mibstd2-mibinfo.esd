@@ -2,7 +2,7 @@
 # 
 # Custom Green Engineering Menu screen
 # Author: 		Olli & lprot
-# Version: 		0.7
+# Version: 		0.7.1
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -13,7 +13,7 @@
 screen MIB_Info MIBSTD2_Toolbox
 
 script
-	value 			sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/sysinfo.sh"
+	value 			sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_sysinfo.sh"
 	label 			"Show short system info"
 
 script

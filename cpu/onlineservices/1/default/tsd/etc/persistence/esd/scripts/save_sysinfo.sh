@@ -16,7 +16,7 @@ fi
 
 echo
 echo "Collecting info, please wait..."
-. /tsd/etc/persistence/esd/scripts/sysinfo.sh >$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+. /tsd/etc/persistence/esd/scripts/util_sysinfo.sh >$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 
 echo >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 echo "Processes running on iMX6:" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
