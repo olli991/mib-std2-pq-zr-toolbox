@@ -2,9 +2,6 @@
 echo "This script activates console access until next unit reboot"
 echo
 
-export TSD_COMMON_CONFIG=/tsd/etc/system/tsd.mibstd2.main.root.conf
-export TSD_LOGCHANNEL=J5e
-
 echo /net/J5/dev/ser1 \"/bin/login -f root\" qansi-m on > /tmp/ttys
 /sbin/tinit -f /tmp/ttys &
 

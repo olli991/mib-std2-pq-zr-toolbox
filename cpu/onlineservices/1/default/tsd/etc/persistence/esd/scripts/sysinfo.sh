@@ -41,7 +41,6 @@ echo "$(on -n J5 uname -a)"
 echo
 echo "iMX6 $(pidin info)"
 echo "$(uname -a)"
-echo
 echo "Shell version: $KSH_VERSION"
 echo
 echo "Mounts:"

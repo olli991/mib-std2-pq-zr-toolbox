@@ -315,8 +315,8 @@ FileSize = "2098"
 Checksum = "2d7d234202befee4d3555e997757aac1633f05b0"
 
 FileName = "/tsd/etc/persistence/esd/scripts/sysinfo.sh"
-FileSize = "2332"
-Checksum = "61f7e7a8699040b8018f41a0c1a106de319cf9a5"
+FileSize = "2327"
+Checksum = "00fe136d325b7959f0ec6c35114d3618ec60ca33"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_backup.sh"
 FileSize = "974"
@@ -359,8 +359,8 @@ FileSize = "1382"
 Checksum = "4cbaee093f31a5850a80949b68ed8943daa46377"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_console.sh"
-FileSize = "615"
-Checksum = "448e8a62a0764e65fa95612e9208d22315317468"
+FileSize = "520"
+Checksum = "5c95b6d10e9ad5193eee74a8092147c86e8a2ffc"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_qconn.sh"
 FileSize = "436"
