@@ -113,5 +113,8 @@ A: Press and hold MEDIA key until you hear confirmation sound
 Q: Where to find screenshots?
 A: In the root folder of SD card. You can also use `Toolbox -> Tools -> Move screenshots from root of all drives to the Toolbox drive` function to collect them in screenshots folder of Toolbox drive.
 
-Q: Is Toolbox compatible with non Navi (single SD slot) units? 
+Q: Is Toolbox compatible with non Navi (single SD slot) units?
 A: Yes, but to install you need to use console/telnet installation method.
+
+Q: After Toolbox installation I got OBD error 1556. How to fix it?
+A: Just run Tools->Clean SWDL history and keep only non-duplicated FW updates. Then reboot the unit and clear ODB error with any software that can do that.
