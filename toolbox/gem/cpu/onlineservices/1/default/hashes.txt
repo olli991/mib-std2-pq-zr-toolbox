@@ -367,8 +367,8 @@ FileSize = "1273"
 Checksum = "e42db3033ce8ce7a01107b25cdac077a9253b742"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_dump_emmc.sh"
-FileSize = "552"
-Checksum = "977bb251a3ba0b2e92a62086822de98046693dd9"
+FileSize = "694"
+Checksum = "58b1dcfe62dcf750f6e90434b5ede78a7f213a9f"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_info.sh"
 FileSize = "1631"
