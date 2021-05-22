@@ -70,6 +70,10 @@ script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/privacy_clean_corelogs.sh"
 	label 	"Delete crash (core) logs"
 
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/privacy_clean_mediacache.sh"
+	label 	"Delete media cache"
+
 keyValue
     value   String sys 0x00000000 0
 	label 	""

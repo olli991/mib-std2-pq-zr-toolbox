@@ -87,8 +87,8 @@ FileSize = "1799"
 Checksum = "6e6b34b94e2a25ca417d22bcb58a8eb798be30ef"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-tools.esd"
-FileSize = "2333"
-Checksum = "c6d995afc45dbbcba8796ec2cba263918d0b5db7"
+FileSize = "2454"
+Checksum = "8b64ae90b7efa6f2a4f0c885395799b63fd55f41"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-uninstall.esd"
 FileSize = "1032"
@@ -273,6 +273,10 @@ Checksum = "fea462616709f229e282370f6394738d16a13565"
 FileName = "/tsd/etc/persistence/esd/scripts/privacy_clean_corelogs.sh"
 FileSize = "424"
 Checksum = "06c263f1aa9eccd74da42f6218fabb9ea11abc2c"
+
+FileName = "/tsd/etc/persistence/esd/scripts/privacy_clean_mediacache.sh"
+FileSize = "420"
+Checksum = "4bc700c643947d09a492f688cf8c18786513c8d2"
 
 FileName = "/tsd/etc/persistence/esd/scripts/privacy_shadow.sh"
 FileSize = "439"
