@@ -144,7 +144,7 @@ script
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_dump_emmc.sh"
-	label 	"eMMC content (requires 8Gb space)"
+	label 	"eMMC content (exFAT/NTFS SD card/USB drive + 8Gb free space required)"
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_root.sh"
