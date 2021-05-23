@@ -35,8 +35,8 @@ FileSize = "1837"
 Checksum = "df3aa3f20f4f309c5c27e1fa619e2256589af581"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-dump.esd"
-FileSize = "3948"
-Checksum = "6455952bfb230148e41e14a1dcdcd19e55b325e8"
+FileSize = "3952"
+Checksum = "00623ee022ed5d3a93eac9441396c48f88faffeb"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-greenmenu.esd"
 FileSize = "2180"
@@ -355,8 +355,8 @@ FileSize = "1273"
 Checksum = "e42db3033ce8ce7a01107b25cdac077a9253b742"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_dump_emmc.sh"
-FileSize = "694"
-Checksum = "58b1dcfe62dcf750f6e90434b5ede78a7f213a9f"
+FileSize = "1413"
+Checksum = "fad534b92097f992d00f78db1e784c5f0699999f"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_info.sh"
 FileSize = "1631"
