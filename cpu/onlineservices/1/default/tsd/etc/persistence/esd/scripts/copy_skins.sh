@@ -3,13 +3,11 @@ echo "This script will install custom skins (images.mcf) and/or"
 echo "ambienceColorMap.res from custom/skins folder"
 echo
 
-# Mount system partition in read/write mode
-. /tsd/etc/persistence/esd/scripts/util_mount.sh
-
 export TYPE="file"
+WRITE=""
 
 # Copy custom file(s) to unit
-echo "Copying files to the unit, please wait..."
+echo "Checking changes, please wait..."
 for i in $VOLUME/custom/skins/skin*; do
 	#Extract skin folder name
 	FOLDER=${i##*/}
@@ -20,9 +18,14 @@ for i in $VOLUME/custom/skins/skin*; do
 			export SDPATH=$TOPIC/images.mcf
 			# Make backup
 			. /tsd/etc/persistence/esd/scripts/util_backup.sh
+			if [ -z "$WRITE" ]; then
+				# Mount system partition in read/write mode
+				. /tsd/etc/persistence/esd/scripts/util_mount.sh
+				WRITE=1
+			fi
+			echo "Replacing $FOLDER/images.mcf..."
 			cp -f $i/images.mcf $MIBPATH/$FOLDER/images.mcf
-			echo "images.mcf of $FOLDER is replaced"
-			COPIED=yes
+			echo "Done."
 		fi
 	fi
 	if [ -f $i/ambienceColorMap.res ]; then
@@ -32,20 +35,25 @@ for i in $VOLUME/custom/skins/skin*; do
 			export SDPATH=$TOPIC/ambienceColorMap.res
 			# Make backup
 			. /tsd/etc/persistence/esd/scripts/util_backup.sh
+			if [ -z "$WRITE" ]; then
+				# Mount system partition in read/write mode
+				. /tsd/etc/persistence/esd/scripts/util_mount.sh
+				WRITE=1
+			fi
+			echo "Replacing $FOLDER/ambienceColorMap.res..."
 			cp -f $i/ambienceColorMap.res $MIBPATH/$FOLDER/ambienceColorMap.res
-			echo "ambienceColorMap of $FOLDER is replaced"
-			COPIED=yes
+			echo "Done."
 		fi
 	fi
 done
 
-# Mount system partition in read/only mode
-. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
-
-echo
-if [ -n $COPIED ]; then
+if [ -n "$WRITE" ]; then
+	# Mount system partition in read/only mode
+	. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
+	echo
 	echo "Done. Please restart the unit."
 else
+	echo
 	echo "Done. No new skins/ambienceColorMaps were found."
 fi
 exit 0
