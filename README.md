@@ -103,6 +103,9 @@ Q: I got unit with part number X how to know is that Technisat/Preh/Delphi/Harma
 A: Google that part number in picture mode and take a look at the label or look for the letter in software version string.
 For example MST2_EU_SK_ZR_P0478T. Letter T at the end means it's Technisat. If there is no letter it's Harman.
 
+Q: Is Toolbox compatible with non Navi (single SD slot) units?
+A: Yes, but to install you need to use console/telnet installation method.
+
 Q: Where to find GEM (Green Egineering Menu) version?
 A: In the top left corner of the Green Engineering Menu screen.
 
@@ -116,16 +119,13 @@ Q: Where to find screenshots?
 A: In the root folder of SD card. You can also use `Tools->Move screenshots from root of all drives to the Toolbox drive`
 function to collect them in screenshots folder of Toolbox drive.
 
-Q: Is Toolbox compatible with non Navi (single SD slot) units?
-A: Yes, but to install you need to use console/telnet installation method.
-
 Q: After Toolbox installation I got OBD error 1556. How to fix it?
 A: Just run Tools->Clean SWDL history and keep only non-duplicated FW updates. Then reboot the unit and clear ODB error
 with any software that can do that.
 
 Q: Can I make eMMC backup of my unit?
 A: Use `Dump->eMMC content (exFAT/NTFS SD card/USB drive + ~7.3 GB free space required)` menu.
-As most of the units have 7.3 GB eMMC chips, FAT32 formatted media cannot be used as max filesize on FAT32 is 4 GB.
-It is strongly recommended to use exFAT/NTFS formatted SD card because USB port on MIB STD2 is capped to 5 MB/s.
-SD slot and Class 10 SD card allow to achieve the dump speed upto 10 GB/s so the process finishes in just ~15 minutes :)
+As most of the units have 7.3 GB eMMC chips, FAT32 formatted media cannot be used because of 4 GB max filesize limitation.
+Also it is strongly recommended to use exFAT/NTFS formatted SD card because USB port on MIB STD2 is capped to 5 MB/s.
+Class 10 SD card allows to achieve the dump speed upto 10 GB/s so the process finishes in just ~15 minutes :)
 ```
