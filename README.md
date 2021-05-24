@@ -124,8 +124,8 @@ A: Just run Tools->Clean SWDL history and keep only non-duplicated FW updates. T
 with any software that can do that.
 
 Q: Can I make eMMC backup of my unit?
-A: Use `Dump->eMMC content (exFAT/NTFS SD card/USB drive + ~7.3 GB free space required)` menu. As most of the units have
-7.3 GB eMMC chips, you cannot use FAT32 formatted media as the max filesize on FAT32 is 4 GB.
+A: Use `Dump->eMMC content (exFAT/NTFS SD card/USB drive + ~7.3 GB free space required)` menu.
+As most of the units have 7.3 GB eMMC chips, FAT32 formatted media cannot be used as max filesize on FAT32 is 4 GB.
 It is strongly recommended to use exFAT/NTFS formatted SD card because USB port on MIB STD2 is capped to 5 MB/s.
-SD slot and Class 10 SD card allow to achieve the dump speed upto 10 GB/s so the process finishes in just 15 minutes :)
+SD slot and Class 10 SD card allow to achieve the dump speed upto 10 GB/s so the process finishes in just ~15 minutes :)
 ```
