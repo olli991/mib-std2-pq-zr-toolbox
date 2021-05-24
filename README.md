@@ -98,6 +98,7 @@ Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\
 Converts password to shadow file
 
 ## Frequently asked questions
+```
 Q: I got unit with part number X how to know is that Technisat/Preh/Delphi/Harman?
 A: Google that part number in picture mode and take a look at the label or look for the letter in software version string. For example MST2_EU_SK_ZR_P0478T. Letter T at the end means it's Technisat. If there is no letter it's Harman.
 
@@ -118,3 +119,4 @@ A: Yes, but to install you need to use console/telnet installation method.
 
 Q: After Toolbox installation I got OBD error 1556. How to fix it?
 A: Just run Tools->Clean SWDL history and keep only non-duplicated FW updates. Then reboot the unit and clear ODB error with any software that can do that.
+```
