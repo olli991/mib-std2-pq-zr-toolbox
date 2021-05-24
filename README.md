@@ -100,7 +100,8 @@ Converts password to shadow file
 ## Frequently asked questions
 ```
 Q: I got unit with part number X how to know is that Technisat/Preh/Delphi/Harman?
-A: Google that part number in picture mode and take a look at the label or look for the letter in software version string. For example MST2_EU_SK_ZR_P0478T. Letter T at the end means it's Technisat. If there is no letter it's Harman.
+A: Google that part number in picture mode and take a look at the label or look for the letter in software version string.
+For example MST2_EU_SK_ZR_P0478T. Letter T at the end means it's Technisat. If there is no letter it's Harman.
 
 Q: Where to find GEM (Green Egineering Menu) version?
 A: In the top left corner of the Green Engineering Menu screen.
@@ -112,7 +113,8 @@ Q: How to make screenshots?
 A: Press and hold MEDIA key until you hear confirmation sound
 
 Q: Where to find screenshots?
-A: In the root folder of SD card. You can also use `Toolbox -> Tools -> Move screenshots from root of all drives to the Toolbox drive` function to collect them in screenshots folder of Toolbox drive.
+A: In the root folder of SD card. You can also use `Toolbox -> Tools -> Move screenshots from root of all drives to the Toolbox drive` function
+to collect them in screenshots folder of Toolbox drive.
 
 Q: Is Toolbox compatible with non Navi (single SD slot) units?
 A: Yes, but to install you need to use console/telnet installation method.
