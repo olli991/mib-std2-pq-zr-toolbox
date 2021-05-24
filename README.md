@@ -123,10 +123,9 @@ Q: After Toolbox installation I got OBD error 1556. How to fix it?
 A: Just run Tools->Clean SWDL history and keep only non-duplicated FW updates. Then reboot the unit and clear ODB error
 with any software that can do that.
 
-Q: Can I make eMMC backup of my unit? How big is eMMC and why should I use exFAT/NTFS formatted SD card for doing this?
+Q: Can I make eMMC backup of my unit?
 A: Use `Dump->eMMC content (exFAT/NTFS SD card/USB drive + ~7.3 GB free space required)` menu. As most of the units have
 7.3 GB eMMC chips, you cannot use FAT32 formatted media as the max filesize on FAT32 is 4 GB.
-It is highly advice to use exFAT/NTFS formatted SD card because USB port on MIB STD2 is capped to 5 MB/s while SD slot
-and SD card Class 10 allows to achieve the dump speed upto 10 GB/s and the dump finishes in 15 minutes :)
-
+It is strongly recommended to use exFAT/NTFS formatted SD card because USB port on MIB STD2 is capped to 5 MB/s.
+SD slot and Class 10 SD card allow to achieve the dump speed upto 10 GB/s so the process finishes in just 15 minutes :)
 ```
