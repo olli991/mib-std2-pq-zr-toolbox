@@ -20,11 +20,11 @@ echo "Collecting info, please wait..."
 
 echo >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 echo "Processes running on J5:" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
-on -f J5 ps -A >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+on -f J5 ps -Afl >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 
 echo >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 echo "Processes running on iMX6:" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
-ps -A >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
+ps -Afl >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 
 echo >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
 echo "Environment variables iMX6:" >>$VOLUME/dump/$VERSION/$SERIAL/sysinfo.txt
