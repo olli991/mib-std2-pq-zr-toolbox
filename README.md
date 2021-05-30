@@ -99,6 +99,10 @@ Converts password to shadow file
 
 ## Frequently asked questions
 ```
+Q: I already installed Toolbox and want to install new version do I need to uninstall the old one?
+What is a proper way to update?
+A: No, you do not need to uninstall. Simply do `update_and_unistall->Update Toolbox from SD card or USB drive`
+
 Q: I got unit with part number X how to know is that Technisat/Preh/Delphi/Harman?
 A: Google that part number in picture mode and take a look at the label or look for the letter in software version string.
 For example MST2_EU_SK_ZR_P0478T. Letter T at the end means it's Technisat. If there is no letter it's Harman.
