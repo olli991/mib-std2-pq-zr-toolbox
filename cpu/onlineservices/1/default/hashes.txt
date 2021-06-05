@@ -271,8 +271,8 @@ FileSize = "439"
 Checksum = "255ab9418f5e95a9c9d6a45de5ac9f3c02fdfe92"
 
 FileName = "/tsd/etc/persistence/esd/scripts/privacy_swdl_keep_fws.sh"
-FileSize = "1697"
-Checksum = "5fcdbb8c141080041aa308751e27841efabc939a"
+FileSize = "2559"
+Checksum = "ee1b66ac1965f3b24bacf892cc181c5b8d1d3146"
 
 FileName = "/tsd/etc/persistence/esd/scripts/privacy_swdl_keep_last.sh"
 FileSize = "1720"

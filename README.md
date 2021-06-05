@@ -31,6 +31,25 @@ Note: This installation method is NOT possible on Seat Navi units with HW H50+ (
 6. Run `ksh /media/mp000/install.sh` to install the toolbox. Old GEM will be automatically updated if found.
 7. Open Green Engineering Menu and have fun 🙂
 
+## How to install with QNX Virtual Machine via USB SD card reader directly connected (soldered) to eMMC chip
+1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of any USB flash drive. Eject and physically disconnect all USB drives.
+2. Start Neutrino 6.5 Virtual Machine, insert USB SD card reader into any USB port of the PC/laptop and allow to connect to VM
+3. Insert the USB flash drive with Toolbox to any USB port of PC/laptop and allow to connect to VM
+4. Inside VM, enter `mount` to see where USB drive with Toolbox is mounted. Normally it will be /fs/usb001.
+5. Inside VM, open Utilities->Terminal and run `ksh /fs/usb001/install.sh`
+6. Turn off VM assemble back the unit, Open Green Engineering Menu and have fun 🙂
+NOTE: If you do not want to use USB drive but have sshd running inside of the VM and have WinSCP access, just copy `MIBSTD2-Toolbox-vX.X.X.zip` content to into `/tmp` folder inside VM. And run install.sh.
+
+## How to install with QNX Virtual Machine into via eMMC backup image
+1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of any USB flash drive. Eject and physically disconnect all USB drives.
+2. Make eMMC dump from the unit into raw format for example with USB Image Tool
+3. Convert backup image to VMDK format `qemu-img convert -f raw backup.img -O vmdk backup.vmdk`, add to Neutrino 6.5 Virtual Machine and start it
+4. Insert the Toolbox USB flash drive to any USB port of PC/laptop and allow to connect to VM
+5. Inside VM, open Utilities->Terminal and enter `mount` to see where USB drive with Toolbox is mounted. Normally it will be /fs/usb000.
+6. Run `ksh /fs/usb000/install.sh`
+7. Turn off VM, flash back  assemble back the unit, Open Green Engineering Menu and have fun 🙂
+NOTE: If you do not want to use USB drive but have sshd running inside of the VM and have WinSCP access, just copy `MIBSTD2-Toolbox-vX.X.X.zip` content to into `/tmp` folder inside VM. And run install.sh.
+
 ## How to use the toolbox to do customizations
 1. Use `dump` menu to copy files from unit's filesystem into corresponding `dump` subfolder on SD card or USB drive 
 2. Modify those files as you wish and copy into corresponding `custom` subfolder on SD card or USB drive
@@ -124,7 +143,7 @@ A: In the root folder of SD card. You can also use `Tools->Move screenshots from
 function to collect them in screenshots folder of Toolbox drive.
 
 Q: After Toolbox installation I got OBD error 1556. How to fix it?
-A: Just run Tools->Clean SWDL history and keep only non-duplicated FW updates. Then reboot the unit and clear ODB error
+A: Just run Tools->Clean SWDL history and keep only non-duplicated FW updates. Then reboot the unit and clear OBD2 error
 with any software that can do that.
 
 Q: Can I make eMMC backup of my unit?
