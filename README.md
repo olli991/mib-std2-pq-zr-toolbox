@@ -31,23 +31,24 @@ Note: This installation method is NOT possible on Seat Navi units with HW H50+ (
 6. Run `ksh /media/mp000/install.sh` to install the toolbox. Old GEM will be automatically updated if found.
 7. Open Green Engineering Menu and have fun 🙂
 
-## How to install with QNX Virtual Machine via USB SD card reader directly connected (soldered) to eMMC chip
+## How to install with USB SD card reader directly connected (soldered) to eMMC chip via QNX Virtual Machine 
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of any USB flash drive. Eject and physically disconnect all USB drives.
 2. Start Neutrino 6.5 Virtual Machine, insert USB SD card reader into any USB port of the PC/laptop and allow to connect to VM
-3. Insert the USB flash drive with Toolbox to any USB port of PC/laptop and allow to connect to VM
-4. Inside VM, enter `mount` to see where USB drive with Toolbox is mounted. Normally it will be /fs/usb001.
-5. Inside VM, open Utilities->Terminal and run `ksh /fs/usb001/install.sh`
+3. Insert the USB flash drive with the Toolbox to any USB port of PC/laptop and allow to connect to VM
+4. Inside VM, open Utilities->Terminal and enter `mount` to see where USB drive with Toolbox is mounted. Normally it will be /fs/usb001.
+5. Enter `ksh /fs/usb001/install.sh`
 6. Turn off VM assemble back the unit, Open Green Engineering Menu and have fun 🙂
 NOTE: If you do not want to use USB drive but have sshd running inside of the VM and have WinSCP access, just copy `MIBSTD2-Toolbox-vX.X.X.zip` content to into `/tmp` folder inside VM. And run install.sh.
 
-## How to install with QNX Virtual Machine into via eMMC backup image
+## How to install into eMMC backup image with QNX Virtual Machine
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of any USB flash drive. Eject and physically disconnect all USB drives.
 2. Make eMMC dump from the unit into raw format for example with USB Image Tool
-3. Convert backup image to VMDK format `qemu-img convert -f raw backup.img -O vmdk backup.vmdk`, add to Neutrino 6.5 Virtual Machine and start it
+3. Convert backup image to VMDK format `qemu-img convert -f raw backup.img -O vmdk backup.vmdk`, add it to Neutrino 6.5 Virtual Machine and start it
 4. Insert the Toolbox USB flash drive to any USB port of PC/laptop and allow to connect to VM
 5. Inside VM, open Utilities->Terminal and enter `mount` to see where USB drive with Toolbox is mounted. Normally it will be /fs/usb000.
 6. Run `ksh /fs/usb000/install.sh`
-7. Turn off VM, flash back  assemble back the unit, Open Green Engineering Menu and have fun 🙂
+7. Turn off VM and convert VMDK back to raw `qemu-img convert -f vmdk backup.vmdk -O raw new_backup.img`
+8. Flash new_backup.img back into eMMC chip, assemble back the unit, Open Green Engineering Menu and have fun 🙂
 NOTE: If you do not want to use USB drive but have sshd running inside of the VM and have WinSCP access, just copy `MIBSTD2-Toolbox-vX.X.X.zip` content to into `/tmp` folder inside VM. And run install.sh.
 
 ## How to use the toolbox to do customizations
