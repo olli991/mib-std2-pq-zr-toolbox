@@ -123,7 +123,7 @@ Q: I already installed Toolbox and want to install new version do I need to unin
 What is a proper way to update?
 A: No, you do not need to uninstall. Simply do `update_and_unistall->Update Toolbox from SD card or USB drive`
 
-Q: I got unit with part number X how to know is that Technisat/Preh/Delphi/Harman?
+Q: I got unit with part number X. How to know if that is Technisat/Preh/Delphi/Harman?
 A: Google that part number in picture mode and take a look at the label or look for the letter in software version string.
 For example MST2_EU_SK_ZR_P0478T. Letter T at the end means it's Technisat. If there is no letter it's Harman.
 
@@ -135,6 +135,9 @@ A: In the top left corner of the Green Engineering Menu screen.
 
 Q: Why Toolbox is not compatible with GEM 3.5 or lower?
 A: GEM 3.5 and lower cannot run scripts
+
+Q: I instaled Toolbox and want to update my firmware from 02xx version to 04xx version. Will Toolbox remain installed after the update?
+A: No, Toolbox will be deleted as when update happens /tsd/etc/persistence/esd folder gets cleaned. So you will need to install the Toolbox again.
 
 Q: How to make screenshots?
 A: Press and hold MEDIA key until you hear confirmation sound
