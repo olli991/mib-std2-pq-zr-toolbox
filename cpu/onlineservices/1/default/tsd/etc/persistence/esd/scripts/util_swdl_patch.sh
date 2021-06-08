@@ -16,9 +16,13 @@ size=$(ls -l $file | awk '{print $5}' 2>/dev/null)
 
 echo "Checking $file..."
 case $size in
-	3107004) #cpu US PQ 367
+	3128084) #cpu EU ZR 253
+		set -A offsets A9B1C ABAC7 ABBBF 14E190 ;;
+	3084644) #cpuplus EU ZR 253
+		set -A offsets A91F4 AB19F AB297 14CBB4 ;;
+	3104884|3107004|3105500) #cpu US/EU PQ/ZR 363/367
 		set -A offsets A9A64 ABA37 ABAF3 14EBDC ;;
-	3063780) #cpuplus US PQ 367
+	3061668|3063780|3062284) #cpuplus US/EU PQ/ZR 363/367
 		set -A offsets A9214 AB1E7 AB2A3 14D6D8 ;;
 	3108412) #cpu EU PQ/ZR 478/479
 		set -A offsets A9A64 ABA37 ABAF3 14EBD4 ;;
