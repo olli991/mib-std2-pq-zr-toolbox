@@ -87,8 +87,8 @@ FileSize = "1799"
 Checksum = "6e6b34b94e2a25ca417d22bcb58a8eb798be30ef"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-tools.esd"
-FileSize = "2454"
-Checksum = "8b64ae90b7efa6f2a4f0c885395799b63fd55f41"
+FileSize = "2611"
+Checksum = "9a7ae29bc3e7d72f614716804ddf2cd2da765cda"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-uninstall.esd"
 FileSize = "1032"
@@ -389,6 +389,10 @@ Checksum = "ef43fdf3f9a18196a040799bbd09fe2da52a3ecd"
 FileName = "/tsd/etc/persistence/esd/scripts/util_restore.sh"
 FileSize = "2352"
 Checksum = "5b17cb861de1a32e15980e3cc30a064b6b4ab57c"
+
+FileName = "/tsd/etc/persistence/esd/scripts/util_swdl_patch.sh"
+FileSize = "1446"
+Checksum = "6a8db150f8e4fd77d76689a78d7a5416e033c7bd"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_sysinfo.sh"
 FileSize = "3139"
