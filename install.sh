@@ -25,7 +25,7 @@ done
 DESTINATION=""
 ESD_FOLDER=/tsd/etc/persistence/esd
 if [ -z "$VOLUME" ]; then
-	for i in /fs/usb*; do
+	for i in /fs/*; do
 		if [ -d "$i$TOOLBOX_FOLDER" ]; then
 			VOLUME=$i
 			break
@@ -37,15 +37,12 @@ if [ -z "$VOLUME" ]; then
 		fi
 	fi
 	if [ -n "$VOLUME" ]; then
-		for k in /fs/usb*; do
+		for k in /fs/*; do
 			if [ -d $k$ESD_FOLDER ]; then
 				DESTINATION=$k
 				break
 			fi
 		done
-		if [ -z "$DESTINATION" ]; then
-			DESTINATION="/fs/hd1-qnx6"
-		fi
 	fi
 fi
 
