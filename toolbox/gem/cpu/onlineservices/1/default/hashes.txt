@@ -91,8 +91,8 @@ FileSize = "2611"
 Checksum = "9a7ae29bc3e7d72f614716804ddf2cd2da765cda"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-uninstall.esd"
-FileSize = "1032"
-Checksum = "131ce500ee02b28ff99d640f2ddaa2b0f56b9100"
+FileSize = "1132"
+Checksum = "33536ee24b18d669a6061130a620785b8b22d9fd"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_console.sh"
 FileSize = "520"
