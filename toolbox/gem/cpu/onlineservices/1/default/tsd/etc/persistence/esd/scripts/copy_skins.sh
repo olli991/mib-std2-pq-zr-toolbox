@@ -3,6 +3,9 @@ echo "This script will install custom skins (images.mcf) and/or"
 echo "ambienceColorMap.res from custom/skins folder"
 echo
 
+# Locate Toolbox drive
+. /tsd/etc/persistence/esd/scripts/util_checksd.sh
+
 export TYPE="file"
 WRITE=""
 
