@@ -15,9 +15,9 @@ for i in $VOLUME/custom/skins/skin*; do
 	#Extract skin folder name
 	FOLDER=${i##*/}
 	if [ -f $i/images.mcf ]; then
+		export MIBPATH=/tsd/hmi/Resources/$FOLDER/images.mcf
 		if [ -n "$(cmp $i/images.mcf $MIBPATH/$FOLDER/images.mcf)" ]; then
 			export TOPIC=skins/$FOLDER
-			export MIBPATH=/tsd/hmi/Resources/$FOLDER/images.mcf
 			export SDPATH=$TOPIC/images.mcf
 			# Make backup
 			. /tsd/etc/persistence/esd/scripts/util_backup.sh
@@ -32,9 +32,9 @@ for i in $VOLUME/custom/skins/skin*; do
 		fi
 	fi
 	if [ -f $i/ambienceColorMap.res ]; then
+		export MIBPATH=/tsd/hmi/Resources/$FOLDER/ambienceColorMap.res
 		if [ -n "$(cmp $i/ambienceColorMap.res $MIBPATH/$FOLDER/ambienceColorMap.res)" ]; then
 			export TOPIC=skins/$FOLDER
-			export MIBPATH=/tsd/hmi/Resources/$FOLDER/ambienceColorMap.res
 			export SDPATH=$TOPIC/ambienceColorMap.res
 			# Make backup
 			. /tsd/etc/persistence/esd/scripts/util_backup.sh
