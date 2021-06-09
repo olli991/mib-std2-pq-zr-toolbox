@@ -90,6 +90,8 @@ MIB STD2 Toolbox Main
 |   +---Update                          # Enable manual SWDL
 |
 +---Update_and_Uninstall                # Allows to update & uninstall the Toolbox
+|   +---Update Toolbox                  # Update Toolbox from SD card or USB drive"
++   +---Uninstall Toolbox               # Completely uninstalls Toolbox
 ```
 
 ## How to use Python3 scripts from the tools folder
