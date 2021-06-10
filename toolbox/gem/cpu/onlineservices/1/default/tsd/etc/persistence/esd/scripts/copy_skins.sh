@@ -8,10 +8,11 @@ echo
 
 export TYPE="file"
 WRITE=""
+SOURCE=$VOLUME
 
 # Copy custom file(s) to unit
 echo "Checking changes, please wait..."
-for i in $VOLUME/custom/skins/skin*; do
+for i in $SOURCE/custom/skins/skin*; do
 	#Extract skin folder name
 	FOLDER=${i##*/}
 	if [ -f $i/images.mcf ]; then
