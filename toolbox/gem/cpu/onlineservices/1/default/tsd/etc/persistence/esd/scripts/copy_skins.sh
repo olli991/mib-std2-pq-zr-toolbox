@@ -8,16 +8,15 @@ echo
 
 export TYPE="file"
 WRITE=""
-SOURCE=$VOLUME
 
 # Copy custom file(s) to unit
 echo "Checking changes, please wait..."
-for i in $SOURCE/custom/skins/skin*; do
+for skin_folder in $VOLUME/custom/skins/skin*; do
 	#Extract skin folder name
-	FOLDER=${i##*/}
-	if [ -f $i/images.mcf ]; then
+	FOLDER=${skin_folder##*/}
+	if [ -f $skin_folder/images.mcf ]; then
 		export MIBPATH=/tsd/hmi/Resources/$FOLDER/images.mcf
-		if [ -n "$(cmp $i/images.mcf $MIBPATH)" ]; then
+		if [ -n "$(cmp $skin_folder/images.mcf $MIBPATH)" ]; then
 			export TOPIC=skins/$FOLDER
 			export SDPATH=$TOPIC/images.mcf
 			# Make backup
@@ -28,13 +27,13 @@ for i in $SOURCE/custom/skins/skin*; do
 				WRITE=1
 			fi
 			echo "Replacing $FOLDER/images.mcf..."
-			cp -f $i/images.mcf $MIBPATH
+			cp -f $skin_folder/images.mcf $MIBPATH
 			echo "Done."
 		fi
 	fi
-	if [ -f $i/ambienceColorMap.res ]; then
+	if [ -f $skin_folder/ambienceColorMap.res ]; then
 		export MIBPATH=/tsd/hmi/Resources/$FOLDER/ambienceColorMap.res
-		if [ -n "$(cmp $i/ambienceColorMap.res $MIBPATH)" ]; then
+		if [ -n "$(cmp $skin_folder/ambienceColorMap.res $MIBPATH)" ]; then
 			export TOPIC=skins/$FOLDER
 			export SDPATH=$TOPIC/ambienceColorMap.res
 			# Make backup
@@ -45,7 +44,7 @@ for i in $SOURCE/custom/skins/skin*; do
 				WRITE=1
 			fi
 			echo "Replacing $FOLDER/ambienceColorMap.res..."
-			cp -f $i/ambienceColorMap.res $MIBPATH
+			cp -f $skin_folder/ambienceColorMap.res $MIBPATH
 			echo "Done."
 		fi
 	fi
