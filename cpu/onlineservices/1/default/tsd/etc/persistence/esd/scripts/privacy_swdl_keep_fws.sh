@@ -56,7 +56,7 @@ elif [ -f $MIBPATH/swdlhistory/swdownload1.conf ]; then
 fi
 
 VERSION=$(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g')
-if [ -z "$(echo "$VERSION" | grep $MIBPATH/.swdownload.conf)" ]; then
+if [ -z "$(cat $MIBPATH/.swdownload.conf | grep $VERSION)" ]; then
 	echo "Fixing error 1556..."
 	sed -i "s/\(ReleaseName[[:space:]]*=[[:space:]]*\)\(.*\)/\1${VERSION}\r/" $MIBPATH/.swdownload.conf
 	VERSION=$(echo "$VERSION"|awk -F'_' '{gsub(/[^[:digit:]]/, "", $5);print $5}' 2>/dev/null)
