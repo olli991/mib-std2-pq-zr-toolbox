@@ -35,11 +35,6 @@ script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/custom_script.sh"
 	label 	"Run toolbox.sh script from the root of the Toolbox drive"
 
-choice
-	value 	per 0x01c100e7 503
-	label 	"Manual SWDL:"
-	poll 	1000
-
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_swdl_patch.sh"
 	label 	"Patch tsd.mibstd2.system.swdownload to accept any metainfo2.txt"
