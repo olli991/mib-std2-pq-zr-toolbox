@@ -1,7 +1,7 @@
 #!/bin/ksh
 export TOPIC=hmi
 export MIBPATH=/tsd/hmi/tsd.mibstd2.hmi.ifs
-export SDPATH=patch/$TOPIC/tsd.mibstd2.hmi.ifs
+export SDPATH=$TOPIC/tsd.mibstd2.hmi.ifs
 export TYPE="file"
 
 echo "This script will copy tsd.mibstd2.hmi.ifs"

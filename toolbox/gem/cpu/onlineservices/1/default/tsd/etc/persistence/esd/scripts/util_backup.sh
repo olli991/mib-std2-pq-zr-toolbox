@@ -26,12 +26,13 @@ if [ "$TYPE" = "folder" ]; then
 		echo "Backup is done."
 	fi
 else
-	if [ -f "$VOLUME/backup/$SDPATH" ]; then
+	FILENAME=${SDPATH##*/}
+	if [ -f "$BACKUPFOLDER/$FILENAME" ]; then
 		echo "Backup already exists. Skipping..."
 	else
 		echo "Copying file, please wait..."
 		mkdir -p ${BACKUPFOLDER}
-		cp ${MIBPATH} ${BACKUPFOLDER}
+		cp ${MIBPATH} ${BACKUPFOLDER}/
 		echo "Backup is done."
 	fi
 fi
