@@ -63,8 +63,8 @@ FileSize = "1683"
 Checksum = "7f7f79549c2c33aab84612727b3b2e49a56c82ea"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-network.esd"
-FileSize = "1536"
-Checksum = "7d729691e03bfdca8663143f0a54318a30644a4d"
+FileSize = "1514"
+Checksum = "063f5e6e4d50ac61426d402cb34028030fba5eb7"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-skins.esd"
 FileSize = "1479"
