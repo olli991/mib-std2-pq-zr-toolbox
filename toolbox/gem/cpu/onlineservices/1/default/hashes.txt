@@ -391,8 +391,8 @@ FileSize = "2352"
 Checksum = "5b17cb861de1a32e15980e3cc30a064b6b4ab57c"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_swdl_patch.sh"
-FileSize = "1660"
-Checksum = "30efe59db35063225d70ad3b83be42001d5175ad"
+FileSize = "1688"
+Checksum = "20844f9bfb074a14118a4e795f64632c3b383951"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_sysinfo.sh"
 FileSize = "3139"
