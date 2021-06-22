@@ -7,8 +7,8 @@ FileSize = "821"
 Checksum = "1a5dc2c8c03ad53ef0819025648608322f5a5892"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-advanced.esd"
-FileSize = "2970"
-Checksum = "368458cbcd44af9054652f0ff080efe86c11a16c"
+FileSize = "3228"
+Checksum = "3846dfc4c21a9202f222c6bc8558016264179b29"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-carBAPdeviceList.esd"
 FileSize = "4456"
@@ -137,6 +137,10 @@ Checksum = "3e21fe54789f760c2057a841fafd8c1ed6ca4c11"
 FileName = "/tsd/etc/persistence/esd/scripts/copy_sounds.sh"
 FileSize = "456"
 Checksum = "04f0fbe114de1a66642c477d8f15d028e50d635c"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_startanim.sh"
+FileSize = "464"
+Checksum = "755f92f87d448732131930bb8a59fcb3453e4b2b"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_stationdb.sh"
 FileSize = "484"
@@ -321,6 +325,10 @@ Checksum = "78c2f1f96046bc9f4a1f7e6231d8fd44d925ec4a"
 FileName = "/tsd/etc/persistence/esd/scripts/restore_sounds.sh"
 FileSize = "223"
 Checksum = "7ce23356400fe45150aa029a0536835b1f872fa0"
+
+FileName = "/tsd/etc/persistence/esd/scripts/restore_startanim.sh"
+FileSize = "219"
+Checksum = "6eb18417e9b41610d28b66e00917aa5df70e8f50"
 
 FileName = "/tsd/etc/persistence/esd/scripts/restore_stationdb.sh"
 FileSize = "269"
