@@ -48,6 +48,23 @@ for skin_folder in $VOLUME/custom/skins/skin*; do
 			echo "Done."
 		fi
 	fi
+	if [ -f $skin_folder/info.txt ]; then
+		export MIBPATH=/tsd/hmi/Resources/$FOLDER/info.txt
+		if [ -n "$(cmp $skin_folder/info.txt $MIBPATH)" ]; then
+			export TOPIC=skins/$FOLDER
+			export SDPATH=$TOPIC/info.txt
+			# Make backup
+			. /tsd/etc/persistence/esd/scripts/util_backup.sh
+			if [ -z "$WRITE" ]; then
+				# Mount system partition in read/write mode
+				. /tsd/etc/persistence/esd/scripts/util_mount.sh
+				WRITE=1
+			fi
+			echo "Replacing $FOLDER/info.txt..."
+			cp -f $skin_folder/info.txt $MIBPATH
+			echo "Done."
+		fi
+	fi
 done
 
 if [ -n "$WRITE" ]; then
