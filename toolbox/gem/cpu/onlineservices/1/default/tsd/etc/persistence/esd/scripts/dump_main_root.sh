@@ -1,9 +1,4 @@
 #!/bin/ksh
-export TOPIC=j5_root
-export MIBPATH=/
-export SDPATH=$TOPIC
-export TYPE="folder"
-
 echo "This script will dump root of J5 SD card/USB drive"
 echo
 
@@ -14,7 +9,7 @@ echo
 . /tsd/etc/persistence/esd/scripts/util_info.sh
 
 #Make dump folder
-DUMPFOLDER=$VOLUME/dump/$VERSION/$SERIAL/$SDPATH
+DUMPFOLDER=$VOLUME/dump/$VERSION/$SERIAL/j5_root
 
 #Make dump folder if needed
 if [ ! -d "$DUMPFOLDER" ]; then
@@ -22,7 +17,7 @@ if [ ! -d "$DUMPFOLDER" ]; then
 	mkdir -p $DUMPFOLDER
 fi
 
-if [ -f /net/J5 ]; then
+if [ -d /net/J5 ]; then
 	SRC=/net/J5
 fi
 
@@ -33,7 +28,7 @@ if [ -f "$SRC/net" ]; then
 	ls -al ${SRC}/net >>${DUMPFOLDER}/root.txt
 fi
 for d in ${SRC}/*; do
-	if [ "$d" != "$SRC/cpu" ] && [ "$d" != "$SRC/dev" ] && [ "$d" != "$SRC/net" ]; then
+	if [ "$d" != "$SRC/cpu" ] && [ "$d" != "$SRC/dev" ] && [ "$d" != "$SRC/net" ] && [ "$d" != "$SRC/proc" ]; then
 		echo "Dumping $d"
 		cp -r ${d} ${DUMPFOLDER}
 	fi
