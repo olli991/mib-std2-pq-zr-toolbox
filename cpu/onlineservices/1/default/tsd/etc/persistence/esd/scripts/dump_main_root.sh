@@ -1,39 +1,11 @@
 #!/bin/ksh
 echo "This script will dump root of J5 SD card/USB drive"
 echo
-
-# Locate Toolbox drive
-. /tsd/etc/persistence/esd/scripts/util_checksd.sh
-
-# Include info utility
-. /tsd/etc/persistence/esd/scripts/util_info.sh
-
-#Make dump folder
-DUMPFOLDER=$VOLUME/dump/$VERSION/$SERIAL/j5_root
-
-#Make dump folder if needed
-if [ ! -d "$DUMPFOLDER" ]; then
-	echo "Making $DUMPFOLDER..."
-	mkdir -p $DUMPFOLDER
-fi
-
+export TOPIC=j5_root
 if [ -d /net/J5 ]; then
-	SRC=/net/J5
+	export MIBPATH=/net/J5
+else
+	export MIBPATH=""
 fi
 
-echo "Listing files..."
-ls -al ${SRC}/ >${DUMPFOLDER}/root.txt
-ls -al ${SRC}/dev/ >>${DUMPFOLDER}/root.txt
-if [ -d "$SRC/net" ]; then
-	ls -al ${SRC}/net >>${DUMPFOLDER}/root.txt
-fi
-for d in ${SRC}/{,.}*; do
-	if [[ "$d" != "$SRC/." && "$d" != "$SRC/.." && "$d" != "$SRC/cpu" && "$d" != "$SRC/dev" && "$d" != "$SRC/media" && "$d" != "$SRC/net" && "$d" != "$SRC/proc" && "$d" != "$SRC/tmp" ]]; then
-		echo "Dumping $d"
-		cp -r ${d} ${DUMPFOLDER}
-	fi
-done
-sync
-echo
-echo "Done. Saved at $DUMPFOLDER"
-exit 0
+. /tsd/etc/persistence/esd/scripts/util_dump_root.sh

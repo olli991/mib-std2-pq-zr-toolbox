@@ -116,7 +116,7 @@ keyValue
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_mirrorlink.sh"
-	label 	"Mirrorlink config"
+	label 	"MirrorLink config"
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_nav.sh"
@@ -152,4 +152,4 @@ script
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_root.sh"
-	label 	"iMX6 root (will take long time!)"
+	label 	"iMX6 root"
