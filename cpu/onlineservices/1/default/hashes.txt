@@ -35,8 +35,8 @@ FileSize = "1837"
 Checksum = "df3aa3f20f4f309c5c27e1fa619e2256589af581"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-dump.esd"
-FileSize = "3952"
-Checksum = "00623ee022ed5d3a93eac9441396c48f88faffeb"
+FileSize = "4047"
+Checksum = "a4262898bd4f1d2ef67545bcc4decbb18d434a78"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-greenmenu.esd"
 FileSize = "2180"
@@ -181,6 +181,10 @@ Checksum = "618e119cb173ea2d9b1094c282d8f474c75fe3db"
 FileName = "/tsd/etc/persistence/esd/scripts/dump_hmi.sh"
 FileSize = "198"
 Checksum = "87574d5434a4f2f1dcbec1dd7c4cceec58c113eb"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_main_root.sh"
+FileSize = "922"
+Checksum = "88dea76259c642041554c7ee84412860142c8e65"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_mapcfg.sh"
 FileSize = "210"

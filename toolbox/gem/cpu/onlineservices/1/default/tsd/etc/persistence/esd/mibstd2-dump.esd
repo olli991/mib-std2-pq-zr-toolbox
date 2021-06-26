@@ -147,5 +147,9 @@ script
 	label 	"eMMC content (exFAT/NTFS SD card/USB drive + ~7.3 GB free space required)"
 
 script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_main_root.sh"
+	label 	"J5 root"
+
+script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_root.sh"
-	label 	"Root without /dev (will take hours!)"
+	label 	"iMX6 root (will take long time!)"
