@@ -24,11 +24,11 @@ fi
 echo "Listing files..."
 ls -al ${SRC}/ >${DUMPFOLDER}/root.txt
 ls -al ${SRC}/dev/ >>${DUMPFOLDER}/root.txt
-if [ -f "$SRC/net" ]; then
+if [ -d "$SRC/net" ]; then
 	ls -al ${SRC}/net >>${DUMPFOLDER}/root.txt
 fi
-for d in ${SRC}/*; do
-	if [ "$d" != "$SRC/cpu" ] && [ "$d" != "$SRC/dev" ] && [ "$d" != "$SRC/net" ] && [ "$d" != "$SRC/proc" ]; then
+for d in ${SRC}/{,.}*; do
+	if [[ "$d" != "$SRC/." && "$d" != "$SRC/.." && "$d" != "$SRC/cpu" && "$d" != "$SRC/dev" && "$d" != "$SRC/media" && "$d" != "$SRC/net" && "$d" != "$SRC/proc" && "$d" != "$SRC/tmp" ]]; then
 		echo "Dumping $d"
 		cp -r ${d} ${DUMPFOLDER}
 	fi

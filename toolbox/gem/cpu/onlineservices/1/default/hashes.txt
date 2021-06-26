@@ -195,8 +195,8 @@ FileSize = "198"
 Checksum = "87574d5434a4f2f1dcbec1dd7c4cceec58c113eb"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_main_root.sh"
-FileSize = "868"
-Checksum = "5aa3350fe1385557ccd0b6402ec8b9f04ff0ccdc"
+FileSize = "949"
+Checksum = "cfbb87440af399e8eb65a4b368a19afbdeeb7e93"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_mapcfg.sh"
 FileSize = "210"
