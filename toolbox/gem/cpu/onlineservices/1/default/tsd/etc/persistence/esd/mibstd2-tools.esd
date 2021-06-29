@@ -73,6 +73,14 @@ script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/privacy_clean_mediacache.sh"
 	label 	"Delete media cache"
 
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/privacy_clean_picturestore.sh"
+	label 	"Delete radiostations picturestore"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/privacy_clean_stationdb_presets.sh"
+	label 	"Delete stationdb presets"
+
 keyValue
     value   String sys 0x00000000 0
 	label 	""

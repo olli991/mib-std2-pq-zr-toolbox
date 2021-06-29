@@ -11,7 +11,8 @@ DUMPFOLDER=$VOLUME/dump/$VERSION/$SERIAL/$TOPIC
 
 #Make dump folder if needed
 if [ ! -d "$DUMPFOLDER" ]; then
-        echo "Making $DUMPFOLDER..."
+        echo "Making $VOLUME/dump/"
+        echo "  $VERSION/$SERIAL/$TOPIC..."
         mkdir -p $DUMPFOLDER
 fi
 
@@ -34,5 +35,6 @@ for d in ${MIBPATH}/{,.}*; do
 done
 sync
 echo
-echo "Done. Saved at $DUMPFOLDER"
+echo "Done. Saved at: $VOLUME/dump/"
+echo "  $VERSION/$SERIAL/$TOPIC..."
 exit 0
