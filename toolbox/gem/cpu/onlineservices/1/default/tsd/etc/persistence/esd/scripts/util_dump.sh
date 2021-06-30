@@ -13,7 +13,7 @@ echo
 DUMPFOLDER=$VOLUME/dump/$VERSION/$SERIAL/$SDPATH
 echo "Source $TYPE: $MIBPATH"
 echo "Destination: dump/$VERSION/$SERIAL/"
-echo "             $SDPATH"
+echo "  $SDPATH"
 
 if [ "$TYPE" = "file" ]; then
 	if [ -f $MIBPATH ]; then

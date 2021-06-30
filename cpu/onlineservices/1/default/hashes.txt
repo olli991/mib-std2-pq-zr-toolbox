@@ -143,8 +143,8 @@ FileSize = "464"
 Checksum = "755f92f87d448732131930bb8a59fcb3453e4b2b"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_stationdb.sh"
-FileSize = "484"
-Checksum = "c5c34de06eb106d0ca440f2046008c37b22acaf9"
+FileSize = "1220"
+Checksum = "581605863fef1b5858a5a0bd7dd0dcc16a297d7b"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_swap.sh"
 FileSize = "495"
@@ -359,8 +359,8 @@ FileSize = "2107"
 Checksum = "b48eb418c9dbcdf56cf99f06e04cb852b4b7db7e"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_backup.sh"
-FileSize = "1000"
-Checksum = "337b4a1d74cc806989e4e5e4ee2ffa9fbf4e6b0d"
+FileSize = "1018"
+Checksum = "62397686ebcbe1ccd4cfd4d92b2f0afed47b648a"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_checksd.sh"
 FileSize = "461"
@@ -371,8 +371,8 @@ FileSize = "1229"
 Checksum = "d9f63e7d92e93e5d54809dc49f1c86d7efe55313"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_dump.sh"
-FileSize = "1273"
-Checksum = "e42db3033ce8ce7a01107b25cdac077a9253b742"
+FileSize = "1262"
+Checksum = "c581c179dd5902b2bf9d2c6a1f4e5183015f236b"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_dump_emmc.sh"
 FileSize = "1413"
