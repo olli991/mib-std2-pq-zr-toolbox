@@ -143,8 +143,8 @@ FileSize = "464"
 Checksum = "755f92f87d448732131930bb8a59fcb3453e4b2b"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_stationdb.sh"
-FileSize = "1220"
-Checksum = "581605863fef1b5858a5a0bd7dd0dcc16a297d7b"
+FileSize = "1398"
+Checksum = "675516748af927845a8f588ce3e5321c15341a20"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_swap.sh"
 FileSize = "495"
