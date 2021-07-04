@@ -7,8 +7,8 @@ FileSize = "2433"
 Checksum = "ed14e46fedbd78d3855495f266b81de7dd7f71c0"
 
 FileName = "/tsd/bin/system/startup"
-FileSize = "2704"
-Checksum = "c4c9ca1f855412ddb9638dff44cf5846d39633b5"
+FileSize = "2738"
+Checksum = "5f8f131ebb4b4e15456103ba0f2a4e478c08f817"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-about.esd"
 FileSize = "478"
