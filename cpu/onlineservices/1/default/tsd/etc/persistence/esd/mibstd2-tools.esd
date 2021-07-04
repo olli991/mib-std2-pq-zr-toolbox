@@ -1,8 +1,8 @@
 ###########################################################################################
 # 
 # Custom Green Engineering Menu screen
-# Author: 		YOX, Olli & lprot
-# Version: 		0.7.1
+# Author:		YOX, Olli & lprot
+# Version:		0.8
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -38,6 +38,10 @@ script
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_swdl_patch.sh"
 	label 	"Patch tsd.mibstd2.system.swdownload to accept any metainfo2.txt"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/update_maps.sh"
+	label 	"Copy new /maps from SD/USB to navigation SD (16Gb~1hour)"
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_reboot.sh"

@@ -2,7 +2,7 @@
 #
 # Custom Green Engineering Menu screen
 # Author:       Olli
-# Version:      0.7.1
+# Version:      0.8
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -219,13 +219,12 @@ choice
 choice
    value   	per 27263191 502
    label   	"Display configuration: "
- 
+
 keyValue
     value   String sys 0x00000000 0
     label   ""
 	poll 	0
-	
+
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_reboot.sh"
 	label 	"Reboot unit"
-	

@@ -1,8 +1,8 @@
 ###########################################################################################
 # 
 # Custom Green Engineering Menu screen
-# Author: 		YOX, Olli & lprot
-# Version: 		0.7.1
+# Author:		YOX, Olli & lprot
+# Version:		0.8
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -14,27 +14,22 @@ screen Skins Customization
 
 keyValue
     value	String sys 0x00000000 0
-    label   "This screen can be used to replace skin-graphics of the MIB."
-    poll    0  
+    label   "This screen is used to replace skins/graphics/ambience colors of the MIB."
+    poll    0
 
 keyValue
     value   String sys 0x00000000 0
-    label   "images.mcf and ambienceColorMap.res go into the custom/skins/skinX folder"
-    poll    0  
-
-keyValue
-    value   String sys 0x00000000 0
-    label   "To apply changes, reboot after copy."
-    poll    0      
+    label   "images.mcf and ambienceColorMap.res are copied from /custom/skins/skinX folders"
+    poll    0
 
 keyValue
     value   String sys 0x00000000 0
     label   ""
-    poll    0    
+    poll    0
 
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skins.sh"
-   label    "Copy new graphics/ambient colors for skins from /custom/skins"
+   label    "Copy images.mcf and ambienceColorMap.res from /custom/skins"
 
 keyValue
     value   String sys 0x00000000 0
@@ -43,7 +38,16 @@ keyValue
 
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_skins.sh"
-   label    "Restore all skins and ambienceColorMaps from backup"   
+   label    "Restore images.mcf and ambienceColorMaps from /backup"
+
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0
+
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/patch_menumode.sh"
+   label    "Activate UserSwitchableMenuMode in all skins"
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_reboot.sh"

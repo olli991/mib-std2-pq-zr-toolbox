@@ -1,8 +1,8 @@
 ###########################################################################################
 # 
 # Custom Green Engineering Menu screen
-# Author: 		YOX, Olli & lprot
-# Version: 		0.7.1
+# Author:		YOX, Olli & lprot
+# Version:		0.8
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -19,7 +19,7 @@ keyvalue
 
 keyvalue
 	value	String sys 0x00000000 0
-	label 	"If you want to update do NOT uninstall!"
+	label 	"WARNING! If you want to update do NOT uninstall!"
 	poll 	0
 
 keyValue

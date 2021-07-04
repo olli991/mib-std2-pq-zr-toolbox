@@ -1,8 +1,8 @@
 ###########################################################################################
 # 
 # Custom Green Engineering Menu screen
-# Author: 		Olli & lprot
-# Version: 		0.7.1
+# Author:		Olli & lprot
+# Version:		0.8
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -32,7 +32,7 @@ table
 	maxrows 		5
 	orientation 	horizontal
 	columns 		( "Name" String 150 ) ( "Status" String 120 ) ( "n/a" String 50 ) ( "n/a" String 50 ) ( "Temp" int 80 )
-	
+
 keyValue
     value   		String sys 0x00000000 0
 	label			"__________________________________________________________________"
@@ -45,7 +45,7 @@ table
 	maxrows 		1
 	orientation 	horizontal
 	columns 		( "part no" String 150 ) ( "SW version" String 150 ) ( "HW version" String 150 )
-	
+
 keyValue
     value   		String sys 0x00000000 0
 	label			"__________________________________________________________________"
@@ -58,12 +58,12 @@ table
 	maxrows 		1
 	orientation 	horizontal
 	columns 		( "Main-uC" String 150 ) ( "Touch-uC" String 150 ) ( "prox-uC" String 150 ) ( "EEPROM version" String 180 )
-	
+
 keyValue
     value   		String sys 0x00000000 0
 	label			"__________________________________________________________________"
 	poll    		0
-	
+
 keyValue
 	value 			int per 0x01c100e7 14
 	label 			"HW Fan [rpm]"
@@ -83,7 +83,7 @@ keyValue
     value   		String sys 0x00000000 0
 	label			"__________________________________________________________________"
 	poll    		0
-	
+
 table
 	content 		per 0x01c100e7 21
 	label 			"eMMC: Memory in kB"
@@ -96,7 +96,7 @@ keyValue
     value   		String sys 0x00000000 0
 	label			"__________________________________________________________________"
 	poll    		0
-	
+
 table
 	content 		per 0x01b800e1 84
 	label 			"Connected BT devices"
@@ -104,12 +104,12 @@ table
 	maxrows 		2
 	orientation 	horizontal
 	columns 		( "MAC address" String 180 ) ( "User-friendly name" String 175 ) ( "RSSI" String 70 ) ( "HFP version" String 50 ) ( "Supported profiles" String 200 )
-	
+
 keyValue
     value   		String sys 0x00000000 0
 	label			"__________________________________________________________________"
 	poll    		0
-	
+
 table
 	content 		per 0x01b800e1 40
 	label 			"Internal WiFi module"
@@ -117,7 +117,7 @@ table
 	maxrows 		1
 	orientation 	horizontal
 	columns 		( "SSID" String 100 ) ( "MAC address" String 200 ) ( "IP address" String 200 )
-	
+
 table
 	content 		per 0x01b800e1 101
 	label 			"Connected WiFi devices"
@@ -125,4 +125,3 @@ table
 	maxrows 		8
 	orientation 	horizontal
 	columns 		( "MAC address" String 200 ) ( "IP address" String 200 ) ( "RSSI" String 100 )
-	

@@ -2,7 +2,7 @@
 # 
 # Custom Green Engineering Menu screen
 # Author: 		YOX, Olli & lprot
-# Version: 		0.7.1
+# Version: 		0.8
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -30,39 +30,39 @@ keyValue
 keyValue
     value   String sys 0x00000000 0
     label   "the potential of the MQB platform. It's never our intention to harm any"
-    poll    0 
+    poll    0
 
 keyValue
     value   String sys 0x00000000 0
     label   "person, car or brand."
-    poll    0 
+    poll    0
 
 keyValue
     value   String sys 0x00000000 0
     label   ""
-    poll    0 	
+    poll    0
 
 keyValue
     value   String sys 0x00000000 0
     label   "If you've paid for this toolbox, you've been scammed."
-    poll    0 
-	
+    poll    0
+
 keyValue
     value   String sys 0x00000000 0
     label   ""
-    poll    0 	
+    poll    0
 
 keyValue
     value   String sys 0x00000000 0
     label   "Knowledge is power, but only when shared."
-    poll    0 
+    poll    0
 
 keyValue
     value   String sys 0x00000000 0
     label   ""
-    poll    0    
-    
+    poll    0
+
 keyValue
     value   String sys 0x00000000 0
-    label   "Based on the initial idea from YOX, rebuild and modified by Olli, lprot and Jille."
+    label   "Based on the initial idea from Jille, rebuild and modified by YOX, Olli, lprot"
     poll    0
