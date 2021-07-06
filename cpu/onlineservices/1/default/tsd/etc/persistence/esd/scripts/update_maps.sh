@@ -7,18 +7,18 @@ echo
 SRC=""
 NDSFILE=/maps/00/nds/product/product.nds
 for i in /media/mp00*; do
-	if [ -d $i/maps ]; then
+	if [ -d "$i/maps" ]; then
 		if [ -n "$SRC" ]; then
-			if [ -n "$(awk -v num1=$(ls -l $SRC$NDSFILE|awk '{print $5}' 2>/dev/null) -v num2=$(ls -l $i$NDSFILE|awk '{print $5}' 2>/dev/null) 'BEGIN{if (num1>num2) print "true"}' 2>/dev/null)" ]; then
-				SRC=$SRC/maps
-				DST=$i/maps
+			if [ -n "$(awk -v num1=$(ls -l """$SRC$NDSFILE"""|awk '{print $5}' 2>/dev/null) -v num2=$(ls -l """$i$NDSFILE"""|awk '{print $5}' 2>/dev/null) 'BEGIN{if (num1>=num2) print "true"}' 2>/dev/null)" ]; then
+				SRC="$SRC/maps"
+				DST="$i/maps"
 			else
-				DST=$SRC/maps
-				SRC=$i/maps
+				DST="$SRC/maps"
+				SRC="$i/maps"
 			fi
 			break
 		fi
-		SRC=$i
+		SRC="$i"
 	fi
 done
 
@@ -38,7 +38,7 @@ list() {
 		fi
 	done
 }
-list $SRC
+list "$SRC"
 
 echo "Removing /maps folder on the navigation SD..."
 rm -rf "$DST"
@@ -48,19 +48,20 @@ if [ -d "$DST" ]; then
 fi
 
 echo "Copying $FILENUM file(s) to navigation SD, please wait..."
-(start=`date -t`
+(COPIED=0
+start=`date -t`
 
-trap 'echo "File(s) copied: $COPIED"' USR1
+trap 'echo "File(s) copied: $COPIED ${i##$SRC}"' USR1
 
 copy() {
-	for i in "$1"/*;do
+	for i in "$1"/*; do
 		if [ -d "$i" ];then
-			#echo "Mkdir: $DST${i##$SRC}"
+			#echo "mkdir $DST${i##$SRC}"
 			mkdir -p "$DST${i##$SRC}"
 			copy "$i"
 		elif [ -f "$i" ]; then
-			#echo "Cp: $i to $DST${i##$SRC}"
-			cp "$i" $DST${i##$SRC} &
+			#echo "cp $i $DST${i##$SRC}"
+			cp -f "$i" "$DST${i##$SRC}" &
 			wait $!
 			((COPIED=COPIED+1))
 		fi
@@ -69,12 +70,12 @@ copy() {
 copy "$SRC"
 
 sync
-echo "File(s) copied: $COPIED"
+echo "File(s) copied: $COPIED ${i##$SRC}"
 end=`date -t`
 if ((end-start < 60)); then
-	echo "Done in $((end-start)) second(s)."
+	echo "Done in $((end-start)) second(s). Reboot the unit."
 else
-	echo "Done in $(((end-start)/60)) minute(s)."
+	echo "Done in $(((end-start)/60)) minute(s). Reboot the unit."
 fi
 kill -INT $$) &
 
@@ -82,7 +83,7 @@ CHPID=$!
 
 trap 'kill $CHPID 2>/dev/null;exit 0' INT
 while :; do
-	sleep 30 &
+	sleep 60 &
 	wait $!
 	kill -USR1 $CHPID
 done

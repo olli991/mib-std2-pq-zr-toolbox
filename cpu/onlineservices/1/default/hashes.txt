@@ -75,8 +75,8 @@ FileSize = "1792"
 Checksum = "ceca6519471d0cdf78333dd6f74aec69d09d36c3"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-tools.esd"
-FileSize = "2955"
-Checksum = "9581d10278cff6573a0382101232fc062f08cb99"
+FileSize = "2957"
+Checksum = "56459900f9c57d44e84274a4e37bbce0195f66d8"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-uninstall.esd"
 FileSize = "1137"
@@ -363,8 +363,8 @@ FileSize = "2107"
 Checksum = "b48eb418c9dbcdf56cf99f06e04cb852b4b7db7e"
 
 FileName = "/tsd/etc/persistence/esd/scripts/update_maps.sh"
-FileSize = "1782"
-Checksum = "834fb9ec00abdc3e020719d53aba145e738c1afe"
+FileSize = "1875"
+Checksum = "88fe998e10a899981e63321052e0c51767b428bb"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_backup.sh"
 FileSize = "1018"
