@@ -1,8 +1,8 @@
 ###########################################################################################
 # 
 # Custom Green Engineering Menu screen
-# Author: 		Olli
-# Version: 		0.7
+# Author:		Olli
+# Version:		0.8
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -15,22 +15,22 @@ screen GreenMenu Customization
 keyValue
     value	String sys 0x00000000 0
     label   "Instructions: Put *.esd files into the custom/greenmenu folder on the Toolbox"
-    poll    0    
+    poll    0
 
 keyValue
     value   String sys 0x00000000 0
     label   "drive. Custom scripts go into custom/greenmenu/scripts. Make sure that scripts"
-    poll    0    
+    poll    0
 
 keyValue
     value   String sys 0x00000000 0
     label   "in your *.esd files are referenced as /tsd/etc/persistence/esd/scripts"
-    poll    0   
+    poll    0
 
 keyValue
     value   String sys 0x00000000 0
     label   ""
-    poll    0  
+    poll    0
 
 keyValue
     value   String sys 0x00000000 0
@@ -50,8 +50,8 @@ keyValue
 keyValue
     value   String sys 0x00000000 0
     label   ""
-    poll    0  
-	
+    poll    0
+
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_esd.sh"
    label    "Copy custom Green Engineering Menu screens and scripts to unit" 
@@ -63,12 +63,12 @@ script
 keyValue
     value   String sys 0x00000000 0
     label   ""
-    poll    0  
+    poll    0
 
 keyValue
     value   String sys 0x00000000 0
-    label   "--- DEVELOPMENT ---"
-    poll    0  
+    label   "--- For developers only ---"
+    poll    0
 
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_devesd.sh"

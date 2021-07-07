@@ -16,8 +16,10 @@ echo "Destination:" $MIBPATH
 
 if [ "$TYPE" = "folder" ]; then
 	if [ -d ${NEWFILES} ]; then
-		# Mount system as read/write
-		. /tsd/etc/persistence/esd/scripts/util_mount.sh
+		if [ -z "$(echo $MIBPATH | grep '/tsd/var')" ]; then
+			# Mount system as read/write
+			. /tsd/etc/persistence/esd/scripts/util_mount.sh
+		fi
 		echo "Copying folder, please wait..."
 		cp -rf ${NEWFILES}/. ${MIBPATH}
 	else
@@ -26,8 +28,10 @@ if [ "$TYPE" = "folder" ]; then
 	fi	
 else
 	if [ -f ${NEWFILES} ]; then
-		# Mount system as read/write
-		. /tsd/etc/persistence/esd/scripts/util_mount.sh
+		if [ -z "$(echo $MIBPATH | grep '/tsd/var')" ]; then
+			# Mount system as read/write
+			. /tsd/etc/persistence/esd/scripts/util_mount.sh
+		fi
 		echo "Copying file, please wait..."
 		cp -f ${NEWFILES} ${MIBPATH}
 		if [[ $TOPIC = "hmi" || $TOPIC = "mirrorlink" || $TOPIC = "navigation" || $TOPIC = "swap" || $TOPIC = "swdl" || $TOPIC = "shadow" ]]; then

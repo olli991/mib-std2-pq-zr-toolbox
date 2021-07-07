@@ -1,7 +1,7 @@
 #!/bin/ksh
 export TOPIC=hmi
 export MIBPATH=/tsd/hmi/tsd.mibstd2.hmi.ifs
-export SDPATH=patch/$TOPIC
+export SDPATH=$TOPIC
 export TYPE="file"
 
 echo "This script will dump HMI file"

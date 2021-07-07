@@ -2,7 +2,7 @@
 #
 # Custom Green Engineering Menu screen
 # Author:       Olli
-# Version:      0.7
+# Version:      0.8
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -14,46 +14,45 @@ screen  Car_CAN_Device_List Adaptation
 
 choice
    value	per 27263191 300
-   label    "MFL: " 
+   label    "MFL: "
 
 choice
    value    per 27263191 302
-   label    "Trailer: " 
+   label    "Trailer: "
 
 choice
    value    per 27263191 304
-   label    "Oillevel: " 
+   label    "Oillevel: "
 
 choice
    value    per 27263191 306
-   label    "PDC audio lowering: " 
+   label    "PDC audio lowering: "
 
 choice
    value    per 27263191 308
-   label    "Vehicle ID number (VIN): " 
-   
+   label    "Vehicle ID number (VIN): "
+
 choice
    value    per 27263191 310
    label    "Driving school: "
 
 choice
    value    per 27263191 312
-   label    "Adaptive keys: "   
+   label    "Adaptive keys: "
 
 choice
    value    per 27263191 314
-   label    "Eco rating: "  
+   label    "Eco rating: "
 
 choice
    value    per 27263191 316
-   label    "RVC as RVC_Low: "  
+   label    "RVC as RVC_Low: "
 
 keyValue
     value   String sys 0x00000000 0
     label   ""
 	poll 	0
-	
+
 script
-	value 	sys 1 0x0100 "/bin/shutdown"
-	label 	"Reboot unit"	
-	
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_reboot.sh"
+	label 	"Reboot unit"

@@ -66,6 +66,7 @@ sleep 0.5
 mount -o remount,rw /
 mv -f /tsd/bin/system/GEM.jar /tsd/hmi/HMI/jar/GEM.jar
 mv -f /tsd/bin/system/SOP2 /tsd/bin/system/startup
+chmod 777 /tsd/bin/system/startup
 chmod a+rwx /tsd/etc/persistence/esd/scripts/*.sh
 sync
 mount -o remount,ro /

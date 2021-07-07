@@ -1,8 +1,8 @@
 ###########################################################################################
 #
 # Custom Green Engineering Menu screen
-# Author:       Olli
-# Version:      0.7
+# Author:       Olli & lprot
+# Version:      0.8
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -18,7 +18,7 @@ keyValue
 	poll 	0
 
 script
-	value 	sys 1 0x0100 "/bin/shutdown"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_reboot.sh"
 	label 	"Reboot unit"
 
 keyValue

@@ -1,7 +1,7 @@
 #!/bin/ksh
 export TOPIC=swdl
 export MIBPATH=/tsd/bin/swdownload/tsd.mibstd2.system.swdownload
-export SDPATH=patch/$TOPIC/tsd.mibstd2.system.swdownload
+export SDPATH=$TOPIC/tsd.mibstd2.system.swdownload
 export TYPE="file"
 
 echo "This script will copy tsd.mibstd2.system.swdownload"

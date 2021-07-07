@@ -1,7 +1,7 @@
 #!/bin/ksh
 export TOPIC=swap
 export MIBPATH=/tsd/bin/swap/tsd.mibstd2.system.swap
-export SDPATH=patch/$TOPIC/tsd.mibstd2.system.swap
+export SDPATH=$TOPIC/tsd.mibstd2.system.swap
 export TYPE="file"
 
 echo "This script will copy tsd.mibstd2.system.swap"

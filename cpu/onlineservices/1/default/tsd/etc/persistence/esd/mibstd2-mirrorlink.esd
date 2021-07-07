@@ -1,8 +1,8 @@
 ###########################################################################################
 # 
 # Custom Green Engineering Menu screen
-# Author: 		YOX & Olli
-# Version: 		0.7
+# Author:		YOX, Olli & lprot
+# Version:		0.8
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -16,17 +16,17 @@ keyValue
     value   String sys 0x00000000 0
     label   "Patches MirrorLink config to allow usage of any app while driving."
 	poll 	0
-	
+
 keyValue
     value   String sys 0x00000000 0
     label	"Don't be a dick watching movies while driving!"
 	poll 	0
-	
+
 keyValue
     value   String sys 0x00000000 0
 	label 	""
 	poll 	0
-	
+
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/patch_mirrorlink.sh"
 	label 	"Patch MirrorLink config"
@@ -35,7 +35,7 @@ keyValue
     value   String sys 0x00000000 0
 	label 	""
 	poll 	0
-	
+
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_mirrorlink.sh"
 	label 	"Restore MirrorLink config from backup"

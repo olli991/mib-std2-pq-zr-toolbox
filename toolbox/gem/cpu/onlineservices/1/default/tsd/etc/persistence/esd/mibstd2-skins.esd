@@ -1,8 +1,8 @@
 ###########################################################################################
 # 
 # Custom Green Engineering Menu screen
-# Author: 		YOX & Olli
-# Version: 		0.7
+# Author:		YOX, Olli & lprot
+# Version:		0.8
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -14,75 +14,22 @@ screen Skins Customization
 
 keyValue
     value	String sys 0x00000000 0
-    label   "This screen can be used to replace skin-graphics of the MIB."
-    poll    0  
+    label   "This screen is used to replace skins/graphics/ambience colors of the MIB."
+    poll    0
 
 keyValue
     value   String sys 0x00000000 0
-    label   "images.mcf and ambienceColorMap.res go into the custom/skins/skinX folder"
-    poll    0  
-
-keyValue
-    value   String sys 0x00000000 0
-    label   "Reboot after copy of a new skin or ambienceColorMap."
-    poll    0      
+    label   "images.mcf and ambienceColorMap.res are copied from /custom/skins/skinX folders"
+    poll    0
 
 keyValue
     value   String sys 0x00000000 0
     label   ""
-    poll    0    
+    poll    0
 
 script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin0.sh"
-   label    "Copy new graphics for skin0 from /custom/skins/skin0"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin1.sh"
-   label    "Copy new graphics for skin1 from /custom/skins/skin1"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin1_ambient.sh"
-   label    "Copy new ambient colors for skin1 from /custom/skins/skin1"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin2.sh"
-   label    "Copy new graphics for skin2 from /custom/skins/skin2"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin2_ambient.sh"
-   label    "Copy new ambient colors for skin2 from /custom/skins/skin2"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin3.sh"
-   label    "Copy new graphics for skin3 from /custom/skins/skin3"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin3_ambient.sh"
-   label    "Copy new ambient colors for skin3 from /custom/skins/skin3"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin4.sh"
-   label    "Copy new graphics for skin4 from /custom/skins/skin4"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin4_ambient.sh"
-   label    "Copy new ambient colors for skin4 from /custom/skins/skin4"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin5.sh"
-   label    "Copy new graphics for skin5 from /custom/skins/skin5"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin5_ambient.sh"
-   label    "Copy new ambient colors for skin5 from /custom/skins/skin5"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin6.sh"
-   label    "Copy new graphics for skin6 from /custom/skins/skin6"
-
-script
-   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skin6_ambient.sh"
-   label    "Copy new ambient colors for skin6 from custom/skins/skin6"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skins.sh"
+   label    "Copy images.mcf and ambienceColorMap.res from /custom/skins"
 
 keyValue
     value   String sys 0x00000000 0
@@ -91,8 +38,17 @@ keyValue
 
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_skins.sh"
-   label    "Restore all skins and ambienceColorMaps from backup"   
+   label    "Restore images.mcf and ambienceColorMaps from /backup"
+
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0
 
 script
-	value 	sys 1 0x0100 "/bin/shutdown"
-	label 	"Reboot"
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/patch_menumode.sh"
+   label    "Activate UserSwitchableMenuMode in all skins"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_reboot.sh"
+	label 	"Reboot unit"

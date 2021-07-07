@@ -12,13 +12,14 @@ echo
 
 DUMPFOLDER=$VOLUME/dump/$VERSION/$SERIAL/$SDPATH
 echo "Source $TYPE: $MIBPATH"
-echo "Destination: dump/$VERSION/$SERIAL/$SDPATH"
+echo "Destination: dump/$VERSION/$SERIAL/"
+echo "  $SDPATH"
 
 if [ "$TYPE" = "file" ]; then
 	if [ -f $MIBPATH ]; then
 		# Create destination and all intermediate folders if needed
 		if [ ! -d "$DUMPFOLDER" ]; then
-			echo "Creating folder $DUMPFOLDER..."
+			echo "Creating folder..."
 			mkdir -p $DUMPFOLDER
 		fi
 		echo "Copying, please wait..."
@@ -36,7 +37,7 @@ if [ "$TYPE" = "file" ]; then
 elif [ -d $MIBPATH ]; then
 	# Create destination and all intermediate folders if needed
 	if [ ! -d "$DUMPFOLDER" ]; then
-		echo "Creating folder $DUMPFOLDER..."
+		echo "Creating folder..."
 		mkdir -p $DUMPFOLDER
 	fi
 	echo "Copying, please wait..."

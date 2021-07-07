@@ -39,7 +39,6 @@ while [ $i -ne 99 ]; do
 	fi
 done
 
-echo
 if [ -n "$CHANGES" ]; then
 	if [ -f $MIBPATH/swdlhistory/swdownload1.conf ]; then
 		echo "Copying last to current..."
@@ -48,18 +47,32 @@ if [ -n "$CHANGES" ]; then
 		echo "Copying current to last..."
 		cp -f $MIBPATH/.swdownload.conf $MIBPATH/swdlhistory/swdownload1.conf
 	fi
-	sync
-	echo "Done. Please restart the unit to apply changes."
 elif [ -f $MIBPATH/swdlhistory/swdownload1.conf ]; then
 	if [ -n "$(cmp $MIBPATH/.swdownload.conf $MIBPATH/swdlhistory/swdownload1.conf)" ]; then
 		echo "Copying last to current because of differences..."
 		cp -f $MIBPATH/swdlhistory/swdownload1.conf $MIBPATH/.swdownload.conf
-		sync
-		echo "Done. Please reboot the unit to apply changes."
-	else
-		echo "Done. Nothing was changed"
+		CHANGES=1
 	fi
-else 
+fi
+
+VERSION=$(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g')
+if [ -z "$(cat $MIBPATH/.swdownload.conf | grep $VERSION)" ]; then
+	echo "Fixing error 1556..."
+	sed -i "s/\(ReleaseName[[:space:]]*=[[:space:]]*\)\(.*\)/\1${VERSION}\r/" $MIBPATH/.swdownload.conf
+	VERSION=$(echo "$VERSION"|awk -F'_' '{gsub(/[^[:digit:]]/, "", $5);print $5}' 2>/dev/null)
+	sed -i "s/\(MuVersion[[:space:]]*=[[:space:]]*\)\(.*\)/\1${VERSION}\r/" $MIBPATH/.swdownload.conf
+	VERSION=$(cat $MIBPATH/.swdownload.conf|awk '/online/{getline;getline;printf "%d",$3}' 2>/dev/null)
+	sed -i "s/TargetVersion = 1157/TargetVersion = ${VERSION}/" $MIBPATH/.swdownload.conf
+	sed -i "s/UpdateStatus = 14/UpdateStatus = 4/" $MIBPATH/.swdownload.conf
+	sed -i "s/UpdateResult = 2/UpdateStatus = 1/" $MIBPATH/.swdownload.conf
+	cp -f $MIBPATH/.swdownload.conf $MIBPATH/swdlhistory/swdownload1.conf
+fi
+
+echo
+if [ -n "$CHANGES" ]; then
+	sync
+	echo "Done. Please reboot the unit to apply changes."
+else
 	echo "Done. Nothing was changed"
 fi
 

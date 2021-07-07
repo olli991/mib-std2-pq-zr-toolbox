@@ -1,8 +1,8 @@
 ###########################################################################################
-# 
+#
 # Custom Green Engineering Menu screen
-# Author: 		YOX & Olli
-# Version: 		0.7
+# Author:		YOX, Olli & lprot
+# Version:		0.8
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -116,7 +116,7 @@ keyValue
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_mirrorlink.sh"
-	label 	"Mirrorlink config"
+	label 	"MirrorLink config"
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_nav.sh"
@@ -135,9 +135,21 @@ script
 	label 	"Persistence vault"
 
 script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_onlineservices.sh"
+	label 	"Online services settings"
+
+script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_var.sh"
 	label 	"/tsd/var partition"
 
 script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_emmc.sh"
+	label 	"eMMC content (exFAT/NTFS SD card/USB drive + ~7.3 GB free space required)"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_main_root.sh"
+	label 	"J5 root"
+
+script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_root.sh"
-	label 	"Root without /dev (will take hours!)"
+	label 	"iMX6 root"

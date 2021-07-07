@@ -1,8 +1,8 @@
 ###########################################################################################
 # 
 # Custom Green Engineering Menu screen
-# Author: 		YOX & Olli
-# Version: 		0.7
+# Author:		YOX, Olli & lprot
+# Version:		0.8
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -14,8 +14,20 @@ screen Network MIBSTD2_Toolbox
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_telnet.sh"
-	label 	"Activate telnet, ftp and console access until next reboot"
-	
+	label 	"Activate telnet and ftp access until the next reboot"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_qconn.sh"
+	label 	"Activate qconn access until the next reboot"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_console.sh"
+	label 	"Activate console access until the next reboot"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/deactivate_access.sh"
+	label 	"Deactivate telnet, ftp and qconn access"
+
 choice
 	value 	per 0x01c100e7 54
 	label 	"Ethernet:"
@@ -25,22 +37,22 @@ keyValue
 	value 	String per 0x01c100e7 76
 	label 	"Current MU IP addresses:"
 	poll 	100
-	
+
 keyValue
     value   String sys 0x00000000 0
 	label 	""
 	poll 	0
-	
+
 keyValue
     value   String sys 0x00000000 0
 	label 	"--- NOT TESTED ---"
 	poll 	0
-	
+
 choice
 	value 	per 0x01b800e1 93
 	label 	"MOD via D-Link"
 	poll 	2000
-	
+
 choice
 	value 	per 0x01b800e1 92
 	label 	"Allow any USB surfstick"
