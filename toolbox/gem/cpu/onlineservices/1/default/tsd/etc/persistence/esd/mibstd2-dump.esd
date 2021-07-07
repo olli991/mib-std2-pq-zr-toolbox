@@ -143,7 +143,7 @@ script
 	label 	"/tsd/var partition"
 
 script
-	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_dump_emmc.sh"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_emmc.sh"
 	label 	"eMMC content (exFAT/NTFS SD card/USB drive + ~7.3 GB free space required)"
 
 script
