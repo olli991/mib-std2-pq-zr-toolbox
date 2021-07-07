@@ -8,7 +8,6 @@ echo
 # Include info utility
 . /tsd/etc/persistence/esd/scripts/util_info.sh
 
-
 if [ ! -d "$VOLUME/dump/$VERSION/$SERIAL" ]; then
 	echo "Creating backup folder..."
 	mkdir -p $VOLUME/dump/$VERSION/$SERIAL
