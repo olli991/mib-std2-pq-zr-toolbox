@@ -1,11 +1,10 @@
-
 # MIB STD2 Toolbox
 ⚠️ **Currently is working only on MIB STD2 PQ/ZR Technisat/Preh and is NOT COMPATIBLE with MIB2 STD Delphi and MIB2 HIGH Harman units!** ⚠️
 
 ## Disclaimer
 WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT YOUR OWN RISK! READ THIS README, USE YOUR BRAIN AND BE CAREFUL!
 
-![Toolbox-Mainpage-0-7-1](https://user-images.githubusercontent.com/55631413/119200127-98ff7b80-ba8c-11eb-93ce-f3b50c819deb.png)
+![MST2-Toolbox-v0 8](https://user-images.githubusercontent.com/55631413/125124008-bb5e5e80-e0f7-11eb-9112-0cbaeb580b51.png)
 
 ## Requirements
 - Any OBD2 adapter with a software that can enable developer mode (Green Engineering Menu) on the unit
