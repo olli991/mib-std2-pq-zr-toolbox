@@ -1,5 +1,5 @@
 ###########################################################################################
-# 
+#
 # Custom Green Engineering Menu screen
 # Author:		YOX, Olli & lprot
 # Version:		0.8
@@ -7,10 +7,10 @@
 #
 ###########################################################################################
 #
-# Main -> MIB STD2 Toolbox Main -> Update & Unistall
+# Main -> MIB STD2 Toolbox Main -> Update & Uninstall
 #
 ###########################################################################################
-screen Update_and_Unistall MIBSTD2_Toolbox
+screen Update_and_Uninstall MIBSTD2_Toolbox
 
 keyvalue
 	value	String sys 0x00000000 0
