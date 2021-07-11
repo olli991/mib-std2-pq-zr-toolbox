@@ -38,19 +38,16 @@ copy() {
 			mkdir -p "$DST${i##$SRC}"
 			copy "$i"
 		elif [ -f "$i" ]; then
-			(kill $LASTPID &>/dev/null
-			sleep 60
-			echo "$COPIED cp ${i##$SRC}"
-			) &
-			LASTPID=$!
+			cpstart=`date -t`
 			cp -f "$i" "$DST${i##$SRC}"
 			((COPIED=COPIED+1))
+			if ((`date -t`-cpstart > 30)); then
+				echo "$COPIED cp ${i##$SRC}"
+			fi
 		fi
 	done
 }
 copy "$SRC"
-
-kill $LASTPID &>/dev/null
 
 end=`date -t`
 

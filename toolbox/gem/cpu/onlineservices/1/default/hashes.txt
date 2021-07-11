@@ -383,8 +383,8 @@ FileSize = "2106"
 Checksum = "e50b8e4e25eb7d0e4d632b3ca1c5f7c53fce5c9a"
 
 FileName = "/tsd/etc/persistence/esd/scripts/update_maps.sh"
-FileSize = "1473"
-Checksum = "8a8129416b315f75a475ee2d67cd4fe327d581af"
+FileSize = "1450"
+Checksum = "ac299a8643be81f566916d18cb6def65a15f918c"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_backup.sh"
 FileSize = "1018"
