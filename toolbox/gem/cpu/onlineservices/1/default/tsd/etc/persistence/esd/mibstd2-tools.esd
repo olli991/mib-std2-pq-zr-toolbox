@@ -41,7 +41,7 @@ script
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/update_maps.sh"
-	label 	"Copy new /maps from SD/USB to navigation SD (16Gb~1,5hour)"
+	label 	"Copy /maps_new from SD to navigation SD (16Gb~1,5hour)"
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_reboot.sh"
