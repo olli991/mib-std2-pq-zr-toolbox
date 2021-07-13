@@ -4,6 +4,11 @@
 # This script will make a backup if it's not already there
 # Modified for MIB STD2 toolbox by Olli
 
+if [ -z "$VOLUME" ]; then
+# Locate Toolbox drive
+. /tsd/etc/persistence/esd/scripts/util_checksd.sh 
+fi
+
 if [ "$TOPIC" = "devesd" ]; then
 	NEWFILES=$VOLUME/toolbox/$SDPATH
 else

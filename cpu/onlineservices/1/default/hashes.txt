@@ -383,8 +383,8 @@ FileSize = "461"
 Checksum = "c6c5ef6f561c6f3e4de452f365946212a87c38c3"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_copy.sh"
-FileSize = "1229"
-Checksum = "d9f63e7d92e93e5d54809dc49f1c86d7efe55313"
+FileSize = "1334"
+Checksum = "7c5f0436decadf7c47296223c397c6fae2c5f36f"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_dump.sh"
 FileSize = "1262"
