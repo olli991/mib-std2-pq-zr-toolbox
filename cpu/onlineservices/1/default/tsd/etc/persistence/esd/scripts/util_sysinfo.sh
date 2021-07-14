@@ -26,13 +26,26 @@ echo "SW-Version: $(echo $INFO | sed 's/.*SW-Version=\(.*\) HW-Ver.*/\1/' 2>/dev
 echo "SerNum:" $(echo $INFO | sed 's/.*SerNum=\(.*\) Wdog=.*/\1/' 2>/dev/null) "Mileage:" $(echo $INFO | sed 's/.*Mileage=\(.*\) VIN=.*/\1/' 2>/dev/null) "VIN:" $(echo $INFO | sed 's/.*VIN=\(.*\).*$/\1/' 2>/dev/null)
 echo "Train:" $(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g') "VCRN: $VCRN" 
 
-if [ -e /bin/in32 ]; then
-	addr=$((0x020D8000 + 0x024))
+addr=$((0x020D8000 + 0x024))
+
+if [ ! -e /bin/in32 ]; then
+	# Find the volume with Toolbox folder
+	for i in /media/mp00*; do
+		if [ -f "$i/toolbox/utils/in32" ]; then
+			cp $i/toolbox/utils/in32 /tmp/
+			chmod 777 /tmp/in32
+			set -A RES $(/tmp/in32 ${addr})
+			rm -f /tmp/in32
+			break
+		fi
+	done
+else
 	set -A RES $(in32 ${addr})
-	gpio5=$((16#${RES[2]}))
-	hwVersion=$((${gpio5}&(0x1f)))
-	hwVariant=$((((${gpio5}&(1<<5))|((${gpio5}&(0x3f<<10))>>4))>>5))
 fi
+
+gpio5=$((16#${RES[2]}))
+hwVersion=$((${gpio5}&(0x1f)))
+hwVariant=$((((${gpio5}&(1<<5))|((${gpio5}&(0x3f<<10))>>4))>>5))
 
 swdlVariant=$(awk -F "\015| " '/Variant/{print $3}' /tsd/var/swdownload/.swdownload.conf 2>/dev/null)
 swdlHwVersion=$(awk -F "\015| " '/HwVersion/{print $3}' /tsd/var/swdownload/.swdownload.conf 2>/dev/null)

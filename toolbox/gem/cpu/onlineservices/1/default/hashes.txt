@@ -431,8 +431,8 @@ FileSize = "2352"
 Checksum = "5b17cb861de1a32e15980e3cc30a064b6b4ab57c"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_sysinfo.sh"
-FileSize = "3307"
-Checksum = "39187e0858bad039587789c54c618d42c650879e"
+FileSize = "3551"
+Checksum = "1fdb1cdfc0ecfcee633436dd6f1691cd1bef45de"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_uninstall.sh"
 FileSize = "1017"
