@@ -38,6 +38,10 @@ keyValue
 	label 	"Current MU IP addresses:"
 	poll 	100
 
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/test_internet.sh"
+	label 	"Test internet connection"
+
 keyValue
     value   String sys 0x00000000 0
 	label 	""

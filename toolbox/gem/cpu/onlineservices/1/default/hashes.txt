@@ -75,8 +75,8 @@ FileSize = "1671"
 Checksum = "4d7d91e0bf555f8d731fd0292b33b2d8c3ac2c6b"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-network.esd"
-FileSize = "1506"
-Checksum = "24d7b1310364d6c08d8a4e37536c5f7c4625cc9f"
+FileSize = "1622"
+Checksum = "eaee1328c547f333ee510da66d38b8bf759a0d52"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-skins.esd"
 FileSize = "1586"
@@ -382,6 +382,10 @@ FileName = "/tsd/etc/persistence/esd/scripts/save_sysinfo.sh"
 FileSize = "2106"
 Checksum = "e50b8e4e25eb7d0e4d632b3ca1c5f7c53fce5c9a"
 
+FileName = "/tsd/etc/persistence/esd/scripts/test_internet.sh"
+FileSize = "247"
+Checksum = "f878a662eafa68a489aa831f7cdd9b04c44d9966"
+
 FileName = "/tsd/etc/persistence/esd/scripts/update_maps.sh"
 FileSize = "1450"
 Checksum = "ac299a8643be81f566916d18cb6def65a15f918c"
@@ -427,8 +431,8 @@ FileSize = "2352"
 Checksum = "5b17cb861de1a32e15980e3cc30a064b6b4ab57c"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_sysinfo.sh"
-FileSize = "3139"
-Checksum = "b7e5cdf2b486cbfbe6af0eb42687f19e6730bc9f"
+FileSize = "3307"
+Checksum = "39187e0858bad039587789c54c618d42c650879e"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_uninstall.sh"
 FileSize = "1017"
