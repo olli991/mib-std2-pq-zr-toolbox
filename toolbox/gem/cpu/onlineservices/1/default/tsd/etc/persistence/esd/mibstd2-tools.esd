@@ -24,28 +24,12 @@ keyValue
 
 keyValue
     value   String sys 0x00000000 0
-	label 	"--- Utilities ---"
+	label 	"--- Screenshots ---"
 	poll 	0
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/move_screenshots.sh"
 	label 	"Move screenshots from root of all drives to the Toolbox drive"
-
-script
-	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/custom_script.sh"
-	label 	"Run toolbox.sh script from the root of the Toolbox drive"
-
-script
-	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/patch_swdl.sh"
-	label 	"Patch tsd.mibstd2.system.swdownload to accept any metainfo2.txt"
-
-script
-	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/update_maps.sh"
-	label 	"Copy /maps_new from SD to navigation SD (16Gb~1,5hour)"
-
-script
-	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_reboot.sh"
-	label 	"Reboot unit"
 
 keyValue
     value    String sys 0x00000000 0
@@ -54,7 +38,53 @@ keyValue
 
 keyValue
     value   String sys 0x00000000 0
-    label   "--- Privacy & security related ---"
+	label 	"--- Run ---"
+	poll 	0
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/custom_script.sh"
+	label 	"Run toolbox.sh script from the root of the Toolbox drive"
+
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+	label 	"--- Patch ---"
+	poll 	0
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/patch_swdl.sh"
+	label 	"Patch tsd.mibstd2.system.swdownload to accept any metainfo2.txt"
+
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+	label 	"--- Maps ---"
+	poll 	0
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/update_maps.sh"
+	label 	"Copy /maps_new from SD to navigation SD (16Gb~1,5hour)"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/update_poi.sh"
+	label 	"Copy POI update from USB drive to SD card for installation"
+
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "--- Privacy related ---"
     poll    0
 
 script
@@ -90,6 +120,16 @@ keyValue
 	label 	""
 	poll 	0
 
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "--- Security ---"
+    poll    0
+
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/privacy_shadow.sh"
 	label 	"Copy custom shadow file to unit"
@@ -97,3 +137,12 @@ script
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_shadow.sh"
 	label 	"Restore shadow file from backup"
+
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_reboot.sh"
+	label 	"Reboot unit"

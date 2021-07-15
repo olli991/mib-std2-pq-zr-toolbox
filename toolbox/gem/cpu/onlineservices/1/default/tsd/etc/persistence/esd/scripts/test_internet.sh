@@ -8,7 +8,7 @@ ping -c 3 8.8.8.8
 
 echo "Pinging www.google.com..." &
 wait $!
-ping -c 3 8.8.8.8
+ping -c 3 www.google.com
 
 echo
 echo "Script execution finished."

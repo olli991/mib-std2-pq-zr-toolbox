@@ -75,8 +75,8 @@ FileSize = "1792"
 Checksum = "ceca6519471d0cdf78333dd6f74aec69d09d36c3"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-tools.esd"
-FileSize = "2948"
-Checksum = "af1a0b72afa741b32fa83c2bc67fc4f3f018112f"
+FileSize = "3800"
+Checksum = "d15d30611d2301958f590a2b195d9e2625ab3b19"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-uninstall.esd"
 FileSize = "1139"
@@ -371,12 +371,16 @@ FileSize = "2106"
 Checksum = "e50b8e4e25eb7d0e4d632b3ca1c5f7c53fce5c9a"
 
 FileName = "/tsd/etc/persistence/esd/scripts/test_internet.sh"
-FileSize = "247"
-Checksum = "f878a662eafa68a489aa831f7cdd9b04c44d9966"
+FileSize = "254"
+Checksum = "701d8448eef33a0d19f198f9d43d196e4160996e"
 
 FileName = "/tsd/etc/persistence/esd/scripts/update_maps.sh"
 FileSize = "1450"
 Checksum = "ac299a8643be81f566916d18cb6def65a15f918c"
+
+FileName = "/tsd/etc/persistence/esd/scripts/update_poi.sh"
+FileSize = "753"
+Checksum = "e4d4f89f7e92f7dbff3140300fbfb5cfa3768b02"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_backup.sh"
 FileSize = "1018"
