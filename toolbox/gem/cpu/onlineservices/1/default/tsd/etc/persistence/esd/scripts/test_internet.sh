@@ -2,13 +2,12 @@
 echo "This script tests the connection of the unit to the Internet"
 echo
 
-echo "Pinging 8.8.8.8..." &
-wait $!
-ping -c 3 8.8.8.8
+echo "Pinging 8.8.8.8..."
+ping -c 3 8.8.8.8 2>&1
 
-echo "Pinging www.google.com..." &
-wait $!
-ping -c 3 www.google.com
+echo
+echo "Pinging www.google.com..."
+ping -c 3 www.google.com 2>&1
 
 echo
 echo "Script execution finished."

@@ -77,6 +77,10 @@ script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/update_poi.sh"
 	label 	"Copy POI update from USB drive to SD card for installation"
 
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/delete_poi.sh"
+	label 	"Delete POI update from SD card after installation"
+
 keyValue
     value    String sys 0x00000000 0
     label    ""
@@ -119,11 +123,6 @@ keyValue
     value   String sys 0x00000000 0
 	label 	""
 	poll 	0
-
-keyValue
-    value    String sys 0x00000000 0
-    label    ""
-    poll     0
 
 keyValue
     value   String sys 0x00000000 0
