@@ -1,6 +1,8 @@
 #!/bin/ksh
-echo "This script will install custom skins (images.mcf) and/or"
-echo "ambienceColorMap.res from custom/skins folder"
+echo "This script will install /custom/skins (images.mcf) and/or"
+echo "ambienceColorMap.res from /custom/skins folder"
+echo "If /custom/skins contains new skin folders, they will be"
+echo "copies into /tsd/hmi/Resources/"
 echo
 
 # Locate Toolbox drive
@@ -27,7 +29,7 @@ for skin_folder in $VOLUME/custom/skins/skin*; do
 				WRITE=1
 			fi
 			echo "Replacing $FOLDER/images.mcf..."
-			cp -f $skin_folder/images.mcf $MIBPATH
+			cp -f $skin_folder/images.mcf $MIBPATH 2>&1
 			echo "Done."
 		fi
 	fi
@@ -44,7 +46,7 @@ for skin_folder in $VOLUME/custom/skins/skin*; do
 				WRITE=1
 			fi
 			echo "Replacing $FOLDER/ambienceColorMap.res..."
-			cp -f $skin_folder/ambienceColorMap.res $MIBPATH
+			cp -f $skin_folder/ambienceColorMap.res $MIBPATH 2>&1
 			echo "Done."
 		fi
 	fi
@@ -61,9 +63,19 @@ for skin_folder in $VOLUME/custom/skins/skin*; do
 				WRITE=1
 			fi
 			echo "Replacing $FOLDER/info.txt..."
-			cp -f $skin_folder/info.txt $MIBPATH
+			cp -f $skin_folder/info.txt $MIBPATH 2>&1
 			echo "Done."
 		fi
+	fi
+	if [ ! -d /tsd/hmi/Resources/$FOLDER ]; then
+		if [ -z "$WRITE" ]; then
+			# Mount system partition in read/write mode
+			. /tsd/etc/persistence/esd/scripts/util_mount.sh
+			WRITE=1
+		fi
+		echo "Copying new $FOLDER..."
+		cp -rf $skin_folder /tsd/hmi/Resources/ 2>&1
+		echo "Done."
 	fi
 done
 
