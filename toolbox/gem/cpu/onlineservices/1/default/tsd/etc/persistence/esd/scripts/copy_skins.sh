@@ -2,7 +2,7 @@
 echo "This script will install /custom/skins (images.mcf) and/or"
 echo "ambienceColorMap.res from /custom/skins folder"
 echo "If /custom/skins contains new skin folders, they will be"
-echo "copies into /tsd/hmi/Resources/"
+echo "copied into /tsd/hmi/Resources/"
 echo
 
 # Locate Toolbox drive
@@ -18,7 +18,7 @@ for skin_folder in $VOLUME/custom/skins/skin*; do
 	FOLDER=${skin_folder##*/}
 	if [ -f $skin_folder/images.mcf ]; then
 		export MIBPATH=/tsd/hmi/Resources/$FOLDER/images.mcf
-		if [ -n "$(cmp $skin_folder/images.mcf $MIBPATH)" ]; then
+		if [ -n "$(cmp $skin_folder/images.mcf $MIBPATH 2>/dev/null)" ]; then
 			export TOPIC=skins/$FOLDER
 			export SDPATH=$TOPIC/images.mcf
 			# Make backup
@@ -35,7 +35,7 @@ for skin_folder in $VOLUME/custom/skins/skin*; do
 	fi
 	if [ -f $skin_folder/ambienceColorMap.res ]; then
 		export MIBPATH=/tsd/hmi/Resources/$FOLDER/ambienceColorMap.res
-		if [ -n "$(cmp $skin_folder/ambienceColorMap.res $MIBPATH)" ]; then
+		if [ -n "$(cmp $skin_folder/ambienceColorMap.res $MIBPATH 2>/dev/null)" ]; then
 			export TOPIC=skins/$FOLDER
 			export SDPATH=$TOPIC/ambienceColorMap.res
 			# Make backup
@@ -52,7 +52,7 @@ for skin_folder in $VOLUME/custom/skins/skin*; do
 	fi
 	if [ -f $skin_folder/info.txt ]; then
 		export MIBPATH=/tsd/hmi/Resources/$FOLDER/info.txt
-		if [ -n "$(cmp $skin_folder/info.txt $MIBPATH)" ]; then
+		if [ -n "$(cmp $skin_folder/info.txt $MIBPATH 2>/dev/null)" ]; then
 			export TOPIC=skins/$FOLDER
 			export SDPATH=$TOPIC/info.txt
 			# Make backup
@@ -74,6 +74,30 @@ for skin_folder in $VOLUME/custom/skins/skin*; do
 			WRITE=1
 		fi
 		echo "Copying new $FOLDER..."
+		cp -rf $skin_folder /tsd/hmi/Resources/ 2>&1
+		echo "Done."
+	fi
+done
+
+#replace skins in MIB with skins from /custom/skins/replace
+for skin_folder in $VOLUME/custom/skins/replace/skin*; do
+	#Extract skin folder name
+	FOLDER=${skin_folder##*/}
+	if [ -d /tsd/hmi/Resources/$FOLDER ]; then
+		export MIBPATH=/tsd/hmi/Resources/$FOLDER
+		export TOPIC=skins/$FOLDER
+		export SDPATH=$TOPIC
+		export TYPE="folder" 
+		# Make backup
+		. /tsd/etc/persistence/esd/scripts/util_backup.sh
+		if [ -z "$WRITE" ]; then
+			# Mount system partition in read/write mode
+			. /tsd/etc/persistence/esd/scripts/util_mount.sh
+			WRITE=1
+		fi
+		echo "Deleting /tsd/hmi/Resources/$FOLDER..."
+		rm -rf /tsd/hmi/Resources/$FOLDER 2>&1
+		echo "Replacing with $skin_folder..."
 		cp -rf $skin_folder /tsd/hmi/Resources/ 2>&1
 		echo "Done."
 	fi

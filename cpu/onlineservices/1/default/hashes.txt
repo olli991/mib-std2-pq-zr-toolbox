@@ -131,8 +131,8 @@ FileSize = "466"
 Checksum = "5f75c492f3b5e66c6a1ca6f4e2c10601e3353bb4"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_skins.sh"
-FileSize = "2758"
-Checksum = "8785d24b5836ece4b0a4770f76c176a59d877b5e"
+FileSize = "3541"
+Checksum = "7960783f8018de9ca744831034de57ab1dd62aa1"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_sounds.sh"
 FileSize = "456"
