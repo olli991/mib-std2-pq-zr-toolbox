@@ -59,5 +59,18 @@ keyValue
     poll    0
 
 script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_tts.sh"
+   label    "Copy new tts sounds from /custom/tts to unit"
+
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_tts.sh"
+   label    "Restore tts from backup"
+
+keyValue
+    value   String sys 0x00000000 0
+    label   ""
+    poll    0
+	
+script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_reboot.sh"
 	label 	"Reboot unit"
