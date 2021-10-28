@@ -103,8 +103,8 @@ FileSize = "499"
 Checksum = "89a73c72b03b4075b3b3a55f9477a980bb3a34e1"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_fec.sh"
-FileSize = "531"
-Checksum = "48bfa0b0ab0b037f708a23a5ada9310c0b902d6b"
+FileSize = "530"
+Checksum = "8fa299c3f4c9b6560db1df30b1a2b16b30478eb4"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_hmi.sh"
 FileSize = "477"
