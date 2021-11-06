@@ -2,7 +2,7 @@
 #
 # Custom Green Engineering Menu screen
 # Author:		YOX, Olli & lprot
-# Version:		0.8
+# Version:		0.8.1
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -11,6 +11,11 @@
 #
 ###########################################################################################
 screen History About
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.8.1 POI import, skin improvements, carplay and tts added, sanity and fixes."
+    poll     0
 
 keyValue
     value   String sys 0x00000000 0
