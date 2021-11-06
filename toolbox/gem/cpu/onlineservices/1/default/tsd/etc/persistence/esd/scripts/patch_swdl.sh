@@ -8,9 +8,9 @@ echo "This script will patch tsd.mibstd2.system.swdownload to"
 echo "accept custom metainfo2.txt"
 echo
 
-size=$(ls -l $file | awk '{print $5}' 2>/dev/null)
+size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
 
-echo "Checking $file..."
+echo "Checking $MIBPATH..."
 case $size in
 	3128084|3128124) #cpu EU ZR/US PQ 253
 		set -A offsets A9B1C ABAC7 ABBBF 14E190 ;;
