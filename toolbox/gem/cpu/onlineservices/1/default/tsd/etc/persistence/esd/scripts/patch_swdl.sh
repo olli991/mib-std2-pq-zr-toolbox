@@ -8,9 +8,6 @@ echo "This script will patch tsd.mibstd2.system.swdownload to"
 echo "accept custom metainfo2.txt"
 echo
 
-# Make backup folder
-. /tsd/etc/persistence/esd/scripts/util_backup.sh 
-
 file="/tsd/bin/swdownload/tsd.mibstd2.system.swdownload"
 size=$(ls -l $file | awk '{print $5}' 2>/dev/null)
 
@@ -20,10 +17,14 @@ case $size in
 		set -A offsets A9B1C ABAC7 ABBBF 14E190 ;;
 	3084644|3084684) #cpuplus EU ZR/US PQ 253
 		set -A offsets A91F4 AB19F AB297 14CBB4 ;;
-	3104884|3107004|3105500|3105572) #cpu US/EU PQ/ZR 363/367/368
+	3104884|3105500|3105572|3106676) #cpu US/EU PQ/ZR 363/368/369
 		set -A offsets A9A64 ABA37 ABAF3 14EBDC ;;
-	3061668|3063780|3062284|3062348) #cpuplus US/EU PQ/ZR 363/367/368
+	3061668|3062284|3062348|3063452) #cpuplus US/EU PQ/ZR 363/368/369
 		set -A offsets A9214 AB1E7 AB2A3 14D6D8 ;;
+	3107004) #cpu US PQ/ZR 367
+		set -A offsets A9A64 ABA34 ABAEF 14EBD8 ;;
+	3063780) #cpuplus US PQ/ZR 367
+		set -A offsets A9214 AB1E4 AB29F 14D6D4 ;;
 	3108412) #cpu EU PQ/ZR 478/479
 		set -A offsets A9A64 ABA37 ABAF3 14EBD4 ;;
 	3065228) #cpuplus EU PQ/ZR 478/479
@@ -32,8 +33,7 @@ case $size in
 		offsets="" ;;
 esac
 
-if [ -n $offsets ]; then
-	mount -t qnx6 -o remount,rw /dev/hd0t177 /
+if [ -n "$offsets" ]; then
 	fin=$file
 	set -A bytes 07 EA EA 07
 	j=0
@@ -48,12 +48,20 @@ if [ -n $offsets ]; then
 		fin=$fout
 		j=$((j+1))
 	done
-	mv -f $fout $file
-	chmod 777 $file
-	sync
-	mount -t qnx6 -o remount,ro /dev/hd0t177 /
-	echo "Patch is applied. Please restart the unit."
+	if [ -f "$fout" ]; then
+		# Make backup folder
+		. /tsd/etc/persistence/esd/scripts/util_backup.sh 
+
+		mount -t qnx6 -o remount,rw /dev/hd0t177 /
+		mv -f $fout $file
+		chmod 777 $file
+		sync
+		mount -t qnx6 -o remount,ro /dev/hd0t177 /
+		echo "Patch is applied. Please restart the unit."
+	else
+		echo "Patching failed!"
+	fi
 else
-	echo "Unknown $file version detected."
+	echo "Unknown file size $size detected."
 fi
 exit 0
