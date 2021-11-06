@@ -39,6 +39,10 @@ echo "Dumping system sounds..."
 . /tsd/etc/persistence/esd/scripts/dump_sounds.sh > /dev/null & wait $!
 echo "Dumping system sounds is done"
 
+echo "Dumping text-to-speech sounds..."
+. /tsd/etc/persistence/esd/scripts/dump_tts.sh > /dev/null & wait $!
+echo "Dumping text-to-speech sounds is done"
+
 ## Graphic dump scripts ##
 echo "Dumping navigation graphics..."
 . /tsd/etc/persistence/esd/scripts/dump_mapcfg.sh > /dev/null & wait $!
@@ -51,6 +55,10 @@ echo "Dumping skin files is done"
 echo "Dumping startup screens..."
 . /tsd/etc/persistence/esd/scripts/dump_startanim.sh > /dev/null & wait $!
 echo "Dumping startup screens is done"
+
+echo "Dumping carplay oem icon..."
+. /tsd/etc/persistence/esd/scripts/dump_carplayicon.sh > /dev/null & wait $!
+echo "Dumping carplay oem icon is done"
 
 ## Database dump scripts ##
 echo "Dumping radio station logo DB..."

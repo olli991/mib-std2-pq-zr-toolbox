@@ -113,6 +113,14 @@ script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_startanim.sh"
 	label 	"Restore startup animations from backup"
 
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_carplayicon.sh"
+	label 	"Copy carplay oem icon to unit"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_carplayicon.sh"
+	label 	"Restore carplay oem icon from backup"
+	
 keyValue
     value   String sys 0x00000000 0
 	label 	""

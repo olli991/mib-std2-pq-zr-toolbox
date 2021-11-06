@@ -52,6 +52,10 @@ script
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_stationdb.sh"
 	label 	"Radio station logo DB (RSDB)"
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_carplayicon.sh"
+	label 	"Carplay OEM icon"
 
 keyValue
     value   String sys 0x00000000 0
@@ -71,6 +75,10 @@ script
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_sounds.sh"
    label    "System sounds"
+   
+script
+   value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_tts.sh"
+   label    "Text-to-speech sounds"
 
 keyValue
     value   String sys 0x00000000 0
