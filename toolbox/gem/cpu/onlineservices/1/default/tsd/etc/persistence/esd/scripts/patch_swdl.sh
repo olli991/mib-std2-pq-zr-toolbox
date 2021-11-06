@@ -8,7 +8,6 @@ echo "This script will patch tsd.mibstd2.system.swdownload to"
 echo "accept custom metainfo2.txt"
 echo
 
-file="/tsd/bin/swdownload/tsd.mibstd2.system.swdownload"
 size=$(ls -l $file | awk '{print $5}' 2>/dev/null)
 
 echo "Checking $file..."
@@ -34,7 +33,7 @@ case $size in
 esac
 
 if [ -n "$offsets" ]; then
-	fin=$file
+	fin=$MIBPATH
 	set -A bytes 07 EA EA 07
 	j=0
 	for i in ${offsets[@]}; do
@@ -48,15 +47,19 @@ if [ -n "$offsets" ]; then
 		fin=$fout
 		j=$((j+1))
 	done
+	
 	if [ -f "$fout" ]; then
 		# Make backup folder
 		. /tsd/etc/persistence/esd/scripts/util_backup.sh 
 
-		mount -t qnx6 -o remount,rw /dev/hd0t177 /
-		mv -f $fout $file
-		chmod 777 $file
-		sync
-		mount -t qnx6 -o remount,ro /dev/hd0t177 /
+		# Mount system partition in read/write mode
+		. /tsd/etc/persistence/esd/scripts/util_mount.sh
+		
+		mv -f $fout $MIBPATH
+		chmod 777 $MIBPATH
+		
+		# Mount system partition in read/only mode
+		. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh		
 		echo "Patch is applied. Please restart the unit."
 	else
 		echo "Patching failed!"
