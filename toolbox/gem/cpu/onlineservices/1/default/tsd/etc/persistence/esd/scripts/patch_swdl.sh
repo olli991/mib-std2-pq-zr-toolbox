@@ -9,6 +9,7 @@ echo "accept custom metainfo2.txt"
 echo
 
 size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
+sys=$(uname -m)
 
 echo "Checking $MIBPATH..."
 case $size in
@@ -26,8 +27,11 @@ case $size in
 		set -A offsets A9214 AB1E4 AB29F 14D6D4 ;;
 	3108412) #cpu EU PQ/ZR 478/479
 		set -A offsets A9A64 ABA37 ABAF3 14EBD4 ;;
-	3065228) #cpuplus EU PQ/ZR 478/479
+	3065228|3066612) #cpuplus EU PQ/ZR 478/479/516
 		set -A offsets A9234 AB207 AB2C3 14D6F0 ;;
+	3109788) #cpu EU ZR 516
+		set -A offsets A9A5C ABA2F ABAEB 14EBCC ;;
+	
 	*)
 		offsets="" ;;
 esac
