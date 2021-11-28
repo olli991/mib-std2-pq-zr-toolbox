@@ -14,7 +14,7 @@ screen MIBSTD2_Toolbox Main
 
 keyvalue
 	value	String sys 0x00000000 0
-	label	"Welcome to MIB STD2 PQ/ZR Toolbox v0.8.1"
+	label	"Welcome to MIB STD2 PQ/ZR Toolbox v0.8.2"
 	poll	0
 
 keyValue

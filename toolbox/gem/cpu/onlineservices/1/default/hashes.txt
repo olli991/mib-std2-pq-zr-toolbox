@@ -60,7 +60,7 @@ Checksum = "0b9d44f86219e7d5ac7e352c255d566edd655ed8"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-main.esd"
 FileSize = "972"
-Checksum = "adca4bd47d241ec5b3453f119e5386a13b9e8c12"
+Checksum = "911e6cb1b457142df25abd6903f3a045083c0f20"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-mibinfo.esd"
 FileSize = "3609"
