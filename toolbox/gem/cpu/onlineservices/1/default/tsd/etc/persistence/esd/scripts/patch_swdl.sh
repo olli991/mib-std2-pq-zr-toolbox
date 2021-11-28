@@ -13,7 +13,7 @@ sys=$(uname -m)
 
 echo "Checking $MIBPATH..."
 case $size in
-	3128084|3128124) #cpu EU ZR/US PQ 253
+	3128116|3128084|3128124) #cpu PQ/ZR EU/US 241/253
 		set -A offsets A9B1C ABAC7 ABBBF 14E190 ;;
 	3084644|3084684) #cpuplus EU ZR/US PQ 253
 		set -A offsets A91F4 AB19F AB297 14CBB4 ;;
