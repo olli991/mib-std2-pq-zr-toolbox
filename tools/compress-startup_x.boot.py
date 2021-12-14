@@ -65,7 +65,8 @@ print(("data start offset: %d" % offset_data_start))
 
 offset_new = offset_data_start
 
-original_header = data[0:5208]
+#original_header = data[0:5208]
+original_header = data[0:toc_offset]
 
 images = bytes()
 struct_toc = bytes()
@@ -104,7 +105,8 @@ for j in range(0, int(num_files)):
 struct_datablocksize = struct.pack('I', data_block_size_new + (num_files * 4))
 print("Datablock size:", data_block_size_new)
 
-struct_numfiles = struct.pack('I', 38)
+#struct_numfiles = struct.pack('I', 38)
+struct_numfiles = struct.pack('I', num_files)
 print("Writing %d images to %s " % (num_files, sys.argv[2]))
 f = open(sys.argv[2], 'wb')
 f.write(original_header + struct_datablocksize + struct_numfiles + struct_toc + struct_data)
