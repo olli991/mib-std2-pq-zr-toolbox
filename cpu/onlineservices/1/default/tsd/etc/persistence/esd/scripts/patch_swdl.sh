@@ -31,7 +31,8 @@ case $size in
 		set -A offsets A9234 AB207 AB2C3 14D6F0 ;;
 	3109788) #cpu EU ZR 516
 		set -A offsets A9A5C ABA2F ABAEB 14EBCC ;;
-	
+	3110500) #cpu EU PQ 604
+		set -A offsets A9A94 ABA67 ABB23 14EB0C ;;	
 	*)
 		offsets="" ;;
 esac
