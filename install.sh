@@ -33,7 +33,7 @@ if [ -z "$VOLUME" ]; then
 	done
 	if [ -z "$VOLUME" ]; then
 		if [ -d "/tmp$TOOLBOX_FOLDER" ]; then
-			VOLUME="/tmp$TOOLBOX_FOLDER"
+			VOLUME="/tmp"
 		fi
 	fi
 	if [ -n "$VOLUME" ]; then
