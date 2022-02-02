@@ -4,7 +4,7 @@
 ## Disclaimer
 WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT YOUR OWN RISK! READ THIS README, USE YOUR BRAIN AND BE CAREFUL!
 
-![Toolbox-v0 8 1](https://user-images.githubusercontent.com/55631413/140619668-47b47d4d-794a-46c3-9fbf-43a280d2153d.png)
+![MST-Toolbox-v09](https://user-images.githubusercontent.com/55631413/152172892-d38e837e-bbc5-4fce-af30-5c422f868fe2.png)
 
 ## Requirements
 - Any OBD2 adapter with a software that can enable developer mode (Green Engineering Menu) on the unit
@@ -163,4 +163,15 @@ A: Sure, just use `Dump->eMMC content (exFAT/NTFS SD card/USB drive + ~7.3 GB fr
 As most of the units have 7.3 GB eMMC chips, FAT32 formatted media cannot be used because of 4 GB max filesize limitation.
 Also it is strongly recommended to use exFAT/NTFS formatted SD card because USB port on MIB STD2 is capped to 5 MB/s.
 Class 10 SD card allows to achieve the dump speed upto 10 GB/s so the process finishes in just ~15 minutes :)
+
+Q: Which firmware trains are currently supported for direct SWAP patching?
+A. At the moment the following trains are supported: 
+   - EU PQ/ZR 253
+   - EU ZR 369
+   - EU PQ/ZR 478
+   - EU PQ/ZR 479
+   - EU PQ/ZR 480
+   - EU ZR 516
+   - EU PQ 604
+   If you get the error "Unknown file size detected" please open up an issue wirh your train.
 ```
