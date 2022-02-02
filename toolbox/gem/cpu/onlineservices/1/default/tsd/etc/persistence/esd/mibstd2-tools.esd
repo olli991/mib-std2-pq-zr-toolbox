@@ -2,7 +2,7 @@
 # 
 # Custom Green Engineering Menu screen
 # Author:		YOX, Olli & lprot
-# Version:		0.8.3
+# Version:		0.9
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -58,6 +58,10 @@ keyValue
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/patch_swdl.sh"
 	label 	"Patch tsd.mibstd2.system.swdownload to accept any metainfo2.txt"
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/patch_swap.sh"
+	label 	"Patch tsd.mibstd2.system.swap and generate EL"
 
 keyValue
     value    String sys 0x00000000 0
