@@ -1,5 +1,5 @@
 # MIB STD2 Toolbox
-⚠️ **Currently is working only on MIB STD2 PQ/ZR Technisat/Preh and is NOT COMPATIBLE with MIB2 STD Delphi and MIB2 HIGH Harman units!** ⚠️
+⚠️ **This toolbox version is only compatible with MIB STD2 PQ/ZR Technisat/Preh units and is NOT COMPATIBLE with MIB2 STD Delphi and MIB2 HIGH Harman units!** ⚠️
 
 ## Disclaimer
 WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT YOUR OWN RISK! READ THIS README, USE YOUR BRAIN AND BE CAREFUL!
@@ -13,15 +13,15 @@ WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT 
 ## How to install from SD card via "Service Mode" on supported units with navigation
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of SD card.
 
-NOTE: Additionally, **ONLY** for firmwares 01xx with GEM 3.4 and 02xx with GEM 3.5, replace `cpu` folder in the root of the SD card with `cpu` folder from `\toolbox\gem` folder.
+2. IMPORTANT! If your firmware is version 01xx or 02xx, replace `cpu` folder in the root of the SD card with `cpu` folder from `\toolbox\gem` folder. Otherwise skip this step.
 
-2. Turn on ignition and insert SD card into slot 1 of the unit
-3. Press and hold MENU button to open `Service Mode -> Software Update` and install `MIBStd2_Online_Approval`.
-4. Open Green Engineering Menu and have fun 🙂
+3. Turn on ignition and insert SD card into SD1 slot of the unit
+4. Press and hold MENU button to open `Service Mode -> Software Update` and install `MIBStd2_Online_Approval`.
+5. Open Green Engineering Menu and have fun 🙂
 
-Note: This installation method is NOT possible on Seat Navi units with HW H50+ (firmwares 05xx) as metainfo2.txt does not contain variants 47213, 47214, 47215, 47216 and cannot just be edited (because of digital signature at the end of the file).
+NOTE: This SD installation method is NOT possible on Seat Navi units with HW H50+ (firmwares 05xx) as metainfo2.txt does not contain variants 47213, 47214, 47215, 47216. Metainfo2.txt cannot be edited because has digital signature at the end of the file.
 
-## How to install via serial console or telnet
+## How to install if you already have serial console or telnet
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of SD card or USB drive
 2. Delete `metainfo2.txt`, this helps to avoid endless reading spinner when connecting USB drive to the unit.
 3. Login via console/telnet as root/root
@@ -129,16 +129,19 @@ A: Google that part number in picture mode and take a look at the label or look 
 For example MST2_EU_SK_ZR_P0478T. Letter T at the end means it's Technisat. If there is no letter it's Harman.
 
 Q: Is Toolbox compatible with non Navi (single SD slot) units?
-A: Yes, but to install you need to use console/telnet installation method.
+A: Yes, but to install you need to use eMMC soldering method or console/telnet installation method.
+
+Q: I installed Toolbox from SD but when I try to use it does nothing and prints errors!
+A: Your fw is 01xx/02xx with GEM 3.5. Read installation steps carefully!
+
+Q: Why Toolbox does not work with GEM 3.5 or lower?
+A: GEM 3.5 and lower cannot run scripts
 
 Q: Where to find GEM (Green Egineering Menu) version?
 A: In the top left corner of the Green Engineering Menu screen.
 
-Q: Why Toolbox is not compatible with GEM 3.5 or lower?
-A: GEM 3.5 and lower cannot run scripts
-
 Q: I instaled Toolbox and want to update my firmware from 02xx version to 04xx version. Will Toolbox remain installed after the update?
-A: No, Toolbox will be deleted as when update happens /tsd/etc/persistence/esd folder gets cleaned. So you will need to install the Toolbox again.
+A: Yes, but instead of normal installation you need to update via `Testmode->SWDL->Software Download Manual Download->Start Download` enter cpu or cpuplus and untick `esd_sec` module. If you do not update fw this way, the update will clean /tsd/etc/persistence/esd folder and delete the toolbox.
 
 Q: How to make screenshots?
 A: Press and hold MEDIA key until you hear confirmation sound
@@ -148,11 +151,12 @@ A: In the root folder of SD card. You can also use `Tools->Move screenshots from
 function to collect them in screenshots folder of Toolbox drive.
 
 Q: After Toolbox installation I got OBD error 1556. How to fix it?
-A: Just run Tools->Clean SWDL history and keep only non-duplicated FW updates. Then reboot the unit and clear OBD2 error
-with any software that can do that.
+A: Usually just running `Tools->Clean SWDL history and keep only non-duplicated FW updates` helps. Then reboot the unit and clear OBD2 error.
+Otherwise you need to find the reason of the error. Long press MENU and enter `Testmode->Green Engineering Menu->debugging->additional debug destination`.
+Select to output the log onto SD or USB. Look into that file for strings like `SW incompatible` there you will find the reason.
 
 Q: Can I make eMMC backup of my unit?
-A: Use `Dump->eMMC content (exFAT/NTFS SD card/USB drive + ~7.3 GB free space required)` menu.
+A: Sure, just use `Dump->eMMC content (exFAT/NTFS SD card/USB drive + ~7.3 GB free space required)` menu.
 As most of the units have 7.3 GB eMMC chips, FAT32 formatted media cannot be used because of 4 GB max filesize limitation.
 Also it is strongly recommended to use exFAT/NTFS formatted SD card because USB port on MIB STD2 is capped to 5 MB/s.
 Class 10 SD card allows to achieve the dump speed upto 10 GB/s so the process finishes in just ~15 minutes :)
