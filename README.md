@@ -9,6 +9,7 @@ WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT 
 ## Requirements
 - Any OBD2 adapter with a software that can enable developer mode (Green Engineering Menu) on the unit
 - Empty FAT32 formatted SD card or USB flashdrive, with enough space to save your backups. Everything bigger than 1GB is recommended
+- Read FAQ at the bottom of this file!
 
 ## How to install from SD card via "Service Mode" on supported units with navigation
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of SD card.
@@ -119,7 +120,7 @@ Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\
 ### generate_shadow.py (by lprot)
 Converts password to shadow file
 
-## Frequently asked questions
+## FAQ (Frequently Asked Questions)
 ```
 Q: I already installed Toolbox and want to install new version do I need to uninstall the old one?
 What is a proper way to update?
