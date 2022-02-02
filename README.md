@@ -173,5 +173,5 @@ A. At the moment the following trains are supported:
    - EU PQ/ZR 480
    - EU ZR 516
    - EU PQ 604
-   If you get the error "Unknown file size detected" please open up an issue wirh your train.
+   If you get the error "Unknown file size detected" please open up an issue with your train.
 ```
