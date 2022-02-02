@@ -22,6 +22,7 @@ WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT 
 NOTE: This SD installation method is NOT possible on Seat Navi units with HW H50+ (firmwares 05xx) as metainfo2.txt does not contain variants 47213, 47214, 47215, 47216. Metainfo2.txt cannot be edited because has digital signature at the end of the file.
 
 ## How to install if you already have serial console or telnet
+NOTE: By default console/telnet are disabled and on non navi units you need to solder to enable it!
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of SD card or USB drive
 2. Delete `metainfo2.txt`, this helps to avoid endless reading spinner when connecting USB drive to the unit.
 3. Login via console/telnet as root/root
@@ -37,7 +38,7 @@ NOTE: This SD installation method is NOT possible on Seat Navi units with HW H50
 4. Inside VM, open Utilities->Terminal and enter `mount` to see where USB drive with Toolbox is mounted. Normally it will be /fs/usb1.
 5. Enter `ksh /fs/usb1/install.sh`
 6. Turn off VM assemble back the unit, Open Green Engineering Menu and have fun 🙂
-NOTE: If you do not want to use USB drive but have sshd running inside of the VM and have WinSCP access, just copy `MIBSTD2-Toolbox-vX.X.X.zip` content to into `/tmp` folder inside VM. And run install.sh.
+NOTE: If you do not want to use USB drive but have sshd running inside of the VM and have WinSCP access, just copy `MIBSTD2-Toolbox-vX.X.X.zip` content to into `/tmp` folder inside VM. And run `ksh /tmp/install.sh`
 
 ## How to install into eMMC backup image with QNX Virtual Machine
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of any USB flash drive. Eject and physically disconnect all USB drives.
@@ -48,7 +49,7 @@ NOTE: If you do not want to use USB drive but have sshd running inside of the VM
 6. Run `ksh /fs/usb0/install.sh` or `ksh /fs/hd10-dos-1/install.sh`
 7. Turn off VM and convert VMDK back to raw `qemu-img convert -f vmdk backup.vmdk -O raw new_backup.img`
 8. Flash new_backup.img back into eMMC chip, assemble back the unit, Open Green Engineering Menu and have fun 🙂
-NOTE: If you do not want to use USB drive but have sshd running inside of the VM and have WinSCP access, just copy `MIBSTD2-Toolbox-vX.X.X.zip` content to into `/tmp` folder inside VM. And run install.sh.
+NOTE: If you do not want to use USB drive but have sshd running inside of the VM and have WinSCP access, just copy `MIBSTD2-Toolbox-vX.X.X.zip` content to into `/tmp` folder inside VM. And run `ksh /tmp/install.sh`
 
 ## How to use the toolbox to do customizations
 1. Use `dump` menu to copy files from unit's filesystem into corresponding `dump` subfolder on SD card or USB drive
@@ -140,20 +141,21 @@ A: GEM 3.5 and lower cannot run scripts
 Q: Where to find GEM (Green Egineering Menu) version?
 A: In the top left corner of the Green Engineering Menu screen.
 
-Q: I instaled Toolbox and want to update my firmware from 02xx version to 04xx version. Will Toolbox remain installed after the update?
-A: Yes, but instead of normal installation you need to update via `Testmode->SWDL->Software Download Manual Download->Start Download` enter cpu or cpuplus and untick `esd_sec` module. If you do not update fw this way, the update will clean /tsd/etc/persistence/esd folder and delete the toolbox.
+Q: I already have the Toolbox installed and want to update my firmware from 02xx/03xx to 04xx/05xx/06xx etc version. Will Toolbox remain installed after the update?
+A: Yes, but you need to update fw manually via `Testmode->SWDL->Software Download Manual Download->Start Download`.
+Open cpu or cpuplus folder there and untick `esd_sec` module and start the update.
+If you forget to untick `esd_sec`, the update will clean /tsd/etc/persistence/esd folder and delete the toolbox.
 
 Q: How to make screenshots?
 A: Press and hold MEDIA key until you hear confirmation sound
 
 Q: Where to find screenshots?
-A: In the root folder of SD card. You can also use `Tools->Move screenshots from root of all drives to the Toolbox drive`
-function to collect them in screenshots folder of Toolbox drive.
+A: In the root folder of SD card. You can also use `Tools->Move screenshots from root of all drives to the Toolbox drive` to collect them in `screenshots` folder on the Toolbox drive.
 
 Q: After Toolbox installation I got OBD error 1556. How to fix it?
 A: Usually just running `Tools->Clean SWDL history and keep only non-duplicated FW updates` helps. Then reboot the unit and clear OBD2 error.
-Otherwise you need to find the reason of the error. Long press MENU and enter `Testmode->Green Engineering Menu->debugging->additional debug destination`.
-Select to output the log onto SD or USB. Look into that file for strings like `SW incompatible` there you will find the reason.
+If the error still there, long press MENU and enter `Testmode->Green Engineering Menu->debugging->additional debug destination`.
+Select where to save the log onto SD or USB. Open the log from SD/USB and look for strings like `SW incompatible`. They will contain the reason of the error.
 
 Q: Can I make eMMC backup of my unit?
 A: Sure, just use `Dump->eMMC content (exFAT/NTFS SD card/USB drive + ~7.3 GB free space required)` menu.
