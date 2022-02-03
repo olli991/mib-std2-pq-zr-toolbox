@@ -144,7 +144,7 @@ A: In the top left corner of the Green Engineering Menu screen.
 
 Q: I already have the Toolbox installed and want to update my firmware from 02xx/03xx to 04xx/05xx/06xx etc version. Will Toolbox remain installed after the update?
 A: Yes, but you need to update fw manually via `Testmode->SWDL->Software Download Manual Download->Start Download`.
-Open cpu or cpuplus folder there and untick `esd_sec` module and start the update.
+Tap on "Select all", open `cpu` or `cpuplus` folder there and untick `esd_sec` module and start the update.
 If you forget to untick `esd_sec`, the update will clean /tsd/etc/persistence/esd folder and delete the toolbox.
 
 Q: How to make screenshots?
