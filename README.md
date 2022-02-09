@@ -38,7 +38,7 @@ NOTE: By default console/telnet are disabled and on non navi units you need to s
 3. Insert the USB flash drive with the Toolbox to any USB port of PC/laptop and allow to connect to VM
 4. Inside VM, open Utilities->Terminal and enter `mount` to see where USB drive with Toolbox is mounted. Normally it will be /fs/usb1.
 5. Enter `ksh /fs/usb1/install.sh`
-   - **If you encouter VM freezes or I/O errors while copying:** try to create a .iso (via `AnyToIso Lite` as example) from the contents of the toolbox and mount the iso via CD drive. You can then run `ksh /fs/cd0/install.sh`!
+   - **If you encounter VM freezes or I/O errors while copying:** try to create an .iso (via `AnyToIso Lite` as example) from the contents of the toolbox and mount the iso via CD drive. You can then run `ksh /fs/cd0/install.sh`! - OR - use the eMMC backup method.
 7. Turn off VM assemble back the unit, Open Green Engineering Menu and have fun 🙂
 NOTE: If you do not want to use USB drive but have sshd running inside of the VM and have WinSCP access, just copy `MIBSTD2-Toolbox-vX.X.X.zip` content to into `/tmp` folder inside VM. And run `ksh /tmp/install.sh`
 
@@ -49,7 +49,7 @@ NOTE: If you do not want to use USB drive but have sshd running inside of the VM
 4. Insert the Toolbox USB flash drive to any USB port of PC/laptop and allow to connect to VM
 5. Inside VM, open Utilities->Terminal and enter `mount` to see where USB drive with Toolbox is mounted. Normally it will be /fs/usb0 or /fs/hd10-dos-1.
 6. Run `ksh /fs/usb0/install.sh` or `ksh /fs/hd10-dos-1/install.sh`
-   - **If you encouter VM freezes or I/O errors while copying:** try to create a .iso (via `AnyToIso Lite` as example) from the contents of the toolbox and mount the iso via CD drive. You can then run `ksh /fs/cd0/install.sh`!
+   - **If you encounter VM freezes or I/O errors while copying:** try to create an .iso (via `AnyToIso Lite` as example) from the contents of the toolbox and mount the iso via CD drive. You can then run `ksh /fs/cd0/install.sh`!
 8. Turn off VM and convert VMDK back to raw `qemu-img convert -f vmdk backup.vmdk -O raw new_backup.img`
 9. Flash new_backup.img back into eMMC chip, assemble back the unit, Open Green Engineering Menu and have fun 🙂
 NOTE: If you do not want to use USB drive but have sshd running inside of the VM and have WinSCP access, just copy `MIBSTD2-Toolbox-vX.X.X.zip` content to into `/tmp` folder inside VM. And run `ksh /tmp/install.sh`
