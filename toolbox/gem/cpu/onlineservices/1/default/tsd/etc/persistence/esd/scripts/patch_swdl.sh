@@ -13,6 +13,8 @@ sys=$(uname -m)
 
 echo "Checking $MIBPATH..."
 case $size in
+	2950532) #cpu EU ZR 140
+		set -A offsets C88D4 C9DC3 C9EDB 13D270 ;;
 	3128116|3128084|3128124) #cpu PQ/ZR EU/US 241/253
 		set -A offsets A9B1C ABAC7 ABBBF 14E190 ;;
 	3084644|3084684) #cpuplus EU ZR/US PQ 253
