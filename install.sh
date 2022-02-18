@@ -65,7 +65,7 @@ fi
 
 echo "Toolbox is found on $VOLUME"
 echo "Destination is: $DESTINATION$ESD_FOLDER"
-echo "Sounds that logical? Press ENTER to continue ot CTRL+C to abort"
+echo "Sounds that logical? Press ENTER to continue or CTRL+C to abort"
 read
 
 
