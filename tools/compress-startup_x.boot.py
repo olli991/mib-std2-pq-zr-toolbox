@@ -77,17 +77,17 @@ data_block_size_new = 0
 # loop through all the images and pack them into the cff
 for j in range(0, int(num_files)):
     offset = offset_new
-    fileimage_dir = os.path.join(out_dir, 'img_' + str(j).zfill(2) + '.png')
-
-    print("importing img_%d.png to %s" % (j, sys.argv[2]))
+    fileimage_dir = os.path.join(out_dir, 'img_' + str(j).zfill(2) + '.mib')
+    print(fileimage_dir)
+    print("importing img_%d.mib to %s" % (j, sys.argv[2]))
     if not os.path.exists(fileimage_dir):
         print("file %s does not exist." % filepath_original.decode("utf-8"))
         input("\nPress Enter to exit...")
         sys.exit(1)
     im = Image.open(fileimage_dir)
     if im.mode != "LA":
-        print("! WARNING: img_%d.png isn't LA format. Make sure the image is saved as LA-format." % j)
-        print("Converting img_%d.png to LA format. This image will not have any transparency." % j)
+        print("! WARNING: img_%d.mib isn't LA format. Make sure the image is saved as LA-format." % j)
+        print("Converting img_%d.mib to LA format. This image will not have any transparency." % j)
         im = im.convert('LA')
     width, height = im.size
     image_bytes = im.tobytes('raw')
@@ -105,7 +105,6 @@ for j in range(0, int(num_files)):
 struct_datablocksize = struct.pack('I', data_block_size_new + (num_files * 4))
 print("Datablock size:", data_block_size_new)
 
-#struct_numfiles = struct.pack('I', 38)
 struct_numfiles = struct.pack('I', num_files)
 print("Writing %d images to %s " % (num_files, sys.argv[2]))
 f = open(sys.argv[2], 'wb')

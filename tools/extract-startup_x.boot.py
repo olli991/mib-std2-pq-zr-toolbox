@@ -83,7 +83,7 @@ while j < num_files:
     # create path
     if not os.path.exists(out_dir):
         os.makedirs(out_dir)
-    out_path = os.path.join(out_dir, 'img_' + str(j).zfill(2) + '.png')
+    out_path = os.path.join(out_dir, 'img_' + str(j).zfill(2) + '.mib')
 
     print("Extracting", out_path, width, height)
     im = Image.frombuffer('LA', (width, height), image_decompressed, 'raw', 'LA', 0, 1)
