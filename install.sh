@@ -36,6 +36,11 @@ if [ -z "$VOLUME" ]; then
 			VOLUME="/tmp"
 		fi
 	fi
+	if [ -z "$VOLUME" ]; then
+		if [ -d "/dev/sdcard$TOOLBOX_FOLDER" ]; then
+			VOLUME="/dev/sdcard"
+		fi
+	fi
 	if [ -n "$VOLUME" ]; then
 		for k in /fs/*; do
 			if [ -d $k$ESD_FOLDER ]; then
@@ -43,6 +48,13 @@ if [ -z "$VOLUME" ]; then
 				break
 			fi
 		done
+		
+		if [ -z "$DESTINATION" ]; then
+			# Try /dev/sdcard method by EvaldasL patcher
+			if [ -d "/emmc$ESD_FOLDER" ]; then
+				DESTINATION=/emmc
+			fi
+		fi
 	fi
 fi
 
@@ -53,6 +65,10 @@ fi
 
 echo "Toolbox is found on $VOLUME"
 echo "Destination is: $DESTINATION$ESD_FOLDER"
+echo "Sounds that logical? Press ENTER to continue ot CTRL+C to abort"
+read
+
+
 
 if [ -d "$DESTINATION$ESD_FOLDER" ]; then
 	if [ -z "$DESTINATION" ]; then
