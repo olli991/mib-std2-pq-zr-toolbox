@@ -12,7 +12,11 @@ size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
 sys=$(uname -m)
 
 echo "Checking $MIBPATH..."
+set -A bytes 07 EA EA 07
 case $size in
+	2949116) #cpu EU PQ 138
+		set -A offsets C88D4 C9DC3 C9EDB 
+		set -A bytes 07 EA EA ;;
 	2950532) #cpu EU ZR 140
 		set -A offsets C88D4 C9DC3 C9EDB 13D270 ;;
 	3128116|3128084|3128124) #cpu PQ/ZR EU/US 241/253
@@ -41,7 +45,6 @@ esac
 
 if [ -n "$offsets" ]; then
 	fin=$MIBPATH
-	set -A bytes 07 EA EA 07
 	j=0
 	for i in ${offsets[@]}; do
 		fh=$((16#$i))

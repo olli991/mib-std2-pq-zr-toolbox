@@ -12,6 +12,9 @@ sys=$(uname -m)
 
 echo "Checking $MIBPATH..."
 case $size in
+	1197248) #cpu EU PQ 138
+		set -A offsets 2F190 2F191 2F192 2F197 2F52C 2F52D 2F52E 2F533 391D8 41C7C
+		set -A bytes 01 30 A0 EA 01 30 A0 EA 07 07 ;;
 	1186460) #cpu EU PQ/ZR 253
 		if [ "$sys" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 18430 1F160 4A2A4 4A2A6 4A2AB 4A66C 4A66D 4A66E 4A673 6AF64
