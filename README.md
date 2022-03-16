@@ -4,7 +4,7 @@
 ## Disclaimer
 WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT YOUR OWN RISK! READ THIS README, USE YOUR BRAIN AND BE CAREFUL!
 
-![MST-Toolbox-v09](https://user-images.githubusercontent.com/55631413/152172892-d38e837e-bbc5-4fce-af30-5c422f868fe2.png)
+![SCREENSHOT_Toolbox-v1 0](https://user-images.githubusercontent.com/55631413/158680797-cb8f9a1e-80ec-4701-b7c0-e979167f486a.png)
 
 ## Requirements
 - Any OBD2 adapter with a software that can enable developer mode (Green Engineering Menu) on the unit
@@ -168,6 +168,7 @@ Class 10 SD card allows to achieve the dump speed upto 10 GB/s so the process fi
 
 Q: Which firmware trains are currently supported for direct SWAP patching?
 A. At the moment the following trains are supported: 
+   - EU PQ 138
    - EU PQ/ZR 253
    - EU ZR 369
    - EU PQ/ZR 478
@@ -175,5 +176,28 @@ A. At the moment the following trains are supported:
    - EU PQ/ZR 480
    - EU ZR 516
    - EU PQ 604
-   If you get the error "Unknown file size detected" please open up an issue with your train.
+   If you get the error "Unknown file size detected" please use the "Dump necessary files to SD folder /dump/.../support" option in the "Tools" section and open up an issue to send us those files!
+   
+Q: Which firmware trains are currently supported for direct SWDL patching?
+A. At the moment the following trains are supported: 
+   - EU PQ 138
+   - EU ZR 140
+   - EU/US PQ/ZR 241/253
+   - EU/US PQ/ZR 363/368/369
+   - US PQ/ZR 367
+   - EU/US PQ/ZR 478/479
+   - EU ZR 516
+   - EU PQ 604
+   If you get the error "Unknown file size detected" please use the "Dump necessary files to SD folder /dump/.../support" option in the "Tools" section and open up an issue to send us those files!
+
+Q: Which firmware trains are currently supported for direct CP patching?
+A. At the moment the following trains are supported: 
+   - EU PQ 138
+   - EU PQ/ZR 252
+   - EU PQ 353/359
+   - EU ZR 367/368
+   - EU PQ 369
+   - EU PQ/ZR 449/472/478/479/480
+   - EU ZR 515/516
+   If you get the error "Unknown file size detected" please use the "Dump necessary files to SD folder /dump/.../support" option in the "Tools" section and open up an issue to send us those files!
 ```
