@@ -12,87 +12,87 @@ Checksum = "5f8f131ebb4b4e15456103ba0f2a4e478c08f817"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-about.esd"
 FileSize = "490"
-Checksum = "ff8bbf8144b9176dd0f789d944fafd8e3f580ae7"
+Checksum = "2ba854c9e0741292f684129d842e2f4a15c572ab"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-adaptation.esd"
 FileSize = "842"
-Checksum = "d00669c1fbafbb2add83f324149d48bd51a8f37e"
+Checksum = "92cedef4c097eb512efec5720b6ba5a51e43b153"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-advanced.esd"
 FileSize = "3613"
-Checksum = "48dcb4ca774578131549a29d5424970386514013"
+Checksum = "adde6d63fde1cee36555229cee447975cef64d1b"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-carBAPdeviceList.esd"
 FileSize = "4675"
-Checksum = "00997cae14df7ef352e235edc89c84e4bd1c399c"
+Checksum = "2f0f11d53c2d7931436f03072809b2601b82d003"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-carCANdeviceList.esd"
 FileSize = "1354"
-Checksum = "743b7d7c0bc81edf4335ba67814033d9f8cc04df"
+Checksum = "1054d3ca4d9e00032f5be1a27021d9fad134b3ce"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-carDeviceBUS.esd"
 FileSize = "27052"
-Checksum = "9d7989a23c2b9a4b6fc8fce905ca3ec04554d653"
+Checksum = "e0e81b56c00b3c8ab7b7d2d61aa7e67a3f10943e"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-carMenuOp.esd"
 FileSize = "6522"
-Checksum = "c6cfd1c63e94879458cd47e24c4b9813a97060ae"
+Checksum = "0ee44787d3622474f12e3876dda12ae24009a54a"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-customization.esd"
 FileSize = "1006"
-Checksum = "6b073a472473eeafafd5dae56d36458f0d32cff3"
+Checksum = "d1bdad77c24a0ae0ae93931c06803c4c117096c2"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-disclaimer.esd"
 FileSize = "1879"
-Checksum = "16bf08747b86e98d60715b656991b32ecac647a0"
+Checksum = "f36ecd51a429256dc3c351ecebbe93207a218fcf"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-dump.esd"
 FileSize = "4407"
-Checksum = "c92434097f0569e69142a0110ae94296e0bee69f"
+Checksum = "edcb52f18b21abfd47588149be2ad7dec792e702"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-greenmenu.esd"
 FileSize = "2238"
-Checksum = "65588adaaba412645d54bdc7cdfb29f779b60b32"
+Checksum = "4e267f75112dbf83f2869cd3321667ca92c79a98"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-history.esd"
-FileSize = "3680"
-Checksum = "1044bbfbe9949b68cacdfde4545a2b5be3c0c766"
+FileSize = "3830"
+Checksum = "84ede9dc968acd6651282c330d0c2857518532b0"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-main.esd"
 FileSize = "968"
-Checksum = "8856901a76bbf88a325669e1be396bc077566f44"
+Checksum = "c83f94b01ec9a1517f94d207eb0a3e8d3c58482f"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-mibinfo.esd"
 FileSize = "3607"
-Checksum = "b6730fdbece07a334cf418734ffac34ad4a40cc1"
+Checksum = "1877a42a336ede3a6ca47ada18443f545d984cb0"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-mirrorlink.esd"
 FileSize = "1190"
-Checksum = "d48fa6edda2819282e588b72151882f7a98ef668"
+Checksum = "d4b7981ca14b363512cbcd8150217b4822f2b1fb"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-nav.esd"
 FileSize = "1738"
-Checksum = "4409ce7ab2b3b3c9e5a73c91c090b7dd5a5f856e"
+Checksum = "53e202ee36e94f06973224ad804f3d9190e16572"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-network.esd"
 FileSize = "1684"
-Checksum = "0bb6fb0d9677bad6aed150ed8f1f40b0d25115a1"
+Checksum = "1c99287013c0761fb727b4865faf9ec851418ccd"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-skins.esd"
 FileSize = "1640"
-Checksum = "6c8daeaf5246b78aecfeba88d095000723fdf818"
+Checksum = "88cdbf143457b8817b1d95303a344ca2f17212e8"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-sounds.esd"
 FileSize = "2204"
-Checksum = "328ea66801f40c0888d9e498e0b48f25473de364"
+Checksum = "9cb8edb028e6de3b50c67ec60beb511aa6acf1a1"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-tools.esd"
-FileSize = "4145"
-Checksum = "be6f0e1862711f576c60832fc64b24a9bb0f0618"
+FileSize = "4967"
+Checksum = "cd1745946c2fdcd00f4891408761665381c4e526"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-uninstall.esd"
 FileSize = "1180"
-Checksum = "8ae050efe9d60710b5f5ce5bb41711fa5b190830"
+Checksum = "3f1afc909861c8096290f4c197e2c5adb473d7fa"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_console.sh"
 FileSize = "520"
@@ -266,6 +266,10 @@ FileName = "/tsd/etc/persistence/esd/scripts/dump_stationdb.sh"
 FileSize = "241"
 Checksum = "8ffc68d440024078268dcbf623c146d7745c1dd3"
 
+FileName = "/tsd/etc/persistence/esd/scripts/dump_support.sh"
+FileSize = "2611"
+Checksum = "9dd5c092259dfd4745f33faa82e85a380af51da7"
+
 FileName = "/tsd/etc/persistence/esd/scripts/dump_swap.sh"
 FileSize = "209"
 Checksum = "221119e0906f4d4e7e6fbe8b6fc2e7494d98676d"
@@ -289,6 +293,10 @@ Checksum = "4d76adffc2b5a4a7920bf414f69120b8b540507c"
 FileName = "/tsd/etc/persistence/esd/scripts/move_screenshots.sh"
 FileSize = "517"
 Checksum = "8bf0659ce14e0b4c052b5064f5578b4709c9ea17"
+
+FileName = "/tsd/etc/persistence/esd/scripts/patch_cp.sh"
+FileSize = "4135"
+Checksum = "9ccad16376d6bd120fb799f68d6461d76afa2162"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_menumode.sh"
 FileSize = "637"
@@ -467,8 +475,8 @@ FileSize = "2352"
 Checksum = "5b17cb861de1a32e15980e3cc30a064b6b4ab57c"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_sysinfo.sh"
-FileSize = "3551"
-Checksum = "1fdb1cdfc0ecfcee633436dd6f1691cd1bef45de"
+FileSize = "3649"
+Checksum = "10acc510b73e7ad473f81eb4151b5b62b47292dc"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_uninstall.sh"
 FileSize = "1017"

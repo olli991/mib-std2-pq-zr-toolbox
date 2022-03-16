@@ -2,7 +2,7 @@
 # 
 # Custom Green Engineering Menu screen
 # Author:		YOX, Olli & lprot
-# Version:		0.9
+# Version:		1.0
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -24,13 +24,45 @@ keyValue
 
 keyValue
     value   String sys 0x00000000 0
-	label 	"--- Screenshots ---"
+	label 	"--- Patch ---"
 	poll 	0
 
 script
-	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/move_screenshots.sh"
-	label 	"Move screenshots from root of all drives to the Toolbox drive"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/patch_swdl.sh"
+	label 	"Patch tsd.mibstd2.system.swdownload to accept any metainfo2.txt"
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/patch_swap.sh"
+	label 	"Patch tsd.mibstd2.system.swap and generate EL"
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/patch_cp.sh"
+	label 	"Patch tsd.mibstd2.audio.audiomgr for CP off"
 
+keyValue
+    value    String sys 0x00000000 0
+    label    ""
+    poll     0
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "One or all of the scripts above is not working on your current firmware?"
+    poll     0
+
+keyValue
+    value    String sys 0x00000000 0
+    label    "Please run the following script and create an issue on Git to send us the"
+    poll     0
+	
+keyValue
+    value    String sys 0x00000000 0
+    label    "files. We will then extend the support of those scripts :-)"
+    poll     0
+	
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/dump_support.sh"
+	label 	"Dump necessary files to SD folder /dump/.../support"
+	
 keyValue
     value    String sys 0x00000000 0
     label    ""
@@ -49,24 +81,20 @@ keyValue
     value    String sys 0x00000000 0
     label    ""
     poll     0
-
+	
 keyValue
     value   String sys 0x00000000 0
-	label 	"--- Patch ---"
+	label 	"--- Screenshots ---"
 	poll 	0
 
 script
-	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/patch_swdl.sh"
-	label 	"Patch tsd.mibstd2.system.swdownload to accept any metainfo2.txt"
-	
-script
-	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/patch_swap.sh"
-	label 	"Patch tsd.mibstd2.system.swap and generate EL"
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/move_screenshots.sh"
+	label 	"Move screenshots from root of all drives to the Toolbox drive"
 
 keyValue
     value    String sys 0x00000000 0
     label    ""
-    poll     0
+    poll     0	
 
 keyValue
     value   String sys 0x00000000 0

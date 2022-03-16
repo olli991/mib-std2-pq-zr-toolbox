@@ -12,7 +12,8 @@ elif [ "$GEM_SIZE" = "250770" ]; then
 elif [ "$GEM_SIZE" = "250996" ]; then
 	GEM_VERSION="4.12t"
 fi
-echo "Date: $(date) GEM version: $GEM_VERSION Toolbox: 0.8"
+VERSION=$(awk '/Version:/{print $NF}' /tsd/etc/persistence/esd/mibstd2-main.esd 2>/dev/null)
+echo "Date: $(date) GEM version: $GEM_VERSION Toolbox: $VERSION"
 
 #INFO=$(awk -F "" '{for(i=1;i<=NF;i++) if($i~/[A-Z0-9]/) {printf $i} else {printf " "}}' /tsd/var/itr.timer.log 2>/dev/null | sed 's/\b\w\{1,3\}\b\s*//g')
 sloginfo >/tmp/sloginfo
