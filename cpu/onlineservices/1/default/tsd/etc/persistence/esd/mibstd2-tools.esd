@@ -51,12 +51,12 @@ keyValue
 
 keyValue
     value    String sys 0x00000000 0
-    label    "Please run the following script and create an issue on Git to send us the"
+    label    "Please run the following script and create an issue on GitHub to send us"
     poll     0
 	
 keyValue
     value    String sys 0x00000000 0
-    label    "files. We will then extend the support of those scripts :-)"
+    label    the files. We will then extend the support of those scripts :-)"
     poll     0
 	
 script
