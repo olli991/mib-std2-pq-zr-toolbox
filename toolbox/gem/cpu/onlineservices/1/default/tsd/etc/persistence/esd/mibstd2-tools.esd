@@ -56,7 +56,7 @@ keyValue
 	
 keyValue
     value    String sys 0x00000000 0
-    label    the files. We will then extend the support of those scripts :-)"
+    label    "the files. We will then extend the support of those scripts :-)"
     poll     0
 	
 script
