@@ -123,9 +123,8 @@ Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\
 Converts password to shadow file
 
 ## FAQ (Frequently Asked Questions)
-Q: I already installed Toolbox and want to install new version do I need to uninstall the old one?
-What is a proper way to update?
-A: No, you do not need to uninstall. Simply do `update_and_uninstall->Update Toolbox from SD card or USB drive`
+  Q: I already installed Toolbox and want to install new version do I need to uninstall the old one? What is a proper way to update?
+  A: No, you do not need to uninstall. Simply do `update_and_uninstall->Update Toolbox from SD card or USB drive`
 
 Q: I got unit with part number X. How to know if that is Technisat/Preh/Delphi/Harman?
 A: Google that part number in picture mode and take a look at the label or look for the letter in software version string.
@@ -167,6 +166,6 @@ Class 10 SD card allows to achieve the dump speed upto 10 GB/s so the process fi
 
 Q: Which firmware trains are currently supported for direct SWDL/SWAP/CP patching?
 A: [SWDL](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swdl.sh)
-[SWAP](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swap.sh)
-[CP](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_cp.sh)
-**IMPORTANT!** If you get the error "Unknown file size detected" please use the "Dump necessary files to SD folder /dump/.../support" option in the "Tools" section and open up an issue to send us those files!
+  [SWAP](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swap.sh)
+  [CP](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_cp.sh)
+  **IMPORTANT!** If you get the error "Unknown file size detected" please use the "Dump necessary files to SD folder /dump/.../support" option in the "Tools" section and open up an issue to send us those files!
