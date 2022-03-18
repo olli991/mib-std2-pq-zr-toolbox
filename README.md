@@ -123,8 +123,9 @@ Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\
 Converts password to shadow file
 
 ## FAQ (Frequently Asked Questions)
-  Q: I already installed Toolbox and want to install new version do I need to uninstall the old one? What is a proper way to update?
-  A: No, you do not need to uninstall. Simply do `update_and_uninstall->Update Toolbox from SD card or USB drive`
+Q: I already installed Toolbox and want to install new version do I need to uninstall the old one? What is a proper way to update?
+
+A: No, you do not need to uninstall. Simply do `update_and_uninstall->Update Toolbox from SD card or USB drive`
 
 Q: I got unit with part number X. How to know if that is Technisat/Preh/Delphi/Harman?
 A: Google that part number in picture mode and take a look at the label or look for the letter in software version string.
