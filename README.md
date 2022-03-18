@@ -167,8 +167,8 @@ Also it is strongly recommended to use exFAT/NTFS formatted SD card because USB 
 Class 10 SD card allows to achieve the dump speed upto 10 GB/s so the process finishes in just ~15 minutes :)
 
 Q: Which firmware trains are currently supported for direct SWDL/SWAP/CP patching?
-A: SWDL https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swdl.sh
-SWAP https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swap.sh
-CP https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_cp.sh
-IMPORTANT! If you get the error "Unknown file size detected" please use the "Dump necessary files to SD folder /dump/.../support" option in the "Tools" section and open up an issue to send us those files!
+A: [SWDL](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swdl.sh)
+[SWAP](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swap.sh)
+[CP](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_cp.sh)
+**IMPORTANT!** If you get the error "Unknown file size detected" please use the "Dump necessary files to SD folder /dump/.../support" option in the "Tools" section and open up an issue to send us those files!
 ```
