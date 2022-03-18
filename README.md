@@ -123,17 +123,17 @@ Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\
 Converts password to shadow file
 
 ## FAQ (Frequently Asked Questions)
-Q: I already installed Toolbox and want to install new version do I need to uninstall the old one? What is a proper way to update? 
+Q: I already installed Toolbox and want to install new version do I need to uninstall the old one? What is a proper way to update?  
 A: No, you do not need to uninstall. Simply do `update_and_uninstall->Update Toolbox from SD card or USB drive`
 
-Q: I got unit with part number X. How to know if that is Technisat/Preh/Delphi/Harman?
+Q: I got unit with part number X. How to know if that is Technisat/Preh/Delphi/Harman?  
 A: Google that part number in picture mode and take a look at the label or look for the letter in software version string.
 For example MST2_EU_SK_ZR_P0478T. Letter T at the end means it's Technisat. If there is no letter it's Harman.
 
-Q: Is Toolbox compatible with non Navi (single SD slot) units?
+Q: Is Toolbox compatible with non Navi (single SD slot) units?  
 A: Yes, but to install you need to use eMMC soldering method or console/telnet installation method.
 
-Q: I installed Toolbox from SD but when I try to use it does nothing and prints errors!
+Q: I installed Toolbox from SD but when I try to use it does nothing and prints errors!  
 A: Your fw is 01xx/02xx with GEM 3.5. Read installation steps carefully!
 
 Q: Why Toolbox does not work with GEM 3.5 or lower?
