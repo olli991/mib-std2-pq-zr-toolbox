@@ -12,18 +12,16 @@ echo
 
 TOOLBOX_FOLDER=/cpu/onlineservices/1/default/tsd/etc/persistence/esd
 VOLUME=""
+DESTINATION=""
+ESD_FOLDER=/tsd/etc/persistence/esd
 
-# Search toolbox folder on all available volumes
+# Search toolbox folder
 for i in /media/mp00*; do
-	if [ -d $i$TOOLBOX_FOLDER ]; then
+	if [ -d "$i$TOOLBOX_FOLDER" ]; then
 		VOLUME=$i
-		echo "Toolbox is found on $VOLUME"
 		break
 	fi
 done
-
-DESTINATION=""
-ESD_FOLDER=/tsd/etc/persistence/esd
 if [ -z "$VOLUME" ]; then
 	for i in /fs/*; do
 		if [ -d "$i$TOOLBOX_FOLDER" ]; then
@@ -32,23 +30,28 @@ if [ -z "$VOLUME" ]; then
 		fi
 	done
 	if [ -z "$VOLUME" ]; then
-		if [ -d "/tmp$TOOLBOX_FOLDER" ]; then
-			VOLUME="/tmp"
-		fi
-	fi
-	if [ -n "$VOLUME" ]; then
-		for k in /fs/*; do
-			if [ -d $k$ESD_FOLDER ]; then
-				DESTINATION=$k
+		for i in /mnt/*; do
+			if [ -d "$i$TOOLBOX_FOLDER" ]; then
+				VOLUME=$i
 				break
 			fi
 		done
 	fi
-fi
-
-if [ -z $VOLUME ]; then
-	echo "ERROR: No SD card or USB drive with toolbox folder were found"
-	exit 1
+	if [ -z "$VOLUME" ]; then
+		if [ -d "/tmp$TOOLBOX_FOLDER" ]; then
+			VOLUME="/tmp"
+		fi
+	fi
+	if [ -z "$VOLUME" ]; then
+		echo "ERROR: Cannot find a drive with the Toolbox!"
+		exit 1
+	fi
+	for i in /fs/*; do
+		if [ -d "$i$ESD_FOLDER" ]; then
+			DESTINATION=$i
+			break
+		fi
+	done
 fi
 
 echo "Toolbox is found on $VOLUME"
@@ -89,7 +92,7 @@ if [ -d "$DESTINATION$ESD_FOLDER" ]; then
 
 	sync
 
-	if [ -z "$DESTINATION" ];then
+	if [ -z "$DESTINATION" ]; then
 		# Mount system volume in read/only mode
 		echo "Mounting system volume in read/only mode"
 		mount -t qnx6 -o remount,ro /dev/hd0t177 /
