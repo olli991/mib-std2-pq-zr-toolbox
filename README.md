@@ -123,7 +123,6 @@ Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\
 Converts password to shadow file
 
 ## FAQ (Frequently Asked Questions)
-```
 Q: I already installed Toolbox and want to install new version do I need to uninstall the old one?
 What is a proper way to update?
 A: No, you do not need to uninstall. Simply do `update_and_uninstall->Update Toolbox from SD card or USB drive`
@@ -171,4 +170,3 @@ A: [SWDL](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onli
 [SWAP](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swap.sh)
 [CP](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_cp.sh)
 **IMPORTANT!** If you get the error "Unknown file size detected" please use the "Dump necessary files to SD folder /dump/.../support" option in the "Tools" section and open up an issue to send us those files!
-```
