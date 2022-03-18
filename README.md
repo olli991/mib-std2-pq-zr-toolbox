@@ -166,38 +166,9 @@ As most of the units have 7.3 GB eMMC chips, FAT32 formatted media cannot be use
 Also it is strongly recommended to use exFAT/NTFS formatted SD card because USB port on MIB STD2 is capped to 5 MB/s.
 Class 10 SD card allows to achieve the dump speed upto 10 GB/s so the process finishes in just ~15 minutes :)
 
-Q: Which firmware trains are currently supported for direct SWAP patching?
-A. At the moment the following trains are supported: 
-   - EU PQ 138
-   - EU PQ/ZR 253
-   - EU ZR 369
-   - EU PQ/ZR 478
-   - EU PQ/ZR 479
-   - EU PQ/ZR 480
-   - EU ZR 516
-   - EU PQ 604
-   If you get the error "Unknown file size detected" please use the "Dump necessary files to SD folder /dump/.../support" option in the "Tools" section and open up an issue to send us those files!
-   
-Q: Which firmware trains are currently supported for direct SWDL patching?
-A. At the moment the following trains are supported: 
-   - EU PQ 138
-   - EU ZR 140
-   - EU/US PQ/ZR 241/253
-   - EU/US PQ/ZR 363/368/369
-   - US PQ/ZR 367
-   - EU/US PQ/ZR 478/479
-   - EU ZR 516
-   - EU PQ 604
-   If you get the error "Unknown file size detected" please use the "Dump necessary files to SD folder /dump/.../support" option in the "Tools" section and open up an issue to send us those files!
-
-Q: Which firmware trains are currently supported for direct CP patching?
-A. At the moment the following trains are supported: 
-   - EU PQ 138
-   - EU PQ/ZR 252
-   - EU PQ 353/359
-   - EU ZR 367/368
-   - EU PQ 369
-   - EU PQ/ZR 449/472/478/479/480
-   - EU ZR 515/516
-   If you get the error "Unknown file size detected" please use the "Dump necessary files to SD folder /dump/.../support" option in the "Tools" section and open up an issue to send us those files!
+Q: Which firmware trains are currently supported for direct SWDL/SWAP/CP patching?
+A: SWDL https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swdl.sh
+SWAP https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swap.sh
+CP https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_cp.sh
+IMPORTANT! If you get the error "Unknown file size detected" please use the "Dump necessary files to SD folder /dump/.../support" option in the "Tools" section and open up an issue to send us those files!
 ```
