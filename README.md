@@ -128,7 +128,7 @@ A: No, you do not need to uninstall. Simply do `update_and_uninstall->Update Too
 
 Q: I got unit with part number X. How to know if that is Technisat/Preh/Delphi/Harman?  
 A: Google that part number in picture mode and take a look at the label or look for the letter in software version string.  
-For example MST2_EU_SK_ZR_P0478T. Letter T at the end means it's Technisat. If there is no letter it's Harman.
+For example MST2_EU_SK_ZR_P0478T. Letter T at the end means it's Technisat/Preh. If there is no letter it's Harman, correspondingly D=Delphi.
 
 Q: Is Toolbox compatible with non Navi (single SD slot) units?  
 A: Yes, but to install you need to use eMMC soldering method or console/telnet installation method.
