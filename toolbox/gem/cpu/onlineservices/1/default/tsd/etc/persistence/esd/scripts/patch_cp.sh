@@ -15,6 +15,8 @@ set -A bytes 1E FF 2F E1 1E FF 2F E1
 case $size in
 	1851273) #EU PQ 138
 		set -A offsets 1430B8 1430B9 1430BA 1430BB 143154 143155 143156 143157 ;;
+	1850369) #EU ZR 140
+		set -A offsets 142D2C 142D2D 142D2E 142D2F 142DC8 142DC9 142DCA 142DCB ;;		
 	1923559) #EU ZR 252
 		set -A offsets 151E74 151E75 151E76 151E77 151F0C 151F0D 151F0E 151F0F ;;
 	1921551) #EU PQ 252
@@ -72,7 +74,7 @@ if [ -n "$offsets" ]; then
 		
 		echo "export TSD_COMMON_CONFIG=/tsd/etc/system/tsd.mibstd2.main.root.conf" >/tsd/bin/system/startup_main
 		echo "export TSD_LOGCHANNEL=J5e" >>/tsd/bin/system/startup_main
-		if [[ "$size" == "1851273" ]]; then
+		if [[ "$size" == "1851273" || "$size" == "1850369" ]]; then
 			echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -reset=/net/imx6/var/root/reset.count.main" >>/tsd/bin/system/startup_main		
 		else
 			echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -swdlfile=/tsd/etc/system/swdl/main_swdl.conf -reset=/tsd/var/root/reset.count.main" >>/tsd/bin/system/startup_main		
@@ -85,7 +87,7 @@ if [ -n "$offsets" ]; then
 		echo ' echo "shutdown finished!"' >>/tsd/bin/system/startup_main
 		echo "elif [ $""RET -eq 42 ] ; then" >>/tsd/bin/system/startup_main
 		echo ' echo "MP42 set to low! -> Boot Stopped."' >>/tsd/bin/system/startup_main
-		if [[ "$size" == "1851273" ]]; then
+		if [[ "$size" == "1851273" || "$size" == "1850369" ]]; then
 			echo "else" >>/tsd/bin/system/startup_main
 			echo "   /tsd/bin/system/wd_procterm.sh 'tsd.mibstd2.main.root' J5e.MCP 0 "'"main.root crash"' >>/tsd/bin/system/startup_main
 		fi

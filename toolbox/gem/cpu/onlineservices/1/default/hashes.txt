@@ -295,8 +295,8 @@ FileSize = "517"
 Checksum = "8bf0659ce14e0b4c052b5064f5578b4709c9ea17"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_cp.sh"
-FileSize = "4335"
-Checksum = "4d328c24a9c77591aa51b42a064607c9521fccda"
+FileSize = "4482"
+Checksum = "bd2c517cd55f5ee7d64026b3ba849f6b9a702819"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_menumode.sh"
 FileSize = "637"
@@ -311,8 +311,8 @@ FileSize = "1099"
 Checksum = "e810dfb10fb482526a602b6c84e1230a8ab6bffb"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_swap.sh"
-FileSize = "4707"
-Checksum = "bc50b5180536205fed0b46a68681d7f3838e53bb"
+FileSize = "5042"
+Checksum = "3d9b7a0ceee5920dfed10554ebb9d87fc680fead"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_swdl.sh"
 FileSize = "2383"
