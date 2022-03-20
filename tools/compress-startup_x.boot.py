@@ -1,18 +1,10 @@
 # -------------------------------------------------------------------------------------
-# --- Quick 'n' dirty startup_x.boot file compressor
-#
-# File:        compress-startup_x.boot.py
-# Author:      Jille
-# Revision:    1
-# Purpose:     Compress MIB2 images in mcf file
-# Comments:    Usage: compress-startup_x.boot.py <original-file> <new-file> <imagesdir>
-# Changelog:   v1:      initial version
+# startup_x.boot images compressor
+# Authors:      Jille, jtomtos
+# Revision:     2
 # -------------------------------------------------------------------------------------
+import os, struct, sys, zlib
 
-import os
-import struct
-import sys
-import zlib
 if sys.version_info[0] < 3:
     raw_input("You need to run this with Python 3!\nPress Enter to exit...")
     sys.exit(1)
@@ -38,15 +30,14 @@ if not os.path.exists(out_dir):
     sys.exit(1)
 
 data = open(sys.argv[1], 'rb').read()
-offset = 12
-(cmd_block_len,) = struct.unpack_from('<I', data, offset)
+(cmd_block_len,) = struct.unpack_from('<I', data, 12)
 
 datasize_offset = toc_offset = cmd_block_len + 24
 
 offset = cmd_block_len + 24
 
 (data_block_size, num_files,) = struct.unpack_from('<II', data, datasize_offset)
-print("Num of files: \t %d" % num_files)
+print("Number of images to compress: %d" % num_files)
 offset = offset + 8
 i = 0
 offset_array = []
@@ -61,7 +52,7 @@ zsize = 0
 j = 0
 
 offset_data_start = offset_array[0]
-print(("data start offset: %d" % offset_data_start))
+print("Data start offset: %d" % offset_data_start)
 
 offset_new = offset_data_start
 
@@ -78,15 +69,14 @@ data_block_size_new = 0
 for j in range(0, int(num_files)):
     offset = offset_new
     fileimage_dir = os.path.join(out_dir, 'img_' + str(j).zfill(2) + '.mib')
-    print(fileimage_dir)
-    print("importing img_%d.mib to %s" % (j, sys.argv[2]))
+    print("Compressing %s" % fileimage_dir)
     if not os.path.exists(fileimage_dir):
-        print("file %s does not exist." % filepath_original.decode("utf-8"))
+        print("ERROR! File %s does not exist." % filepath_original.decode("utf-8"))
         input("\nPress Enter to exit...")
         sys.exit(1)
     im = Image.open(fileimage_dir)
     if im.mode != "LA":
-        print("! WARNING: img_%d.mib isn't LA format. Make sure the image is saved as LA-format." % j)
+        print("WARNING! img_%d.mib isn't LA format. Make sure the image is saved as LA-format." % j)
         print("Converting img_%d.mib to LA format. This image will not have any transparency." % j)
         im = im.convert('LA')
     width, height = im.size
@@ -103,11 +93,14 @@ for j in range(0, int(num_files)):
     j = j + 1
 
 struct_datablocksize = struct.pack('I', data_block_size_new + (num_files * 4))
-print("Datablock size:", data_block_size_new)
+print("Images are compressed into datablock of %d bytes" % data_block_size_new)
 
 struct_numfiles = struct.pack('I', num_files)
-print("Writing %d images to %s " % (num_files, sys.argv[2]))
+print("Writing the datablock into %s " % sys.argv[2])
 f = open(sys.argv[2], 'wb')
 f.write(original_header + struct_datablocksize + struct_numfiles + struct_toc + struct_data)
-print("\nAll files are imported to %s" % sys.argv[2])
 f.close()
+
+print("\nDone compressing images. Enjoy!")
+input("\nPress Enter to exit...")
+sys.exit(1)

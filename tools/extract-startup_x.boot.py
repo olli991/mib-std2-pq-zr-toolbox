@@ -1,18 +1,9 @@
 # ------------------------------------------------------------------
-# --- Quick 'n' dirty startup_x.boot file extractor
-#
-# File:        	extract-startup_x.boot.py
-# Author:      	Jille
-# Revision:    	1
-# Purpose:     	startup_x.boot file extractor
-# Comments:    	Usage: extract-startup_x.boot.py <filename> <outdir>
-# Changelog:	First edition
+# startup_x.boot images extractor
+# Authors:      Jille, jtomtos
+# Revision:    	2
 # ------------------------------------------------------------------
-
-import os
-import struct
-import sys
-import zlib
+import os, struct, sys, zlib
 
 if sys.version_info[0] < 3:
     raw_input("You need to run this with Python 3!\nPress Enter to exit...")
@@ -28,7 +19,7 @@ except ImportError:
     sys.exit(1)
 
 if len(sys.argv) != 3:
-    print("usage: extract-startup_x.boot.py <filename> <outdir>")
+    print("Usage: extract-startup_x.boot.py <filename> <outdir>")
     input("\nPress Enter to exit...")
     sys.exit(1)
 
@@ -36,21 +27,16 @@ out_dir = sys.argv[2]
 if not os.path.exists(out_dir):
     os.mkdir(out_dir)
 
-
 def mkdir_path(path):
     if not os.access(path, os.F_OK):
         os.mkdir(path)
 
-
 data = open(sys.argv[1], 'rb').read()  # Open File with path in sys.argv[1] in mode 'r' reading and 'b' binary mode
-
-offset = 12
-
-(cmd_block_len,) = struct.unpack_from('<I', data, offset)
+(cmd_block_len,) = struct.unpack_from('<I', data, 12)
 
 offset = cmd_block_len + 24
 (data_block_size, num_files,) = struct.unpack_from('<II', data, offset)
-print("Num of files: \t %d" % num_files)
+print("Number of images: %d" % num_files)
 offset = offset + 8
 i = 0
 offset_array = []
@@ -63,7 +49,7 @@ while i < num_files:
     i = i + 1
 zsize = 0
 j = 0
-print("Extracting files...")
+print("Extracting images...")
 while j < num_files:
     offset = offset_array[j]
     # read data at offset
@@ -85,10 +71,12 @@ while j < num_files:
         os.makedirs(out_dir)
     out_path = os.path.join(out_dir, 'img_' + str(j).zfill(2) + '.mib')
 
-    print("Extracting", out_path, width, height)
+    print("Extracting %s %dx%d" %(out_path, width, height))
     im = Image.frombuffer('LA', (width, height), image_decompressed, 'raw', 'LA', 0, 1)
-    im.save(out_path)
+    im.save(out_path, 'png')
 
     j = j + 1
 
 print("Done extracting images. Enjoy!")
+input("\nPress Enter to exit...")
+sys.exit(1)
