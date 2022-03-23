@@ -21,8 +21,13 @@ case $size in
 			set -A bytes 01 A0 EA 00 30 A0 E3 07 07
 		fi ;;		
 	1194776) #cpu EU ZR 140
-		set -A offsets 2F164 2F166 2F16B 33D0C 33D0D 33D0E 33D0F 3C110 44BB4
-		set -A bytes 01 A0 EA 00 30 A0 E3 07 07 ;;
+		if [ "$sys" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 33940 33942 33947 33D0C 33D0D 33D0E 33D0F 3C110 44BB4
+			set -A bytes 01 A0 EA 00 30 A0 E3 07 07
+		else #cpuplus EU ZR 148
+			set -A offsets 33944 33946 3394B 33D10 33D11 33D12 33D13 3C114 44BB8
+			set -A bytes 01 A0 EA 00 30 A0 E3 07 07
+		fi ;;			
 	1186460) #cpu EU PQ/ZR 253
 		if [ "$sys" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 18430 1F160 4A2A4 4A2A6 4A2AB 4A66C 4A66D 4A66E 4A673 6AF64
