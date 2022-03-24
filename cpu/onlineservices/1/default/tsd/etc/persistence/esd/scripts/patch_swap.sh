@@ -24,7 +24,7 @@ case $size in
 		if [ "$sys" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 33940 33942 33947 33D0C 33D0D 33D0E 33D0F 3C110 44BB4
 			set -A bytes 01 A0 EA 00 30 A0 E3 07 07
-		else #cpuplus EU ZR 148
+		else #cpuplus EU ZR 140
 			set -A offsets 33944 33946 3394B 33D10 33D11 33D12 33D13 3C114 44BB8
 			set -A bytes 01 A0 EA 00 30 A0 E3 07 07
 		fi ;;			
