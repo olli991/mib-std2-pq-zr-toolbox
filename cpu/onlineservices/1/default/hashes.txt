@@ -299,12 +299,12 @@ FileSize = "1099"
 Checksum = "e810dfb10fb482526a602b6c84e1230a8ab6bffb"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_swap.sh"
-FileSize = "5384"
-Checksum = "828f4aa6168db91432c515008f41f28132412b91"
+FileSize = "5396"
+Checksum = "195a9f5c9e5d420579bfc7f58e07a86bed4fe3d7"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_swdl.sh"
-FileSize = "2383"
-Checksum = "2031a5274f24b279b37d5bb854193f10f48e1d9e"
+FileSize = "2395"
+Checksum = "8b7bcee6de18958f285c5e1363f2a5ccfafd8d28"
 
 FileName = "/tsd/etc/persistence/esd/scripts/privacy_cleanphonedata.sh"
 FileSize = "850"
