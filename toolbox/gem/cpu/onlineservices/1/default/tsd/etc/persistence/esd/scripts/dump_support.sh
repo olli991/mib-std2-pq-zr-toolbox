@@ -114,6 +114,9 @@ else
 	echo "ERROR: Cannot open $MIBPATH"
 fi
 
+# Include short sysinfo
+. /tsd/etc/persistence/esd/scripts/util_sysinfo.sh >$DUMPFOLDER/sysinfo.txt
+
 echo
 echo "Script execution has finished."
 exit 0
