@@ -43,12 +43,12 @@ FileSize = "2238"
 Checksum = "4e267f75112dbf83f2869cd3321667ca92c79a98"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-history.esd"
-FileSize = "3970"
-Checksum = "02f0264ba0de9702dcf431631b4a97a728227870"
+FileSize = "4128"
+Checksum = "a04626709f6a7afe10ee355e152a2eaff45220f3"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-main.esd"
 FileSize = "972"
-Checksum = "5fea447ba38f73b08af0434cd89fd918fae6e435"
+Checksum = "95b57675ba179d1f73912633b0f370908b879737"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-mibinfo.esd"
 FileSize = "3607"

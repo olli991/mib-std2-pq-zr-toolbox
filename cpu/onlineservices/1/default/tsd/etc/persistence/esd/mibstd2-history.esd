@@ -2,7 +2,7 @@
 #
 # Custom Green Engineering Menu screen
 # Author:		YOX, Olli & lprot
-# Version:		1.0.1
+# Version:		1.0.2
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -14,17 +14,22 @@ screen History About
 
 keyValue
     value   String sys 0x00000000 0
-    label   "v1.0.1 Extended firmware support in live patching scripts"
+    label   "v1.0.2 Changing support dumps for further development. Extended support."
     poll     0
 
 keyValue
     value   String sys 0x00000000 0
-    label   "v1.0 Added functionality to patch CP directy from within toolbox menu"
+    label   "v1.0.1 Extended firmware support in live patching scripts."
     poll     0
 
 keyValue
     value   String sys 0x00000000 0
-    label   "v0.9 Added functionality to patch SWAP directy from within toolbox menu"
+    label   "v1.0 Added functionality to patch CP directy from within toolbox menu."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.9 Added functionality to patch SWAP directy from within toolbox menu."
     poll     0
 
 keyValue
@@ -99,7 +104,7 @@ keyValue
 
 keyValue
     value   String sys 0x00000000 0
-    label   "v0.51 Added alternative installer for old units with GEM 3.5"
+    label   "v0.51 Added alternative installer for old units with GEM 3.5."
 	poll 	0
 
 keyValue
@@ -129,5 +134,5 @@ keyValue
 
 keyValue
     value   String sys 0x00000000 0
-    label   "v0.1 Initial version by YOX"
+    label   "v0.1 Initial version by YOX."
 	poll 	0
