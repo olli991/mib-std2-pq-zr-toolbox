@@ -283,8 +283,8 @@ FileSize = "517"
 Checksum = "8bf0659ce14e0b4c052b5064f5578b4709c9ea17"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_cp.sh"
-FileSize = "4777"
-Checksum = "0183a052f728000eb6b93d260f1423f278c0a910"
+FileSize = "4874"
+Checksum = "80848d5d9dd071ab99ed154f557860cd9d3edd11"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_menumode.sh"
 FileSize = "637"
@@ -299,12 +299,12 @@ FileSize = "1099"
 Checksum = "e810dfb10fb482526a602b6c84e1230a8ab6bffb"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_swap.sh"
-FileSize = "4754"
-Checksum = "9801119459d2ee0c14858a07d7860d7b90a95ff6"
+FileSize = "4758"
+Checksum = "6835d60d53ae29947fbcff20a5f4331ace37dc0b"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_swdl.sh"
-FileSize = "2414"
-Checksum = "23ce460ca113e096d6ccc742ffa71594177bdcd0"
+FileSize = "2418"
+Checksum = "e8928c65aae065b8c74bdf043995a93ae5454e2d"
 
 FileName = "/tsd/etc/persistence/esd/scripts/privacy_cleanphonedata.sh"
 FileSize = "850"

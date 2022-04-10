@@ -28,7 +28,7 @@ case $size in
 			set -A offsets 3394B 33D10 33D11 33D12 33D13 3C114 44BB8
 			set -A bytes EA 00 30 A0 E3 07 07
 		fi ;;			
-	1186460) #cpu EU PQ/ZR 253
+	1186460) #cpu EU PQ/ZR 245/253
 		if [ "$sys" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 18430 1F160 4A2AB 4A673
 			set -A bytes 07 07 EA EA
