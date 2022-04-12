@@ -69,6 +69,9 @@ case $size in
 	1168208) #cpu EU PQ 449
 		set -A offsets 230D7 2349F 37890 3E828
 		set -A bytes EA EA 07 07 ;;
+	1168104) #cpu CN PQ 478
+		set -A offsets 22F8F 23357 2F9E0 36978
+		set -A bytes EA EA 07 07 ;;
 	1170896) #cpu CN/US/EU PQ/ZR 478/479/480
 		set -A offsets 1A4E8 21480 45A37 45DFF
 		set -A bytes 07 07 EA EA ;;
