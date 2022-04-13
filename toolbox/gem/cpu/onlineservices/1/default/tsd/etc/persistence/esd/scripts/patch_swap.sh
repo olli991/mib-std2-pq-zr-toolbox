@@ -9,6 +9,7 @@ echo
 
 size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
 sys=$(uname -m)
+train=$(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g')
 
 echo "Checking $MIBPATH..."
 case $size in
@@ -36,9 +37,14 @@ case $size in
 			set -A offsets 18434 1F164 4A2AF 4A677
 			set -A bytes 07 07 EA EA
 		fi ;;
-	1166772) #cpu EU PQ 353
-		set -A offsets 198F3 19CBB 2802C 2EFAC
-		set -A bytes EA EA 07 07 ;;
+	1166772) #cpu EU ZR 356
+		if [ "$train" = "MST2_EU_VW_ZR_P0356T" ]; then
+			set -A offsets 198EF 19CB7 28028 2EFA8
+			set -A bytes EA EA 07 07
+		else #cpu EU PQ 353
+			set -A offsets 198F3 19CBB 2802C 2EFAC
+			set -A bytes EA EA 07 07
+		fi ;;
 	1163264) #cpu CN ZR 361
 		set -A offsets 1864C 1F5D0 1F5D2 1F5D3 4033B 40703
 		set -A bytes 07 00 A0 E3 EA EA ;;
