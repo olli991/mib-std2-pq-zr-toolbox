@@ -303,8 +303,8 @@ FileSize = "5247"
 Checksum = "46d62c73fdcb60e7778ef5de70ea82d139d37e82"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_swdl.sh"
-FileSize = "2490"
-Checksum = "8d0edc8c2bedce3b0b2b4c3a58ee77b4d0c9a98f"
+FileSize = "2491"
+Checksum = "20791d2c82aceff75bf41d36bdee89a040943d0d"
 
 FileName = "/tsd/etc/persistence/esd/scripts/privacy_cleanphonedata.sh"
 FileSize = "850"
