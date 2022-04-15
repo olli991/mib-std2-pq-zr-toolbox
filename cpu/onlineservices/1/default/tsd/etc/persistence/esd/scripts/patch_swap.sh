@@ -48,9 +48,14 @@ case $size in
 	1163264) #cpu CN ZR 361
 		set -A offsets 1864C 1F5D0 1F5D2 1F5D3 4033B 40703
 		set -A bytes 07 00 A0 E3 EA EA ;;
-	1164620) #cpu EU PQ 367
-		set -A offsets 277F7 27BBF 3037C 372FC
-		set -A bytes EA EA 07 07 ;;
+	1164620) #cpu EU ZR 346
+		if [ "$train" = "MST2_EU_SE_ZR_P0346T" ]; then
+			set -A offsets 20BBC 27B3C 42C13 42FDB
+			set -A bytes 07 07 EA EA
+		else #cpu EU PQ 367
+			set -A offsets 277F7 27BBF 3037C 372FC
+			set -A bytes EA EA 07 07
+		fi ;;
 	1165100) #cpu CN PQ 367
 		set -A offsets 20317 206DF 3B18C 4210C
 		set -A bytes EA EA 07 07 ;;
