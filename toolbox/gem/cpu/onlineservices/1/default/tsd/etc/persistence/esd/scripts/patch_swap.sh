@@ -7,14 +7,16 @@ export TYPE="file"
 echo "This script will patch tsd.mibstd2.system.swap"
 echo
 
+# Include info utility
+. /tsd/etc/persistence/esd/scripts/util_info.sh
+
+# Size of the file to patch
 size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
-sys=$(uname -m)
-train=$(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g')
 
 echo "Checking $MIBPATH..."
 case $size in
 	1197248) #cpu EU PQ 138
-		if [ "$sys" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 2F197 2F530 2F531 2F532 2F533 391D8 41C7C
 			set -A bytes EA 00 30 A0 E3 07 07
 		else #cpuplus EU PQ 138
@@ -22,7 +24,7 @@ case $size in
 			set -A bytes EA 00 30 A0 E3 07 07
 		fi ;;		
 	1194776) #cpu EU ZR 140
-		if [ "$sys" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 33947 33D0C 33D0D 33D0E 33D0F 3C110 44BB4
 			set -A bytes EA 00 30 A0 E3 07 07
 		else #cpuplus EU ZR 140
@@ -30,7 +32,7 @@ case $size in
 			set -A bytes EA 00 30 A0 E3 07 07
 		fi ;;			
 	1186460) #cpu EU PQ/ZR 245/253
-		if [ "$sys" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 18430 1F160 4A2AB 4A673
 			set -A bytes 07 07 EA EA
 		else #cpuplus EU PQ/ZR 253
@@ -38,7 +40,7 @@ case $size in
 			set -A bytes 07 07 EA EA
 		fi ;;
 	1166772) #cpu EU ZR 356
-		if [ "$train" = "MST2_EU_VW_ZR_P0356T" ]; then
+		if [ "$TRAIN" = "MST2_EU_VW_ZR_P0356T" ]; then
 			set -A offsets 198EF 19CB7 28028 2EFA8
 			set -A bytes EA EA 07 07
 		else #cpu EU PQ 353
@@ -52,7 +54,7 @@ case $size in
 		set -A offsets 1864C 1F5D0 1F5D2 1F5D3 4033B 40703
 		set -A bytes 07 00 A0 E3 EA EA ;;
 	1164620) #cpu EU ZR 346
-		if [ "$train" = "MST2_EU_SE_ZR_P0346T" ]; then
+		if [ "$TRAIN" = "MST2_EU_SE_ZR_P0346T" ]; then
 			set -A offsets 20BBC 27B3C 42C13 42FDB
 			set -A bytes 07 07 EA EA
 		else #cpu EU PQ 367

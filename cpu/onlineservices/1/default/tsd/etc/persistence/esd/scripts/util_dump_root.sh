@@ -7,12 +7,12 @@
 . /tsd/etc/persistence/esd/scripts/util_info.sh
 
 #Make dump folder
-DUMPFOLDER=$VOLUME/dump/$VERSION/$SERIAL/$TOPIC
+DUMPFOLDER=$VOLUME/dump/$TRAIN/$SERIAL/$TOPIC
 
 #Make dump folder if needed
 if [ ! -d "$DUMPFOLDER" ]; then
         echo "Making $VOLUME/dump/"
-        echo "  $VERSION/$SERIAL/$TOPIC..."
+        echo "  $TRAIN/$SERIAL/$TOPIC..."
         mkdir -p $DUMPFOLDER
 fi
 
@@ -36,5 +36,5 @@ done
 sync
 echo
 echo "Done. Saved at: $VOLUME/dump/"
-echo "  $VERSION/$SERIAL/$TOPIC..."
+echo "  $TRAIN/$SERIAL/$TOPIC..."
 exit 0

@@ -8,8 +8,11 @@ echo "This script will patch tsd.mibstd2.system.swdownload to"
 echo "accept custom metainfo2.txt"
 echo
 
+# Include info utility
+. /tsd/etc/persistence/esd/scripts/util_info.sh
+
+# Size of the file to patch
 size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
-sys=$(uname -m)
 
 echo "Checking $MIBPATH..."
 set -A bytes 07 EA EA 07

@@ -10,9 +10,9 @@ echo
 # Include info utility
 . /tsd/etc/persistence/esd/scripts/util_info.sh
 
-DUMPFOLDER=$VOLUME/dump/$VERSION/$SERIAL/$SDPATH
+DUMPFOLDER=$VOLUME/dump/$TRAIN/$SERIAL/$SDPATH
 echo "Source $TYPE: $MIBPATH"
-echo "Destination: dump/$VERSION/$SERIAL/"
+echo "Destination: dump/$TRAIN/$SERIAL/"
 echo "  $SDPATH"
 
 if [ "$TYPE" = "file" ]; then

@@ -7,8 +7,11 @@ export TYPE="file"
 echo "This script will patch CP check"
 echo
 
+# Include info utility
+. /tsd/etc/persistence/esd/scripts/util_info.sh
+
+# Size of the file to patch
 size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
-sys=$(uname -m)
 
 echo "Checking $MIBPATH..."
 set -A bytes 1E FF 2F E1 1E FF 2F E1

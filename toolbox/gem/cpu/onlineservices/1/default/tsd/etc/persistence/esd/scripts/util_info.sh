@@ -8,7 +8,10 @@
 #INFO=$(awk -F "" '{for(i=1;i<=NF;i++) if($i~/[A-Z0-9]/) {printf $i} else {printf " "}}' /tsd/var/itr.timer.log 2>/dev/null | sed 's/\b\w\{1,3\}\b\s*//g')
 
 # Firmware version (Train)
-export VERSION=$(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g')
+export TRAIN=$(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g')
+
+# CPU type
+export SYS=$(uname -m)
 
 # Serial number
 INFO=$(sloginfo | grep ".devinfo" | tail -1 | sed 's/.*DevInfo: //')
@@ -40,6 +43,6 @@ export SERIAL=$(echo $INFO |awk -F " |=" '{print $8}' 2>/dev/null)
 # Output
 #echo "---------------------------"
 #echo Serial of this unit: "$SERIAL"
-#echo Firmware version: "$VERSION"
+#echo Firmware version: "$TRAIN"
 # echo Detected brand: "$BRAND"
 #echo "---------------------------"

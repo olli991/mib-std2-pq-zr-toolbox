@@ -14,9 +14,9 @@ MIBPATH=/tsd/bin/swap/tsd.mibstd2.system.swap
 SDPATH=support/$TOPIC
 TYPE="file"
 
-DUMPFOLDER=$VOLUME/dump/$VERSION/$SERIAL/$SDPATH
+DUMPFOLDER=$VOLUME/dump/$TRAIN/$SERIAL/$SDPATH
 echo "Source $TYPE: $MIBPATH"
-echo "Destination: dump/$VERSION/$SERIAL/"
+echo "Destination: dump/$TRAIN/$SERIAL/"
 echo "  $SDPATH"
 
 if [ -f $MIBPATH ]; then
@@ -41,9 +41,9 @@ MIBPATH=/tsd/bin/swdownload/tsd.mibstd2.system.swdownload
 SDPATH=support/$TOPIC
 TYPE="file"
 
-DUMPFOLDER=$VOLUME/dump/$VERSION/$SERIAL/$SDPATH
+DUMPFOLDER=$VOLUME/dump/$TRAIN/$SERIAL/$SDPATH
 echo "Source $TYPE: $MIBPATH"
-echo "Destination: dump/$VERSION/$SERIAL/"
+echo "Destination: dump/$TRAIN/$SERIAL/"
 echo "  $SDPATH"
 
 if [ -f $MIBPATH ]; then
@@ -68,9 +68,9 @@ MIBPATH=/net/J5/tsd/bin/audio/tsd.mibstd2.audio.audiomgr
 SDPATH=support/$TOPIC
 TYPE="file"
 
-DUMPFOLDER=$VOLUME/dump/$VERSION/$SERIAL/$SDPATH
+DUMPFOLDER=$VOLUME/dump/$TRAIN/$SERIAL/$SDPATH
 echo "Source $TYPE: $MIBPATH"
-echo "Destination: dump/$VERSION/$SERIAL/"
+echo "Destination: dump/$TRAIN/$SERIAL/"
 echo "  $SDPATH"
 
 if [ -f $MIBPATH ]; then
@@ -95,9 +95,9 @@ MIBPATH=/net/J5/tsd/bin/system/startup
 SDPATH=support/$TOPIC
 TYPE="file"
 
-DUMPFOLDER=$VOLUME/dump/$VERSION/$SERIAL/$SDPATH
+DUMPFOLDER=$VOLUME/dump/$TRAIN/$SERIAL/$SDPATH
 echo "Source $TYPE: $MIBPATH"
-echo "Destination: dump/$VERSION/$SERIAL/"
+echo "Destination: dump/$TRAIN/$SERIAL/"
 echo "  $SDPATH"
 
 if [ -f $MIBPATH ]; then

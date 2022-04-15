@@ -12,9 +12,9 @@ echo
 cp $VOLUME/toolbox/utils/dd /tmp/
 chmod 777 /tmp/dd
 
-if [ ! -d "$VOLUME/dump/$VERSION/$SERIAL" ]; then
+if [ ! -d "$VOLUME/dump/$TRAIN/$SERIAL" ]; then
 	echo "Creating dump folder..."
-	mkdir -p $VOLUME/dump/$VERSION/$SERIAL
+	mkdir -p $VOLUME/dump/$TRAIN/$SERIAL
 fi
 
 if [[ -n "$(mount|grep $VOLUME|grep fat32)" ]]; then
@@ -22,10 +22,10 @@ if [[ -n "$(mount|grep $VOLUME|grep fat32)" ]]; then
 	exit 0
 fi
 
-OUT=$VOLUME/dump/$VERSION/$SERIAL/emmc.img
+OUT=$VOLUME/dump/$TRAIN/$SERIAL/emmc.img
 EMMC_SIZE=$(df /dev/hd0 | awk '{printf "%d",$2*512 }' 2>/dev/null)
 echo "eMMC size is $(df /dev/hd0|awk '{printf "%.2f",$2*512/1024/1024/1024}' 2>/dev/null) GB. Dumping to:"
-echo "/dump/$VERSION/$SERIAL/emmc.img"
+echo "/dump/$TRAIN/$SERIAL/emmc.img"
 echo "It will take some time. Please wait..."
 start=`date -t`
 /tmp/dd if=/dev/hd0 of=${OUT} bs=524288 &

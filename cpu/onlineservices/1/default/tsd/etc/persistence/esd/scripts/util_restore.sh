@@ -12,8 +12,8 @@ echo
 # Include info utility
 . /tsd/etc/persistence/esd/scripts/util_info.sh
 
-OLDFILES=$VOLUME/backup/$VERSION/$SERIAL/$SDPATH
-echo "Source: backup/$VERSION/$SERIAL/"
+OLDFILES=$VOLUME/backup/$TRAIN/$SERIAL/$SDPATH
+echo "Source: backup/$TRAIN/$SERIAL/"
 echo "        $SDPATH"
 echo "Destination: $MIBPATH"
 

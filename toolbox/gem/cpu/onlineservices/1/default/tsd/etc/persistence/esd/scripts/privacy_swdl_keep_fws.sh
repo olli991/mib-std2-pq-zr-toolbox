@@ -55,14 +55,14 @@ elif [ -f $MIBPATH/swdlhistory/swdownload1.conf ]; then
 	fi
 fi
 
-VERSION=$(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g')
-if [ -z "$(cat $MIBPATH/.swdownload.conf | grep $VERSION)" ]; then
+TRAIN=$(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g')
+if [ -z "$(cat $MIBPATH/.swdownload.conf | grep $TRAIN)" ]; then
 	echo "Fixing error 1556..."
-	sed -i "s/\(ReleaseName[[:space:]]*=[[:space:]]*\)\(.*\)/\1${VERSION}\r/" $MIBPATH/.swdownload.conf
-	VERSION=$(echo "$VERSION"|awk -F'_' '{gsub(/[^[:digit:]]/, "", $5);print $5}' 2>/dev/null)
-	sed -i "s/\(MuVersion[[:space:]]*=[[:space:]]*\)\(.*\)/\1${VERSION}\r/" $MIBPATH/.swdownload.conf
-	VERSION=$(cat $MIBPATH/.swdownload.conf|awk '/online/{getline;getline;printf "%d",$3}' 2>/dev/null)
-	sed -i "s/TargetVersion = 1157/TargetVersion = ${VERSION}/" $MIBPATH/.swdownload.conf
+	sed -i "s/\(ReleaseName[[:space:]]*=[[:space:]]*\)\(.*\)/\1${TRAIN}\r/" $MIBPATH/.swdownload.conf
+	TRAIN=$(echo "$TRAIN"|awk -F'_' '{gsub(/[^[:digit:]]/, "", $5);print $5}' 2>/dev/null)
+	sed -i "s/\(MuVersion[[:space:]]*=[[:space:]]*\)\(.*\)/\1${TRAIN}\r/" $MIBPATH/.swdownload.conf
+	TRAIN=$(cat $MIBPATH/.swdownload.conf|awk '/online/{getline;getline;printf "%d",$3}' 2>/dev/null)
+	sed -i "s/TargetVersion = 1157/TargetVersion = ${TRAIN}/" $MIBPATH/.swdownload.conf
 	sed -i "s/UpdateStatus = 14/UpdateStatus = 4/" $MIBPATH/.swdownload.conf
 	sed -i "s/UpdateResult = 2/UpdateStatus = 1/" $MIBPATH/.swdownload.conf
 	cp -f $MIBPATH/.swdownload.conf $MIBPATH/swdlhistory/swdownload1.conf

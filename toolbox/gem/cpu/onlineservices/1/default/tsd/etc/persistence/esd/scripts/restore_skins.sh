@@ -19,7 +19,7 @@ MIBPATH=/tsd/hmi/Resources
 
 # Restore file(s) to unit
 echo "Copying all skin files from backup folder to the unit, please wait..."
-for i in $VOLUME/backup/$VERSION/$SERIAL/skins/skin*; do
+for i in $VOLUME/backup/$TRAIN/$SERIAL/skins/skin*; do
 	#Extract skin folder name
 	FOLDER=${i##*/}
 	if [ -f $i/images.mcf ]; then

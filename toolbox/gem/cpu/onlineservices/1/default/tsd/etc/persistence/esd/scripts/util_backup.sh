@@ -10,12 +10,12 @@
 # Include info utility
 . /tsd/etc/persistence/esd/scripts/util_info.sh
 
-export BACKUPFOLDER=$VOLUME/backup/$VERSION/$SERIAL/$TOPIC
+export BACKUPFOLDER=$VOLUME/backup/$TRAIN/$SERIAL/$TOPIC
 
 echo "Making $TYPE backup..."
 echo "Source: $MIBPATH"
 echo "Destination: $VOLUME/backup/"
-echo "  $VERSION/$SERIAL/$TOPIC"
+echo "  $TRAIN/$SERIAL/$TOPIC"
 
 if [ "$TYPE" = "folder" ]; then
 	if [ -d "${BACKUPFOLDER}" ]; then
