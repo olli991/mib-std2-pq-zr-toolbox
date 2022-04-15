@@ -16,6 +16,8 @@ size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
 echo "Checking $MIBPATH..."
 set -A bytes 1E FF 2F E1 1E FF 2F E1
 case $size in
+	1852137) #EU ZR 137
+		set -A offsets 14334C 14334D 14334E 14334F 1433E8 1433E9 1433EA 1433EB ;;
 	1851273) #EU PQ 138
 		set -A offsets 1430B8 1430B9 1430BA 1430BB 143154 143155 143156 143157 ;;
 	1850369) #EU ZR 140

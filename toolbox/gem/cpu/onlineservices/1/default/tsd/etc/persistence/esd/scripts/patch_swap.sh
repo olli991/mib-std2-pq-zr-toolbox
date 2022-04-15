@@ -14,38 +14,34 @@ echo
 size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
 
 echo "Checking $MIBPATH..."
+set -A bytes 07 07 07 07
 case $size in
+	1197376) #cpu EU ZR 137
+		set -A offsets 2C778 3521C 4B73C 4BAD8 ;;
 	1197248) #cpu EU PQ 138
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
-			set -A offsets 2F197 2F530 2F531 2F532 2F533 391D8 41C7C
-			set -A bytes EA 00 30 A0 E3 07 07
+			set -A offsets 2F164 2F500 391D8 41C7C
 		else #cpuplus EU PQ 138
-			set -A offsets 2F19B 2F534 2F535 2F536 2F537 391DC 41C80
-			set -A bytes EA 00 30 A0 E3 07 07
-		fi ;;		
+			set -A offsets 2F168 2F504 391DC 41C80
+		fi ;;
 	1194776) #cpu EU ZR 140
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
-			set -A offsets 33947 33D0C 33D0D 33D0E 33D0F 3C110 44BB4
-			set -A bytes EA 00 30 A0 E3 07 07
+			set -A offsets 33940 33CDC 3C110 44BB4
 		else #cpuplus EU ZR 140
-			set -A offsets 3394B 33D10 33D11 33D12 33D13 3C114 44BB8
-			set -A bytes EA 00 30 A0 E3 07 07
+			set -A offsets 33944 33CE0 3C114 44BB8
 		fi ;;			
 	1186460) #cpu EU PQ/ZR 245/253
+		set -A bytes 07 07 EA EA
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 18430 1F160 4A2AB 4A673
-			set -A bytes 07 07 EA EA
 		else #cpuplus EU PQ/ZR 253
 			set -A offsets 18434 1F164 4A2AF 4A677
-			set -A bytes 07 07 EA EA
 		fi ;;
 	1166772) #cpu EU ZR 356
 		if [ "$TRAIN" = "MST2_EU_VW_ZR_P0356T" ]; then
-			set -A offsets 198EF 19CB7 28028 2EFA8
-			set -A bytes EA EA 07 07
+			set -A offsets 198E8 19CB0 28028 2EFA8
 		else #cpu EU PQ 353
-			set -A offsets 198F3 19CBB 2802C 2EFAC
-			set -A bytes EA EA 07 07
+			set -A offsets 198EC 19CB4 2802C 2EFAC
 		fi ;;
 	1168644) #cpu EU ZR 359
 		set -A offsets 198EF 19CB7 3BFD4 42F54
@@ -55,11 +51,9 @@ case $size in
 		set -A bytes 07 00 A0 E3 EA EA ;;
 	1164620) #cpu EU ZR 346
 		if [ "$TRAIN" = "MST2_EU_SE_ZR_P0346T" ]; then
-			set -A offsets 20BBC 27B3C 42C13 42FDB
-			set -A bytes 07 07 EA EA
-		else #cpu EU PQ 367
-			set -A offsets 277F7 27BBF 3037C 372FC
-			set -A bytes EA EA 07 07
+			set -A offsets 20BBC 27B3C 42C0C 42FD4
+		else #cpu EU PQ 363
+			set -A offsets 277F0 27BB8 3037C 372FC
 		fi ;;
 	1165100) #cpu CN PQ 367
 		set -A offsets 20317 206DF 3B18C 4210C
@@ -95,14 +89,14 @@ case $size in
 		set -A offsets 1A4EC 21484 45A3B 45E03
 		set -A bytes 07 07 EA EA ;;
 	1170704|1171128) #cpu EU ZR 515/516
-			set -A offsets 1A4E0 21478 45A2F 45DF7
-			set -A bytes 07 07 EA EA ;;
+		set -A offsets 1A4E0 21478 45A2F 45DF7
+		set -A bytes 07 07 EA EA ;;
 	1171136) #cpuplus EU ZR 516
-			set -A offsets 1A4E4 2147C 45A33 45DFB
-			set -A bytes 07 07 EA EA ;;
+		set -A offsets 1A4E4 2147C 45A33 45DFB
+		set -A bytes 07 07 EA EA ;;
 	1173048) #cpu EU PQ 604
-			set -A offsets 19997 19D5F 23B20 2AAB8
-			set -A bytes EA EA 07 07 ;;
+		set -A offsets 19997 19D5F 23B20 2AAB8
+		set -A bytes EA EA 07 07 ;;
 	*)
 		offsets="" ;;
 esac
