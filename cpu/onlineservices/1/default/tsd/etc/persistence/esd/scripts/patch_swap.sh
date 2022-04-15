@@ -45,6 +45,9 @@ case $size in
 			set -A offsets 198F3 19CBB 2802C 2EFAC
 			set -A bytes EA EA 07 07
 		fi ;;
+	1168644) #cpu EU ZR 359
+		set -A offsets 198EF 19CB7 3BFD4 42F54
+		set -A bytes EA EA 07 07 ;;
 	1163264) #cpu CN ZR 361
 		set -A offsets 1864C 1F5D0 1F5D2 1F5D3 4033B 40703
 		set -A bytes 07 00 A0 E3 EA EA ;;
