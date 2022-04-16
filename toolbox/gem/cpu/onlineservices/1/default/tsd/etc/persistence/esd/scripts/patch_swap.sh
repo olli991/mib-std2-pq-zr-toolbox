@@ -33,7 +33,7 @@ case $size in
 			set -A offsets 226AC 293DC 44D44 4510C
 		else #cpuplus EU PQ/ZR 253
 			set -A offsets 226B0 293E0 44D48 45110
-		fi ;;		
+		fi ;;
 	1186460) #cpu EU PQ/ZR 245/253
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 18430 1F160 4A2A4 4A66C
@@ -42,16 +42,10 @@ case $size in
 		fi ;;
 	1187340) #cpu CN PQ 253
 		set -A offsets 25894 2C5C4 44E88 45250 ;;
-	1166380) #cpu US ZR 367
+	1166772) #cpu EU PQ/ZR 353/356
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
-			set -A offsets 26AD4 26E9C 3B15C 420DC
-		else #cpuplus EU ZR 367
-			set -A offsets 26AD8 26EA0 3B160 420E0
-		fi ;;	
-	1166772) #cpu EU ZR 356
-		if [ "$TRAIN" = "MST2_EU_VW_ZR_P0356T" ]; then
 			set -A offsets 198E8 19CB0 28028 2EFA8
-		else #cpu EU PQ 353
+		else #cpuplus EU PQ/ZR 353/356
 			set -A offsets 198EC 19CB4 2802C 2EFAC
 		fi ;;
 	1168644) #cpu EU ZR 359
@@ -67,6 +61,12 @@ case $size in
 		fi ;;
 	1165100) #cpu CN PQ 367
 		set -A offsets 20310 206D8 3B18C 4210C ;;
+	1166380) #cpu EU/US ZR 367
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 26AD4 26E9C 3B15C 420DC
+		else #cpuplus EU/US ZR 367
+			set -A offsets 26AD8 26EA0 3B160 420E0
+		fi ;;	
 	1166364) #cpu EU ZR 368
 		set -A offsets 28618 289E0 3113C 380BC ;;
 	1166348) #cpu EU ZR 369
