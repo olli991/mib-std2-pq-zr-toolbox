@@ -40,6 +40,8 @@ case $size in
 		else #cpuplus EU PQ/ZR 253
 			set -A offsets 18434 1F164 4A2A8 4A670
 		fi ;;
+	1187340) #cpu CN PQ 253
+		set -A offsets 25894 2C5C4 44E88 45250 ;;
 	1166380) #cpu US ZR 367
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 26AD4 26E9C 3B15C 420DC
@@ -79,7 +81,7 @@ case $size in
 		set -A offsets 23AF4 23EBC 3B348 422C8 ;;
 	1168208) #cpu EU PQ 449
 		set -A offsets 230D0 23498 37890 3E828 ;;
-	1168104) #cpu CN PQ 478
+	1168104) #cpu CN PQ/ZR 469/475/478
 		set -A offsets 22F88 23350 2F9E0 36978 ;;
 	1170896) #cpu CN/US/EU PQ/ZR 478/479/480
 		set -A offsets 1A4E8 21480 45A30 45DF8 ;;
