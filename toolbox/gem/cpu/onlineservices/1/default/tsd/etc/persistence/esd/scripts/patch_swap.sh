@@ -79,7 +79,7 @@ case $size in
 		set -A offsets 23AF8 23EC0 3B34C 422CC ;;
 	1168916) #cpu EU ZR 369
 		set -A offsets 23AF4 23EBC 3B348 422C8 ;;
-	1168208) #cpu EU PQ 449
+	1168208) #cpu EU PQ/ZR 449/475
 		set -A offsets 230D0 23498 37890 3E828 ;;
 	1168104) #cpu CN PQ/ZR 469/475/478
 		set -A offsets 22F88 23350 2F9E0 36978 ;;
