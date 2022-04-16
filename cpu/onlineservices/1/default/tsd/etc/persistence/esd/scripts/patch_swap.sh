@@ -9,98 +9,145 @@ echo
 
 # Include info utility
 . /tsd/etc/persistence/esd/scripts/util_info.sh
+echo "ID: $TRAIN $SYS"
 
 # Size of the file to patch
 size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
 
 echo "Checking $MIBPATH..."
 set -A bytes 07 07 07 07
+offsets=""
+
 case $size in
-	1197376) #cpu EU ZR 137
-		set -A offsets 2C778 3521C 4B73C 4BAD8 ;;
-	1197248) #cpu EU PQ 138
+	1197376) #EU PQ/ZR 137
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 2C778 3521C 4B73C 4BAD8
+		fi ;;
+	1197248) #EU PQ/ZR 138
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 2F164 2F500 391D8 41C7C
-		else #cpuplus EU PQ 138
-			set -A offsets 2F168 2F504 391DC 41C80
+		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
+			set -A offsets 2F168 2F504 391DC 41C80		
 		fi ;;
-	1194776) #cpu EU ZR 140
-		set -A offsets 33940 33CDC 3C110 44BB4 ;;
-	1194784) #cpuplus EU ZR 140
-        set -A offsets 33944 33CE0 3C114 44BB8 ;;
-	1187364) #cpu US PQ/ZR 245/253
+	1194776) #EU PQ/ZR 140
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 33940 33CDC 3C110 44BB4
+		fi ;;
+	1194784) #EU PQ/ZR 140
+		if [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
+			set -A offsets 33944 33CE0 3C114 44BB8
+		fi ;;
+	1187364) #EU/US PQ/ZR 245/253
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 226AC 293DC 44D44 4510C
-		else #cpuplus EU PQ/ZR 253
+		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			set -A offsets 226B0 293E0 44D48 45110
 		fi ;;
-	1186460) #cpu EU PQ/ZR 245/253
+	1186460) #EU PQ/ZR 245/253
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 18430 1F160 4A2A4 4A66C
-		else #cpuplus EU PQ/ZR 253
+		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			set -A offsets 18434 1F164 4A2A8 4A670
 		fi ;;
-	1187340) #cpu CN PQ 253
-		set -A offsets 25894 2C5C4 44E88 45250 ;;
-	1166772) #cpu EU PQ/ZR 353/356
+	1187340) #CN PQ 253
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 25894 2C5C4 44E88 45250
+		fi ;;
+	1166772) #EU PQ/ZR 353/356
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 198E8 19CB0 28028 2EFA8
-		else #cpuplus EU PQ/ZR 353/356
+		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			set -A offsets 198EC 19CB4 2802C 2EFAC
 		fi ;;
-	1168644) #cpu EU ZR 359
-		set -A offsets 198E8 19CB0 3BFD4 42F54 ;;
-	1163264) #cpu CN ZR 361
-		set -A offsets 1864C 1F5D3 4033B 40703
-		set -A bytes 07 E3 EA EA ;;
-	1164620) #cpu EU ZR 346
-		if [ "$TRAIN" = "MST2_EU_SE_ZR_P0346T" ]; then
-			set -A offsets 20BBC 27B3C 42C0C 42FD4
-		else #cpu EU PQ 363
-			set -A offsets 277F0 27BB8 3037C 372FC
+	1168644) #EU ZR 359
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 198E8 19CB0 3BFD4 42F54
 		fi ;;
-	1165100) #cpu CN PQ 367
-		set -A offsets 20310 206D8 3B18C 4210C ;;
-	1166380) #cpu EU/US ZR 367
+	1163264) #CN ZR 361
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 1864C 1F5D3 4033B 40703
+			set -A bytes 07 E3 EA EA
+		fi ;;
+	1164620) #EU 346 or 363 
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			if [ "$TRAIN" = "MST2_EU_SE_ZR_P0346T" ]; then
+				set -A offsets 20BBC 27B3C 42C0C 42FD4
+			else #PQ 363
+				set -A offsets 277F0 27BB8 3037C 372FC
+			fi
+		fi ;;
+	1165100) #CN PQ 367
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 20310 206D8 3B18C 4210C
+		fi ;;
+	1166380) #EU/US ZR 367
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 26AD4 26E9C 3B15C 420DC
-		else #cpuplus EU/US ZR 367
+		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			set -A offsets 26AD8 26EA0 3B160 420E0
 		fi ;;	
-	1166364) #cpu EU ZR 368
-		set -A offsets 28618 289E0 3113C 380BC ;;
-	1166348) #cpu EU ZR 369
-		set -A offsets 2499C 2B91C 4A1B8 4A580 ;;
-	1166356) #cpuplus EU PQ 369
-		set -A offsets 249A0 2B920 4A1BC 4A584 ;;
-	1167660) #cpu EU ZR 369
-		set -A offsets 198E8 19CB0 3B674 425F4 ;;
-	1168924) #cpuplus EU ZR 369
-		set -A offsets 23AF8 23EC0 3B34C 422CC ;;
-	1168916) #cpu EU ZR 369
-		set -A offsets 23AF4 23EBC 3B348 422C8 ;;
-	1168208) #cpu EU PQ/ZR 449/475
-		set -A offsets 230D0 23498 37890 3E828 ;;
-	1168104) #cpu CN PQ/ZR 469/475/478
-		set -A offsets 22F88 23350 2F9E0 36978 ;;
-	1170896) #cpu CN/US/EU PQ/ZR 478/479/480
-		set -A offsets 1A4E8 21480 45A30 45DF8 ;;
-	1170904) #cpuplus CN/US/EU PQ/ZR 478/479/480
-		set -A offsets 1A4EC 21484 45A34 45DFC ;;
-	1170704) #cpu EU ZR 515
+	1166364) #EU ZR 368
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 28618 289E0 3113C 380BC
+		fi ;;
+	1166348) #EU ZR 369
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 2499C 2B91C 4A1B8 4A580
+		fi ;;
+	1166356) #EU PQ 369
+		if [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
+			set -A offsets 249A0 2B920 4A1BC 4A584
+		fi ;;
+	1167660) #EU ZR 369
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 198E8 19CB0 3B674 425F4
+		fi ;;
+	1168924) #EU ZR 369
+		if [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
+			set -A offsets 23AF8 23EC0 3B34C 422CC
+		fi ;;
+	1168916) #EU ZR 369
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 23AF4 23EBC 3B348 422C8
+		fi ;;
+	1168208) #EU PQ/ZR 449/475
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 230D0 23498 37890 3E828
+		fi ;;
+	1168104) #CN PQ/ZR 469/475/478
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 22F88 23350 2F9E0 36978
+		fi ;;
+	1170896) #CN/US/EU PQ/ZR 478/479/480
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 1A4E8 21480 45A30 45DF8
+		fi ;;
+	1170904) #CN/US/EU PQ/ZR 478/479/480
+		if [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
+			set -A offsets 1A4EC 21484 45A34 45DFC
+		fi ;;
+	1170704) #EU ZR 515
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 1AAB0 1AE78 2EA44 359DC
-		else #cpuplus EU ZR 515
+		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			set -A offsets 1AAB4 1AE7C 2EA48 359E0
 		fi ;;
 	1171128) #cpu EU ZR 516
-		set -A offsets 1A4E0 21478 45A28 45DF0 ;;
-	1171136) #cpuplus EU ZR 516
-		set -A offsets 1A4E4 2147C 45A2C 45DF4 ;;
-	1173048) #cpu EU PQ 604
-		set -A offsets 19990 19D58 23B20 2AAB8 ;;
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 1A4E0 21478 45A28 45DF0
+		fi ;;
+	1171136) #EU ZR 516
+		if [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
+			set -A offsets 1A4E4 2147C 45A2C 45DF4
+		fi ;;
+	1173048) #EU PQ 604
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 19990 19D58 23B20 2AAB8
+		fi ;;
     1173056) #cpuplus EU PQ 604
-		set -A offsets 19994 19D5C 23B24 2AABC ;;
+		if [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
+			set -A offsets 19994 19D5C 23B24 2AABC
+		fi ;;
 	*)
 		offsets="" ;;
 esac

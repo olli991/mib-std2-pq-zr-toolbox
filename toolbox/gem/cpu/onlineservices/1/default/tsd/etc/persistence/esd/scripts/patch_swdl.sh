@@ -10,6 +10,7 @@ echo
 
 # Include info utility
 . /tsd/etc/persistence/esd/scripts/util_info.sh
+echo "ID: $TRAIN $SYS"
 
 # Size of the file to patch
 size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
