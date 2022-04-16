@@ -94,7 +94,7 @@ if [ -n "$offsets" ]; then
 		
 		echo "export TSD_COMMON_CONFIG=/tsd/etc/system/tsd.mibstd2.main.root.conf" >/tsd/bin/system/startup_main
 		echo "export TSD_LOGCHANNEL=J5e" >>/tsd/bin/system/startup_main
-		if [[ "$size" == "1851273" || "$size" == "1850369" ]]; then
+		if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" ]]; then
 			echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -reset=/net/imx6/var/root/reset.count.main" >>/tsd/bin/system/startup_main		
 		else
 			echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -swdlfile=/tsd/etc/system/swdl/main_swdl.conf -reset=/tsd/var/root/reset.count.main" >>/tsd/bin/system/startup_main		
@@ -107,7 +107,7 @@ if [ -n "$offsets" ]; then
 		echo ' echo "shutdown finished!"' >>/tsd/bin/system/startup_main
 		echo "elif [ $""RET -eq 42 ] ; then" >>/tsd/bin/system/startup_main
 		echo ' echo "MP42 set to low! -> Boot Stopped."' >>/tsd/bin/system/startup_main
-		if [[ "$size" == "1851273" || "$size" == "1850369" ]]; then
+		if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" ]]; then
 			echo "else" >>/tsd/bin/system/startup_main
 			echo "   /tsd/bin/system/wd_procterm.sh 'tsd.mibstd2.main.root' J5e.MCP 0 "'"main.root crash"' >>/tsd/bin/system/startup_main
 		fi
