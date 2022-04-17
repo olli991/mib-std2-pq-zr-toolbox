@@ -20,11 +20,13 @@ set -A bytes 07 07 07 07
 offsets=""
 
 case $size in
+	1484164) #mainstd EU ZR 140
+		set -A offsets 7EAC4 7F668 7FBDC ;;
 	1541236) #mainstd EU ZR 253/254
 		set -A offsets 6EE80 72328 72A4C BE660 ;;
 	1562016|1562024|1562036) #mainstd EU ZR 363/367/369
 		set -A offsets 6F8E4 73718 73E44 BF534 ;;
-	1562772) #mainstd EU ZR 478/480
+	1562772) #mainstd EU ZR 475/478/480
 		set -A offsets 6F8D0 73704 73E30 BF518 ;;		
 	2949116|2951292|2950532) #cpu EU PQ/ZR 137/138/140
 		set -A offsets C88D4 C9DBC C9ED4 ;;

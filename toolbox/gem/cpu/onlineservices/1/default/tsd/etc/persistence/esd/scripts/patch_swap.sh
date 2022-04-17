@@ -19,15 +19,19 @@ set -A bytes 07 07 07 07
 offsets=""
 
 case $size in
-	619040) #EU mainstd 253/254
+	633668) #EU mainstd ZR 140
+		set -A offsets 25ABC 25DF4 32144 34968 ;;
+	619040) #EU mainstd ZR 253/254
 		set -A offsets 18018 18B8C 3248C 32764 ;;
-	630184) #EU mainstd 363
+	630184) #EU mainstd ZR 363
 		set -A offsets 20978 20C50 2B030 2BBA4 ;;		
-	630416) #EU mainstd 367
+	630416) #EU mainstd ZR 367
 		set -A offsets 1E640 1F1B4 2D0CC 2D3A4 ;;		
-	630416) #EU mainstd 369
+	630416) #EU mainstd ZR 369
 		set -A offsets 1D184 1D45C 2E674 2F1E8 ;;		
-	631548) #EU mainstd 478
+	631292) #EU mainstd ZR 475
+		set -A offsets 1CE0C 1D0E4 2E9C8 2F53C ;;		
+	631548) #EU mainstd ZR 478/480
 		set -A offsets 1AF98 1BB0C 2F7F4 2FACC ;;		
 	1197376) #EU PQ/ZR 137
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
