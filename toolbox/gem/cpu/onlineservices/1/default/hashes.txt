@@ -267,8 +267,8 @@ FileSize = "241"
 Checksum = "8ffc68d440024078268dcbf623c146d7745c1dd3"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_support.sh"
-FileSize = "2696"
-Checksum = "4d675403c16d3292a6f7ad6cbb4e3aa775745bee"
+FileSize = "3611"
+Checksum = "1263f6e188bc83175a2c725b88bd4e2223065676"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_swap.sh"
 FileSize = "209"
