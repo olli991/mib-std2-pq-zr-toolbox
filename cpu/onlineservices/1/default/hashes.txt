@@ -63,8 +63,8 @@ FileSize = "1738"
 Checksum = "53e202ee36e94f06973224ad804f3d9190e16572"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-network.esd"
-FileSize = "1684"
-Checksum = "1c99287013c0761fb727b4865faf9ec851418ccd"
+FileSize = "1982"
+Checksum = "5240e55bfad08d3d7313445ba4bff856a3c3cbb9"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-skins.esd"
 FileSize = "1640"
@@ -85,6 +85,10 @@ Checksum = "3f1afc909861c8096290f4c197e2c5adb473d7fa"
 FileName = "/tsd/etc/persistence/esd/scripts/activate_console.sh"
 FileSize = "520"
 Checksum = "5c95b6d10e9ad5193eee74a8092147c86e8a2ffc"
+
+FileName = "/tsd/etc/persistence/esd/scripts/activate_perm_access.sh"
+FileSize = "1343"
+Checksum = "8bbd15df94ba309e58ddc8e34cd50c2911c3aced"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_qconn.sh"
 FileSize = "436"
@@ -169,6 +173,10 @@ Checksum = "a9a9b8453414c70699ecaad9bb2339f4ac8d14ed"
 FileName = "/tsd/etc/persistence/esd/scripts/deactivate_access.sh"
 FileSize = "281"
 Checksum = "0494318adf43bedf4a19bd5d67764485cc71bba1"
+
+FileName = "/tsd/etc/persistence/esd/scripts/deactivate_perm_access.sh"
+FileSize = "785"
+Checksum = "bb5cd2f682fe1f228911047f69e7b64553bd1957"
 
 FileName = "/tsd/etc/persistence/esd/scripts/delete_fec.sh"
 FileSize = "662"

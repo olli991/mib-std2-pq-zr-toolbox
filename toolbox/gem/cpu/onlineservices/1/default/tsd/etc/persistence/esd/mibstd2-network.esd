@@ -28,6 +28,14 @@ script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/deactivate_access.sh"
 	label 	"Deactivate telnet, ftp and qconn access"
 
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_perm_access.sh"
+	label 	"Activate permanent telnet and console access"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/deactivate_perm_access.sh"
+	label 	"Deactivate permanent telnet and console access"
+
 choice
 	value 	per 0x01c100e7 54
 	label 	"Ethernet:"
