@@ -93,6 +93,7 @@ if [ -n "$offsets" ]; then
 
 		# Mount system partition in read/write mode
 		. /tsd/etc/persistence/esd/scripts/util_mount.sh
+		echo "Creating startup_main file..."
 		
 		echo "export TSD_COMMON_CONFIG=/tsd/etc/system/tsd.mibstd2.main.root.conf" >/tsd/bin/system/startup_main
 		echo "export TSD_LOGCHANNEL=J5e" >>/tsd/bin/system/startup_main

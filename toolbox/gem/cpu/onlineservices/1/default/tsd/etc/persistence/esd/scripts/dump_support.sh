@@ -39,6 +39,7 @@ echo "Include backup files if present..."
 BACKUPFOLDER=$VOLUME/backup/$TRAIN/$SERIAL/$TOPIC
 DUMPFOLDER2=$DUMPFOLDER/backup
 if [ -d "$BACKUPFOLDER" ]; then
+	echo "Files found!"
 	if [ ! -d "$DUMPFOLDER2" ]; then
 		echo "Creating folder..."
 		mkdir -p $DUMPFOLDER2
@@ -50,7 +51,7 @@ if [ -d "$BACKUPFOLDER" ]; then
 else
 	echo "No backup found for SWAP. Nothing to include."
 fi
-
+echo "25% done, please wait..."
 echo 
 
 #Dumping SWDL file to SD
@@ -84,6 +85,7 @@ echo "Include backup files if present..."
 BACKUPFOLDER=$VOLUME/backup/$TRAIN/$SERIAL/$TOPIC
 DUMPFOLDER2=$DUMPFOLDER/backup
 if [ -d "$BACKUPFOLDER" ]; then
+	echo "Files found!"
 	if [ ! -d "$DUMPFOLDER2" ]; then
 		echo "Creating folder..."
 		mkdir -p $DUMPFOLDER2
@@ -95,7 +97,7 @@ if [ -d "$BACKUPFOLDER" ]; then
 else
 	echo "No backup found for SWDL. Nothing to include."
 fi
-
+echo "50% done, please wait..."
 echo 
 
 # Dumping Audiomanager to SD
@@ -122,7 +124,7 @@ if [ -f $MIBPATH ]; then
 else
 	echo "ERROR: Cannot open $MIBPATH"
 fi
-
+echo "75% done, please wait..."
 echo 
 
 # Dumping startup to SD
@@ -149,10 +151,14 @@ if [ -f $MIBPATH ]; then
 else
 	echo "ERROR: Cannot open $MIBPATH"
 fi
+echo
+echo "95% done, please wait..."
+echo
 
 # Include short sysinfo
+echo "Saving system informations..."
 . /tsd/etc/persistence/esd/scripts/util_sysinfo.sh >$DUMPFOLDER/sysinfo.txt
 
 echo
-echo "Script execution has finished."
+echo "100% - Script execution has finished."
 exit 0

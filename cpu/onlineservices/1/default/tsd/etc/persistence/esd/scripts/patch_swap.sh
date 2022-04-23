@@ -206,6 +206,7 @@ if [ -n "$offsets" ]; then
 		
 		# Mount system partition in read/write mode
 		. /tsd/etc/persistence/esd/scripts/util_mount.sh
+		echo "Creating Exeption List..."
 		
 		mv $fout $MIBPATH
 		chmod 777 $MIBPATH

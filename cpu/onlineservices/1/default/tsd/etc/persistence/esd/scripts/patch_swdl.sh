@@ -71,6 +71,7 @@ if [ -n "$offsets" ]; then
 
 		# Mount system partition in read/write mode
 		. /tsd/etc/persistence/esd/scripts/util_mount.sh
+		echo "Setting file permissions..."
 		
 		mv -f $fout $MIBPATH
 		chmod 777 $MIBPATH
