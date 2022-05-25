@@ -168,6 +168,8 @@ case $size in
 	1168608) #US PQ 478
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 12E38 19DD0 364BC 36884
+		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
+			set -A offsets 12E3C 19DD4 364C0 36888
 		fi ;;
 	1170896) #CN/US/EU PQ/ZR 468/478/479/480
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
