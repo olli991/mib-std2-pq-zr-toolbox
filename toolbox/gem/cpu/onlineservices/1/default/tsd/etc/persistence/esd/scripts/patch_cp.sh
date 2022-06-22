@@ -94,7 +94,7 @@ if [ -n "$offsets" ]; then
 		j=$((j+1))
 	done
 
-	if [ -f "$fout" ]; then				
+	if [[ $j -eq 8 && -f "$fout" ]]; then
 		mv $fout /tsd/var/tsd.mibstd2.audio.audiomgr
 		chmod 777 /tsd/var/tsd.mibstd2.audio.audiomgr
 
@@ -132,7 +132,7 @@ if [ -n "$offsets" ]; then
 		. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
 		echo "Patch is applied. Please restart the unit."
 	else
-		echo "Patching failed!"
+		echo "Patching failed! Please retry and/or send sysinfo!"
 	fi
 else
 	echo "Unknown file size $size detected."
