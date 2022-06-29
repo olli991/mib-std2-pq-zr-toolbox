@@ -307,8 +307,8 @@ FileSize = "1099"
 Checksum = "e810dfb10fb482526a602b6c84e1230a8ab6bffb"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_swap.sh"
-FileSize = "8745"
-Checksum = "0b705dfa15d8984dd7d86ba21735228e65924db0"
+FileSize = "8746"
+Checksum = "8b2f7ef51101fb6074a83bf8a0cd50e324336c9a"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_swdl.sh"
 FileSize = "2987"
