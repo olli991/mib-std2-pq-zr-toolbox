@@ -15,7 +15,7 @@ WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT 
 **NOTE:** This SD installation method is NOT possible on Seat Navi units with HW H50+ (firmwares 05xx) also known as variants 47213, 47214, 47215, 47216.
 Metainfo2.txt of the Toolbox does not contain these variant numbers. Metainfo2.txt cannot be edited because has digital signature at the end of the file. The ONLY KNOWN way to install Toolbox onto this kind of units is soldering USB SD card reader to eMMC.
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of SD card.
-2. **IMPORTANT!** If your firmware is version 01xx or 02xx having GEM (Green Engineering Menu) version 3.x, you must update. To do this, replace `cpu` folder in the root of the SD card with `cpu` folder from `\toolbox\gem` folder. Otherwise skip this step.
+2. **IMPORTANT!** If your firmware is version 01xx or 02xx having GEM (Green Engineering Menu) version 3.x, you must use special edition of Toolbox to update it. To do this, replace `cpu` folder in the root of the SD card with `cpu` folder from `\toolbox\gem` folder. If GEM is version 4.x+, skip this step.
 3. Turn on ignition and insert SD card into SD1 slot of the unit
 4. Press and hold MENU button to open `Service Mode -> Software Update` and install `MIBStd2_Online_Approval`.
 5. Open Green Engineering Menu and have fun 🙂
