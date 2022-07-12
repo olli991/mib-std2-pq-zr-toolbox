@@ -7,23 +7,21 @@ WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT 
 ![Toolbox-v1 1](https://user-images.githubusercontent.com/55631413/164947549-1cf46837-ea2d-49a6-b841-f54ba4452ab9.png)
 
 ## Requirements
-- Any OBD2 adapter with a software that can enable developer mode (Green Engineering Menu) on the unit
-- Empty FAT32 formatted SD card or USB flashdrive, with enough space to save your backups. Everything bigger than 1GB is recommended
+- Green Engineering Menu (developer mode) enabled in adaptations of block 5F. Use any OBD2 adapter and software that can enable it.
+- Empty FAT32 formatted SD card or soldering skills + USB flashdrive, with enough space to save your backups. Everything bigger than 1GB is recommended
 - Read FAQ at the bottom of this file!
 
-## How to install from SD card via "Service Mode" on supported units with navigation
+## How to install from SD card via "Service Mode" on supported units with navigation (units with two SD slots)
+NOTE: This SD installation method is NOT possible on Seat Navi units with HW H50+ (firmwares 05xx) also known as variants 47213, 47214, 47215, 47216.
+Metainfo2.txt of the Toolbox does not contain these variant numbers. Metainfo2.txt cannot be edited because has digital signature at the end of the file. The ONLY KNOWN way to install Toolbox onto this kind of units is soldering USB SD card reader to eMMC.
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of SD card.
-
-2. IMPORTANT! If your firmware is version 01xx or 02xx, replace `cpu` folder in the root of the SD card with `cpu` folder from `\toolbox\gem` folder. Otherwise skip this step.
-
+2. IMPORTANT! If your firmware is version 01xx or 02xx having GEM (Green Engineering Menu) version 3.x, you must update. To do this, replace `cpu` folder in the root of the SD card with `cpu` folder from `\toolbox\gem` folder. Otherwise skip this step.
 3. Turn on ignition and insert SD card into SD1 slot of the unit
 4. Press and hold MENU button to open `Service Mode -> Software Update` and install `MIBStd2_Online_Approval`.
 5. Open Green Engineering Menu and have fun 🙂
 
-NOTE: This SD installation method is NOT possible on Seat Navi units with HW H50+ (firmwares 05xx) as metainfo2.txt does not contain variants 47213, 47214, 47215, 47216. Metainfo2.txt cannot be edited because has digital signature at the end of the file.
-
 ## How to install if you already have serial console or telnet
-NOTE: By default console/telnet are disabled and on non navi units you need to solder to enable it!
+NOTE: By default console/telnet are disabled and on non navi units you need to solder USB SD card reader to eMMC chip to enable it!
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of SD card or USB drive
 2. Delete `metainfo2.txt`, this helps to avoid endless reading spinner when connecting USB drive to the unit.
 3. Login via console/telnet as root/root
@@ -32,7 +30,7 @@ NOTE: By default console/telnet are disabled and on non navi units you need to s
 6. Run `ksh /media/mp000/install.sh` to install the toolbox. Old GEM will be automatically updated if found.
 7. Open Green Engineering Menu and have fun 🙂
 
-## How to install with USB SD card reader directly connected (soldered) to eMMC chip via QNX Virtual Machine
+## How to install with USB SD card reader soldered to eMMC chip by using QNX Virtual Machine
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of any USB flash drive. Eject and physically disconnect all USB drives.
 2. Start Neutrino 6.5 Virtual Machine, insert USB SD card reader into any USB port of the PC/laptop and allow to connect to VM
 3. Insert the USB flash drive with the Toolbox to any USB port of PC/laptop and allow to connect to VM
