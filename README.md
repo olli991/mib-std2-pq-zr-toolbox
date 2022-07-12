@@ -11,8 +11,8 @@ WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT 
 - Empty FAT32 formatted SD card or soldering skills + USB flashdrive, with enough space to save your backups. Everything bigger than 1GB is recommended
 - Read FAQ at the bottom of this file!
 
-## How to install from SD card via "Service Mode" on supported units with navigation (units with two SD slots)
-**NOTE:** This SD installation method is NOT possible on Seat Navi units with HW H50+ (firmwares 05xx) also known as variants 47213, 47214, 47215, 47216.
+## How to install from SD card via "Service Mode" on units with navigation (units with two SD slots)
+**NOTE:** This SD installation method is NOT possible on Seat units with HW H50+ (firmwares 05xx) also known as variants 47213, 47214, 47215, 47216.
 Metainfo2.txt of the Toolbox does not contain these variant numbers. Metainfo2.txt cannot be edited because has digital signature at the end of the file. The ONLY KNOWN way to install Toolbox onto this kind of units is soldering USB SD card reader to eMMC.
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of SD card.
 2. **IMPORTANT!** If your firmware is version 01xx or 02xx having GEM (Green Engineering Menu) version 3.x, you must use special edition of Toolbox to update it. To do this, replace `cpu` folder in the root of the SD card with `cpu` folder from `\toolbox\gem` folder. If GEM is version 4.x+, skip this step.
