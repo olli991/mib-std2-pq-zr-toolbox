@@ -20,8 +20,8 @@ Metainfo2.txt of the Toolbox does not contain these variant numbers. Metainfo2.t
 4. Press and hold MENU button to open `Service Mode -> Software Update` and install `MIBStd2_Online_Approval`.
 5. Open Green Engineering Menu and have fun 🙂
 
-## How to install if you already have serial console or telnet
-**IMPORTANT!** By default console/telnet are disabled and on non navi units you need to solder USB SD card reader to eMMC chip to enable it!
+## How to install if you already have serial console or telnet access to your unit
+**IMPORTANT!** By default console/telnet access on all units is disabled and you first need to install Toolbox to enable it!
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of SD card or USB drive
 2. Delete `metainfo2.txt`, this helps to avoid endless reading spinner when connecting USB drive to the unit.
 3. Login via console/telnet as root/root
