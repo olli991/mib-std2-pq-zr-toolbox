@@ -23,7 +23,7 @@ case $size in
 		set -A offsets 14334C 14334D 14334E 14334F 1433E8 1433E9 1433EA 1433EB ;;
 	1851273) #EU PQ 138
 		set -A offsets 1430B8 1430B9 1430BA 1430BB 143154 143155 143156 143157 ;;
-	1850369) #EU ZR 140
+	1850393|1850369) #EU ZR 131/140
 		set -A offsets 142D2C 142D2D 142D2E 142D2F 142DC8 142DC9 142DCA 142DCB ;;
 	1919783) #EU PQ 245
 		set -A offsets 1513B0 1513B1 1513B2 1513B3 151448 151449 15144A 15144B ;;
@@ -107,8 +107,8 @@ if [ -n "$offsets" ]; then
 		
 		echo "export TSD_COMMON_CONFIG=/tsd/etc/system/tsd.mibstd2.main.root.conf" >/tsd/bin/system/startup_main
 		echo "export TSD_LOGCHANNEL=J5e" >>/tsd/bin/system/startup_main
-		if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" ]]; then
-			echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -reset=/net/imx6/var/root/reset.count.main" >>/tsd/bin/system/startup_main		
+		if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" ]]; then
+			echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/tsd/bin/system/startup_main		
 		else
 			echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -swdlfile=/tsd/etc/system/swdl/main_swdl.conf -reset=/tsd/var/root/reset.count.main" >>/tsd/bin/system/startup_main		
 		fi
@@ -120,7 +120,7 @@ if [ -n "$offsets" ]; then
 		echo ' echo "shutdown finished!"' >>/tsd/bin/system/startup_main
 		echo "elif [ $""RET -eq 42 ] ; then" >>/tsd/bin/system/startup_main
 		echo ' echo "MP42 set to low! -> Boot Stopped."' >>/tsd/bin/system/startup_main
-		if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" ]]; then
+		if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" ]]; then
 			echo "else" >>/tsd/bin/system/startup_main
 			echo "   /tsd/bin/system/wd_procterm.sh 'tsd.mibstd2.main.root' J5e.MCP 0 "'"main.root crash"' >>/tsd/bin/system/startup_main
 		fi

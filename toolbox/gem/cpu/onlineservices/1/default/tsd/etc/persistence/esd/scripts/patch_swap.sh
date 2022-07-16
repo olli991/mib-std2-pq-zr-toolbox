@@ -33,7 +33,7 @@ case $size in
 		set -A offsets 1CE0C 1D0E4 2E9C8 2F53C ;;		
 	631548) #EU mainstd ZR 478/480
 		set -A offsets 1AF98 1BB0C 2F7F4 2FACC ;;		
-	1197376) #EU PQ/ZR 137
+	1197376) #EU PQ/ZR 131/137
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 2C778 3521C 4B73C 4BAD8
 		fi ;;
