@@ -41,7 +41,7 @@ case $size in
 		set -A offsets 15CC90 15CC91 15CC92 15CC93 15CD24 15CD25 15CD26 15CD27 ;;
 	2187958) #EU PQ 353
 		set -A offsets 15D2B8 15D2B9 15D2BA 15D2BB 15D34C 15D34D 15D34E 15D34F ;;
-	2187950) #EU ZR 356
+	2187950|2187983) #EU/US PQ/ZR 356/359
 		set -A offsets 15D2B0 15D2B1 15D2B2 15D2B3 15D344 15D345 15D346 15D347 ;;
 	2189718) #EU PQ/ZR 359
 		set -A offsets 15D8C8 15D8C9 15D8CA 15D8CB 15D95C 15D95D 15D95E 15D95F ;;
@@ -97,44 +97,61 @@ if [ -n "$offsets" ]; then
 	if [[ $j -eq 8 && -f "$fout" ]]; then
 		mv $fout /tsd/var/tsd.mibstd2.audio.audiomgr
 		chmod 777 /tsd/var/tsd.mibstd2.audio.audiomgr
+		if [[ -f "/tsd/var/tsd.mibstd2.audio.audiomgr" ]]; then
+			cp -f /net/J5/tsd/etc/system/main.conf /tsd/var/
+			if [[ -f "/tsd/var/main.conf" ]]; then
+				confsize=$(ls -l /tsd/var/main.conf | awk '{print $5}' 2>/dev/null)
+				sed -i 's/   command \/tsd\/bin\/audio\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/   command \/tsd\/var\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/g' /tsd/var/main.conf
+				if [[ "$confsize" != "$(ls -l /tsd/var/main.conf | awk '{print $5}' 2>/dev/null)" ]]; then 
+					j5startup_size=$(ls -l /net/j5/tsd/bin/system/startup_main | awk '{print $5}' 2>/dev/null)
+					mx6startup_size=$(ls -l /net/imx6/tsd/bin/system/startup_main | awk '{print $5}' 2>/dev/null)
+					if [[ "$j5startup_size" != "$mx6startup_size" ]]; then 
+						# Mount system partition in read/write mode
+						. /tsd/etc/persistence/esd/scripts/util_mount.sh
 
-		cp -f /net/J5/tsd/etc/system/main.conf /tsd/var/
-		sed -i 's/   command \/tsd\/bin\/audio\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/   command \/tsd\/var\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/g' /tsd/var/main.conf
-
-		# Mount system partition in read/write mode
-		. /tsd/etc/persistence/esd/scripts/util_mount.sh
-		echo "Creating startup_main file..."
-		
-		echo "export TSD_COMMON_CONFIG=/tsd/etc/system/tsd.mibstd2.main.root.conf" >/tsd/bin/system/startup_main
-		echo "export TSD_LOGCHANNEL=J5e" >>/tsd/bin/system/startup_main
-		if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" ]]; then
-			echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/tsd/bin/system/startup_main		
+						echo "Creating startup_main file..."					
+						echo "export TSD_COMMON_CONFIG=/tsd/etc/system/tsd.mibstd2.main.root.conf" >/tsd/bin/system/startup_main
+						echo "export TSD_LOGCHANNEL=J5e" >>/tsd/bin/system/startup_main
+						if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" ]]; then
+							echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/tsd/bin/system/startup_main		
+						else
+							echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -swdlfile=/tsd/etc/system/swdl/main_swdl.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/tsd/bin/system/startup_main		
+						fi
+						echo "RET=$""?" >>/tsd/bin/system/startup_main
+						echo "if [ $""RET -eq 0 ] ; then" >>/tsd/bin/system/startup_main
+						echo ' echo "main.root terminated -> calling shutdown script"' >>/tsd/bin/system/startup_main
+						echo " # source it to avoid spawning a new shell" >>/tsd/bin/system/startup_main
+						echo " . /tsd/bin/system/shutdown" >>/tsd/bin/system/startup_main
+						echo ' echo "shutdown finished!"' >>/tsd/bin/system/startup_main
+						echo "elif [ $""RET -eq 42 ] ; then" >>/tsd/bin/system/startup_main
+						echo ' echo "MP42 set to low! -> Boot Stopped."' >>/tsd/bin/system/startup_main
+						if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" ]]; then
+							echo "else" >>/tsd/bin/system/startup_main
+							echo "   /tsd/bin/system/wd_procterm.sh 'tsd.mibstd2.main.root' J5e.MCP 0 "'"main.root crash"' >>/tsd/bin/system/startup_main
+						fi
+						echo "fi" >>/tsd/bin/system/startup_main
+						
+						chmod 777 /tsd/bin/system/startup_main
+						
+						# Mount system partition in read/only mode
+						. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
+						echo "Patch is applied. Please restart the unit."
+					else
+						echo "Patching failed. Cannot create startup_main!"					
+					fi
+				else
+					echo "Patching failed. Cannot patch main.conf!"
+				fi
+			else
+				echo "Patching failed. Cannot open mainconf!"
+			fi
 		else
-			echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -swdlfile=/tsd/etc/system/swdl/main_swdl.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/tsd/bin/system/startup_main		
+			echo "Patching failed. Cannot open audiomgr!"
 		fi
-		echo "RET=$""?" >>/tsd/bin/system/startup_main
-		echo "if [ $""RET -eq 0 ] ; then" >>/tsd/bin/system/startup_main
-        echo ' echo "main.root terminated -> calling shutdown script"' >>/tsd/bin/system/startup_main
-		echo " # source it to avoid spawning a new shell" >>/tsd/bin/system/startup_main
-		echo " . /tsd/bin/system/shutdown" >>/tsd/bin/system/startup_main
-		echo ' echo "shutdown finished!"' >>/tsd/bin/system/startup_main
-		echo "elif [ $""RET -eq 42 ] ; then" >>/tsd/bin/system/startup_main
-		echo ' echo "MP42 set to low! -> Boot Stopped."' >>/tsd/bin/system/startup_main
-		if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" ]]; then
-			echo "else" >>/tsd/bin/system/startup_main
-			echo "   /tsd/bin/system/wd_procterm.sh 'tsd.mibstd2.main.root' J5e.MCP 0 "'"main.root crash"' >>/tsd/bin/system/startup_main
-		fi
-		echo "fi" >>/tsd/bin/system/startup_main
-		
-		chmod 777 /tsd/bin/system/startup_main
-		
-		# Mount system partition in read/only mode
-		. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
-		echo "Patch is applied. Please restart the unit."
 	else
-		echo "Patching failed! Please retry and/or send sysinfo!"
+		echo "Patching failed! Please retry or send sysinfo!"
 	fi
 else
-	echo "Unknown file size $size detected."
+	echo "Unknown file size $size detected. Please send sysinfo!"
 fi
 exit 0
