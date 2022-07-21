@@ -103,35 +103,38 @@ if [ -n "$offsets" ]; then
 				confsize=$(ls -l /tsd/var/main.conf | awk '{print $5}' 2>/dev/null)
 				sed -i 's/   command \/tsd\/bin\/audio\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/   command \/tsd\/var\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/g' /tsd/var/main.conf
 				if [[ "$confsize" != "$(ls -l /tsd/var/main.conf | awk '{print $5}' 2>/dev/null)" ]]; then 
-					j5startup_size=$(ls -l /net/j5/tsd/bin/system/startup_main | awk '{print $5}' 2>/dev/null)
-					mx6startup_size=$(ls -l /net/imx6/tsd/bin/system/startup_main | awk '{print $5}' 2>/dev/null)
+					j5startup_size=$(ls -l /net/J5/tsd/bin/system/startup_main | awk '{print $5}' 2>/dev/null)
+					mx6startup_size=""
+					if [[ -f /net/imx6/tsd/bin/system/startup_main ]]; then
+						mx6startup_size=$(ls -l /net/imx6/tsd/bin/system/startup_main | awk '{print $5}' 2>/dev/null)
+					fi
 					if [[ "$j5startup_size" != "$mx6startup_size" ]]; then 
 						# Mount system partition in read/write mode
 						. /tsd/etc/persistence/esd/scripts/util_mount.sh
 
 						echo "Creating startup_main file..."					
-						echo "export TSD_COMMON_CONFIG=/tsd/etc/system/tsd.mibstd2.main.root.conf" >/tsd/bin/system/startup_main
-						echo "export TSD_LOGCHANNEL=J5e" >>/tsd/bin/system/startup_main
+						echo "export TSD_COMMON_CONFIG=/tsd/etc/system/tsd.mibstd2.main.root.conf" >/net/imx6/tsd/bin/system/startup_main
+						echo "export TSD_LOGCHANNEL=J5e" >>/net/imx6/tsd/bin/system/startup_main
 						if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" ]]; then
-							echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/tsd/bin/system/startup_main		
+							echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/net/imx6/tsd/bin/system/startup_main		
 						else
-							echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -swdlfile=/tsd/etc/system/swdl/main_swdl.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/tsd/bin/system/startup_main		
+							echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -swdlfile=/tsd/etc/system/swdl/main_swdl.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/net/imx6/tsd/bin/system/startup_main		
 						fi
-						echo "RET=$""?" >>/tsd/bin/system/startup_main
-						echo "if [ $""RET -eq 0 ] ; then" >>/tsd/bin/system/startup_main
-						echo ' echo "main.root terminated -> calling shutdown script"' >>/tsd/bin/system/startup_main
-						echo " # source it to avoid spawning a new shell" >>/tsd/bin/system/startup_main
-						echo " . /tsd/bin/system/shutdown" >>/tsd/bin/system/startup_main
-						echo ' echo "shutdown finished!"' >>/tsd/bin/system/startup_main
-						echo "elif [ $""RET -eq 42 ] ; then" >>/tsd/bin/system/startup_main
-						echo ' echo "MP42 set to low! -> Boot Stopped."' >>/tsd/bin/system/startup_main
+						echo "RET=$""?" >>/net/imx6/tsd/bin/system/startup_main
+						echo "if [ $""RET -eq 0 ] ; then" >>/net/imx6/tsd/bin/system/startup_main
+						echo ' echo "main.root terminated -> calling shutdown script"' >>/net/imx6/tsd/bin/system/startup_main
+						echo " # source it to avoid spawning a new shell" >>/net/imx6/tsd/bin/system/startup_main
+						echo " . /tsd/bin/system/shutdown" >>/net/imx6/tsd/bin/system/startup_main
+						echo ' echo "shutdown finished!"' >>/net/imx6/tsd/bin/system/startup_main
+						echo "elif [ $""RET -eq 42 ] ; then" >>/net/imx6/tsd/bin/system/startup_main
+						echo ' echo "MP42 set to low! -> Boot Stopped."' >>/net/imx6/tsd/bin/system/startup_main
 						if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" ]]; then
-							echo "else" >>/tsd/bin/system/startup_main
-							echo "   /tsd/bin/system/wd_procterm.sh 'tsd.mibstd2.main.root' J5e.MCP 0 "'"main.root crash"' >>/tsd/bin/system/startup_main
+							echo "else" >>/net/imx6/tsd/bin/system/startup_main
+							echo "   /tsd/bin/system/wd_procterm.sh 'tsd.mibstd2.main.root' J5e.MCP 0 "'"main.root crash"' >>/net/imx6/tsd/bin/system/startup_main
 						fi
-						echo "fi" >>/tsd/bin/system/startup_main
+						echo "fi" >>/net/imx6/tsd/bin/system/startup_main
 						
-						chmod 777 /tsd/bin/system/startup_main
+						chmod 777 /net/imx6/tsd/bin/system/startup_main
 						
 						# Mount system partition in read/only mode
 						. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
