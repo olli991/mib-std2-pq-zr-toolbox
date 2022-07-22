@@ -96,24 +96,19 @@ if [ -n "$offsets" ]; then
 
 	if [[ $j -eq 8 && -f "$fout" ]]; then
 		mv $fout /tsd/var/tsd.mibstd2.audio.audiomgr
-		chmod 777 /tsd/var/tsd.mibstd2.audio.audiomgr
 		if [[ -f "/tsd/var/tsd.mibstd2.audio.audiomgr" ]]; then
+			chmod 777 /tsd/var/tsd.mibstd2.audio.audiomgr
 			cp -f /net/J5/tsd/etc/system/main.conf /tsd/var/
 			if [[ -f "/tsd/var/main.conf" ]]; then
 				confsize=$(ls -l /tsd/var/main.conf | awk '{print $5}' 2>/dev/null)
 				sed -i 's/   command \/tsd\/bin\/audio\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/   command \/tsd\/var\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/g' /tsd/var/main.conf
 				if [[ "$confsize" != "$(ls -l /tsd/var/main.conf | awk '{print $5}' 2>/dev/null)" ]]; then 
-					j5startup_size=$(ls -l /net/J5/tsd/bin/system/startup | awk '{print $5}' 2>/dev/null)
-					mx6startup_size=""
-					if [[ -f /net/imx6/tsd/bin/system/startup_main ]]; then
-						mx6startup_size=$(ls -l /net/imx6/tsd/bin/system/startup_main | awk '{print $5}' 2>/dev/null)
-					fi
-					if [[ "$j5startup_size" != "$mx6startup_size" ]]; then 
-						# Mount system partition in read/write mode
-						. /tsd/etc/persistence/esd/scripts/util_mount.sh
+					# Mount system partition in read/write mode
+					. /tsd/etc/persistence/esd/scripts/util_mount.sh
 
-						echo "Creating startup_main file..."					
-						echo "export TSD_COMMON_CONFIG=/tsd/etc/system/tsd.mibstd2.main.root.conf" >/net/imx6/tsd/bin/system/startup_main
+					echo "Creating startup_main file..."					
+					echo "export TSD_COMMON_CONFIG=/tsd/etc/system/tsd.mibstd2.main.root.conf" >/net/imx6/tsd/bin/system/startup_main
+					if [[ -f /net/imx6/tsd/bin/system/startup_main ]]; then
 						echo "export TSD_LOGCHANNEL=J5e" >>/net/imx6/tsd/bin/system/startup_main
 						if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" ]]; then
 							echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/net/imx6/tsd/bin/system/startup_main		
@@ -133,20 +128,18 @@ if [ -n "$offsets" ]; then
 							echo "   /tsd/bin/system/wd_procterm.sh 'tsd.mibstd2.main.root' J5e.MCP 0 "'"main.root crash"' >>/net/imx6/tsd/bin/system/startup_main
 						fi
 						echo "fi" >>/net/imx6/tsd/bin/system/startup_main
-						
 						chmod 777 /net/imx6/tsd/bin/system/startup_main
-						
-						# Mount system partition in read/only mode
-						. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
 						echo "Patch is applied. Please restart the unit."
 					else
-						echo "Patching failed. Cannot create startup_main!"					
+						echo "Cannot create startup_main file. Nothing was changed."
 					fi
+					# Mount system partition in read/only mode
+					. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
 				else
 					echo "Patching failed. Cannot patch main.conf!"
 				fi
 			else
-				echo "Patching failed. Cannot open mainconf!"
+				echo "Patching failed. Cannot open main.conf!"
 			fi
 		else
 			echo "Patching failed. Cannot open audiomgr!"

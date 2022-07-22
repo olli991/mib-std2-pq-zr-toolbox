@@ -291,8 +291,8 @@ FileSize = "517"
 Checksum = "8bf0659ce14e0b4c052b5064f5578b4709c9ea17"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_cp.sh"
-FileSize = "7384"
-Checksum = "0db8263e29c1e0eed59847057bac9899b7fe82ba"
+FileSize = "7086"
+Checksum = "3c45e76dfa860af0084616561a698a90bfabb93a"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_menumode.sh"
 FileSize = "637"
