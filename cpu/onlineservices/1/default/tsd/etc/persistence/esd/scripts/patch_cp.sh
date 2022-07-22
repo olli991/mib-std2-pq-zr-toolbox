@@ -103,7 +103,7 @@ if [ -n "$offsets" ]; then
 				confsize=$(ls -l /tsd/var/main.conf | awk '{print $5}' 2>/dev/null)
 				sed -i 's/   command \/tsd\/bin\/audio\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/   command \/tsd\/var\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/g' /tsd/var/main.conf
 				if [[ "$confsize" != "$(ls -l /tsd/var/main.conf | awk '{print $5}' 2>/dev/null)" ]]; then 
-					j5startup_size=$(ls -l /net/J5/tsd/bin/system/startup_main | awk '{print $5}' 2>/dev/null)
+					j5startup_size=$(ls -l /net/J5/tsd/bin/system/startup | awk '{print $5}' 2>/dev/null)
 					mx6startup_size=""
 					if [[ -f /net/imx6/tsd/bin/system/startup_main ]]; then
 						mx6startup_size=$(ls -l /net/imx6/tsd/bin/system/startup_main | awk '{print $5}' 2>/dev/null)
