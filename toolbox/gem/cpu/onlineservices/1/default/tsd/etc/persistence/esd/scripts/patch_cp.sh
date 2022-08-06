@@ -43,7 +43,7 @@ case $size in
 		set -A offsets 15CC90 15CC91 15CC92 15CC93 15CD24 15CD25 15CD26 15CD27 ;;
 	2187958) #EU PQ 353
 		set -A offsets 15D2B8 15D2B9 15D2BA 15D2BB 15D34C 15D34D 15D34E 15D34F ;;
-	2187950|2187983) #EU/US PQ/ZR 356/359
+	2187950|2187982|2187983) #EU/US PQ/ZR 356/357/359
 		set -A offsets 15D2B0 15D2B1 15D2B2 15D2B3 15D344 15D345 15D346 15D347 ;;
 	2189718) #EU PQ/ZR 359
 		set -A offsets 15D8C8 15D8C9 15D8CA 15D8CB 15D95C 15D95D 15D95E 15D95F ;;
@@ -97,6 +97,7 @@ if [ -n "$offsets" ]; then
 	done
 
 	if [[ $j -eq 8 && -f "$fout" ]]; then
+		echo "Audiomgr is patched. Moving to eMMC..."
 		mv $fout /tsd/var/tsd.mibstd2.audio.audiomgr
 		if [[ -f "/tsd/var/tsd.mibstd2.audio.audiomgr" ]]; then
 			chmod 777 /tsd/var/tsd.mibstd2.audio.audiomgr
