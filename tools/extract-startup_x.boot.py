@@ -34,6 +34,41 @@ def mkdir_path(path):
 data = open(sys.argv[1], 'rb').read()  # Open File with path in sys.argv[1] in mode 'r' reading and 'b' binary mode
 (cmd_block_len,) = struct.unpack_from('<I', data, 12)
 
+# extracting command list 
+print("Extracting command list...")
+f_commands = open(os.path.join(out_dir, 'animation.csv'), 'wt')
+cmd_offset = 20
+i=0 
+num_blocks = cmd_block_len / 32
+print("Number of commands: %d" % num_blocks)
+while i < num_blocks:
+    comment = ''
+    (nn,cmd,arg1,arg2,arg3,arg4,arg5,arg6) = struct.unpack_from('<IIIIIIII', data, cmd_offset)
+    match cmd:
+        case 0:
+            comment = 'BEGIN'        
+        case 1:
+            comment = 'END'
+        case 4:
+            comment = 'DRAW BASE img_'+str(arg1).zfill(2)+' at position (x:'+str(arg3)+', y:'+str(arg4)+')'
+        case 5:
+            comment = 'DRAW STICKER img_'+str(arg1).zfill(2)+' at position (x:'+str(arg3)+', y:'+str(arg4)+')'
+        case 6:
+            comment = 'WAIT '+str(arg1*0.01)+' sec.'
+        case 10:
+            comment = 'IF NO_HIFI'
+        case 11:
+            comment = 'ELSE'
+        case 12:
+            comment = 'ENDIF'
+    
+    f_commands.write("\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\"\n".format(nn,cmd,arg1,arg2,arg3,arg4,arg5,arg6,comment))
+
+    cmd_offset = cmd_offset + 32
+    i = i + 1
+f_commands.close()
+print("Command list extracted to animation.csv")
+
 offset = cmd_block_len + 24
 (data_block_size, num_files,) = struct.unpack_from('<II', data, offset)
 print("Number of images: %d" % num_files)
