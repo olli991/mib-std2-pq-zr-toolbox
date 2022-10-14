@@ -2,32 +2,28 @@
 # --- Quick 'n' dirty MCF file extractor
 #
 # File:        extract-mcf.py
-# Author:      Jille, sVn
-# Revision:    4
-# Purpose:     Discover Pro MIB2 mcf file exporter
-# Comments:    Usage: extract-mcf.py <filename> <outdir>
+# Author:      Jille, sVn, lprot
+# Revision:    5
+# Purpose:     Extraction of images from images.mcf from MIB STD2 PQ/ZR FWs
 # Credits:     Partially based on code supplied by booto @ 
 # 			   https://goo.gl/GqSfpt
 # Changelog:   v1: Initial version
 #			   v2: Parsing of ImageIdMap.res added
 #			   v3: Python 3 support
 #			   v4: Moving and renaming skin0 files.
+#			   v5: The script works w/o any command line params now
 # ----------------------------------------------------------
 
-import struct
 import sys
 if sys.version_info[0] < 3:
-    raw_input("You need to run this with Python 3!\nPress Enter to exit...")
+    raw_input("Install Python 3 or newer!\nPress Enter to exit...")
     sys.exit(1)
 
-import os
-import zlib
+import os, struct, zlib
 from shutil import copyfile
 
 try:
-    from PIL import Image
-    from PIL import ImageFont
-    from PIL import ImageDraw
+    from PIL import Image, ImageFont, ImageDraw
 except ImportError:
     print("  You are missing the PIL module!\n"
           "  install it by running:\n"
@@ -35,16 +31,9 @@ except ImportError:
     input("\nPress Enter to exit...")
     sys.exit(1)
 
+out_dir = mcf_path = os.getcwd()
+mcf_data = open(mcf_path + '\images.mcf', 'rb').read()
 
-if len(sys.argv) != 3:
-    print("usage: extract-mcf.py <filename> <outdir>")
-    input("\nPress Enter to exit...")
-    sys.exit(1)
-
-
-out_dir = sys.argv[2]
-mcf_path = sys.argv[1]
-mcf_data = open(mcf_path, 'rb').read()
 offset = 0
 counterRGBA = 0
 counterL = 0
@@ -52,26 +41,71 @@ counterLA = 0
 num_mifIDs2 = 0
 
 offset = 1  # skip the first bytes, makes comparing easier
-(magic,) = struct.unpack_from('<3s', mcf_data,
-                              offset)  # '<4s'  =  '<' little-endian, 's' is type char, '6s' Array of 6 chars; get first entry of the returned tuple
+(magic,) = struct.unpack_from('<3s', mcf_data, offset) #'<4s'='<' little-endian, 's' is type char, '6s' Array of 6 chars; get first entry of the returned tuple
 if magic != str('MCF').encode("UTF-8"):  # corresponds to MCF file starting
-    print('This is not a correct MCF file!')
+    print('This is not a correct images.mcf file!')
     input("\nPress Enter to exit...")
     sys.exit(1)
 
 filepath, filename = os.path.split(mcf_path)
-idmap_path = filepath + "\imageidmap.res"
-parse_idmap = "n"
-if os.path.exists(idmap_path):
-	print("Imageidmap found, so you can extract files to the right name/folder")
-	parse_idmap = input("Parse imageidmap.res and move files to folders? (y/n): ")
-
 print_number = input("Do you want to print the image number on each image(y/n)?: ")
 
-# parse IDMAP to an array
-if (parse_idmap == "y"):
-	idmap_path
+offset = 32
+(size_of_TOC,) = struct.unpack_from('<I', mcf_data, offset)
+print(('size of TOC: ' + str(size_of_TOC)))
+
+data_start = size_of_TOC + 56
+print(("data start: %d" % (data_start)))
+
+offset = 48
+(num_files,) = struct.unpack_from('<L', mcf_data, offset)
+print(("number of files: %d" % (num_files)))
+
+# TOC
+offset = 52
+for image_id in range(0, int(num_files)):
+	(file_type, file_id, file_offset, file_size) = struct.unpack_from('<4sIII', mcf_data, offset)
+	offset += 16
+
+offset = data_start
+
+for image_id in range(0, int(num_files)):
+	(type, file_id, always_8, zsize, max_pixel_count, always_1, unknown_16, width, height, image_mode,
+	 always__1) = struct.unpack_from('<4sIIIIIIhhhh', mcf_data, offset)
+	# max_pixel_count = width * height and mulitplied by 1 on L-Mode and mulitplied by 4 on RGBA-Mode
+	zlib_data_offset = offset + 36
+	# offsethex = "%0.8X" % zlib_data_offset
+	zlib_image = mcf_data[zlib_data_offset:zlib_data_offset + zsize]
+	zlib_decompress = zlib.decompress(zlib_image)
+	if image_mode == 4096:
+		im = Image.frombuffer('L', (width, height), zlib_decompress, 'raw', 'L', 0, 1)
+		counterL += 1
+	if image_mode == 4356:
+		im = Image.frombuffer('RGBA', (width, height), zlib_decompress, 'raw', 'RGBA', 0, 1)
+		counterRGBA += 1
+	if (print_number == "y"):
+		draw = ImageDraw.Draw(im)
+		draw.text((width / 2, height / 2), "%d" % image_id, 255, ImageFont.truetype("cour.ttf", 14))
+	out_dir_unsorted = out_dir + "\\Unsorted\\"
+	print("extracting %d to %simg_%d.png" % (image_id, out_dir_unsorted, image_id))
+	if not os.path.exists(out_dir_unsorted):
+		os.makedirs(out_dir_unsorted)
+	out_path = os.path.join(out_dir_unsorted, 'img_%d.png' % image_id)
+	im.save(out_path)
+
+	offset = offset + zsize + 40
+
+counter = counterL + counterLA + counterRGBA
+rest = int(num_files) - counter
+print("Done. Extracted %d of %d images (RGBA: %d, L-mode: %d, LA-mode: %d)" % (counter, num_files, counterRGBA, counterL, counterLA))
+if rest > 0:
+	print("WARNING! %d were not extracted for some reason!" % (rest))
+
+# Try to open mapping file and map unsorted images with IDs to human readable paths and filenames
+idmap_path = mcf_path + "\imageidmap.res"
+try:
 	idMapFile = open(idmap_path, "rb")
+	print("\nFound imageidmap.res. Parsing...")
 	seek = idMapFile.seek
 	read = idMapFile.read
 
@@ -79,7 +113,7 @@ if (parse_idmap == "y"):
 	seek(12)
 	data = read(4)
 	if (data != str("Skr0").encode("UTF-8")):
-		print('Error: not an imageidmap.res file')
+		print('WARNING! Unknown imageidmap.res header detected!')
 
 	# read the UID
 	seek(16)
@@ -100,6 +134,7 @@ if (parse_idmap == "y"):
 	filename_array = []
 	mifid_array = []
 
+	# Create array of paths and filenames
 	while (i < num_mifIDs):
 		data = read(4)
 		(path_len,) = struct.unpack('<I', data)
@@ -109,90 +144,32 @@ if (parse_idmap == "y"):
 		path = read(path_len).decode('utf-16')
 		filename_array.append(path.replace("/", "\\"))
 		seek(4, 1)
-		i = i + 1
+		i += 1
 
 	data = read(4)
 	(num_mifIDs2,) = struct.unpack('<I', data)
 
 	if (num_mifIDs2 != num_mifIDs):
-		print('Warning, the table is probably corrupt, expected:' + num_mifIDs)
+		print('ERROR! The table is corrupt! Expected %s mifIDs, read %s' % (str(num_mifIDs), str(num_mifIDs2)))
 
 	j = 0
-	print('Number of MifID2s: ' + str(num_mifIDs2))
+	print('Copying %s images from "Unsorted" into "Images" folder with proper path and name...' % str(num_mifIDs2))
 	while (j < num_mifIDs2):
 		data = read(4)
-		print(idMapFile.tell())
+		#print(idMapFile.tell())
 		(mifID,) = struct.unpack_from('<I', data, 0)
 		file_id = mifID - 1
-		mifid_array.append(file_id)
-		j = j + 1
-
-offset = 32
-(size_of_TOC,) = struct.unpack_from('<I', mcf_data, offset)
-print(('size of TOC: ' + str(size_of_TOC)))
-
-data_start = size_of_TOC + 56
-print(("data start: %d" % (data_start)))
-
-offset = 48
-(num_files,) = struct.unpack_from('<L', mcf_data, offset)
-print(("number of files: %d" % (num_files)))
-
-# TOC
-offset = 52
-for image_id in range(0, int(num_files)):
-	(file_type, file_id, file_offset, file_size) = struct.unpack_from('<4sIII', mcf_data, offset)
-	offset = offset + 16
-
-offset = data_start
-
-for image_id in range(0, int(num_files)):
-	(type, file_id, always_8, zsize, max_pixel_count, always_1, unknown_16, width, height, image_mode,
-	 always__1) = struct.unpack_from('<4sIIIIIIhhhh', mcf_data, offset)
-	# max_pixel_count = width * height and mulitplied by 1 on L-Mode and mulitplied by 4 on RGBA-Mode
-	zlib_data_offset = offset + 36
-	# offsethex = "%0.8X" % zlib_data_offset
-	zlib_image = mcf_data[zlib_data_offset:zlib_data_offset + zsize]
-	zlib_decompress = zlib.decompress(zlib_image)
-	if image_mode == 4096:
-		im = Image.frombuffer('L', (width, height), zlib_decompress, 'raw', 'L', 0, 1)
-		counterL = counterL + 1
-	if image_mode == 4356:
-		im = Image.frombuffer('RGBA', (width, height), zlib_decompress, 'raw', 'RGBA', 0, 1)
-		counterRGBA = counterRGBA + 1
-	if (print_number == "y"):
-		draw = ImageDraw.Draw(im)
-		draw.text((width / 2, height / 2), "%d" % image_id, 255, ImageFont.truetype("cour.ttf", 14))
-	out_dir_unsorted = out_dir + "\\Unsorted\\"
-	print("extracting %d to %simg_%d.png" % (image_id, out_dir_unsorted, image_id))
-	if not os.path.exists(out_dir_unsorted):
-		os.makedirs(out_dir_unsorted)
-	out_path = os.path.join(out_dir_unsorted, 'img_%d.png' % image_id)
-	im.save(out_path)
-
-	offset = offset + zsize + 40
-
-counter = counterL + counterLA + counterRGBA
-rest = int(num_files) - counter
-print(("\nExtracting %s done\n%d of %d images were extracted" % (sys.argv[1], counter, num_files)))
-print(("%d RGBA images\n%d LA-mode images\n%d L-mode images" % (counterRGBA, counterLA, counterL)))
-if rest > 0:
-	print(("%d were not exported for some reason" % (rest)))
-
-# cycle through the idmap if needed
-j = 0
-if parse_idmap == "y":
-	print("\nParsing imageidmap.res and moving files to the right folder")
-	while j < num_mifIDs2:
-		id = mifid_array[j]
-		originalfilepath = os.path.join(out_dir_unsorted, 'img_%d.png' % id)
-		newfilepath = new_path = out_dir + "Images\\" + filename_array[j]
+		originalfilepath = os.path.join(out_dir_unsorted, 'img_%d.png' % file_id)
+		newfilepath = out_dir + "\\Images\\" + filename_array[j]
 		pngfilepath, pngfilename = os.path.split(newfilepath)
-		print("Copying img_%d.png to %s" % (j, newfilepath))
+		print("Copying \\Unsorted\\img_%d.png to %s" % (j, "\\Images\\" + filename_array[j]))
 		if not os.path.exists(pngfilepath):
 			os.makedirs(pngfilepath, 0o777)
 		if not os.path.exists(originalfilepath):
 			print("Error: %s  missing!" % (originalfilepath))
 		else:
 			copyfile(originalfilepath, newfilepath)
-		j = j + 1
+		j += 1
+except IOError:
+	print('Skipped mapping paths and filenames. Could not open imageidmap.res!')
+	exit(0)
