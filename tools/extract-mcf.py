@@ -52,14 +52,12 @@ filepath, filename = os.path.split(mcf_path)
 
 offset = 32
 (size_of_TOC,) = struct.unpack_from('<I', mcf_data, offset)
-print('size of TOC: ' + str(size_of_TOC))
 
 data_start = size_of_TOC + 56
-print("data start: %d" % (data_start))
 
 offset = 48
 (num_files,) = struct.unpack_from('<L', mcf_data, offset)
-print("number of files: %d" % (num_files))
+print("TOC size = %s. Data start = %d. Number of files = %d" % (str(size_of_TOC), data_start, num_files))
 
 # TOC
 offset = 52
