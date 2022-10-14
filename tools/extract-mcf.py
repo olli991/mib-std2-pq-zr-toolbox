@@ -4,7 +4,7 @@
 # File:        extract-mcf.py
 # Author:      Jille, sVn, lprot
 # Revision:    5
-# Purpose:     Extraction of images from images.mcf from MIB STD2 PQ/ZR FWs
+# Purpose:     Extraction of images from images.mcf of MIB STD2 PQ/ZR FWs
 # Credits:     Partially based on code supplied by booto @ 
 # 			   https://goo.gl/GqSfpt
 # Changelog:   v1: Initial version
@@ -32,6 +32,7 @@ except ImportError:
     sys.exit(1)
 
 out_dir = mcf_path = os.getcwd()
+print('Parsing images.mcf...')
 mcf_data = open(mcf_path + '\images.mcf', 'rb').read()
 
 offset = 0
@@ -48,18 +49,17 @@ if magic != str('MCF').encode("UTF-8"):  # corresponds to MCF file starting
     sys.exit(1)
 
 filepath, filename = os.path.split(mcf_path)
-print_number = input("Do you want to print the image number on each image(y/n)?: ")
 
 offset = 32
 (size_of_TOC,) = struct.unpack_from('<I', mcf_data, offset)
-print(('size of TOC: ' + str(size_of_TOC)))
+print('size of TOC: ' + str(size_of_TOC))
 
 data_start = size_of_TOC + 56
-print(("data start: %d" % (data_start)))
+print("data start: %d" % (data_start))
 
 offset = 48
 (num_files,) = struct.unpack_from('<L', mcf_data, offset)
-print(("number of files: %d" % (num_files)))
+print("number of files: %d" % (num_files))
 
 # TOC
 offset = 52
@@ -69,6 +69,7 @@ for image_id in range(0, int(num_files)):
 
 offset = data_start
 
+print_number = input("Do you want to print the image number on each image(y/n)?: ")
 for image_id in range(0, int(num_files)):
 	(type, file_id, always_8, zsize, max_pixel_count, always_1, unknown_16, width, height, image_mode,
 	 always__1) = struct.unpack_from('<4sIIIIIIhhhh', mcf_data, offset)
@@ -170,6 +171,8 @@ try:
 		else:
 			copyfile(originalfilepath, newfilepath)
 		j += 1
+	print('Done.')
 except IOError:
 	print('Skipped mapping paths and filenames. Could not open imageidmap.res!')
-	exit(0)
+input("\nPress Enter to exit...")
+
