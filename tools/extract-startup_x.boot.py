@@ -42,22 +42,29 @@ def extract(filename, out_dir):
         (nn,cmd,arg1,arg2,arg3,arg4,arg5,arg6) = struct.unpack_from('<IIIIIIII', data, cmd_offset)
         match cmd:
             case 0:
-                comment = 'BEGIN'        
+                comment = 'BEGIN'
             case 1:
                 comment = 'END'
+            case 2:
+                comment = 'CLEAR SCREEN'
+            case 3:
+                comment = 'SET RESOLUTION '+str(arg3).zfill(2)+'x'+str(arg4)
             case 4:
                 comment = 'DRAW BASE img_'+str(arg1).zfill(2)+' at position (x:'+str(arg3)+', y:'+str(arg4)+')'
             case 5:
                 comment = 'DRAW STICKER img_'+str(arg1).zfill(2)+' at position (x:'+str(arg3)+', y:'+str(arg4)+')'
             case 6:
                 comment = 'WAIT '+str(arg1*0.01)+' sec.'
+            case 7:
+                comment = 'START/END ANIMATION'
             case 10:
                 comment = 'IF NO_HIFI'
             case 11:
                 comment = 'ELSE'
             case 12:
                 comment = 'ENDIF'
-        
+            case _:
+                comment = 'UNKNOWN'
         f_commands.write("\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\"\n".format(nn,cmd,arg1,arg2,arg3,arg4,arg5,arg6,comment))
 
         cmd_offset = cmd_offset + 32
@@ -123,6 +130,6 @@ match len(sys.argv):
         input("\nPress Enter to exit...")
         sys.exit(1)
 
-print("Done extracting images. Enjoy!")
+print("Extracting done. Enjoy!")
 input("\nPress Enter to exit...")
 sys.exit(1)
