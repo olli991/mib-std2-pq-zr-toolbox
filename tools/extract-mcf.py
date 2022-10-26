@@ -33,15 +33,11 @@ out_dir = mcf_path = os.getcwd()
 print('Parsing images.mcf...')
 mcf_data = open(mcf_path + '\images.mcf', 'rb').read()
 
-offset = 0
-counterRGBA = 0
-counterL = 0
-counterLA = 0
-num_mifIDs2 = 0
+counterRGBA = counterL = counterLA = num_mifIDs2 = 0
 
-offset = 1  # skip the first bytes, makes comparing easier
+offset = 1  # skip the first byte to make comparing easier
 (magic,) = struct.unpack_from('<3s', mcf_data, offset) #'<4s'='<' little-endian, 's' is type char, '6s' Array of 6 chars; get first entry of the returned tuple
-if magic != str('MCF').encode("UTF-8"):  # corresponds to MCF file starting
+if magic != str('MCF').encode("UTF-8"):
     print('This is not a correct images.mcf file!')
     input("\nPress Enter to exit...")
     sys.exit(1)
