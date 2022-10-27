@@ -32,14 +32,13 @@ def extract(filename, out_dir):
         print("Creating folder %s" % out_dir)
         os.mkdir(out_dir)
 
-    # extracting command list 
+    # extracting command list
     cmd_offset = 20
     i = 0 
     num_blocks = cmd_block_len / 32
-    print("Number of commands in command list: %d. Extracting to animation.csv..." % num_blocks)
-    f_commands = open(os.path.join(out_dir, 'animation.csv'), 'wt')
+    print("Number of commands in command list: %d. Extracting to animation_script.csv..." % num_blocks)
+    f_commands = open(os.path.join(out_dir, 'animation_script.csv'), 'wt')
     while i < num_blocks:
-        comment = ''
         (nn,cmd,arg1,arg2,arg3,arg4,arg5,arg6) = struct.unpack_from('<IIIIIIII', data, cmd_offset)
         match cmd:
             case 0:
@@ -51,23 +50,22 @@ def extract(filename, out_dir):
             case 3:
                 comment = 'SET RESOLUTION '+str(arg3).zfill(2)+'x'+str(arg4)
             case 4:
-                comment = 'DRAW BASE img_'+str(arg1).zfill(2)+' at position (x:'+str(arg3)+', y:'+str(arg4)+')'
+                comment = 'DRAW img_'+str(arg1).zfill(2)+' at x='+str(arg3)+', y='+str(arg4)
             case 5:
-                comment = 'DRAW STICKER img_'+str(arg1).zfill(2)+' at position (x:'+str(arg3)+', y:'+str(arg4)+')'
+                comment = 'DRAW STICKER img_'+str(arg1).zfill(2)+' at x='+str(arg3)+', y='+str(arg4)
             case 6:
                 comment = 'WAIT '+str(arg1*0.01)+' sec.'
             case 7:
                 comment = 'START/END ANIMATION'
             case 10:
-                comment = 'IF NO_HIFI'
+                comment = 'IF STICKER='+str(arg2)+' THEN'
             case 11:
                 comment = 'ELSE'
             case 12:
                 comment = 'ENDIF'
             case _:
                 comment = 'UNKNOWN'
-        f_commands.write("\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\"\n".format(nn,cmd,arg1,arg2,arg3,arg4,arg5,arg6,comment))
-
+        f_commands.write("{};{};{};{};{};{};{};{};{}\n".format(nn,cmd,arg1,arg2,arg3,arg4,arg5,arg6,comment).replace("4294967295",""))
         cmd_offset += 32
         i += 1
     f_commands.close()
