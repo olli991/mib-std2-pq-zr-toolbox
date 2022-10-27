@@ -1,11 +1,12 @@
-# ----------------------------------------------------------------------------
-# startup_x.boot command list and images extractor
+#----------------------------------------------------------------------------
+#--- startup_x.boot command list and images extractor
+#
 # Authors:     Jille, jtomtos, lprot
 # Revision:    3
-# Changelog:   v1: Initial version
-#              v2: mib2image.py added
-#              v3: By default, extracts all *.boot files in the current folder
-# ----------------------------------------------------------------------------
+# Changelog:   1: Initial version
+#              2: mib2image.py added
+#              3: By default, extracts all *.boot files in the current folder
+#----------------------------------------------------------------------------
 import sys
 
 if sys.version_info[0] < 3:
@@ -23,7 +24,7 @@ except ImportError:
     sys.exit(1)
 
 def extract(filename, out_dir):
-    print("Opening %s" % filename)
+    print("\nOpening %s" % filename)
     data = open(filename, 'rb').read()  # Opens filename in mode 'r' reading and 'b' binary mode
     (cmd_block_len,) = struct.unpack_from('<I', data, 12)
 
@@ -33,7 +34,7 @@ def extract(filename, out_dir):
 
     # extracting command list 
     cmd_offset = 20
-    i=0 
+    i = 0 
     num_blocks = cmd_block_len / 32
     print("Number of commands in command list: %d. Extracting to animation.csv..." % num_blocks)
     f_commands = open(os.path.join(out_dir, 'animation.csv'), 'wt')
@@ -67,7 +68,7 @@ def extract(filename, out_dir):
                 comment = 'UNKNOWN'
         f_commands.write("\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\";\"{}\"\n".format(nn,cmd,arg1,arg2,arg3,arg4,arg5,arg6,comment))
 
-        cmd_offset = cmd_offset + 32
+        cmd_offset += 32
         i += 1
     f_commands.close()
 
@@ -82,12 +83,11 @@ def extract(filename, out_dir):
     # go through the entire table of contents to get all paths and offsets
     while i < num_files:
         (file_offset,) = struct.unpack_from('<I', data, offset)
-        offset = offset + 4
+        offset += 4
         offset_array.append(file_offset)
         i += 1
-    zsize = 0
-    j = 0
 
+    zsize = j = 0
     while j < num_files:
         offset = offset_array[j]
         # read data at offset
@@ -104,13 +104,9 @@ def extract(filename, out_dir):
         zlib_image = data[offset:offset + zsize]
 
         image_decompressed = zlib.decompress(zlib_image)
-        # create path
-        if not os.path.exists(out_dir):
-            os.makedirs(out_dir)
-        out_path = os.path.join(out_dir, 'img_' + str(j).zfill(2) + '.mib')
-
-        print("Saving %s Width/Height=%dx%d" %(out_path, width, height))
         im = Image.frombuffer('LA', (width, height), image_decompressed, 'raw', 'LA', 0, 1)
+        out_path = os.path.join(out_dir, 'img_' + str(j).zfill(2) + '.mib')
+        print("Saving %s Width/Height=%dx%d" %(out_path, width, height))
         im.save(out_path, 'png')
         j += 1
 
