@@ -43,6 +43,10 @@ case $size in
 		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			set -A offsets 2F168 2F504 391DC 41C80		
 		fi ;;
+	1212544) #CN ZR 138
+		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
+			set -A offsets 1281C 1A350 379D8 37D74
+		fi ;;
 	1194776) #EU PQ/ZR 140
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 33940 33CDC 3C110 44BB4
