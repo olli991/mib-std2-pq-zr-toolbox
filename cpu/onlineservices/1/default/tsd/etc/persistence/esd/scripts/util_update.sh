@@ -38,6 +38,15 @@ cp -r $VOLUME$TOOLBOX_FOLDER/* /tsd/etc/persistence/esd
 echo "Done."
 echo "Setting execution attributes to scripts..."
 chmod a+rwx /tsd/etc/persistence/esd/scripts/*.sh
+
+# Upgrage GEM 4.3 to 4.11 if found
+GEM_SIZE=$(ls -la "/tsd/hmi/HMI/jar/GEM.jar" | awk '{print $5}' 2>/dev/null)
+if [[ "$GEM_SIZE" = "242383" ]]; then
+	echo "Updating GEM 4.3 to version 4.11..."
+	cp -fv $VOLUME$TOOLBOX_FOLDER/toolbox/gem/cpu/onlineservices/1/default/tsd/bin/system/GEM.jar /tsd/hmi/HMI/jar/GEM.jar
+	echo "GEM update is finished."
+fi
+
 echo "Done."
 
 sync

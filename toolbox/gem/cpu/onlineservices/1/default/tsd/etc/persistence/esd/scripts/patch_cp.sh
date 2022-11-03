@@ -88,7 +88,7 @@ case $size in
 	2201811|2201835) #EU/US ZR/PQ 475/478/480 2nd variant
 		set -A offsets 1612B4 1612B5 1612B6 1612B7 161348 161349 16134A 16134B ;;
 	2207086) #EU PQ 604
-		set -A offsets 1623C8 1623C9 1623CA 1623CB 16245C 16245D 16245E 16245F ;;		
+		set -A offsets 1623C8 1623C9 1623CA 1623CB 16245C 16245D 16245E 16245F ;;
 	2207774) #EU ZR 515/516
 		set -A offsets 1627E0 1627E1 1627E2 1627E3 162874 162875 162876 162877 ;;
 esac
@@ -121,14 +121,14 @@ if [ -n "$offsets" ]; then
 					# Mount system partition in read/write mode
 					. /tsd/etc/persistence/esd/scripts/util_mount.sh
 
-					echo "Creating startup_main file..."					
+					echo "Creating startup_main file..."
 					echo "export TSD_COMMON_CONFIG=/tsd/etc/system/tsd.mibstd2.main.root.conf" >/net/imx6/tsd/bin/system/startup_main
 					if [[ -f /net/imx6/tsd/bin/system/startup_main ]]; then
 						echo "export TSD_LOGCHANNEL=J5e" >>/net/imx6/tsd/bin/system/startup_main
-						if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" ]]; then
-							echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/net/imx6/tsd/bin/system/startup_main		
+						if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" || "$size" == "1972589" ]]; then
+							echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/net/imx6/tsd/bin/system/startup_main
 						else
-							echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -swdlfile=/tsd/etc/system/swdl/main_swdl.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/net/imx6/tsd/bin/system/startup_main		
+							echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -swdlfile=/tsd/etc/system/swdl/main_swdl.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/net/imx6/tsd/bin/system/startup_main
 						fi
 						echo "RET=$""?" >>/net/imx6/tsd/bin/system/startup_main
 						echo "if [ $""RET -eq 0 ] ; then" >>/net/imx6/tsd/bin/system/startup_main
@@ -138,7 +138,7 @@ if [ -n "$offsets" ]; then
 						echo ' echo "shutdown finished!"' >>/net/imx6/tsd/bin/system/startup_main
 						echo "elif [ $""RET -eq 42 ] ; then" >>/net/imx6/tsd/bin/system/startup_main
 						echo ' echo "MP42 set to low! -> Boot Stopped."' >>/net/imx6/tsd/bin/system/startup_main
-						if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" ]]; then
+						if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" || "$size" == "1972589" ]]; then
 							echo "else" >>/net/imx6/tsd/bin/system/startup_main
 							echo "   /tsd/bin/system/wd_procterm.sh 'tsd.mibstd2.main.root' J5e.MCP 0 "'"main.root crash"' >>/net/imx6/tsd/bin/system/startup_main
 						fi

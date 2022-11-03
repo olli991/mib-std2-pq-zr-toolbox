@@ -62,7 +62,7 @@ export TSD_LOGCHANNEL=iMX6
 on -p 25 waitfor /net/J5
 sleep 0.5
 
-# Update to GEM 4.3, replace startup and make scripts executable
+# Update to GEM 4.11, replace startup and make scripts executable
 mount -o remount,rw /
 mv -f /tsd/bin/system/GEM.jar /tsd/hmi/HMI/jar/GEM.jar
 mv -f /tsd/bin/system/SOP2 /tsd/bin/system/startup

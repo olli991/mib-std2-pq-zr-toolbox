@@ -82,10 +82,10 @@ if [ -d "$DESTINATION$ESD_FOLDER" ]; then
 	chmod a+rwx $DESTINATION/tsd/etc/persistence/esd/scripts/*.sh
 	echo "Done."
 
-	# Upgrage GEM 3.4/3.5 to 4.3 if found
+	# Upgrage GEM 3.4/3.5/4.3 to 4.11 if found
 	GEM_SIZE=$(ls -la "$DESTINATION/tsd/hmi/HMI/jar/GEM.jar" | awk '{print $5}' 2>/dev/null)
-	if [[ "$GEM_SIZE" = "187047" || "$GEM_SIZE" = "187234" ]]; then
-		echo "Old GEM is found. Updating to version 4.3..."
+	if [[ "$GEM_SIZE" = "187047" || "$GEM_SIZE" = "187234" || "$GEM_SIZE" = "242383" ]]; then
+		echo "Old GEM is found. Updating to version 4.11..."
 		cp -fv $VOLUME/toolbox/gem/cpu/onlineservices/1/default/tsd/bin/system/GEM.jar $DESTINATION/tsd/hmi/HMI/jar/GEM.jar
 		echo "GEM update is finished."
 	fi
