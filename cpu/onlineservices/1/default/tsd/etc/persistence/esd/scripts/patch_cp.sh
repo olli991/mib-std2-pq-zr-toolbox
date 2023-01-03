@@ -19,14 +19,14 @@ set -A bytes 1E FF 2F E1 1E FF 2F E1
 offsets=""
 
 case $size in
-	1852137) #EU ZR 137
-		set -A offsets 14334C 14334D 14334E 14334F 1433E8 1433E9 1433EA 1433EB ;;
-	1851273) #EU PQ 138
-		set -A offsets 1430B8 1430B9 1430BA 1430BB 143154 143155 143156 143157 ;;
-	1850393|1850369) #EU ZR 131/140
-		set -A offsets 142D2C 142D2D 142D2E 142D2F 142DC8 142DC9 142DCA 142DCB ;;
-	1972589) #CN ZR 138
-		set -A offsets 13F5C4 13F5C5 13F5C6 13F5C7 13F660 13F661 13F662 13F663 ;;
+	#1852137) #EU ZR 137
+	#	set -A offsets 14334C 14334D 14334E 14334F 1433E8 1433E9 1433EA 1433EB ;;
+	#1851273) #EU PQ 138
+	#	set -A offsets 1430B8 1430B9 1430BA 1430BB 143154 143155 143156 143157 ;;
+	#1850393|1850369) #EU ZR 131/140
+	#	set -A offsets 142D2C 142D2D 142D2E 142D2F 142DC8 142DC9 142DCA 142DCB ;;
+	#1972589) #CN ZR 138
+	#	set -A offsets 13F5C4 13F5C5 13F5C6 13F5C7 13F660 13F661 13F662 13F663 ;;
 	1919734) #EU PQ 240
 		set -A offsets 151380 151381 151382 151383 151418 151419 15141A 15141B ;;
 	1921742) #EU ZR 241
@@ -173,6 +173,10 @@ if [ -n "$offsets" ]; then
 		echo "Patching failed! Please retry or send sysinfo!"
 	fi
 else
-	echo "Unknown file size $size detected. Please send sysinfo!"
+	if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" || "$size" == "1972589" ]]; then
+		echo "CP patch on firmwares 1xx is not possible, sorry!"
+	else
+		echo "Unknown file size $size detected. Please send sysinfo!"
+	fi
 fi
 exit 0
