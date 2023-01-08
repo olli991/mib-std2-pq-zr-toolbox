@@ -6,7 +6,7 @@ For MIB2 HIGH see the [jilleb/mib2-toolbox](https://github.com/jilleb/mib2-toolb
 ## Disclaimer
 WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT YOUR OWN RISK! READ THIS README, USE YOUR BRAIN AND BE CAREFUL!
 
-![Toolbox-v1 1](https://user-images.githubusercontent.com/55631413/164947549-1cf46837-ea2d-49a6-b841-f54ba4452ab9.png)
+![MST2-Toolbox-v1 2](https://user-images.githubusercontent.com/55631413/211194331-5ef3450e-4561-4027-ad34-514bc9473eb8.png)
 
 ## Requirements
 - Green Engineering Menu (developer mode) enabled in adaptations of block 5F. Use any OBD2 adapter and software that can enable it.
