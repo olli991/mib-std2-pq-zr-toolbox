@@ -9,7 +9,7 @@ WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT 
 ![MST2-Toolbox-v1 2](https://user-images.githubusercontent.com/55631413/211194331-5ef3450e-4561-4027-ad34-514bc9473eb8.png)
 
 ## Requirements
-- Train MST2_XX_XX_XX_X0XXXT, where X=any letter (to see the train press and long hold MENU button, then press "Software Update")
+- Train MST2_XX_XX_XX_X0XXXT, where X=any character (to see the train press and long hold MENU button, then press "Software Update")
 - Green Engineering Menu (developer mode) enabled in adaptations of block 5F. Use any OBD2 adapter and software that can enable it.
 - Empty FAT32 formatted SD card or soldering skills + USB flashdrive, with enough space to save your backups. Everything bigger than 1GB is recommended
 - Read FAQ at the bottom of this file!
