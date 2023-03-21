@@ -59,7 +59,7 @@ case $size in
 		if [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			set -A offsets 33944 33CE0 3C114 44BB8
 		fi ;;
-	1187364) #EU/US PQ/ZR 245/247/253
+	1187364) #EU/US PQ/ZR 245/247/253/254
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 226AC 293DC 44D44 4510C
 		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
