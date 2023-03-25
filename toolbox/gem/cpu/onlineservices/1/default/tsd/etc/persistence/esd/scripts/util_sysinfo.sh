@@ -15,46 +15,42 @@ fi
 TOOLBOX_VERSION=$(awk '/Version:/{print $NF}' /tsd/etc/persistence/esd/mibstd2-main.esd 2>/dev/null)
 echo "Date: $(date) GEM version: $GEM_VERSION Toolbox: $TOOLBOX_VERSION"
 
-#INFO=$(awk -F "" '{for(i=1;i<=NF;i++) if($i~/[A-Z0-9]/) {printf $i} else {printf " "}}' /tsd/var/itr.timer.log 2>/dev/null | sed 's/\b\w\{1,3\}\b\s*//g')
 sloginfo >/tmp/sloginfo
-INFO=$(grep ".devinfo" /tmp/sloginfo | tail -1 | sed 's/.*DevInfo: //')
+
+INFO=$(grep "STD_KEY_MU_VERSION:" /tmp/sloginfo | tail -1 | sed 's/.*STD_KEY_MU_VERSION: //')
+VIN=$(grep "vin=" /tmp/sloginfo | tail -1 | sed 's/.*vin=//')
+if [ -z "$VIN" ]; then
+	VIN='--------------'
+fi
+INFO2=$(grep ".devinfo" /tmp/sloginfo | tail -1 | sed 's/.*DevInfo: //')
+if [ -z "$INFO2" ]; then
+	SERNUM='----------'
+	MILEAGE='----------'
+else
+	SERNUM=$(echo $INFO2 | sed 's/.*SerNum=\(.*\) Wdog=.*/\1/' 2>/dev/null)
+	MILEAGE=$(echo $INFO2 | sed 's/.*Mileage=\(.*\) VIN=.*/\1/' 2>/dev/null)
+fi
 VCRN=$(grep "VCRN:" /tmp/sloginfo | tail -1 | awk '{print $10}' 2>/dev/null)
 if [ -z "$VCRN" ]; then
 	VCRN='----------'
 fi
+echo "SW-Version: $(echo $INFO | awk '{print substr($3,1,4)}' 2>/dev/null) HW-Version: $(echo $INFO | awk '{print substr($3,5)}' 2>/dev/null) PartNum: $(echo $INFO | awk '{print $2}')"
+echo "VIN: $VIN SerNum: $SERNUM Mileage: $MILEAGE"
+echo "Train:" $(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g') "VCRN: $VCRN"
 
-echo "SW-Version: $(echo $INFO | sed 's/.*SW-Version=\(.*\) HW-Ver.*/\1/' 2>/dev/null) HW-Version: $(echo $INFO | sed 's/.*HW-Version=\(.*\) PartNum=.*/\1/' 2>/dev/null) PartNum: $(echo $INFO | sed 's/.*PartNum=\(.*\) SerNum=.*/\1/' 2>/dev/null)"
-echo "SerNum:" $(echo $INFO | sed 's/.*SerNum=\(.*\) Wdog=.*/\1/' 2>/dev/null) "Mileage:" $(echo $INFO | sed 's/.*Mileage=\(.*\) VIN=.*/\1/' 2>/dev/null) "VIN:" $(echo $INFO | sed 's/.*VIN=\(.*\).*$/\1/' 2>/dev/null)
-echo "Train:" $(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g') "VCRN: $VCRN" 
-
-addr=$((0x020D8000 + 0x024))
-
-if [ ! -e /bin/in32 ]; then
-	# Find the volume with Toolbox folder
-	for i in /media/mp00*; do
-		if [ -f "$i/toolbox/utils/in32" ]; then
-			cp $i/toolbox/utils/in32 /tmp/
-			chmod 777 /tmp/in32
-			set -A RES $(/tmp/in32 ${addr})
-			rm -f /tmp/in32
-			break
-		fi
-	done
-else
-	set -A RES $(in32 ${addr})
-fi
-
-gpio5=$((16#${RES[2]}))
-hwVersion=$((${gpio5}&(0x1f)))
-hwVariant=$((((${gpio5}&(1<<5))|((${gpio5}&(0x3f<<10))>>4))>>5))
-
+swdlHwVersion=$(awk -F "\015| " '/HwVersion/{print $3+1}' /tsd/var/swdownload/.swdownload.conf 2>/dev/null)
 swdlVariant=$(awk -F "\015| " '/Variant/{print $3}' /tsd/var/swdownload/.swdownload.conf 2>/dev/null)
-swdlHwVersion=$(awk -F "\015| " '/HwVersion/{print $3}' /tsd/var/swdownload/.swdownload.conf 2>/dev/null)
-echo "hwVersion: $hwVersion hwVariant: $hwVariant SWDL hwVersion: $swdlHwVersion SWDL Variant: $swdlVariant" 
+echo "SWDL HwVersion: $swdlHwVersion SWDL Variant: $swdlVariant" 
 
 RF_MODULE=$(grep "hw version = " /tmp/sloginfo | tail -1)
-RF_MODULE_HW=$(echo $RF_MODULE | awk -F 'hw version = |fw version = ' '{printf "%x",strtonum($2)}' 2>/dev/null)
-RF_MODULE_FW=$(echo $RF_MODULE | awk -F 'hw version = |fw version = ' '{printf "%X",strtonum($3)}' 2>/dev/null)
+if [ -n "$RF_MODULE" ]; then
+	RF_MODULE_HW=$(echo $RF_MODULE | awk -F 'hw version = |fw version = ' '{printf "%x",strtonum($2)}' 2>/dev/null)
+	RF_MODULE_FW=$(echo $RF_MODULE | awk -F 'hw version = |fw version = ' '{printf "%X",strtonum($3)}' 2>/dev/null)
+else
+	RF_MODULE=$(grep ", hardware=" /tmp/sloginfo | tail -1)
+	RF_MODULE_HW=$(echo $RF_MODULE | awk -F 'hardware=|firmware=' '{printf "%x",strtonum($2)}' 2>/dev/null)
+	RF_MODULE_FW=$(echo $RF_MODULE | awk -F 'hardware=|firmware=' '{printf "%X",strtonum($3)}' 2>/dev/null)
+fi
 case $RF_MODULE_HW in
 	101a)
 		RF_MODULE="Alps UGZZF-1 01A (BT+WiFi) FW: $RF_MODULE_FW" ;;
@@ -75,10 +71,14 @@ fi
 
 rm -f /tmp/sloginfo
 echo
-echo "J5 $(on -f J5 /net/imx6/bin/pidin info) "
-echo "$(on -n J5 uname -a)"
-echo
-echo "iMX6 $(pidin info)"
+if [ -d /net/imx6 ]; then
+	echo "J5 $(on -f J5 /net/imx6/bin/pidin info) "
+	echo "$(on -n J5 uname -a)"
+	echo
+	echo "iMX6 $(pidin info)"
+else
+	echo "J5 $(pidin info)"
+fi
 echo "$(uname -a)"
 echo "Shell version: $KSH_VERSION"
 echo
@@ -89,9 +89,11 @@ echo "Filesystem                  Size      Used     Avail     Use%  Mounted on"
 df -h
 echo
 echo "J5 root:"
-ls -C /net/J5/
-echo
-echo "iMX6 root:"
+if [ -d /net/imx6 ]; then
+	ls -C /net/J5/
+	echo
+	echo "iMX6 root:"
+fi
 ls -C /
 echo
 echo "Interface config:"

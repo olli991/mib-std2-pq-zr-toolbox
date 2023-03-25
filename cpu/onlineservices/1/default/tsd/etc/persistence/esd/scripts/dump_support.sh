@@ -102,7 +102,11 @@ echo
 
 # Dumping Audiomanager to SD
 TOPIC=cp
-MIBPATH=/net/J5/tsd/bin/audio/tsd.mibstd2.audio.audiomgr
+if [ -d /net/imx6 ]; then
+	MIBPATH=/net/J5/tsd/bin/audio/tsd.mibstd2.audio.audiomgr
+else
+	MIBPATH=/tsd/bin/audio/tsd.mibstd2.audio.audiomgr
+fi
 SDPATH=support/$TOPIC
 TYPE="file"
 
@@ -129,7 +133,11 @@ echo
 
 # Dumping startup to SD
 TOPIC=cp
-MIBPATH=/net/J5/tsd/bin/system/startup
+if [ -d /net/imx6 ]; then
+	MIBPATH=/net/J5/tsd/bin/system/startup
+else
+	MIBPATH=/tsd/bin/system/startup
+fi
 SDPATH=support/$TOPIC
 TYPE="file"
 

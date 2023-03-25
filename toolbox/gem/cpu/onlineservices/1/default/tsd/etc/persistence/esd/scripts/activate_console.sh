@@ -2,7 +2,11 @@
 echo "This script activates console access until next unit reboot"
 echo
 
-echo /net/J5/dev/ser1 \"/bin/login -f root\" qansi-m on > /tmp/ttys
+if [ -d /net/imx6 ]; then
+	echo /net/J5/dev/ser1 \"/bin/login -f root\" qansi-m on > /tmp/ttys
+else
+	echo /dev/ser1 \"/bin/login -f root\" qansi-m on > /tmp/ttys
+fi
 /sbin/tinit -f /tmp/ttys &
 
 # Mount system as read/write

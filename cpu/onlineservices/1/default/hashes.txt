@@ -83,8 +83,8 @@ FileSize = "1180"
 Checksum = "3f1afc909861c8096290f4c197e2c5adb473d7fa"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_console.sh"
-FileSize = "520"
-Checksum = "5c95b6d10e9ad5193eee74a8092147c86e8a2ffc"
+FileSize = "617"
+Checksum = "8c4d61ed83a28fac358e7e37d87c0df55eb97a89"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_perm_access.sh"
 FileSize = "1343"
@@ -263,8 +263,8 @@ FileSize = "241"
 Checksum = "8ffc68d440024078268dcbf623c146d7745c1dd3"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_support.sh"
-FileSize = "3832"
-Checksum = "bb84de4297eef2fa93673ac1b3fec2a67394db18"
+FileSize = "3986"
+Checksum = "b54a528918a6c85820368ab37af3f699e6207f79"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_swap.sh"
 FileSize = "209"
@@ -291,8 +291,8 @@ FileSize = "517"
 Checksum = "8bf0659ce14e0b4c052b5064f5578b4709c9ea17"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_cp.sh"
-FileSize = "8800"
-Checksum = "033887b1350bd124dc731743da8a3d2027937510"
+FileSize = "8983"
+Checksum = "9fe7afdf5279797cc68d04bfee7721bbee8bc8ff"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_menumode.sh"
 FileSize = "637"

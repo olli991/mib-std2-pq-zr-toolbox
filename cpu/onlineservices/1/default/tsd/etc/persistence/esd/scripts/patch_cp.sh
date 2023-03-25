@@ -1,6 +1,10 @@
 #!/bin/ksh
 export TOPIC=cp
-export MIBPATH=/net/J5/tsd/bin/audio/tsd.mibstd2.audio.audiomgr
+if [ -d /net/imx6 ]; then
+	export MIBPATH=/net/J5/tsd/bin/audio/tsd.mibstd2.audio.audiomgr
+else
+	export MIBPATH=/tsd/bin/audio/tsd.mibstd2.audio.audiomgr
+fi
 export SDPATH=$TOPIC/tsd.mibstd2.audio.audiomgr
 export TYPE="file"
 
@@ -127,7 +131,11 @@ if [ -n "$offsets" ]; then
 		mv $fout /tsd/var/tsd.mibstd2.audio.audiomgr
 		if [[ -f "/tsd/var/tsd.mibstd2.audio.audiomgr" ]]; then
 			chmod 777 /tsd/var/tsd.mibstd2.audio.audiomgr
-			cp -f /net/J5/tsd/etc/system/main.conf /tsd/var/
+			if [ -d /net/imx6 ]; then
+				cp -f /net/J5/tsd/etc/system/main.conf /tsd/var/
+			else
+				cp -f /tsd/etc/system/main.conf /tsd/var/
+			fi
 			if [[ -f "/tsd/var/main.conf" ]]; then
 				confsize=$(ls -l /tsd/var/main.conf | awk '{print $5}' 2>/dev/null)
 				sed -i 's/   command \/tsd\/bin\/audio\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/   command \/tsd\/var\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/g' /tsd/var/main.conf
