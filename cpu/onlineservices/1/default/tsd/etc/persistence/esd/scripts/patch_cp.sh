@@ -32,6 +32,8 @@ case $size in
 	#	set -A offsets 142D2C 142D2D 142D2E 142D2F 142DC8 142DC9 142DCA 142DCB ;;
 	#1972589) #CN ZR 138
 	#	set -A offsets 13F5C4 13F5C5 13F5C6 13F5C7 13F660 13F661 13F662 13F663 ;;
+	1599808) #mainstd EU ZR 369
+		set -A offsets FF290 FF291 FF292 FF293 FF328 FF329 FF32A FF32B ;;
 	1919734) #EU PQ 240
 		set -A offsets 151380 151381 151382 151383 151418 151419 15141A 15141B ;;
 	1921742) #EU ZR 241
@@ -134,50 +136,66 @@ if [ -n "$offsets" ]; then
 			chmod 777 /tsd/var/tsd.mibstd2.audio.audiomgr
 			if [ -d /net/imx6 ]; then
 				cp -f /net/J5/tsd/etc/system/main.conf /tsd/var/
-			else
-				cp -f /tsd/etc/system/main.conf /tsd/var/
-			fi
-			if [[ -f "/tsd/var/main.conf" ]]; then
-				confsize=$(ls -l /tsd/var/main.conf | awk '{print $5}' 2>/dev/null)
-				sed -i 's/   command \/tsd\/bin\/audio\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/   command \/tsd\/var\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/g' /tsd/var/main.conf
-				if [[ "$confsize" != "$(ls -l /tsd/var/main.conf | awk '{print $5}' 2>/dev/null)" ]]; then 
-					# Mount system partition in read/write mode
-					. /tsd/etc/persistence/esd/scripts/util_mount.sh
-
-					echo "Creating startup_main file..."
-					echo "export TSD_COMMON_CONFIG=/tsd/etc/system/tsd.mibstd2.main.root.conf" >/net/imx6/tsd/bin/system/startup_main
-					if [[ -f /net/imx6/tsd/bin/system/startup_main ]]; then
-						echo "export TSD_LOGCHANNEL=J5e" >>/net/imx6/tsd/bin/system/startup_main
-						if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" || "$size" == "1972589" ]]; then
-							echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/net/imx6/tsd/bin/system/startup_main
+				if [[ -f "/tsd/var/main.conf" ]]; then
+					confsize=$(ls -l /tsd/var/main.conf | awk '{print $5}' 2>/dev/null)
+					sed -i 's/   command \/tsd\/bin\/audio\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/   command \/tsd\/var\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/g' /tsd/var/main.conf
+					if [[ "$confsize" != "$(ls -l /tsd/var/main.conf | awk '{print $5}' 2>/dev/null)" ]]; then 
+						# Mount system partition in read/write mode
+						. /tsd/etc/persistence/esd/scripts/util_mount.sh
+						echo "Creating startup_main file..."
+						echo "export TSD_COMMON_CONFIG=/tsd/etc/system/tsd.mibstd2.main.root.conf" >/net/imx6/tsd/bin/system/startup_main
+						if [[ -f /net/imx6/tsd/bin/system/startup_main ]]; then
+							echo "export TSD_LOGCHANNEL=J5e" >>/net/imx6/tsd/bin/system/startup_main
+							if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" || "$size" == "1972589" ]]; then
+								echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/net/imx6/tsd/bin/system/startup_main
+							else
+								echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -swdlfile=/tsd/etc/system/swdl/main_swdl.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/net/imx6/tsd/bin/system/startup_main
+							fi
+							echo "RET=$""?" >>/net/imx6/tsd/bin/system/startup_main
+							echo "if [ $""RET -eq 0 ] ; then" >>/net/imx6/tsd/bin/system/startup_main
+							echo ' echo "main.root terminated -> calling shutdown script"' >>/net/imx6/tsd/bin/system/startup_main
+							echo " # source it to avoid spawning a new shell" >>/net/imx6/tsd/bin/system/startup_main
+							echo " . /tsd/bin/system/shutdown" >>/net/imx6/tsd/bin/system/startup_main
+							echo ' echo "shutdown finished!"' >>/net/imx6/tsd/bin/system/startup_main
+							echo "elif [ $""RET -eq 42 ] ; then" >>/net/imx6/tsd/bin/system/startup_main
+							echo ' echo "MP42 set to low! -> Boot Stopped."' >>/net/imx6/tsd/bin/system/startup_main
+							if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" || "$size" == "1972589" ]]; then
+								echo "else" >>/net/imx6/tsd/bin/system/startup_main
+								echo "   /tsd/bin/system/wd_procterm.sh 'tsd.mibstd2.main.root' J5e.MCP 0 "'"main.root crash"' >>/net/imx6/tsd/bin/system/startup_main
+							fi
+							echo "fi" >>/net/imx6/tsd/bin/system/startup_main
+							chmod 777 /net/imx6/tsd/bin/system/startup_main
+							echo "Patch is applied. Please restart the unit."
 						else
-							echo "on -p 20 /tsd/bin/root/tsd.mibstd2.main.root -file=/tsd/var/main.conf -swdlfile=/tsd/etc/system/swdl/main_swdl.conf -reset=/net/imx6/tsd/var/root/reset.count.main" >>/net/imx6/tsd/bin/system/startup_main
+							echo "Cannot create startup_main file. Nothing was changed."
 						fi
-						echo "RET=$""?" >>/net/imx6/tsd/bin/system/startup_main
-						echo "if [ $""RET -eq 0 ] ; then" >>/net/imx6/tsd/bin/system/startup_main
-						echo ' echo "main.root terminated -> calling shutdown script"' >>/net/imx6/tsd/bin/system/startup_main
-						echo " # source it to avoid spawning a new shell" >>/net/imx6/tsd/bin/system/startup_main
-						echo " . /tsd/bin/system/shutdown" >>/net/imx6/tsd/bin/system/startup_main
-						echo ' echo "shutdown finished!"' >>/net/imx6/tsd/bin/system/startup_main
-						echo "elif [ $""RET -eq 42 ] ; then" >>/net/imx6/tsd/bin/system/startup_main
-						echo ' echo "MP42 set to low! -> Boot Stopped."' >>/net/imx6/tsd/bin/system/startup_main
-						if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" || "$size" == "1972589" ]]; then
-							echo "else" >>/net/imx6/tsd/bin/system/startup_main
-							echo "   /tsd/bin/system/wd_procterm.sh 'tsd.mibstd2.main.root' J5e.MCP 0 "'"main.root crash"' >>/net/imx6/tsd/bin/system/startup_main
-						fi
-						echo "fi" >>/net/imx6/tsd/bin/system/startup_main
-						chmod 777 /net/imx6/tsd/bin/system/startup_main
-						echo "Patch is applied. Please restart the unit."
+						# Mount system partition in read/only mode
+						. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
 					else
-						echo "Cannot create startup_main file. Nothing was changed."
+						echo "Patching failed. Cannot patch main.conf!"
 					fi
-					# Mount system partition in read/only mode
-					. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
 				else
-					echo "Patching failed. Cannot patch main.conf!"
+					echo "Patching failed. Cannot open main.conf!"
 				fi
 			else
-				echo "Patching failed. Cannot open main.conf!"
+				cp -f /tsd/etc/system/radio.conf /tsd/var/
+				if [[ -f "/tsd/var/radio.conf" ]]; then
+					confsize=$(ls -l /tsd/var/radio.conf | awk '{print $5}' 2>/dev/null)
+					sed -i 's/   command \/tsd\/bin\/audio\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/   command \/tsd\/var\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/g' /tsd/var/radio.conf
+					if [[ "$confsize" != "$(ls -l /tsd/var/radio.conf | awk '{print $5}' 2>/dev/null)" ]]; then 
+						# Mount system partition in read/write mode
+						. /tsd/etc/persistence/esd/scripts/util_mount.sh
+						echo "Patching /tsd/bin/system/startup..."
+						sed -i 's/    CFG=\/tsd\/etc\/system\/radio\.conf.*/    CFG=\/tsd\/etc\/system\/radio\.conf ; if \[ -f \/tsd\/var\/radio\.conf ]; then CFG=\/tsd\/var\/radio\.conf; fi/g' /tsd/bin/system/startup
+						# Mount system partition in read/only mode
+						. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
+						echo "Patch is applied. Please restart the unit."
+					else
+						echo "Patching failed. Cannot patch radio.conf!"
+					fi
+				else
+					echo "Patching failed. Cannot open radio.conf!"
+				fi
 			fi
 		else
 			echo "Patching failed. Cannot open audiomgr!"
@@ -189,7 +207,7 @@ else
 	if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" || "$size" == "1972589" ]]; then
 		echo "CP patch on firmwares 1xx is not possible, sorry!"
 	else
-		echo "Unknown file size $size detected. Please send sysinfo!"
+		echo "Unknown file size $size detected. Send Tools>Support Dump!"
 	fi
 fi
 exit 0
