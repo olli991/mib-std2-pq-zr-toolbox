@@ -105,7 +105,8 @@ TOPIC=cp
 if [ -d /net/imx6 ]; then
 	MIBPATH=/net/J5/tsd/bin/audio/tsd.mibstd2.audio.audiomgr
 else
-	MIBPATH=/tsd/bin/audio/tsd.mibstd2.audio.audiomgr
+	mount_ifs -f /tsd/bin/ifs/system.ifs -m /tmp
+	MIBPATH=/tmp/tsd/bin/audio/tsd.mibstd2.audio.audiomgr
 fi
 SDPATH=support/$TOPIC
 TYPE="file"

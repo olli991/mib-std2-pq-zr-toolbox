@@ -3,7 +3,8 @@ export TOPIC=cp
 if [ -d /net/imx6 ]; then
 	export MIBPATH=/net/J5/tsd/bin/audio/tsd.mibstd2.audio.audiomgr
 else
-	export MIBPATH=/tsd/bin/audio/tsd.mibstd2.audio.audiomgr
+	mount_ifs -f /tsd/bin/ifs/system.ifs -m /tmp
+	export MIBPATH=/tmp/tsd/bin/audio/tsd.mibstd2.audio.audiomgr
 fi
 export SDPATH=$TOPIC/tsd.mibstd2.audio.audiomgr
 export TYPE="file"
