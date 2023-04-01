@@ -182,19 +182,26 @@ if [ -n "$offsets" ]; then
 				if [[ -f "/tsd/var/radio.conf" ]]; then
 					confsize=$(ls -l /tsd/var/radio.conf | awk '{print $5}' 2>/dev/null)
 					sed -i 's/   command \/tsd\/bin\/audio\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/   command \/tsd\/var\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/g' /tsd/var/radio.conf
-					if [[ "$confsize" != "$(ls -l /tsd/var/radio.conf | awk '{print $5}' 2>/dev/null)" ]]; then 
-						# Mount system partition in read/write mode
-						. /tsd/etc/persistence/esd/scripts/util_mount.sh
-						echo "Patching /tsd/bin/system/startup..."
-						sed -i 's/    CFG=\/tsd\/etc\/system\/radio\.conf.*/    CFG=\/tsd\/etc\/system\/radio\.conf ; if \[ -f \/tsd\/var\/radio\.conf ]; then CFG=\/tsd\/var\/radio\.conf; fi/g' /tsd/bin/system/startup
-						# Mount system partition in read/only mode
-						. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
-						echo "Patch is applied. Please restart the unit."
+					if [[ "$confsize" != "$(ls -l /tsd/var/radio.conf | awk '{print $5}' 2>/dev/null)" ]]; then
+						cp -f /tsd/etc/system/lsmradio/radio.conf /tsd/var/radio2.conf
+						if [[ -f "/tsd/var/radio2.conf" ]]; then
+							confsize=$(ls -l /tsd/var/radio2.conf | awk '{print $5}' 2>/dev/null)
+							sed -i 's/   command \/tsd\/bin\/audio\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/   command \/tsd\/var\/tsd.mibstd2.audio.audiomgr -control=tsd.audiomgr.control/g' /tsd/var/radio2.conf
+							if [[ "$confsize" != "$(ls -l /tsd/var/radio2.conf | awk '{print $5}' 2>/dev/null)" ]]; then
+								. /tsd/etc/persistence/esd/scripts/util_mount.sh
+								echo "Patching /tsd/bin/system/startup..."
+								sed -i 's/    CFG=\/tsd\/etc\/system\/radio\.conf.*/    CFG=\/tsd\/etc\/system\/radio\.conf ; if \[ -f \/tsd\/var\/radio\.conf ]; then CFG=\/tsd\/var\/radio\.conf; fi/g' /tsd/bin/system/startup
+								sed -i 's/    RCFG=\/tsd\/etc\/system\/lsmradio\/radio\.conf.*/    RCFG=\/tsd\/etc\/system\/lsmradio\/radio\.conf ; if \[ -f \/tsd\/var\/radio2\.conf ]; then RCFG=\/tsd\/var\/radio2\.conf; fi/g' /tsd/bin/system/startup
+								. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
+								echo "Patch is applied. Please restart the unit."
+							else
+								echo "Patching failed. Cannot patch /tsd/var/radio2.conf!"
+							fi
 					else
-						echo "Patching failed. Cannot patch radio.conf!"
+						echo "Patching failed. Cannot patch /tsd/var/radio.conf!"
 					fi
 				else
-					echo "Patching failed. Cannot open radio.conf!"
+					echo "Patching failed. Can't copy /tsd/etc/system/radio.conf to /tsd/var/"
 				fi
 			fi
 		else
