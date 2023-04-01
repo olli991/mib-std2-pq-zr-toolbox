@@ -34,7 +34,7 @@ VCRN=$(grep "VCRN:" /tmp/sloginfo | tail -1 | awk '{print $10}' 2>/dev/null)
 if [ -z "$VCRN" ]; then
 	VCRN='----------'
 fi
-echo "SW-Version: $(echo $INFO | awk '{print substr($3,1,4)}' 2>/dev/null) HW-Version: $(echo $INFO | awk '{print substr($3,5)}' 2>/dev/null) PartNum: $(echo $INFO | awk '{print $2}' 2>/dev/null)"
+echo "SW-Version: $(echo $INFO | awk '{print substr($3,1,4)}' 2>/dev/null) HW-Version: $(echo $INFO | awk '{print substr($3,5)}' 2>/dev/null) PartNum: $(echo $INFO | awk '{print $1}' 2>/dev/null) HW: $(echo $INFO | awk '{print $2}' 2>/dev/null)"
 echo "VIN: $VIN SerNum: $SERNUM Mileage: $MILEAGE"
 echo "Train:" $(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g') "VCRN: $VCRN"
 
