@@ -197,6 +197,9 @@ if [ -n "$offsets" ]; then
 							else
 								echo "Patching failed. Cannot patch /tsd/var/radio2.conf!"
 							fi
+						else
+							echo "Patching failed. Can't copy /tsd/etc/system/lsmradio/radio.conf to /tsd/var/"
+						fi
 					else
 						echo "Patching failed. Cannot patch /tsd/var/radio.conf!"
 					fi
