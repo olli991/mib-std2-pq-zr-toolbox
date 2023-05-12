@@ -29,37 +29,46 @@ if [ -z "$VOLUME" ]; then
 			break
 		fi
 	done
-	if [ -z "$VOLUME" ]; then
-		for i in /mnt/*; do
-			if [ -d "$i$TOOLBOX_FOLDER" ]; then
-				VOLUME=$i
-				break
-			fi
-		done
-	fi
-	if [ -z "$VOLUME" ]; then
-		if [ -d "/tmp$TOOLBOX_FOLDER" ]; then
-			VOLUME="/tmp"
-		fi
-	fi
-	if [ -z "$VOLUME" ]; then
-		echo "ERROR: Cannot find a drive with the Toolbox!"
-		exit 1
-	fi
-	for i in /fs/*; do
-		if [ -d "$i$ESD_FOLDER" ]; then
-			DESTINATION=$i
+fi
+if [ -z "$VOLUME" ]; then
+	for i in /mnt/*; do
+		if [ -d "$i$TOOLBOX_FOLDER" ]; then
+			VOLUME=$i
 			break
 		fi
 	done
 fi
-
+if [ -z "$VOLUME" ]; then
+	if [ -d "/tmp$TOOLBOX_FOLDER" ]; then
+		VOLUME="/tmp"
+	fi
+fi
+if [ -z "$VOLUME" ]; then
+	if [ -d "/dev/sdcard$TOOLBOX_FOLDER" ]; then
+		VOLUME="/tmp"
+	fi
+fi
+if [ -z "$VOLUME" ]; then
+	echo "ERROR: Cannot find a drive with the Toolbox!"
+	exit 1
+fi
 echo "Toolbox is found on $VOLUME"
-echo "Destination is: $DESTINATION$ESD_FOLDER"
+
+for i in /fs/*; do
+	if [ -d "$i$ESD_FOLDER" ]; then
+		DESTINATION=$i
+		break
+	fi
+done
+if [ -z "$DESTINATION" ]; then
+	if [ -d "/emmmc$ESD_FOLDER" ]; then
+		DESTINATION=/emmmc
+	fi
+fi
 
 if [ -d "$DESTINATION$ESD_FOLDER" ]; then
+	echo "Destination is: $DESTINATION"
 	if [ -z "$DESTINATION" ]; then
-		# Mount system volume in read/write mode
 		echo "Mounting system volume in read/write mode"
 		mount -t qnx6 -o remount,rw /dev/hd0t177 /
 	fi
@@ -75,7 +84,7 @@ if [ -d "$DESTINATION$ESD_FOLDER" ]; then
 
 	# Copy toolbox screens and scripts
 	echo "Copying toolbox Green Engineering Menu screens and scripts..."
-	cp -r $VOLUME$TOOLBOX_FOLDER/* $DESTINATION/tsd/etc/persistence/esd
+	cp -rf $VOLUME$TOOLBOX_FOLDER/* $DESTINATION/tsd/etc/persistence/esd
 	echo "Done."
 
 	echo "Setting execution attributes to scripts..."
@@ -89,17 +98,13 @@ if [ -d "$DESTINATION$ESD_FOLDER" ]; then
 		cp -fv $VOLUME/toolbox/gem/cpu/onlineservices/1/default/tsd/bin/system/GEM.jar $DESTINATION/tsd/hmi/HMI/jar/GEM.jar
 		echo "GEM update is finished."
 	fi
-
 	sync
-
 	if [ -z "$DESTINATION" ]; then
-		# Mount system volume in read/only mode
 		echo "Mounting system volume in read/only mode"
 		mount -t qnx6 -o remount,ro /dev/hd0t177 /
 	fi
 	echo
 	echo "Installation of the toolbox is done. Now you can open Green Engineering Menu :)"
 else
-	echo
-	echo "ERROR: $DESTINATION$ESD_FOLDER is not found."
+	echo "ERROR: $ESD_FOLDER is not found."
 fi
