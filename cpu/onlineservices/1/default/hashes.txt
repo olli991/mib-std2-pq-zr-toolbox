@@ -67,8 +67,8 @@ FileSize = "1982"
 Checksum = "fb2c5b5766f419d2e84242a33f84207740513372"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-skins.esd"
-FileSize = "1640"
-Checksum = "88cdbf143457b8817b1d95303a344ca2f17212e8"
+FileSize = "1776"
+Checksum = "5c4216c0b4e66b17ec5cc68e562766e0c0e7e0de"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-sounds.esd"
 FileSize = "2204"
@@ -139,8 +139,8 @@ FileSize = "466"
 Checksum = "5f75c492f3b5e66c6a1ca6f4e2c10601e3353bb4"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_skins.sh"
-FileSize = "3541"
-Checksum = "7960783f8018de9ca744831034de57ab1dd62aa1"
+FileSize = "4341"
+Checksum = "c3b8e3236837eedcaf80cc7f95123c500759ce94"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_sounds.sh"
 FileSize = "456"
@@ -387,8 +387,8 @@ FileSize = "212"
 Checksum = "42d335b7b68a6699527edfc91ba67a4b0b5366e1"
 
 FileName = "/tsd/etc/persistence/esd/scripts/restore_skins.sh"
-FileSize = "1282"
-Checksum = "ba04f4635d0590a4da8a34c5fa4a405ffc62b16f"
+FileSize = "1418"
+Checksum = "acdee22b54ef22ac7323061788d3daed2be6f1f9"
 
 FileName = "/tsd/etc/persistence/esd/scripts/restore_sounds.sh"
 FileSize = "223"

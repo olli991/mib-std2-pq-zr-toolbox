@@ -14,12 +14,17 @@ screen Skins Customization
 
 keyValue
     value	String sys 0x00000000 0
-    label   "This screen is used to replace skins/graphics/ambience colors of the MIB."
+    label   "This screen is used to replace texts/skins/graphics/ambience colors of the MIB."
     poll    0
 
 keyValue
     value   String sys 0x00000000 0
-    label   "images.mcf and ambienceColorMap.res are copied from /custom/skins/skinX folders"
+    label   "images.mcf, ambienceColorMap.res and text resources (like en_GB.res) "
+    poll    0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "are copied from /custom/skins/skinX folders"
     poll    0
 
 keyValue
@@ -29,7 +34,7 @@ keyValue
 
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_skins.sh"
-   label    "Copy images.mcf and ambienceColorMap.res from /custom/skins"
+   label    "Copy images.mcf, ambienceColorMap.res and texts from /custom/skins"
 
 keyValue
     value   String sys 0x00000000 0
@@ -38,7 +43,7 @@ keyValue
 
 script
    value    sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_skins.sh"
-   label    "Restore images.mcf and ambienceColorMaps from /backup"
+   label    "Restore images.mcf, ambienceColorMap.res and texts from /backup"
 
 keyValue
     value   String sys 0x00000000 0
