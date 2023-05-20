@@ -33,6 +33,9 @@ Metainfo2.txt of the Toolbox does not contain these variant numbers. Metainfo2.t
 6. Run `ksh /media/mp000/install.sh` to install the toolbox. Old GEM will be automatically updated if found.
 7. Open Green Engineering Menu and have fun 🙂
 
+## How to install without soldering with USB2HSD cable
+[Read in mibwiki.one](https://mibwiki.one/doc/mib-std2-toolbox-installation-via-usb2hsd-cable-aka-solderless-method-0Xzt03EC4d)
+
 ## How to install with USB SD card reader soldered to eMMC chip by using QNX Virtual Machine
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of any USB flash drive. Eject and physically disconnect all USB drives.
 2. Start Neutrino 6.5 Virtual Machine, insert USB SD card reader into any USB port of the PC/laptop and allow to connect to VM
@@ -66,39 +69,38 @@ NOTE: Every time you copy files to the unit, scripts will make a backup of origi
 
 ### Menu overview
 ```
-MIB STD2 Toolbox Main
-+---About
-|   +---Disclaimer                      # Disclaimer and mentioning of involved people
-|   +---History                         # Version history of the toolbox
+mibstd2_toolbox
++---about
+|   +---disclaimer                               # Disclaimer and mentioning of involved people
+|   +---history                                  # Version history of the toolbox
 |
-+---Customization                       # Customization features
-|   +---Adaptation                      # View and change adaptation of the unit
-|       +---Car_BAP_device_list   
-|       +---Car_CAN_device_list    
-|       +---Car_device_BUS
-|       +---Car_menu_operations         
-|   +---Advanced                        # Patching stuff like SWDL, SWAP, HMI CP and more
-|   +---GreenMenu                       # Import custom GreenMenus and scripts
-|   +---Mirror-link                     # Unlock apps while driving
-|   +---Navi                            # Unlock SD card usage from every brand and more
-|   +---Skins                           # Modify skins
-|   +---Sounds                          # Modify ringtones and system sounds
++---customization                                # Customization features
+|   +---adaptation                               # View and change adaptation of the unit
+|       +---car_bap_device_list
+|       +---car_can_device_list
+|       +---car_device_bus
+|       +---car_menu_operations
+|   +---advanced                                 # Replacing of different system files HMI etc
+|   +---greenmenu                                # Import custom GreenMenus and scripts
+|   +---mirror-link                              # Unlock apps while driving
+|   +---navi                                     # Unlock SD card usage from every brand and more
+|   +---skins                                    # Modify skins
+|   +---sounds                                   # Modify ringtones and system sounds
 |
-+---Dump                                # Dump various data to SD card
++---dump                                         # Dumps various data to SD card
 |
-+---MIB_info                            # Hardware infos and such
++---mib_info                                     # Hardware infos about your MIB STD2
 |
-+---Network                             # Telnet activation and more
++---network                                      # Telnet activation and more
 |
-+---Tools                               # Tools and privacy related functions
-|   +---Update                          # Enable manual SWDL
++---tools                                        # Tools and patches of SWDL, SWAP, CP etc
 |
-+---Update_and_Uninstall                # Allows to update & uninstall the Toolbox
-|   +---Update Toolbox                  # Update Toolbox from SD card or USB drive"
-+   +---Uninstall Toolbox               # Completely uninstalls Toolbox
++---update_and_uninstall                         # Allows to update & uninstall the Toolbox
+|   +---Update Toolbox from SD card or USB drive # Updates Toolbox
++   +---Uninstall Toolbox                        # Completely uninstalls Toolbox
 ```
 
-## How to use Python3 scripts from the tools folder
+## How to use Python3 scripts from the Tools folder
 
 ### extract-mcf.py (by jille)
 Extracts files from *.mcf skin file containers<br>
@@ -124,49 +126,49 @@ Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\
 Converts password to shadow file
 
 ## FAQ (Frequently Asked Questions)
-Q: I already installed Toolbox and want to install new version do I need to uninstall the old one? What is a proper way to update?  
+Q: I already installed Toolbox and want to install new version do I need to uninstall the old one? What is a proper way to update?
 A: No, you do not need to uninstall. Simply do `update_and_uninstall->Update Toolbox from SD card or USB drive`
 
-Q: I got unit with part number X. How to know if that is Technisat/Preh/Delphi/Harman?  
-A: Google that part number in picture mode and take a look at the label or look for the letter in software version string.  
+Q: I got unit with part number X. How to know if that is Technisat/Preh/Delphi/Harman?
+A: Google that part number in picture mode and take a look at the label or look for the letter in software version string.
 For example MST2_EU_SK_ZR_P0478T. Letter T at the end means it's Technisat/Preh. If there is no letter it's Harman, correspondingly D=Delphi.
 
-Q: Is Toolbox compatible with non Navi (single SD slot) units?  
-A: Yes, but to install you need to use eMMC soldering method or console/telnet installation method.
+Q: Is Toolbox compatible with non Navi (single SD slot) units?
+A: Yes, but to install you need to use USB2HSD cable or eMMC soldering method or console/telnet installation method.
 
-Q: I installed Toolbox from SD but when I try to use it does nothing and prints errors!  
+Q: I installed Toolbox from SD but when I try to use it does nothing and prints errors!
 A: Your fw is 01xx/02xx with GEM 3.5. Read installation steps carefully!
 
-Q: Why Toolbox does not work with GEM 3.5 or lower?  
+Q: Why Toolbox does not work with GEM 3.5 or lower?
 A: GEM 3.5 and lower cannot run scripts
 
-Q: Where to find GEM (Green Egineering Menu) version?  
+Q: Where to find GEM (Green Egineering Menu) version?
 A: In the top left corner of the Green Engineering Menu screen.
 
-Q: I already have the Toolbox installed and want to update my firmware from 02xx/03xx to 04xx/05xx/06xx etc version. Will Toolbox remain installed after the update?  
-A: Yes, but you need to update fw manually via `Testmode->SWDL->Software Download Manual Download->Start Download`.  
-Tap on "Select all", open `cpu` or `cpuplus` folder there and untick `esd_sec` module and start the update.  
-If you forget to untick `esd_sec`, the update will clean /tsd/etc/persistence/esd folder and delete the toolbox.  
+Q: I already have the Toolbox installed and want to update my firmware from 02xx/03xx to 04xx/05xx/06xx etc version. Will Toolbox remain installed after the update?
+A: Yes, but you need to update fw manually via `Testmode->SWDL->Software Download Manual Download->Start Download`.
+Tap on "Select all", open `cpu` or `cpuplus` folder there and untick `esd_sec` module and start the update.
+If you forget to untick `esd_sec`, the update will clean /tsd/etc/persistence/esd folder and delete the toolbox.
 
-Q: How to make screenshots?  
+Q: How to make screenshots?
 A: Press and hold MEDIA key until you hear confirmation sound
 
 Q: Where to find screenshots?  
-A: In the root folder of SD card. You can also use `Tools->Move screenshots from root of all drives to the Toolbox drive` to collect them in `screenshots` folder on the Toolbox drive.
+A: In the root folder of SD card. Use `tools->Move screenshots from root of all drives to the Toolbox drive` to collect them in `screenshots` folder on the Toolbox drive.
 
-Q: After Toolbox installation I got OBD error 1556. How to fix it?  
-A: Usually just running `Tools->Clean SWDL history and keep only non-duplicated FW updates` helps. Then reboot the unit and clear OBD2 error.  
-If the error still there, long press MENU and enter `Testmode->Green Engineering Menu->debugging->additional debug destination`.  
+Q: After Toolbox installation I got OBD error 1556. How to fix it?
+A: Usually just running `Tools->Clean SWDL history and keep only non-duplicated FW updates` helps. Then reboot the unit and clear OBD2 error.
+If the error still there, long press MENU and enter `Testmode->Green Engineering Menu->debugging->additional debug destination`.
 Select where to save the log onto SD or USB. Open the log from SD/USB and look for strings like `SW incompatible`. They will contain the reason of the error.
 
-Q: Can I make eMMC backup of my unit?  
-A: Sure, just use `Dump->eMMC content (exFAT/NTFS SD card/USB drive + ~7.3 GB free space required)` menu.  
-As most of the units have 7.3 GB eMMC chips, FAT32 formatted media cannot be used because of 4 GB max filesize limitation.  
-Also it is strongly recommended to use exFAT/NTFS formatted SD card because USB port on MIB STD2 is capped to 5 MB/s.  
+Q: Can I make eMMC backup of my unit?
+A: Yes, use `dump->eMMC content (exFAT/NTFS SD card/USB drive + ~7.3 GB free space required)` menu.
+As most of the units have 7.3 GB eMMC chips, FAT32 formatted media cannot be used because of 4 GB max filesize limitation.
+Also it is strongly recommended to use exFAT/NTFS formatted SD card because USB port on MIB STD2 is capped to 5 MB/s.
 Class 10 SD card allows to achieve the dump speed upto 10 GB/s so the process finishes in just ~15 minutes :)
 
-Q: Which firmware trains are currently supported for direct SWDL/SWAP/CP patching?  
+Q: Which firmware trains are currently supported for direct SWDL/SWAP/CP patching?
 A: Look lists for SWDL [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swdl.sh)
 SWAP [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swap.sh)
 , and CP [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_cp.sh)  
-**IMPORTANT!** If you get the error "Unknown file size detected", please use the "Dump necessary files to SD folder /dump/.../support" option in the "Tools" section and open up an issue on GitHub and attach the archive with those files!
+**IMPORTANT!** If you get the error "Unknown file size detected", please run "tools>Dump necessary files to SD folder /dump/.../support" zip and attach the files from /dump/support in the issue [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/issues/93)
