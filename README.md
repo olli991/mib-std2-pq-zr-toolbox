@@ -12,11 +12,12 @@ WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT 
 - Train MST2_XX_XX_XX_X0XXXT, where X=any character (to see the train press and long hold MENU button, then press "Software Update")
 - Green Engineering Menu (developer mode) enabled in adaptations of block 5F. Use any OBD2 adapter and software that can enable it.
 - Empty FAT32 formatted SD card or soldering skills + USB flashdrive, with enough space to save your backups. Everything bigger than 1GB is recommended
-- Read FAQ at the bottom of this file!
+- **IMPORTANT!** Read FAQ at the bottom of this file!
 
 ## How to install from SD card via "Service Mode" on units with navigation (units with two SD slots)
 **NOTE:** SD installation method is NOT possible on units with part numbers 5C0035684F (aka variant 17222) and 5QA035874 (aka variants 47213, 47214, 47215, 47216).
-Metainfo2.txt of the Toolbox does not contain these variant numbers. Metainfo2.txt cannot be edited because has digital signature at the end of the file. The ONLY KNOWN way to install Toolbox onto this kind of units is soldering USB SD card reader to eMMC.
+Metainfo2.txt of the Toolbox does not contain these variant numbers. Metainfo2.txt cannot be edited because has digital signature at the end of the file.  
+The ONLY KNOWN way to install Toolbox onto these variants of units is USB2HSD cable or soldering USB SD card reader to eMMC.
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of SD card.
 2. **IMPORTANT!** If your firmware is version 01xx or 02xx having GEM (Green Engineering Menu) version 3.x, you must use special edition of Toolbox to update it. To do this, replace `cpu` folder in the root of the SD card with `cpu` folder from `\toolbox\gem` folder. If GEM is version 4.x+, skip this step.
 3. Turn on ignition and insert SD card into SD1 slot of the unit
