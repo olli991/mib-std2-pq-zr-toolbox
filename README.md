@@ -6,7 +6,7 @@ For MIB2 HIGH see the [jilleb/mib2-toolbox](https://github.com/jilleb/mib2-toolb
 ## Disclaimer
 WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT YOUR OWN RISK! READ THIS README, USE YOUR BRAIN AND BE CAREFUL!
 
-![MST2-Toolbox-v1 2](https://user-images.githubusercontent.com/55631413/211194331-5ef3450e-4561-4027-ad34-514bc9473eb8.png)
+![Toolbox-v1 3](https://github.com/olli991/mib-std2-pq-zr-toolbox/assets/55631413/b763b862-f0c9-4237-a01e-6f59b1379102)
 
 ## Requirements
 - Train MST2_XX_XX_XX_X0XXXT, where X=any character (to see the train press and long hold MENU button, then press "Software Update")
