@@ -106,5 +106,5 @@ if [ -d "$DESTINATION$ESD_FOLDER" ]; then
 	echo
 	echo "Installation of the toolbox is done. Now you can open Green Engineering Menu :)"
 else
-	echo "ERROR: $ESD_FOLDER is not found."
+	echo "ERROR: $DESTINATION$ESD_FOLDER is not found!"
 fi
