@@ -61,8 +61,8 @@ for i in /fs/*; do
 	fi
 done
 if [ -z "$DESTINATION" ]; then
-	if [ -d "/emmmc$ESD_FOLDER" ]; then
-		DESTINATION=/emmmc
+	if [ -d "/emmc$ESD_FOLDER" ]; then
+		DESTINATION=/emmc
 	fi
 fi
 
