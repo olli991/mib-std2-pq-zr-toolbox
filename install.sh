@@ -45,7 +45,7 @@ if [ -z "$VOLUME" ]; then
 fi
 if [ -z "$VOLUME" ]; then
 	if [ -d "/dev/sdcard$TOOLBOX_FOLDER" ]; then
-		VOLUME="/tmp"
+		VOLUME="/dev/sdcard"
 	fi
 fi
 if [ -z "$VOLUME" ]; then
