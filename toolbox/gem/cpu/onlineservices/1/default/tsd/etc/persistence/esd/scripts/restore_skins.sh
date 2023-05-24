@@ -32,6 +32,11 @@ for i in $VOLUME/backup/$TRAIN/$SERIAL/skins/skin*; do
 		echo "ambienceColorMap of $FOLDER is restored"
 		RESTORE=yes
 	fi
+	if [ -d $i/i18n ]; then
+		cp -rf "$i/i18n/." "$MIBPATH/$FOLDER/i18n/"
+		echo "Text resources of $FOLDER are restored"
+		RESTORE=yes
+	fi
 done
 
 # Mount system partition in read/only mode
