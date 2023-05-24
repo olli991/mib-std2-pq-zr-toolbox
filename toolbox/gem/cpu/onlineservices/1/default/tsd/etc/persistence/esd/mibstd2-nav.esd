@@ -32,6 +32,34 @@ keyValue
 
 keyValue
     value   String sys 0x00000000 0
+    label   "Patch to ignore the navigation-active status from a smartphone."
+	poll 	0
+	
+keyValue
+    value   String sys 0x00000000 0
+    label   "CarPlay/AndroidAuto will work in parallel with built-in car navigation."
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Based on MHI2 patch by andrewleech, Errivincenz, thevaan and many more."
+	poll 	0
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_navignore.sh"
+	label 	"Enable dual navigation"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/deactivate_navignore.sh"
+	label 	"Disable dual navigation"
+
+keyValue
+    value   String sys 0x00000000 0
+	label	""
+	poll    0
+
+keyValue
+    value   String sys 0x00000000 0
 	label	"Mapstyle modifications:"
 	poll    0
 

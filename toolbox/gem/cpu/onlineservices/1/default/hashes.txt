@@ -71,8 +71,8 @@ FileSize = "1190"
 Checksum = "d4b7981ca14b363512cbcd8150217b4822f2b1fb"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-nav.esd"
-FileSize = "1738"
-Checksum = "53e202ee36e94f06973224ad804f3d9190e16572"
+FileSize = "2490"
+Checksum = "8933a4f52de891354dd865bac13cd9e46538ae9e"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-network.esd"
 FileSize = "1982"
@@ -97,6 +97,10 @@ Checksum = "3f1afc909861c8096290f4c197e2c5adb473d7fa"
 FileName = "/tsd/etc/persistence/esd/scripts/activate_console.sh"
 FileSize = "617"
 Checksum = "8c4d61ed83a28fac358e7e37d87c0df55eb97a89"
+
+FileName = "/tsd/etc/persistence/esd/scripts/activate_navignore.sh"
+FileSize = "2267"
+Checksum = "f9a63897193107d379b93f7f4249f195e71a8fef"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_perm_access.sh"
 FileSize = "1558"
@@ -185,6 +189,10 @@ Checksum = "a9a9b8453414c70699ecaad9bb2339f4ac8d14ed"
 FileName = "/tsd/etc/persistence/esd/scripts/deactivate_access.sh"
 FileSize = "281"
 Checksum = "0494318adf43bedf4a19bd5d67764485cc71bba1"
+
+FileName = "/tsd/etc/persistence/esd/scripts/deactivate_navignore.sh"
+FileSize = "823"
+Checksum = "f226e8b392b819d706f32d3d926932ee0c060d6e"
 
 FileName = "/tsd/etc/persistence/esd/scripts/deactivate_perm_access.sh"
 FileSize = "963"
