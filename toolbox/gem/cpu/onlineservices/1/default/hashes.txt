@@ -399,8 +399,8 @@ FileSize = "212"
 Checksum = "42d335b7b68a6699527edfc91ba67a4b0b5366e1"
 
 FileName = "/tsd/etc/persistence/esd/scripts/restore_skins.sh"
-FileSize = "1418"
-Checksum = "acdee22b54ef22ac7323061788d3daed2be6f1f9"
+FileSize = "1419"
+Checksum = "be4798464278eba06a305a9fee09c19a6d27cca6"
 
 FileName = "/tsd/etc/persistence/esd/scripts/restore_sounds.sh"
 FileSize = "223"
