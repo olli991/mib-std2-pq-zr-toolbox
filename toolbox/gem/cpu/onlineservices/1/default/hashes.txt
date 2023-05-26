@@ -99,8 +99,8 @@ FileSize = "617"
 Checksum = "8c4d61ed83a28fac358e7e37d87c0df55eb97a89"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_navignore.sh"
-FileSize = "2267"
-Checksum = "f9a63897193107d379b93f7f4249f195e71a8fef"
+FileSize = "2119"
+Checksum = "8572025b1775618e47e5a368b6f22764e6889ede"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_perm_access.sh"
 FileSize = "1558"

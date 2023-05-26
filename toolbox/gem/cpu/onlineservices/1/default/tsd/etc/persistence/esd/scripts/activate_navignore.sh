@@ -20,9 +20,24 @@ echo
 # Locate Toolbox drive
 . /tsd/etc/persistence/esd/scripts/util_checksd.sh
 
+if [[ "$TRAIN" = *VW* ]] || [[ "$TRAIN" = *SK* ]] || [[ "$TRAIN" = *SE* ]]; then
+	SRCJAR=navignore_vw.jar
+elif [[ "$TRAIN" = *PO* ]] || [[ "$TRAIN" = *AU* ]] || [[ "$TRAIN" = *BY* ]]; then
+	SRCJAR=navignore_audi.jar
+else
+	echo -ne "Aborted. No supported train found!\n"
+	exit 1
+fi
+
+if [ ! -e "$VOLUME/custom/java/$SRCJAR" ]; then
+	echo -ne "Aborted. Cannot open $VOLUME/custom/java/$SRCJAR!\n" 
+	exit 1
+fi
+
 # Mount system partition in read/write mode
 . /tsd/etc/persistence/esd/scripts/util_mount.sh
 
+echo -ne "-- Install NavActiveIgnore\n"
 if ! grep -q '$BOOTCLASSPATH -Xbootclasspath/p:$MIBJAR/NavActiveIgnore.jar' ${HMI_SH}; then
 	if [ ! -f $BU ]; then
 		echo "Backup $HMI_SH"
@@ -39,26 +54,13 @@ else
 	echo "$HMI_SH is already patched."
 fi
 
-echo -ne "-- Install NavActiveIgnore\n"
-if [[ "$TRAIN" = *VW* ]] || [[ "$TRAIN" = *SK* ]] || [[ "$TRAIN" = *SE* ]]; then
-	echo -ne "Update FW to latest version is recommended.\n"
-	if [ -f $JAR_DIR$JAR ]; then
-		echo -ne "$JAR already present on unit.\nWill be updated with file from SD now.\n" 
-	fi
-	cp -f $VOLUME/custom/java/navignore_vw.jar $JAR_DIR$JAR 2>&1
-	chmod a+rwx $JAR_DIR$JAR
-	echo -ne "navignore_vw.jar installed.\n" 
-elif [[ "$TRAIN" = *PO* ]] || [[ "$TRAIN" = *AU* ]] || [[ "$TRAIN" = *BY* ]]; then
-	echo -ne "Update FW to latest version is recommended.\n"
-	if [ -f $JAR_DIR$JAR ]; then
-		echo -ne "$JAR already present on unit.\nWill be updated with file from SD now.\n"
-	fi
-	cp -f $VOLUME/custom/java/navignore_audi.jar $JAR_DIR$JAR 2>&1
-	chmod a+rwx $JAR_DIR$JAR
-	echo -ne "navignore_audi.jar installed.\n" 
-else
-	echo -ne "no supported train found - will stop here.\n" 
+echo -ne "Update of FW onto the latest version is recommended.\n"
+if [ -f $JAR_DIR$JAR ]; then
+	echo -ne "$JAR already present on unit.\nWill be updated with file from SD now.\n" 
 fi
+cp -f $VOLUME/custom/java/$SRCJAR $JAR_DIR$JAR 2>&1
+chmod a+rwx $JAR_DIR$JAR
+echo -ne "$SRCJAR is installed.\n" 
 
 # Mount system partition in read/only mode
 . /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
