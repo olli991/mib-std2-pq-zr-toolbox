@@ -37,7 +37,7 @@ fi
 # Mount system partition in read/write mode
 . /tsd/etc/persistence/esd/scripts/util_mount.sh
 
-echo -ne "-- Install NavActiveIgnore\n"
+echo -ne "-- Installing NavActiveIgnore...\n"
 if ! grep -q '$BOOTCLASSPATH -Xbootclasspath/p:$MIBJAR/NavActiveIgnore.jar' ${HMI_SH}; then
 	if [ ! -f $BU ]; then
 		echo "Backup $HMI_SH"

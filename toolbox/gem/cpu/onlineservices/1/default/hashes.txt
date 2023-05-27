@@ -99,8 +99,8 @@ FileSize = "617"
 Checksum = "8c4d61ed83a28fac358e7e37d87c0df55eb97a89"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_navignore.sh"
-FileSize = "2119"
-Checksum = "8572025b1775618e47e5a368b6f22764e6889ede"
+FileSize = "2125"
+Checksum = "5815dda4816e333b14f0b9e81bbd828e489908fc"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_perm_access.sh"
 FileSize = "1558"
@@ -311,8 +311,8 @@ FileSize = "517"
 Checksum = "8bf0659ce14e0b4c052b5064f5578b4709c9ea17"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_cp.sh"
-FileSize = "11449"
-Checksum = "1551ce83a7b7591d42b4e91e790ec93e3691dfc8"
+FileSize = "11765"
+Checksum = "8932bceb0597bad07f23e67d7a82df30ce441e30"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_menumode.sh"
 FileSize = "637"
