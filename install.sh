@@ -95,8 +95,15 @@ if [ -d "$DESTINATION$ESD_FOLDER" ]; then
 	#GEM_SIZE=$(ls -la "$DESTINATION/tsd/hmi/HMI/jar/GEM.jar" | awk '{print $5}' 2>/dev/null)
 	#if [[ "$GEM_SIZE" = "187047" || "$GEM_SIZE" = "187234" || "$GEM_SIZE" = "242383" ]]; then
 		echo "Updating GEM to version 4.11..."
-		cp -fv $VOLUME/toolbox/gem/cpu/onlineservices/1/default/tsd/bin/system/GEM.jar $DESTINATION/tsd/hmi/HMI/jar/GEM.jar
-		echo "GEM update is finished."
+		if [[ -e "$VOLUME/toolbox/gem/cpu/onlineservices/1/default/tsd/bin/system/GEM.jar" ]]; then
+			cp -fv $VOLUME/toolbox/gem/cpu/onlineservices/1/default/tsd/bin/system/GEM.jar $DESTINATION/tsd/hmi/HMI/jar/GEM.jar
+			echo "GEM update is finished."
+		elif [[ -e "$VOLUME/toolbox/gem/cpu/onlineservices/1/default/tsd/bin/system/gem.jar" ]]; then
+			cp -fv $VOLUME/toolbox/gem/cpu/onlineservices/1/default/tsd/bin/system/gem.jar $DESTINATION/tsd/hmi/HMI/jar/GEM.jar
+			echo "GEM update is finished."
+		else
+			echo "Error! Can't find $VOLUME/toolbox/gem/cpu/onlineservices/1/default/tsd/bin/system/GEM.jar"
+		fi
 	#fi
 	if [ -z "$DESTINATION" ]; then
 		echo "Mounting system volume in read/only mode"
