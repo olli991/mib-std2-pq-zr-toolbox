@@ -1,7 +1,7 @@
 # MIB STD2 Toolbox
 ⚠️ **This toolbox version is only compatible with MIB STD2 PQ/ZR Technisat/Preh units and is NOT COMPATIBLE with MIB2 STD Delphi and MIB2 HIGH Harman units!** ⚠️
 
-For MIB2 HIGH see the [jilleb/mib2-toolbox](https://github.com/jilleb/mib2-toolbox) or even better [Mr-MIBonk/M.I.B._More-Incredible-Bash] (https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash) project
+For MIB2 HIGH see the [jilleb/mib2-toolbox](https://github.com/jilleb/mib2-toolbox) or even better [Mr-MIBonk/M.I.B._More-Incredible-Bash](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash) project
 
 ## Disclaimer
 WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT YOUR OWN RISK! READ THIS README, USE YOUR BRAIN AND BE CAREFUL!
