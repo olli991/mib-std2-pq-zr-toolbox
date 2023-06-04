@@ -11,14 +11,21 @@
 #              v1.2:    Now works with Python 3. Python 2.7 is no longer supported.
 # ---------------------------------------------------------------------------------
 
-import struct
-import sys
+import struct, sys
 if sys.version_info[0] < 3:
     raw_input("You need to run this with Python 3!\nPress Enter to exit...")
     sys.exit(1)
-    
-import os
-import zlib
+
+import subprocess, pkg_resources
+required = {'image'}
+installed = {pkg.key for pkg in pkg_resources.working_set}
+missing = required - installed
+
+if missing:
+    python = sys.executable
+    subprocess.check_call([python, '-m', 'pip', 'install', *missing], stdout=subprocess.DEVNULL)
+
+import os, zlib
 try:
     from PIL import Image
 except ImportError:

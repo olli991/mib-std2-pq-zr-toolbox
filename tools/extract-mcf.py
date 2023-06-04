@@ -10,12 +10,22 @@
 #              v3: Python 3 support
 #              v4: Moving and renaming skin0 files.
 #              v5: The script works w/o any command line params now
+#              v6: Crossplatform compatibility
 # ------------------------------------------------------------------------------
 
 import sys
 if sys.version_info[0] < 3:
     raw_input("Install Python 3 or newer!\nPress Enter to exit...")
     sys.exit(1)
+
+import subprocess, pkg_resources
+required = {'image'}
+installed = {pkg.key for pkg in pkg_resources.working_set}
+missing = required - installed
+
+if missing:
+    python = sys.executable
+    subprocess.check_call([python, '-m', 'pip', 'install', *missing], stdout=subprocess.DEVNULL)
 
 import os, struct, zlib
 from shutil import copyfile
@@ -30,8 +40,7 @@ except ImportError:
     sys.exit(1)
 
 out_dir = mcf_path = os.getcwd()
-print('Parsing images.mcf...')
-mcf_data = open(mcf_path + '\images.mcf', 'rb').read()
+mcf_data = open(mcf_path + os.sep + 'images.mcf', 'rb').read()
 
 counterRGBA = counterL = counterLA = num_mifIDs2 = 0
 
@@ -61,7 +70,6 @@ for image_id in range(0, int(num_files)):
 
 offset = data_start
 
-print_number = input("Do you want to print the image number on each image(y/n)?: ")
 for image_id in range(0, int(num_files)):
     (type, file_id, always_8, zsize, max_pixel_count, always_1, unknown_16, width, height, image_mode,
     always__1) = struct.unpack_from('<4sIIIIIIhhhh', mcf_data, offset)
@@ -76,10 +84,11 @@ for image_id in range(0, int(num_files)):
     if image_mode == 4356:
         im = Image.frombuffer('RGBA', (width, height), zlib_decompress, 'raw', 'RGBA', 0, 1)
         counterRGBA += 1
-    if (print_number == "y"):
+    #embed image numbers into images if extract-mcf was calles with "y" param
+    if (len(sys.argv) > 1 and sys.argv[1] == "y"):
         draw = ImageDraw.Draw(im)
         draw.text((width / 2, height / 2), "%d" % image_id, 255, ImageFont.truetype("cour.ttf", 14))
-    out_dir_unsorted = out_dir + "\\Unsorted\\"
+    out_dir_unsorted = out_dir + os.sep + 'Unsorted' + os.sep
     print("extracting %d to %simg_%d.png" % (image_id, out_dir_unsorted, image_id))
     if not os.path.exists(out_dir_unsorted):
         os.makedirs(out_dir_unsorted)
@@ -94,7 +103,7 @@ if rest > 0:
     print("WARNING! %d were not extracted for some reason!" % (rest))
 
 # Try to open mapping file and map unsorted images with IDs to human readable paths and filenames
-idmap_path = mcf_path + "\imageidmap.res"
+idmap_path = mcf_path + os.sep + 'imageidmap.res'
 try:
     idMapFile = open(idmap_path, "rb")
     print("\nFound imageidmap.res. Parsing...")
@@ -152,9 +161,9 @@ try:
         (mifID,) = struct.unpack_from('<I', data, 0)
         file_id = mifID - 1
         originalfilepath = os.path.join(out_dir_unsorted, 'img_%d.png' % file_id)
-        newfilepath = out_dir + "\\Images\\" + filename_array[j]
+        newfilepath = out_dir + os.sep + 'Images' + os.sep + filename_array[j]
         pngfilepath, pngfilename = os.path.split(newfilepath)
-        print("Copying \\Unsorted\\img_%d.png to %s" % (j, "\\Images\\" + filename_array[j]))
+        print("Copying %sUnsorted%simg_%d.png to %s" % (os.sep, os.sep, j, os.sep + 'Images' + os.sep + filename_array[j]))
         if not os.path.exists(pngfilepath):
             os.makedirs(pngfilepath, 0o777)
         if not os.path.exists(originalfilepath):
