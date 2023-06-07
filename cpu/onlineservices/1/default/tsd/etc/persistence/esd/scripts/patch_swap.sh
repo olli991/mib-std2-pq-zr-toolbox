@@ -155,14 +155,14 @@ case $size in
 		if [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			set -A offsets 198EC 19CB4 3B678 425F8
 		fi ;;
-	1168932) #EU PQ 359
+	1168932) #EU PQ/ZR 359
 		if [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
-			set -A offsets 28AA8 28E70 28E70 28E70
+			set -A offsets 28AA8 28E70 314D0 38450
 		fi ;;
 	1168924) #EU ZR 359/363/369
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			case "$TRAIN" in
-				*359*|*363*|'') #PQ/ZR 359/363
+				*359*|*363*|'') #ZR 359, PQ 363
 					set -A offsets 28AA4 28E6C 314CC 3844C ;;
 			esac
 		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
