@@ -194,6 +194,8 @@ case $size in
 	1170472) #EU ZR 462
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 1AAB8 1AE80 2EA4C 359E4
+		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
+			set -A offsets 1AABC 1AE84 2EA50 359E8
 		fi ;;
 	1170896) #CN/US/EU PQ/ZR 468/478/479/480
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
