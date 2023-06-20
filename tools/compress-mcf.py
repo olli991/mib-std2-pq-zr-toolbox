@@ -9,6 +9,7 @@
 # Changelog:   v1:      initial version
 #              v1.1:    added missing hash to image headers and after zlib data
 #              v1.2:    Now works with Python 3. Python 2.7 is no longer supported.
+#              v1.3:    Work without params
 # ---------------------------------------------------------------------------------
 
 import struct, sys
@@ -35,19 +36,26 @@ except ImportError:
     input("\nPress Enter to exit...")
     sys.exit(1)
 
-if len(sys.argv) != 4:
-    print("usage: compress-mcf.py <original-file> <new-file> <imagesdir>")
-    input("\nPress Enter to exit...")
-    sys.exit(1)
+if len(sys.argv) == 1:
+    infile = "images.mcf"
+    outfile = "images_new.mcf"
+    dir = "Unsorted"
+else:
+    if len(sys.argv) != 4:
+        print("usage: compress-mcf.py <original-file> <new-file> <imagesdir>")
+        input("\nPress Enter to exit...")
+        sys.exit(1)
+    infile = sys.argv[1]
+    outfile = sys.argv[2]
+    dir = sys.argv[3]
 
-dir = sys.argv[3]
 if not os.path.exists(dir):
-    print("folder does not exist.")
+    print("Error! Folder %s does not exist." % dir)
     print("usage: compress-mcf.py <original-file> <new-file> <imagesdir>")
     input("\nPress Enter to exit...")
     sys.exit(1)
 
-data = open(sys.argv[1], 'rb').read()
+data = open(infile, 'rb').read()
 offset = 0
 
 (magic,) = struct.unpack_from('<4s', data, offset)
@@ -131,7 +139,7 @@ for image_id in range(0, int(num_files)):
     hash_1 = (zlib.crc32(header_part1))
     hash_2 = (zlib.crc32(struct.pack('<hhhh', width, height, image_mode, always__1) + image_zlib))
 
-    print("Importing IMG_%d.png to %s" % (file_id, sys.argv[2]))
+    print("Importing IMG_%d.png to %s" % (file_id, outfile))
     struct_data = struct_data + struct.pack('<4sIiiiiIhhhh', type.encode("UTF-8"), file_id, always_8, zsize,
                                             max_pixel_count, always_1, hash_1, width, height, image_mode,
                                             always__1) + image_zlib + struct.pack('<I', hash_2)
@@ -141,7 +149,7 @@ for image_id in range(0, int(num_files)):
     offset_original = offset_original + original_zsize + 40
     offset_new = offset_new + zsize + 40
 
-f = open(sys.argv[2], 'wb')
+f = open(sys.outfile, 'wb')
 toc = struct.pack('<I', num_files) + struct_toc
 toc_checksum = struct.pack('<I', (zlib.crc32(toc)))
 f.write(original_header + toc + toc_checksum + struct_data)
