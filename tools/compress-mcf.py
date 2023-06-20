@@ -149,9 +149,9 @@ for image_id in range(0, int(num_files)):
     offset_original = offset_original + original_zsize + 40
     offset_new = offset_new + zsize + 40
 
-f = open(sys.outfile, 'wb')
+f = open(outfile, 'wb')
 toc = struct.pack('<I', num_files) + struct_toc
 toc_checksum = struct.pack('<I', (zlib.crc32(toc)))
 f.write(original_header + toc + toc_checksum + struct_data)
-print ("\nAll files are imported to %s" % sys.argv[2])
+print ("\nAll files are imported to %s" % outfile)
 f.close()
