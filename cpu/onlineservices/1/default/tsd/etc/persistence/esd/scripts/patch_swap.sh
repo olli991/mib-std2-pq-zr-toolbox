@@ -162,7 +162,7 @@ case $size in
 	1168924) #EU ZR 359/363/369
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			case "$TRAIN" in
-				*359*|*363*|'') #ZR 359, PQ 363
+				*359*|*361*|*363*|'') #ZR 359/361, PQ 363
 					set -A offsets 28AA4 28E6C 314CC 3844C ;;
 			esac
 		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
