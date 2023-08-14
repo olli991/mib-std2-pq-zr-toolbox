@@ -15,7 +15,7 @@ WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT 
 - **IMPORTANT!** Read FAQ at the bottom of this file!
 
 ## How to install from SD card via "Service Mode" on units with navigation (units with two SD slots)
-**NOTE:** SD installation method is NOT possible on units with part numbers 5C0035684F (aka variant 17222) and 5QA035874 (aka variants 47213, 47214, 47215, 47216).
+**NOTE:** SD installation method is NOT possible on units with part numbers 5C0035684F (aka variant 17222) and 5F003587*/5QA035874* (aka variants 47213, 47214, 47215, 47216).
 Metainfo2.txt of the Toolbox does not contain these variant numbers. Metainfo2.txt cannot be edited because has digital signature at the end of the file.  
 The ONLY KNOWN way to install Toolbox onto these variants of units is USB2HSD cable or soldering USB SD card reader to eMMC.
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of SD card.
