@@ -162,7 +162,7 @@ A: Usually just running `Tools->Clean SWDL history and keep only non-duplicated 
 If the error still there, long press MENU and enter `Testmode->Green Engineering Menu->debugging->additional debug destination`.
 Select where to save the log onto SD or USB. Open the log from SD/USB and look for strings like `SW incompatible`. They will contain the reason of the error.
 
-Q: Can I make eMMC backup of my unit?
+Q: Can I make eMMC backup of my unit?  
 A: Yes, use `dump->eMMC content (exFAT/NTFS SD card/USB drive + ~7.3 GB free space required)` menu.  
 As most of the units have 7.3 GB eMMC chips, FAT32 formatted media cannot be used because of 4 GB max filesize limitation.
 Also it is strongly recommended to use exFAT/NTFS formatted SD card because USB port on MIB STD2 is capped to 5 MB/s.
@@ -173,5 +173,5 @@ A: Look lists for SWDL [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/
 SWAP [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swap.sh)
 , and CP [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_cp.sh)  
 
-Q: I got "Unknown file size detected" error
+Q: I got "Unknown file size detected" error  
 A: Run "mibstd2_toolbox>tools>Dump support files to SD folder /dump/.../support". Zip /dump/support folder from SD and attach [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/issues/93)
