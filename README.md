@@ -173,5 +173,5 @@ A: Look lists for SWDL [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/
 SWAP [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swap.sh)
 , and CP [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_cp.sh)  
 
-Q: I got "Unknown file size detected" error  
-A: Run "mibstd2_toolbox>tools>Dump support files to SD folder /dump/.../support". Zip /dump/support folder from SD and attach [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/issues/93)
+Q: I got "**Unknown file size detected**" error  
+A: Run `mibstd2_toolbox>tools>Dump support files to SD folder /dump/.../support`. Zip `/dump/support` folder from SD and attach [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/issues/93)
