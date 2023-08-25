@@ -127,7 +127,7 @@ Example: `compress-startup_x.boot.py startup_x.boot startup2_x.boot .\extracted\
 Converts password to shadow file
 
 ## FAQ (Frequently Asked Questions)
-Q: I already installed Toolbox and want to install new version do I need to uninstall the old one? What is a proper way to update?  
+Q: I already installed Toolbox and want to install new version. Do I need to uninstall the old one? What is a proper way to update?  
 A: No, you do not need to uninstall. Simply do `update_and_uninstall->Update Toolbox from SD card or USB drive`
 
 Q: I got unit with part number X. How to know if that is Technisat/Preh/Delphi/Harman?  
@@ -159,7 +159,7 @@ A: In the root folder of SD card. Use `tools->Move screenshots from root of all 
 
 Q: After Toolbox installation I got OBD error 1556. How to fix it?  
 A: Usually just running `Tools->Clean SWDL history and keep only non-duplicated FW updates` helps. Then reboot the unit and clear OBD2 error.  
-If the error still there, long press MENU and enter `Testmode->Green Engineering Menu->debugging->additional debug destination`.
+If the error is still there, long press MENU and enter `Testmode->Green Engineering Menu->debugging->additional debug destination`.
 Select where to save the log onto SD or USB. Open the log from SD/USB and look for strings like `SW incompatible`. They will contain the reason of the error.
 
 Q: Can I make eMMC backup of my unit?  
@@ -174,4 +174,5 @@ SWAP [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/on
 , and CP [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_cp.sh)  
 
 Q: I got "**Unknown file size detected**" error  
-A: Run `mibstd2_toolbox>tools>Dump support files to SD folder /dump/.../support`. Zip `/dump/support` folder from SD and attach [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/issues/93)
+A: Run `mibstd2_toolbox>tools>Dump support files to SD folder /dump/.../support`.  
+Zip `/dump/support` folder from SD and attach [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/issues/93)
