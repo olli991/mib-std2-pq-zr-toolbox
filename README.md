@@ -172,4 +172,6 @@ Q: Which firmware trains are currently supported for direct SWDL/SWAP/CP patchin
 A: Look lists for SWDL [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swdl.sh)
 SWAP [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swap.sh)
 , and CP [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_cp.sh)  
-**IMPORTANT!** If you get the error "Unknown file size detected", please run "tools>Dump necessary files to SD folder /dump/.../support" zip and attach the files from /dump/support in the issue [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/issues/93)
+
+Q: I got "Unknown file size detected" error
+A: Run "mibstd2_toolbox>tools>Dump support files to SD folder /dump/.../support". Zip /dump/support folder from SD and attach [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/issues/93)
