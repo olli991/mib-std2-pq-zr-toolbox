@@ -19,6 +19,8 @@ set -A bytes 07 07 07 07
 offsets=""
 
 case $size in
+	633660) #EU mainstd ZR 133
+		set -A offsets 2776C 29F90 3344C 33784 ;;
 	633668) #EU mainstd ZR 140
 		set -A offsets 25ABC 25DF4 32144 34968 ;;
 	619040) #EU mainstd ZR 253/254
@@ -167,7 +169,7 @@ case $size in
 			esac
 		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			case "$TRAIN" in
-				*369*) #ZR 369
+				*369*) #PQ/ZR 369
 					set -A offsets 23AF8 23EC0 3B34C 422CC ;;
 			esac
 		fi ;;

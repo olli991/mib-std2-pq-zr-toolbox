@@ -20,7 +20,7 @@ set -A bytes 07 07 07 07
 offsets=""
 
 case $size in
-	1484164) #mainstd EU ZR 140
+	1484196|1484164) #mainstd EU ZR 133/140
 		set -A offsets 7EAC4 7F668 7FBDC ;;
 	1541236) #mainstd EU ZR 253/254
 		set -A offsets 6EE80 72328 72A4C BE660 ;;
