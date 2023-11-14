@@ -20,7 +20,7 @@ set -A bytes 07 07 07 07
 offsets=""
 
 case $size in
-	1484164) #mainstd EU ZR 140
+	1484196|1484164) #mainstd EU ZR 133/140
 		set -A offsets 7EAC4 7F668 7FBDC ;;
 	1541236) #mainstd EU ZR 253/254
 		set -A offsets 6EE80 72328 72A4C BE660 ;;
@@ -51,7 +51,7 @@ case $size in
 	3110500) #cpu EU PQ 604
 		set -A offsets A9A70 ABA60 ABB1C 14EB0C ;;
 	3067324) #cpuplus EU PQ 604
-		set -A offsets A9240 AB230 AB2EC 14D628 ;;	
+		set -A offsets A9240 AB230 AB2EC 14D628 ;;
 esac
 
 if [ -n "$offsets" ]; then
