@@ -47,6 +47,10 @@ script
 	label 	"SETUP>NAV"
 
 script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/rb_voice2car.sh"
+	label 	"VOICE>CAR"
+
+script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_buttons.sh"
 	label 	"Restore buttons mapping from backup"
 
