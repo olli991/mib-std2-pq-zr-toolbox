@@ -21,6 +21,8 @@ offsets=""
 case $size in
 	633660) #EU mainstd ZR 133
 		set -A offsets 2776C 29F90 3344C 33784 ;;
+	633580) #EU mainstd ZR 138
+		set -A offsets 16B9C 16B9C 242F8 26B1C ;;
 	633668) #EU mainstd ZR 140
 		set -A offsets 25ABC 25DF4 32144 34968 ;;
 	619040) #EU mainstd ZR 253/254
@@ -111,7 +113,7 @@ case $size in
 			esac
 		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			case "$TRAIN" in
-				*346*|*351*) #ZR 346/351
+				*346*|*351*) #ZR/PQ 346/351
 					set -A offsets 20BC0 27B40 42C10 42FD8 ;;
 				*363*|*367*|*368*|*478*) #PQ/ZR 363/367/368/478
 					set -A offsets 277F4 27BBC 30380 37300 ;;
@@ -161,9 +163,11 @@ case $size in
 		if [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			set -A offsets 28AA8 28E70 314D0 38450
 		fi ;;
-	1168924) #EU ZR 359/363/369
+	1168924) #EU PQ/ZR 353/359/363/366/369
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			case "$TRAIN" in
+				*353*) #PQ 353
+					set -A offsets 314CC 38453 ;;
 				*359*|*361*|*363*|'') #ZR 359/361, PQ 363
 					set -A offsets 28AA4 28E6C 314CC 3844C ;;
 			esac
