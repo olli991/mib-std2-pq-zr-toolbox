@@ -359,12 +359,12 @@ FileSize = "1720"
 Checksum = "84d5562ab1284c48e4bb14af17f9a577f2f28af4"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_setup2app.sh"
-FileSize = "1416"
-Checksum = "a71029c29f070de74436c707aee8db69a3756b75"
+FileSize = "1409"
+Checksum = "69187a710340037cc17e888722b03ec718379600"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_traffic2app.sh"
-FileSize = "1476"
-Checksum = "8d38e70df5cedf7008a50fc4d73a824478827ed1"
+FileSize = "1539"
+Checksum = "8b05157a7c000cff6b31116bc0c4014176134700"
 
 FileName = "/tsd/etc/persistence/esd/scripts/restore_buttons.sh"
 FileSize = "262"

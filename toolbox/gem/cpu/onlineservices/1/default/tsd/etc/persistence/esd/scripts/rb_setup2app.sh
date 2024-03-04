@@ -4,7 +4,7 @@ export MIBPATH=/tsd/hmi/HMI/res/configurationmanager.res
 export SDPATH=$TOPIC/configurationmanager.res
 export TYPE="file"
 
-echo "Remapping of the SETUP to APP button..."
+echo "Remapping SETUP to APP button..."
 echo
 
 # Include info utility
