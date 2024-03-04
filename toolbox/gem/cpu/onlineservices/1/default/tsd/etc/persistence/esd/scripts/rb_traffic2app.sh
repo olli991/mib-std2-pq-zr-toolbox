@@ -11,6 +11,9 @@ echo
 . /tsd/etc/persistence/esd/scripts/util_info.sh
 echo "ID: $TRAIN $SYS"
 
+# Make backup folder
+. /tsd/etc/persistence/esd/scripts/util_backup.sh
+
 # Size of the file to patch
 size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
 
@@ -41,9 +44,6 @@ if [ -n "$offsets" ]; then
 	done
 	
 	if [ -f "$fout" ]; then
-		# Make backup folder
-		. /tsd/etc/persistence/esd/scripts/util_backup.sh
-
 		# Mount system partition in read/write mode
 		. /tsd/etc/persistence/esd/scripts/util_mount.sh
 		echo "Setting file permissions..."
