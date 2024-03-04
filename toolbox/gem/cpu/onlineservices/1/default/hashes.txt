@@ -78,6 +78,10 @@ FileName = "/tsd/etc/persistence/esd/mibstd2-network.esd"
 FileSize = "1982"
 Checksum = "fb2c5b5766f419d2e84242a33f84207740513372"
 
+FileName = "/tsd/etc/persistence/esd/mibstd2-remapbuttons.esd"
+FileSize = "1235"
+Checksum = "456f416e319c12b00e72d06038c7a4bf5c01bc93"
+
 FileName = "/tsd/etc/persistence/esd/mibstd2-skins.esd"
 FileSize = "1776"
 Checksum = "5c4216c0b4e66b17ec5cc68e562766e0c0e7e0de"
@@ -365,6 +369,18 @@ Checksum = "c9342df2943d418649478faa4a7ce797acf6274e"
 FileName = "/tsd/etc/persistence/esd/scripts/privacy_swdl_keep_last.sh"
 FileSize = "1720"
 Checksum = "84d5562ab1284c48e4bb14af17f9a577f2f28af4"
+
+FileName = "/tsd/etc/persistence/esd/scripts/rb_setup2app.sh"
+FileSize = "1420"
+Checksum = "90f7130f766200f0166845a0a8c33145dc4b7ac0"
+
+FileName = "/tsd/etc/persistence/esd/scripts/rb_traffic2app.sh"
+FileSize = "1480"
+Checksum = "3b1f575e7c9dc5e87a5545d439fa0938e56f2888"
+
+FileName = "/tsd/etc/persistence/esd/scripts/restore_buttons.sh"
+FileSize = "262"
+Checksum = "599b3772f8f4a00fc64c8e1e250df9b79583fc00"
 
 FileName = "/tsd/etc/persistence/esd/scripts/restore_carplayicon.sh"
 FileSize = "244"

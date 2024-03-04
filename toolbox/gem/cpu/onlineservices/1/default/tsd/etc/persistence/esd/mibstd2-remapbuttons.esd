@@ -1,0 +1,45 @@
+###########################################################################################
+#
+# Custom Green Engineering Menu screen
+# Author:		lprot
+# Version:		1.0
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB STD2 Toolbox Main -> Customization -> Remap Buttons
+#
+###########################################################################################
+screen Remap_Buttons Customization
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Here you can remap buttons of your MIB screen"
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/rb_setup2app.sh"
+	label 	"SETUP>APP"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/rb_traffic2app.sh"
+	label 	"TRAFFIC>APP"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_buttons.sh"
+	label 	"Restore buttons mapping from backup"
+
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_reboot.sh"
+	label 	"Reboot unit"
+	
