@@ -2,7 +2,7 @@
 #
 # Custom Green Engineering Menu screen
 # Author:		YOX, Olli & lprot
-# Version:		1.3.3
+# Version:		1.4
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -11,6 +11,11 @@
 #
 ###########################################################################################
 screen History About
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.4 Added buttonremapping and extended support"
+    poll     0
+
 keyValue
     value   String sys 0x00000000 0
     label   "v1.3.3 Bugfix-Release and extended support"
