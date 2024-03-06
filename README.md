@@ -85,6 +85,7 @@ mibstd2_toolbox
 |   +---greenmenu                                # Import custom GreenMenus and scripts
 |   +---mirror-link                              # Unlock apps while driving
 |   +---navi                                     # Unlock SD card usage from every brand and more
+|   +---remap_buttons                            # Remap buttons on your unit to another function
 |   +---skins                                    # Modify skins
 |   +---sounds                                   # Modify ringtones and system sounds
 |
@@ -173,6 +174,10 @@ A: Look lists for SWDL [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/
 SWAP [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swap.sh)
 , and CP [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_cp.sh)  
 
+Q: Which firmware is supported on button remapping?
+A: You can see this in the files, look for the commented sections. List for:
+Traffic -> App [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/rb_traffic2app.sh) | Setup -> App [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/rb_setup2app.sh) | Info -> App [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/rb_info2app.sh) | Setup-> Navigation [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/rb_setup2nav.sh)
+
 Q: I got "**Unknown file size detected**" error  
 A: Run `mibstd2_toolbox>tools>Dump support files to SD folder /dump/.../support`.  
-Zip `/dump/support` folder from SD and attach [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/issues/93)
+Zip `/dump/support` folder from SD and attach file into an issue [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/issues/new?assignees=lprot&labels=&projects=&template=unknown-filesize-detected-while-patching.md&title=)
