@@ -67,8 +67,8 @@ FileSize = "1982"
 Checksum = "fb2c5b5766f419d2e84242a33f84207740513372"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-remapbuttons.esd"
-FileSize = "1339"
-Checksum = "56d631ab5e76d7bcdde5bc44e6d1d40abf95968f"
+FileSize = "1441"
+Checksum = "c031026f758f9e0fa1f43e2b59d324ac7c954c42"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-skins.esd"
 FileSize = "1776"
@@ -357,6 +357,10 @@ Checksum = "c9342df2943d418649478faa4a7ce797acf6274e"
 FileName = "/tsd/etc/persistence/esd/scripts/privacy_swdl_keep_last.sh"
 FileSize = "1720"
 Checksum = "84d5562ab1284c48e4bb14af17f9a577f2f28af4"
+
+FileName = "/tsd/etc/persistence/esd/scripts/rb_info2app.sh"
+FileSize = "1468"
+Checksum = "4470fd37eaf73f21fe8852054d379051290b3e96"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_setup2app.sh"
 FileSize = "1409"
