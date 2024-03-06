@@ -4,7 +4,7 @@ export MIBPATH=/tsd/hmi/HMI/res/configurationmanager.res
 export SDPATH=$TOPIC/configurationmanager.res
 export TYPE="file"
 
-echo "Remapping TRAFFIC to APP button..."
+echo "Remapping SETUP to NAV button..."
 echo
 
 # Include info utility
@@ -18,16 +18,12 @@ echo "ID: $TRAIN $SYS"
 size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
 
 echo "Checking $MIBPATH..."
-set -A bytes 72 05
+set -A bytes 07 04
 offsets=""
 
 case $size in
-	68382) #MST2_EU_XX_ZR_P0363/369T cpu
-		set -A offsets 9A56 A13A ;;
-	78200) #MST2_EU_VW_PQ_P0478T cpu
-		set -A offsets A44C AB30 ;;
-	78202) #MST2_EU_VW_PQ_P0480T cpu
-		set -A offsets A44E AB32 ;;
+	78070) #MST2_EU_XX_ZR_P0480T cpu
+		set -A offsets A38A A44A ;;
 esac
 
 if [ -n "$offsets" ]; then

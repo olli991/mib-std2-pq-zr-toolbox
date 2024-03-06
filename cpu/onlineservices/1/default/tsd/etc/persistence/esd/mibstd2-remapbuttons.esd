@@ -31,6 +31,10 @@ script
 	label 	"TRAFFIC>APP"
 
 script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/rb_setup2nav.sh"
+	label 	"SETUP>NAV"
+
+script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_buttons.sh"
 	label 	"Restore buttons mapping from backup"
 
