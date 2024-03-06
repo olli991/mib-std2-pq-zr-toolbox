@@ -371,8 +371,8 @@ FileSize = "1405"
 Checksum = "2e4ac9bec0925fa53b250cf863bfdc3b68a47106"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_traffic2app.sh"
-FileSize = "1539"
-Checksum = "d92baeaf3b259a1deaf02f2b2e1886ac1b8fc31e"
+FileSize = "1607"
+Checksum = "34fd3572ddbf9d6fb848306844958a2975c8ea75"
 
 FileName = "/tsd/etc/persistence/esd/scripts/restore_buttons.sh"
 FileSize = "262"
