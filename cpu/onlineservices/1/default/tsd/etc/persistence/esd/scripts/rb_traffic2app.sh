@@ -24,7 +24,9 @@ offsets=""
 case $size in
 	68382) #MST2_EU_XX_ZR_P0363/369T cpu
 		set -A offsets 9A56 A13A ;;
-	78200) #MST2_EU_VW_PQ_P0478T cpu
+	78070) #MST2_EU_XX_ZR_P0480T cpu
+		set -A offsets A3CA AAAE ;;
+	78200) #MST2_EU_VW_PQ_P0478/604T cpu
 		set -A offsets A44C AB30 ;;
 	78202) #MST2_EU_VW_PQ_P0480T cpu
 		set -A offsets A44E AB32 ;;
