@@ -67,8 +67,8 @@ FileSize = "1982"
 Checksum = "fb2c5b5766f419d2e84242a33f84207740513372"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-remapbuttons.esd"
-FileSize = "1441"
-Checksum = "c031026f758f9e0fa1f43e2b59d324ac7c954c42"
+FileSize = "1539"
+Checksum = "2589c1b7884b41d5b989701dfeed09608f300cca"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-skins.esd"
 FileSize = "1776"
@@ -369,6 +369,10 @@ Checksum = "c6f26ac869d90a2ed9171c506ebe98b8060049ba"
 FileName = "/tsd/etc/persistence/esd/scripts/rb_setup2nav.sh"
 FileSize = "1405"
 Checksum = "2e4ac9bec0925fa53b250cf863bfdc3b68a47106"
+
+FileName = "/tsd/etc/persistence/esd/scripts/rb_tp2app.sh"
+FileSize = "1406"
+Checksum = "0c0c48f407d8b4e610b42453b085a91f35eb1659"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_traffic2app.sh"
 FileSize = "1675"

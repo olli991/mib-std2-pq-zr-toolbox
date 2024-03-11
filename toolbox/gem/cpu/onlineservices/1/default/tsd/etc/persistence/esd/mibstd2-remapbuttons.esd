@@ -35,6 +35,10 @@ script
 	label 	"INFO>APP"
 
 script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/rb_tp2app.sh"
+	label 	"TP>APP"
+
+script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/rb_setup2nav.sh"
 	label 	"SETUP>NAV"
 
