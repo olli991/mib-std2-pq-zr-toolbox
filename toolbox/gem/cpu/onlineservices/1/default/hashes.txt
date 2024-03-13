@@ -315,8 +315,8 @@ FileSize = "517"
 Checksum = "8bf0659ce14e0b4c052b5064f5578b4709c9ea17"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_cp.sh"
-FileSize = "12489"
-Checksum = "cafc3f96274ec1bb80ea5f40f82581c5e1da0ba0"
+FileSize = "12491"
+Checksum = "7f47805b4991c0f48151ca62ea083da79bde8296"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_menumode.sh"
 FileSize = "637"
@@ -371,8 +371,8 @@ FileSize = "1720"
 Checksum = "84d5562ab1284c48e4bb14af17f9a577f2f28af4"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_info2app.sh"
-FileSize = "1472"
-Checksum = "6f0d4dced16537f4fc15ba37f3b93e9f2d68ea6a"
+FileSize = "1535"
+Checksum = "55059cdb05eadd81c07972de3930f401a6cb3068"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_setup2app.sh"
 FileSize = "1477"
