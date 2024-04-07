@@ -459,8 +459,8 @@ FileSize = "210"
 Checksum = "52aa547d5903ff2fe03fadeb1f74eb9ef8f3385a"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_traffic2app.sh"
-FileSize = "1739"
-Checksum = "2fcd986db1db0804838c982f95da20d06f470567"
+FileSize = "1803"
+Checksum = "22b898de32d393b7cdf3f146e355538756e583f1"
 
 FileName = "/tsd/etc/persistence/esd/scripts/restore_onlineservices.sh"
 FileSize = "240"

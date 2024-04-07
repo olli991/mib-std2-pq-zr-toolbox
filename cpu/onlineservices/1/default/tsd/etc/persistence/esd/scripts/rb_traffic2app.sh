@@ -28,6 +28,8 @@ case $size in
 		set -A offsets 9A56 A13A ;;
 	78070) #MST2_EU_XX_ZR_P0480T cpu
 		set -A offsets A3CA AAAE ;;
+	78072) #MST2_EU_XX_ZR_P0468T cpu
+		set -A offsets AA3C AAB0 ;;
 	78200) #MST2_EU_VW_PQ_P0478/604T cpu
 		set -A offsets A44C AB30 ;;
 	78202) #MST2_EU_VW_PQ_P0480T cpu
