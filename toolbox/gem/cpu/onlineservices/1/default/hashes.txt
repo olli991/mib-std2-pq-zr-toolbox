@@ -55,8 +55,8 @@ FileSize = "4675"
 Checksum = "2f0f11d53c2d7931436f03072809b2601b82d003"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-remapbuttons.esd"
-FileSize = "1539"
-Checksum = "2589c1b7884b41d5b989701dfeed09608f300cca"
+FileSize = "1641"
+Checksum = "12ee0b33f78abebc28472bddf843ca5dcf88b3ed"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-history.esd"
 FileSize = "5508"
@@ -357,6 +357,10 @@ Checksum = "6eb18417e9b41610d28b66e00917aa5df70e8f50"
 FileName = "/tsd/etc/persistence/esd/scripts/privacy_shadow.sh"
 FileSize = "439"
 Checksum = "255ab9418f5e95a9c9d6a45de5ac9f3c02fdfe92"
+
+FileName = "/tsd/etc/persistence/esd/scripts/rb_mute2app.sh"
+FileSize = "1408"
+Checksum = "6cc9833f5ad670f6d670de4efc19e7afb2a519e4"
 
 FileName = "/tsd/etc/persistence/esd/scripts/save_sysinfo.sh"
 FileSize = "2228"

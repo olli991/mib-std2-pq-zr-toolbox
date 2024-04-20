@@ -39,6 +39,10 @@ script
 	label 	"TP>APP"
 
 script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/rb_mute2app.sh"
+	label 	"MUTE>APP"
+
+script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/rb_setup2nav.sh"
 	label 	"SETUP>NAV"
 
