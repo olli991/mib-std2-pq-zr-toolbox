@@ -22,8 +22,12 @@ set -A bytes 72 58
 offsets=""
 
 case $size in
+	59520) #MST2_EU_XX_ZR_P0369T cpuplus
+		set -A offsets 80B0 82B0 ;;
 	67854) #MST2_EU_XX_PQ_P0480T cpuplus
 		set -A offsets 8AA4 8CA4 ;;
+	68038) #MST2_EU_XX_ZR_P0516T cpuplus
+		set -A offsets 8B5C 8D5C ;;
 esac
 
 if [ -n "$offsets" ]; then
