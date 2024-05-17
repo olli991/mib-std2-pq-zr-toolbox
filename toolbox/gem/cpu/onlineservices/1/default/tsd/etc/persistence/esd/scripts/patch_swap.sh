@@ -9,6 +9,9 @@ echo
 
 # Include info utility
 . /tsd/etc/persistence/esd/scripts/util_info.sh
+if [ -z "${TRAIN}" ]; then
+	TRAIN=$SWVER
+fi
 echo "ID: $TRAIN $SYS"
 
 # Size of the file to patch
@@ -110,16 +113,16 @@ case $size in
 	1164620) #EU ZR 346/351 PQ/ZR 363/367/368
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			case "$TRAIN" in
-				*346*|*351*) #ZR 346/351
+				*0346*|*0351*) #ZR 346/351
 					set -A offsets 20BBC 27B3C 42C0C 42FD4 ;;
-				*363*|*367*|*368*|*478*) #PQ/ZR 363/367/368/478
+				*0363*|*0367*|*0368*|*0478*) #PQ/ZR 363/367/368/478
 					set -A offsets 277F0 27BB8 3037C 372FC ;;
 			esac
 		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			case "$TRAIN" in
-				*346*|*351*) #ZR/PQ 346/351
+				*0346*|*0351*) #ZR/PQ 346/351
 					set -A offsets 20BC0 27B40 42C10 42FD8 ;;
-				*363*|*367*|*368*|*478*) #PQ/ZR 363/367/368/478
+				*0363*|*0367*|*0368*|*0478*) #PQ/ZR 363/367/368/478
 					set -A offsets 277F4 27BBC 30380 37300 ;;
 			esac
 		fi ;;
@@ -140,18 +143,18 @@ case $size in
 	1166348) #EU PQ/ZR 367/369/478/604
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			case "$TRAIN" in
-				*367*) #PQ/ZR 367
+				*0367*) #PQ/ZR 367
 					set -A offsets 1FB74 26AF4 42AAC 42E74 ;;
-				*369*|*370*|*478*|*604*) #ZR 369, PQ 478/604 variant 17217
+				*0369*|*0370*|*0478*|*0604*) #ZR 369, PQ 478/604 variant 17217
 					set -A offsets 2499C 2B91C 4A1B8 4A580 ;;
 			esac
 		fi ;;
 	1166356) #EU PQ/ZR 367/369
 		if [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			case "$TRAIN" in
-				*367*) #PQ/ZR 367
+				*0367*) #PQ/ZR 367
 					set -A offsets 1FB78 26AF8 42AB0 42E78 ;;
-				*369*) #PQ/ZR 369
+				*0369*) #PQ/ZR 369
 					set -A offsets 249A0 2B920 4A1BC 4A584 ;;
 			esac
 		fi ;;
@@ -170,14 +173,14 @@ case $size in
 	1168924) #EU PQ/ZR 353/359/363/366/369
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			case "$TRAIN" in
-				*353*) #PQ 353
+				*0353*) #PQ 353
 					set -A offsets 314CC 38453 ;;
-				*359*|*361*|*363*|'') #ZR 359/361, PQ 363
+				*0359*|*0361*|*0363*|'') #ZR 359/361, PQ 363
 					set -A offsets 28AA4 28E6C 314CC 3844C ;;
 			esac
 		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			case "$TRAIN" in
-				*369*) #PQ/ZR 369
+				*0369*) #PQ/ZR 369
 					set -A offsets 23AF8 23EC0 3B34C 422CC ;;
 			esac
 		fi ;;

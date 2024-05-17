@@ -6,6 +6,8 @@
 ########################################################################################
 
 #INFO=$(awk -F "" '{for(i=1;i<=NF;i++) if($i~/[A-Z0-9]/) {printf $i} else {printf " "}}' /tsd/var/itr.timer.log 2>/dev/null | sed 's/\b\w\{1,3\}\b\s*//g')
+INFO=$(grep "STD_KEY_MU_VERSION:" /tmp/sloginfo | tail -1 | sed 's/.*STD_KEY_MU_VERSION: //')
+export SWVER=$(echo $INFO | awk '{print substr($3,1,4)}' 2>/dev/null)
 
 # Firmware version (Train)
 export TRAIN=$(awk '/46924065 401 25/ {print $4}' /tsd/var/persistence/.persistence.vault 2>/dev/null | sed 's/[^[:print:]]//g')
