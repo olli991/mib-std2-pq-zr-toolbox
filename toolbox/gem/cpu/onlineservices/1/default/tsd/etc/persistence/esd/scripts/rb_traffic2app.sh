@@ -26,6 +26,8 @@ case $size in
 		set -A offsets 9A96 A17A ;;
 	68382) #MST2_EU_XX_ZR_P0363/369T cpu
 		set -A offsets 9A56 A13A ;;
+	77892) #MST2_CN_XX_PQ_P0478T cpu
+		set -A offsets A318 A9FC ;;
 	78070) #MST2_EU_XX_ZR_P0480T cpu
 		set -A offsets A3CA AAAE ;;
 	78072) #MST2_EU_XX_ZR_P0468T cpu
