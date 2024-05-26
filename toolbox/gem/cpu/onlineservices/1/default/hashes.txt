@@ -295,8 +295,8 @@ FileSize = "227"
 Checksum = "618e119cb173ea2d9b1094c282d8f474c75fe3db"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_cp.sh"
-FileSize = "12491"
-Checksum = "7f47805b4991c0f48151ca62ea083da79bde8296"
+FileSize = "12521"
+Checksum = "6d8025de26583215171431a28c015ecf086b403e"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_stationdb.sh"
 FileSize = "1398"
@@ -451,8 +451,8 @@ FileSize = "230"
 Checksum = "2ff862dc169f135967c37a1c0793190094a0cfe5"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_swap.sh"
-FileSize = "10522"
-Checksum = "d08c33aa23ef0084f5280cc9dbba6792b31a12dd"
+FileSize = "10650"
+Checksum = "a630956bcef73cc124d34ec0225a271cfe786526"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_pvault.sh"
 FileSize = "210"
@@ -491,8 +491,8 @@ FileSize = "226"
 Checksum = "2aa599c0631a483ce89183b9c8625b373881c621"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_swdl.sh"
-FileSize = "3291"
-Checksum = "f4ff327a1b06275d7f3da1233ac656e8048ce594"
+FileSize = "3303"
+Checksum = "52093f73cea80b685083a0b55278bf525cc5497d"
 
 FileName = "/tsd/etc/persistence/esd/scripts/privacy_clean_mediacache.sh"
 FileSize = "420"
