@@ -451,8 +451,8 @@ FileSize = "230"
 Checksum = "2ff862dc169f135967c37a1c0793190094a0cfe5"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_swap.sh"
-FileSize = "10650"
-Checksum = "a630956bcef73cc124d34ec0225a271cfe786526"
+FileSize = "10648"
+Checksum = "52e73099108e391adc6b358ff6979f2291c62eeb"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_pvault.sh"
 FileSize = "210"

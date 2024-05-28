@@ -101,7 +101,7 @@ case $size in
 			set -A offsets 198EC 19CB4 2802C 2EFAC
 		fi ;;
 	1165412) #RoW ZR 359
-		elif [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
+		if [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			set -A offsets 26A1C 2D99C 49928 49CF0
 		fi ;;
 	1168644) #EU ZR 359/363
