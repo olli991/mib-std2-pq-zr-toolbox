@@ -168,7 +168,7 @@ echo
 echo "Saving system informations..."
 . /tsd/etc/persistence/esd/scripts/util_sysinfo.sh >$DUMPFOLDER/sysinfo.txt
 cp -f /tsd/var/persistence/.persistence.vault $DUMPFOLDER/persistence.vault
-if [ -f /tsd/var/itr.timer.log ], then
+if [ -f /tsd/var/itr.timer.log ]; then
    cp -f /tsd/var/itr.timer.log $DUMPFOLDER/
 fi
 

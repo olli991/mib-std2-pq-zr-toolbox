@@ -19,7 +19,7 @@ sloginfo >/tmp/sloginfo
 # MU version
 #INFO=$(awk -F "" '{for(i=1;i<=NF;i++) if($i~/[A-Z0-9]/) {printf $i} else {printf " "}}' /tsd/var/itr.timer.log 2>/dev/null | sed 's/\b\w\{1,3\}\b\s*//g')
 INFO=$(grep "STD_KEY_MU_VERSION:" /tmp/sloginfo | tail -1 | sed 's/.*STD_KEY_MU_VERSION: //')
-export SWVER=$(echo $INFO | awk '{print substr($3,1,4)}' 2>/dev/null)
+export MUVER=$(echo $INFO | awk '{print substr($3,1,4)}' 2>/dev/null)
 
 # Serial number
 INFO=$(grep ".devinfo" /tmp/sloginfo | tail -1 | sed 's/.*DevInfo: //')

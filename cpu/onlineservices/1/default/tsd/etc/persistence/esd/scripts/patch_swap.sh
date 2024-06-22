@@ -10,7 +10,7 @@ echo
 # Include info utility
 . /tsd/etc/persistence/esd/scripts/util_info.sh
 if [[ "$TRAIN" = "----" ]]; then
-	TRAIN=$SWVER
+	TRAIN=$MUVER
 fi
 echo "ID: $TRAIN $SYS"
 
