@@ -164,9 +164,10 @@ echo
 echo "95% done, please wait..."
 echo
 
-# Include short sysinfo
+# Include short sysinfo and persistence
 echo "Saving system informations..."
 . /tsd/etc/persistence/esd/scripts/util_sysinfo.sh >$DUMPFOLDER/sysinfo.txt
+cp -f /tsd/var/persistence/.persistence.vault $DUMPFOLDER/persistence.vault
 
 echo
 echo "100% - Script execution has finished."

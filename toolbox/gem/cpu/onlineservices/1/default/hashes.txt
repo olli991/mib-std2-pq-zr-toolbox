@@ -207,8 +207,8 @@ FileSize = "245"
 Checksum = "d35ea99a7246c248564806c6f87fa7a5588f5d61"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_info.sh"
-FileSize = "1826"
-Checksum = "70090fb3770adf4b2a8515646d951154cbea7b23"
+FileSize = "1884"
+Checksum = "54f5a7ce0171a7dcadf1840a8618f353e72f31e2"
 
 FileName = "/tsd/etc/persistence/esd/scripts/restore_hmi.sh"
 FileSize = "248"
@@ -439,8 +439,8 @@ FileSize = "436"
 Checksum = "aceb8f764ed992df53fc9f04436ec15e9bbe339f"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_support.sh"
-FileSize = "4036"
-Checksum = "c3d1996dfa0ba93e9ee6c05f6840a61d26e147d2"
+FileSize = "4128"
+Checksum = "fbdfcee38e8a1d44b5c2ae37af66d230a9c595ea"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_emmc.sh"
 FileSize = "1405"
