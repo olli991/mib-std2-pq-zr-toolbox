@@ -9,7 +9,7 @@ echo
 
 # Include info utility
 . /tsd/etc/persistence/esd/scripts/util_info.sh
-if [ -z "${TRAIN}" ]; then
+if [[ "$TRAIN" = "----" ]]; then
 	TRAIN=$SWVER
 fi
 echo "ID: $TRAIN $SYS"

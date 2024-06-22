@@ -207,8 +207,8 @@ FileSize = "245"
 Checksum = "d35ea99a7246c248564806c6f87fa7a5588f5d61"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_info.sh"
-FileSize = "1884"
-Checksum = "54f5a7ce0171a7dcadf1840a8618f353e72f31e2"
+FileSize = "1997"
+Checksum = "292b32a5c7f1e16a38c57d3140a1d800f403303b"
 
 FileName = "/tsd/etc/persistence/esd/scripts/restore_hmi.sh"
 FileSize = "248"
@@ -439,8 +439,8 @@ FileSize = "436"
 Checksum = "aceb8f764ed992df53fc9f04436ec15e9bbe339f"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_support.sh"
-FileSize = "4128"
-Checksum = "fbdfcee38e8a1d44b5c2ae37af66d230a9c595ea"
+FileSize = "4215"
+Checksum = "e016454127bc85e5037315b7a279e8d27570cef4"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_emmc.sh"
 FileSize = "1405"
@@ -451,8 +451,8 @@ FileSize = "230"
 Checksum = "2ff862dc169f135967c37a1c0793190094a0cfe5"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_swap.sh"
-FileSize = "10648"
-Checksum = "52e73099108e391adc6b358ff6979f2291c62eeb"
+FileSize = "10654"
+Checksum = "f6658d14f9293cca6fd83858f8f54871dabd7e57"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_pvault.sh"
 FileSize = "210"
