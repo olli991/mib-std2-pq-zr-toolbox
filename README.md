@@ -17,7 +17,7 @@ WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OF YOUR UNIT. YOU ARE DOING EVERYTHING AT 
 ## How to install from SD card via "Service Mode" on units with navigation (units with two SD slots)
 **NOTE:** SD installation method is NOT possible on units with part numbers 5C0035684F (aka variant 17222) and 5F003587*/5QA035874* (aka variants 47213, 47214, 47215, 47216).
 Metainfo2.txt of the Toolbox does not contain these variant numbers. Metainfo2.txt cannot be edited because has digital signature at the end of the file.  
-The ONLY KNOWN way to install Toolbox onto these variants of units is USB2HSD cable or soldering USB SD card reader to eMMC.
+You may try to install Toolbox onto these variants of units with USB2HSD cable. The ONLY 100% working way of installing Toolbox on these variants is connecting of USB SD card reader to eMMC via needles or soldering.
 1. Unzip `MIBSTD2-Toolbox-vX.X.X.zip` to the root of SD card.
 2. **IMPORTANT!** If your firmware is version 01xx or 02xx having GEM (Green Engineering Menu) version 3.x, you must use special edition of Toolbox to update it. To do this, replace `cpu` folder in the root of the SD card with `cpu` folder from `\toolbox\gem` folder. If GEM is version 4.x+, skip this step.
 3. Turn on ignition and insert SD card into SD1 slot of the unit
