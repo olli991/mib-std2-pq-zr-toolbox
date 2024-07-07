@@ -56,6 +56,7 @@ if [ -n "$offsets" ]; then
 		# Mount system partition in read/only mode
 		. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
 		echo "Patch is applied. Please restart the unit."
+		echo "IMPORTANT! In coding of block 5F byte 24, set bit1=0"
 	else
 		echo "Patching failed!"
 	fi

@@ -263,8 +263,8 @@ FileSize = "1450"
 Checksum = "ac299a8643be81f566916d18cb6def65a15f918c"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_voice2car.sh"
-FileSize = "1539"
-Checksum = "99ec05fd8c1e482c00339108bf789b4da8a5929c"
+FileSize = "1601"
+Checksum = "eac290455f7717811d225ea29bbd2366bdc828ec"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_setup2app.sh"
 FileSize = "1477"
@@ -275,8 +275,8 @@ FileSize = "1405"
 Checksum = "2e4ac9bec0925fa53b250cf863bfdc3b68a47106"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_voice2nav.sh"
-FileSize = "1605"
-Checksum = "170c17c4c3a7b3f4904585e64b6fdf3f620beeed"
+FileSize = "1667"
+Checksum = "84eb293720e9a7a635ae92cbb7f2a04c0865369f"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_hmi.sh"
 FileSize = "477"
