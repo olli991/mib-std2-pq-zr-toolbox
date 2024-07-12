@@ -267,8 +267,8 @@ FileSize = "1601"
 Checksum = "eac290455f7717811d225ea29bbd2366bdc828ec"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_setup2app.sh"
-FileSize = "1477"
-Checksum = "ad9a87af7ad1fac30fa87512816296c893823020"
+FileSize = "1546"
+Checksum = "9fc3ec70e385c4cb1afa9d806e00c48687817cff"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_setup2nav.sh"
 FileSize = "1405"
