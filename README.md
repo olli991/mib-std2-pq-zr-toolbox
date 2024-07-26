@@ -174,7 +174,7 @@ A: Look lists for SWDL [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/
 SWAP [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_swap.sh)
 , and CP [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/patch_cp.sh)  
 
-Q: Which firmware is supported on button remapping?
+Q: Which firmware is supported on button remapping?  
 A: You can see this in the files, look for the commented sections. List for:
 Traffic -> App [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/rb_traffic2app.sh) | Setup -> App [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/rb_setup2app.sh) | Info -> App [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/rb_info2app.sh) | Setup-> Navigation [here](https://github.com/olli991/mib-std2-pq-zr-toolbox/blob/master/cpu/onlineservices/1/default/tsd/etc/persistence/esd/scripts/rb_setup2nav.sh)
 
