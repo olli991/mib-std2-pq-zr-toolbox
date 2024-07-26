@@ -149,7 +149,7 @@ case $size in
 			case "$TRAIN" in
 				*0367*) #PQ/ZR 367
 					set -A offsets 1FB74 26AF4 42AAC 42E74 ;;
-				*0369*|*0370*|*0478*|*0604*) #ZR 369, PQ 478/604 variant 17217
+				*0369*|*0370*|*04*) #ZR 369/480 17206, PQ 478/604 17217
 					set -A offsets 2499C 2B91C 4A1B8 4A580 ;;
 			esac
 		fi ;;
