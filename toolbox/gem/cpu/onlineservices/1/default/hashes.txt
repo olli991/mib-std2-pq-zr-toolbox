@@ -299,8 +299,8 @@ FileSize = "227"
 Checksum = "618e119cb173ea2d9b1094c282d8f474c75fe3db"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_cp.sh"
-FileSize = "12548"
-Checksum = "2b7b75a37011851176a797d4e7905374f107b17e"
+FileSize = "12659"
+Checksum = "4fb3d0fa107d4ceee3426888851030ed7d3ecb73"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_stationdb.sh"
 FileSize = "1398"
