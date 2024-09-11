@@ -36,6 +36,8 @@ case $size in
 		set -A offsets 1E640 1F1B4 2D0CC 2D3A4 ;;
 	630160) #EU mainstd ZR 361/369
 		set -A offsets 1D184 1D45C 2E674 2F1E8 ;;
+	630408) #EU mainstd ZR 369
+		set -A offsets 1F370 1FEE4 3245C 32734 ;;
 	631292) #EU mainstd ZR 475
 		set -A offsets 1CE0C 1D0E4 2E9C8 2F53C ;;
 	631548) #EU mainstd ZR 478/480
