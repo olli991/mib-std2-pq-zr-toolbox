@@ -24,6 +24,8 @@ offsets=""
 case $size in
 	67656) #MST2_EU_XXX_PQ_P0480T cpuplus
 		set -A offsets 853A 88BA ;;
+	67854) #MST2_EU_XX_ZR_P0479T cpu
+		set -A offsets 8600 8980 ;;
 	78202) #MST2_EU_XX_PQ_P0480T cpu
 		set -A offsets A48E A80E ;;
 	78200) #MST2_EU_XX_PQ_P0480T cpu2
@@ -56,7 +58,7 @@ if [ -n "$offsets" ]; then
 		# Mount system partition in read/only mode
 		. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
 		echo "Patch is applied. Please restart the unit."
-		echo "IMPORTANT! In coding of block 5F byte 24, set bit1=0"
+		echo "IMPORTANT! In the coding of block 5F, in byte 24, set bit1=0"
 	else
 		echo "Patching failed!"
 	fi
