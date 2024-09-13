@@ -95,8 +95,8 @@ FileSize = "850"
 Checksum = "fea462616709f229e282370f6394738d16a13565"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_tp2app.sh"
-FileSize = "1406"
-Checksum = "0c0c48f407d8b4e610b42453b085a91f35eb1659"
+FileSize = "1470"
+Checksum = "b8e87fff7397295958219a3825726ed4a9ab223e"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_swap.sh"
 FileSize = "209"

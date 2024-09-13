@@ -24,6 +24,8 @@ offsets=""
 case $size in
 	67854) #MST2_EU_XX_ZR_P0480T cpuplus
 		set -A offsets 8A74 8CA4 ;;
+	78070) #MST2_EU_XX_ZR_P0480T cpu
+		set -A offsets A87E AAAE ;;
 esac
 
 if [ -n "$offsets" ]; then
