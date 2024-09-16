@@ -123,8 +123,8 @@ FileSize = "269"
 Checksum = "1c9e638c43743394c18e7f4139a8bd94a3aaf89a"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_info2app.sh"
-FileSize = "1599"
-Checksum = "0d007c7fe315f4bca4b1434586f6db85418d50b0"
+FileSize = "1662"
+Checksum = "e23f41ddaa3bba1d27ef830d597e907d90ff060d"
 
 FileName = "/tsd/etc/persistence/esd/scripts/util_dump.sh"
 FileSize = "1258"
