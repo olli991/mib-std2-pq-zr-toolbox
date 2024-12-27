@@ -236,7 +236,7 @@ if [ -n "$offsets" ]; then
 		echo "Patching failed! Please retry or send sysinfo!"
 	fi
 else
-	if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" || "$size" == "1972589" ]]; then
+	if [[ "$size" == "1852137" || "$size" == "1851273" || "$size" == "1850369" || "$size" == "1850393" || "$size" == "1972589" || "$size" == "1972461" ]]; then
 		echo "CP patch on firmwares 1xx is not possible, sorry!"
 	else
 		echo "Unknown file size $size detected. Send Tools>Support Dump!"
