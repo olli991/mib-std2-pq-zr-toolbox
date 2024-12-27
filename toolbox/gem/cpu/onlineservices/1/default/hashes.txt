@@ -283,8 +283,8 @@ FileSize = "1546"
 Checksum = "9fc3ec70e385c4cb1afa9d806e00c48687817cff"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_setup2nav.sh"
-FileSize = "1405"
-Checksum = "2e4ac9bec0925fa53b250cf863bfdc3b68a47106"
+FileSize = "1473"
+Checksum = "3b9c133c140baa15bff7a0871d85a92bd33bb2b3"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_voice2nav.sh"
 FileSize = "1667"
@@ -299,8 +299,8 @@ FileSize = "227"
 Checksum = "618e119cb173ea2d9b1094c282d8f474c75fe3db"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_cp.sh"
-FileSize = "12891"
-Checksum = "7136a2066226e37648c26b977630a02ad17ca10d"
+FileSize = "12904"
+Checksum = "48605074ae5a23e0fa05c99381679ba1e709c556"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_stationdb.sh"
 FileSize = "1398"
