@@ -22,6 +22,8 @@ set -A bytes 72 6B
 offsets=""
 
 case $size in
+	65306) #MST2_US_VW_PQ_P0367T cpu
+		set -A offsets 941E 949E ;;
 	68448) #MST2_EU_SK_PQ_P0359T cpu
 		set -A offsets A0FC A17C ;;
 	75208) #MST2_US_VW_PQ_P0478 cpu
