@@ -43,8 +43,8 @@ FileSize = "4675"
 Checksum = "2f0f11d53c2d7931436f03072809b2601b82d003"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-remapbuttons.esd"
-FileSize = "1849"
-Checksum = "cc4387d726cc16897b0730af4ad95cd9aa65ded6"
+FileSize = "1951"
+Checksum = "aeaab0b71cfff7cb18664a85727dc144601627a8"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-history.esd"
 FileSize = "5774"
@@ -397,6 +397,10 @@ Checksum = "21972102d59d11c5991a432659c3b2c0b650f25f"
 FileName = "/tsd/etc/persistence/esd/scripts/dump_all.sh"
 FileSize = "2474"
 Checksum = "3931ea704b5df6155e1f1d3649f03bc5d6b03271"
+
+FileName = "/tsd/etc/persistence/esd/scripts/rb_menu2nav.sh"
+FileSize = "1408"
+Checksum = "ea736bca861c42020646c573c4a9934127592ee2"
 
 FileName = "/tsd/etc/persistence/esd/scripts/custom_script.sh"
 FileSize = "450"
