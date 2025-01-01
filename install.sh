@@ -105,6 +105,7 @@ if [ -d "$DESTINATION$ESD_FOLDER" ]; then
 			echo "Error! Can't find $VOLUME/toolbox/gem/cpu/onlineservices/1/default/tsd/bin/system/GEM.jar"
 		fi
 	#fi
+	sync
 	if [ -z "$DESTINATION" ]; then
 		echo "Mounting system volume in read/only mode"
 		mount -t qnx6 -o remount,ro /dev/hd0t177 /
