@@ -152,12 +152,12 @@ case $size in
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 28618 289E0 3113C 380BC
 		fi ;;
-	1166348) #EU PQ/ZR 367/369/478/604
+	1166348) #EU PQ/ZR 140/367/369/478/604
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			case "$TRAIN" in
 				*0367*) #PQ/ZR 367
 					set -A offsets 1FB74 26AF4 42AAC 42E74 ;;
-				*0369*|*0370*|*04*) #ZR 369/480 17206, PQ 478/604 17217
+				*0140*|*0369*|*0370*|*04*) #ZR 140/369/480 17206, PQ 478/604 17217
 					set -A offsets 2499C 2B91C 4A1B8 4A580 ;;
 			esac
 		fi ;;
@@ -204,7 +204,7 @@ case $size in
 		if [ "$SYS" = "i.MX6_MIBSTD2_CPU_Board" ]; then
 			set -A offsets 1A4E0 2147F
 		fi ;;
-	1169168) #EU RoW PQ/ZR 448
+	1169168) #EU RoW PQ/ZR 448/475
 		if [ "$SYS" = "i.MX6_MIBSTD2PLUS_CPU_Board" ]; then
 			set -A offsets 2C048 32FE0 496F4 49ABC
 		fi ;;
