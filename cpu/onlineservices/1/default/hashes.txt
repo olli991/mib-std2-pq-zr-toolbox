@@ -367,8 +367,8 @@ FileSize = "1408"
 Checksum = "ea736bca861c42020646c573c4a9934127592ee2"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_mute2app.sh"
-FileSize = "1544"
-Checksum = "774f46d3896f897651efa1cd07ac38da0720519f"
+FileSize = "1612"
+Checksum = "4189d35bffd63cfa8575001cc46ae85a79216ccd"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_setup2app.sh"
 FileSize = "1546"
@@ -388,7 +388,7 @@ Checksum = "26df91b7fabd794714d3421553ebb1d8fa2f1ffe"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_voice2app.sh"
 FileSize = "1474"
-Checksum = "75acd4609a11fbe7dc4e8d3dacd6e196f7a8d336"
+Checksum = "85e23dc753ecfaffda6940c5ecaa88e44062597c"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_voice2car.sh"
 FileSize = "1737"

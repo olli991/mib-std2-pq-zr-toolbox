@@ -18,12 +18,12 @@ echo "ID: $TRAIN $SYS"
 size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
 
 echo "Checking $MIBPATH..."
-set -A bytes 32 04
+set -A bytes 72 32
 offsets=""
 
 case $size in
 	67854) #MST2_EU_XX_PQ/ZR_P0480T cpuplus
-		set -A offsets 8580 8CA4 ;;
+		set -A offsets 8980 8CA4 ;;
 esac
 
 if [ -n "$offsets" ]; then
