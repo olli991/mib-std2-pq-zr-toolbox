@@ -4,7 +4,7 @@ export MIBPATH=/tsd/hmi/HMI/res/configurationmanager.res
 export SDPATH=$TOPIC/configurationmanager.res
 export TYPE="file"
 
-echo "Remapping TRAFFIC to APP button..."
+echo "Remapping VOICE to CAR button..."
 echo
 
 # Include info utility
@@ -18,28 +18,12 @@ echo "ID: $TRAIN $SYS"
 size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
 
 echo "Checking $MIBPATH..."
-set -A bytes 72 05
+set -A bytes 32 04
 offsets=""
 
 case $size in
-	68446) #MST2_EU_XX_PQ_P0361T cpu
-		set -A offsets 9A96 A17A ;;
-	68382) #MST2_EU_XX_ZR_P0363/369T cpu
-		set -A offsets 9A56 A13A ;;
-	77892) #MST2_CN_XX_PQ_P0478T cpu
-		set -A offsets A318 A9FC ;;
-	78070) #MST2_EU_XX_ZR_P0480T cpu
-		set -A offsets A3CA AAAE ;;
-	78072) #MST2_EU_XX_ZR_P0468T cpu
-		set -A offsets AA3C AAB0 ;;
-	78098) #MST2_CN_SK_ZR_P0476T cpu
-		set -A offsets A3E6 AACA ;;
-	78200) #MST2_EU_VW_PQ_P0478/604T cpu
-		set -A offsets A44C AB30 ;;
-	78202) #MST2_EU_VW_PQ_P0480T cpu
-		set -A offsets A44E AB32 ;;
-	78254) #MST2_EU_VW_ZR_P0515/516T cpu
-		set -A offsets A482 AB66 ;;
+	67854) #MST2_EU_XX_PQ/ZR_P0480T cpuplus
+		set -A offsets 8580 8CA4 ;;
 esac
 
 if [ -n "$offsets" ]; then
@@ -68,6 +52,7 @@ if [ -n "$offsets" ]; then
 		# Mount system partition in read/only mode
 		. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
 		echo "Patch is applied. Please restart the unit."
+		echo "IMPORTANT! In coding of block 5F byte 24, set bit1=0"
 	else
 		echo "Patching failed!"
 	fi
