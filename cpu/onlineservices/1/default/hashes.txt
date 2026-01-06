@@ -67,8 +67,8 @@ FileSize = "1982"
 Checksum = "fb2c5b5766f419d2e84242a33f84207740513372"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-remapbuttons.esd"
-FileSize = "2055"
-Checksum = "6d3e5ac71147493772a85c994b758a8dd9aed19a"
+FileSize = "2161"
+Checksum = "19ba8576c3fd2bf7e252991a48fa89f77ee82c7e"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-skins.esd"
 FileSize = "1776"
@@ -393,6 +393,10 @@ Checksum = "85e23dc753ecfaffda6940c5ecaa88e44062597c"
 FileName = "/tsd/etc/persistence/esd/scripts/rb_voice2car.sh"
 FileSize = "1737"
 Checksum = "a2d78d61e9ee774c587aeac9fc78cb9484f7d082"
+
+FileName = "/tsd/etc/persistence/esd/scripts/rb_voice2mute.sh"
+FileSize = "1467"
+Checksum = "9c21f3f9369b5257b6cbe431406bec812de66fcf"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_voice2nav.sh"
 FileSize = "1667"
