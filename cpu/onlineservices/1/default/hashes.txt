@@ -368,7 +368,7 @@ Checksum = "ea736bca861c42020646c573c4a9934127592ee2"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_mute2app.sh"
 FileSize = "1612"
-Checksum = "4189d35bffd63cfa8575001cc46ae85a79216ccd"
+Checksum = "f95cb0877b103954e24ec465e495d0f69dead694"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_setup2app.sh"
 FileSize = "1546"

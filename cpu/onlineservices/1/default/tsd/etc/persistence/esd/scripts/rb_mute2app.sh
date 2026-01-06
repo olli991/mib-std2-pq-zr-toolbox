@@ -28,7 +28,7 @@ case $size in
 		set -A offsets 8AA4 8CA4 ;;
 	68038) #MST2_EU_XX_ZR_P0516T cpuplus
 		set -A offsets 8B5C 8D5C ;;
-	68038) #MST2_EU_VW_PQ_R0604T cpuplus
+	78200) #MST2_EU_VW_PQ_R0604T cpuplus
 		set -A offsets A930 AB30 ;;
 esac
 
