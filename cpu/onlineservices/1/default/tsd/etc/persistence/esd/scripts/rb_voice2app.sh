@@ -4,7 +4,7 @@ export MIBPATH=/tsd/hmi/HMI/res/configurationmanager.res
 export SDPATH=$TOPIC/configurationmanager.res
 export TYPE="file"
 
-echo "Remapping VOICE to CAR button..."
+echo "Remapping VOICE to APP button..."
 echo
 
 # Include info utility
@@ -22,6 +22,8 @@ set -A bytes 72 32
 offsets=""
 
 case $size in
+	67656) #MST2_EU_XX_PQ/ZR_P0480T cpuplus
+		set -A offsets 88BA 8BDE ;;
 	67854) #MST2_EU_XX_PQ/ZR_P0480T cpuplus
 		set -A offsets 8980 8CA4 ;;
 esac

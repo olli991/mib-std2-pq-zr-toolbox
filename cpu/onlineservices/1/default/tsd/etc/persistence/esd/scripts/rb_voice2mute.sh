@@ -4,7 +4,7 @@ export MIBPATH=/tsd/hmi/HMI/res/configurationmanager.res
 export SDPATH=$TOPIC/configurationmanager.res
 export TYPE="file"
 
-echo "Remapping VOICE to CAR button..."
+echo "Remapping VOICE to MUTE button..."
 echo
 
 # Include info utility
