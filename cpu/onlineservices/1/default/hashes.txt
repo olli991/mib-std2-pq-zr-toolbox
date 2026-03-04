@@ -79,8 +79,8 @@ FileSize = "2204"
 Checksum = "9cb8edb028e6de3b50c67ec60beb511aa6acf1a1"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-tools.esd"
-FileSize = "4970"
-Checksum = "5957d543b5114d633a833370671c08cebba02a78"
+FileSize = "5107"
+Checksum = "fe612f09df0b790425a5be6c865c25dcbe445158"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-uninstall.esd"
 FileSize = "1180"
@@ -141,6 +141,10 @@ Checksum = "4155ea29b7133cb2978b684f18370700f7d37f63"
 FileName = "/tsd/etc/persistence/esd/scripts/copy_onlineservices.sh"
 FileSize = "382"
 Checksum = "3d59c8ed3261b4983168d5deab45bc9c82c42afe"
+
+FileName = "/tsd/etc/persistence/esd/scripts/copy_poi.sh"
+FileSize = "2818"
+Checksum = "ea27a634bed0ca8cbc8225db8d639247da364c38"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_ringtones.sh"
 FileSize = "466"
@@ -303,8 +307,8 @@ FileSize = "517"
 Checksum = "8bf0659ce14e0b4c052b5064f5578b4709c9ea17"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_cp.sh"
-FileSize = "13013"
-Checksum = "b0ea6659c8066036dd5d37e384948f2561704c27"
+FileSize = "13023"
+Checksum = "d2d0fb1248b5519e93d679dd20f6516052a5657f"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_menumode.sh"
 FileSize = "637"
@@ -323,8 +327,8 @@ FileSize = "11247"
 Checksum = "a82ffeedca54c05c4151b18f8d0a456dd6d33afb"
 
 FileName = "/tsd/etc/persistence/esd/scripts/patch_swdl.sh"
-FileSize = "3473"
-Checksum = "31cefe90522b6d78fa8eeb9670d76b481c4b6c64"
+FileSize = "3481"
+Checksum = "eeafb31765382b96e2242041344d7d7f274a5950"
 
 FileName = "/tsd/etc/persistence/esd/scripts/privacy_cleanphonedata.sh"
 FileSize = "850"

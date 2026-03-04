@@ -106,6 +106,10 @@ script
 	label 	"Copy /maps_new from SD to navigation SD (16Gb~1,5hour)"
 
 script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/copy_poi.sh"
+	label 	"Install POI from USB/SD directly to filesystem"
+
+script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/update_poi.sh"
 	label 	"Copy POI update from USB drive to SD card for installation"
 
