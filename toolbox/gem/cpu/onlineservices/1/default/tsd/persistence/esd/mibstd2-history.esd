@@ -1,0 +1,202 @@
+###########################################################################################
+#
+# Custom Green Engineering Menu screen
+# Author:		YOX, Olli & lprot
+# Version:		1.5
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB STD2 Toolbox Main -> About -> History
+#
+###########################################################################################
+screen History About
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.5 Added a bunch of support for more trains"
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.4.2 Added more button remappings and bug fixing"
+    poll     0
+	
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.4.1 Added more button remappings and bug fixing"
+    poll     0
+	
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.4 Added buttonremapping and extended support"
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.3.3 Bugfix-Release and extended support"
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.3.2 Added navignore, bigfixing and extended support"
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.3.1 Bugfix to install.sh for USB2HSD installation."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.3 Adding USB2HSD and cpustd support as well as more compatibility."
+    poll     0
+	
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.2.1 Disable CP for 01xx firmware because it's not working well."
+    poll     0
+	
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.2 Small update for sanity checks and autoupdating GEM 4.3 and added FW."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.1.2 CP 01xx bugfix release"
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.1.1 Extended firmware support and some bugfixing / improvements."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.1 Extended firmware support. Improved detection. Permanent Telnet..."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.0.2 Changing support dumps for further development. Extended support."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.0.1 Extended firmware support in live patching scripts."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.0 Added functionality to patch CP directy from within toolbox menu."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.9 Added functionality to patch SWAP directy from within toolbox menu."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.8.3 Added support for US ZR 241 and EU ZR 369 in SWDL patcher."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.8.2 Fixed GEM update hashes. Added 516 Support for SWDL patcher."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.8.1 POI import, skin improvements, carplay and tts added, sanity and fixes."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.8 Added: eMMC/J5/iMX6 dumpers, SWDL patcher, improved RSDB update,"
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "        many other small fixes and improvements."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.7.1 Sysinfo is extended, console, telnet + ftp and qconn activations"
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "        are separated. Skins are now imported via single menu item."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "        Online services settings support. Many other small fixes and"
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "        improvements."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.7 Rearrangement of the main menu. Scripts optimisations and speed-ups."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "        Starting from this version the Toolbox is installed in one go."
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "        Sysinfo is added to Mib_info menu. Thanks to lprot for his work!"
+    poll     0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.6 Scripts now in factory folder. Added adaptation features. Added"
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "        MIB informations. Added additional features to the menus. Bugfixing."
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.51 Added alternative installer for old units with GEM 3.5."
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.5 Added several dump scripts. Add privacy screen. Script improvements."
+	poll 	0
+	
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.4 Direct patch for mirrorlink an navigation. Restore/ Backup function..."
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.3 Utilities added for global usage. Dump menu added. Update seperated."
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.2 Added installer, updater and uninstaller to GreenMenu. New install method."
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.11 Slightly restructured and added placeholder pages for future features."
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "v0.1 Initial version by YOX."
+	poll 	0

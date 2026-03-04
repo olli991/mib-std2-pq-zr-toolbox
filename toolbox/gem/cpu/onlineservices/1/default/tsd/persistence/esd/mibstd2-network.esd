@@ -1,0 +1,71 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author:		YOX, Olli & lprot
+# Version:		1.1
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB STD2 Toolbox Main -> Network
+#
+###########################################################################################
+screen Network MIBSTD2_Toolbox
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_telnet.sh"
+	label 	"Activate telnet and ftp access until the next reboot"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_qconn.sh"
+	label 	"Activate qconn access until the next reboot"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_console.sh"
+	label 	"Activate console access until the next reboot"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/deactivate_access.sh"
+	label 	"Deactivate telnet, ftp and qconn access"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_perm_access.sh"
+	label 	"Activate permanent telnet and console access"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/deactivate_perm_access.sh"
+	label 	"Deactivate permanent telnet and console access"
+
+choice
+	value 	per 0x01c100e7 54
+	label 	"Ethernet:"
+	poll 	500
+
+keyValue
+	value 	String per 0x01c100e7 76
+	label 	"Current MU IP addresses:"
+	poll 	100
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/test_internet.sh"
+	label 	"Test internet connection"
+
+keyValue
+    value   String sys 0x00000000 0
+	label 	""
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+	label 	"--- NOT TESTED ---"
+	poll 	0
+
+choice
+	value 	per 0x01b800e1 93
+	label 	"MOD via D-Link"
+	poll 	2000
+
+choice
+	value 	per 0x01b800e1 92
+	label 	"Allow any USB surfstick"
+	poll 	2000
