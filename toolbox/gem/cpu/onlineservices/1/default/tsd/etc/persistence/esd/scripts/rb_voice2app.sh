@@ -4,7 +4,7 @@ export MIBPATH=/tsd/hmi/HMI/res/configurationmanager.res
 export SDPATH=$TOPIC/configurationmanager.res
 export TYPE="file"
 
-echo "Remapping MUTE to APP button..."
+echo "Remapping VOICE to APP button..."
 echo
 
 # Include info utility
@@ -18,18 +18,14 @@ echo "ID: $TRAIN $SYS"
 size=$(ls -l $MIBPATH | awk '{print $5}' 2>/dev/null)
 
 echo "Checking $MIBPATH..."
-set -A bytes 72 58
+set -A bytes 72 32
 offsets=""
 
 case $size in
-	59520) #MST2_EU_XX_ZR_P0369T cpuplus
-		set -A offsets 80B0 82B0 ;;
-	67854) #MST2_EU_XX_PQ_P0480T cpuplus
-		set -A offsets 8AA4 8CA4 ;;
-	68038) #MST2_EU_XX_ZR_P0516T cpuplus
-		set -A offsets 8B5C 8D5C ;;
-	78200) #MST2_EU_VW_PQ_R0604T cpuplus
-		set -A offsets A930 AB30 ;;
+	67656) #MST2_EU_XX_PQ/ZR_P0480T cpuplus
+		set -A offsets 88BA 8BDE ;;
+	67854) #MST2_EU_XX_PQ/ZR_P0480T cpuplus
+		set -A offsets 8980 8CA4 ;;
 esac
 
 if [ -n "$offsets" ]; then
@@ -58,6 +54,7 @@ if [ -n "$offsets" ]; then
 		# Mount system partition in read/only mode
 		. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
 		echo "Patch is applied. Please restart the unit."
+		echo "IMPORTANT! In coding of block 5F byte 24, set bit1=0"
 	else
 		echo "Patching failed!"
 	fi

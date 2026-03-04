@@ -2,7 +2,7 @@
 # 
 # Custom Green Engineering Menu screen
 # Author:		YOX, Olli & lprot
-# Version:		1.4.2
+# Version:		1.5
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -14,7 +14,7 @@ screen MIBSTD2_Toolbox Main
 
 keyvalue
 	value	String sys 0x00000000 0
-	label	"Welcome to MIB STD2 PQ/ZR Toolbox v1.4.2"
+	label	"Welcome to MIB STD2 PQ/ZR Toolbox v1.5"
 	poll	0
 
 keyValue

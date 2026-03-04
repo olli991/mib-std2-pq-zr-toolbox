@@ -2,7 +2,7 @@
 #
 # Custom Green Engineering Menu screen
 # Author:		YOX, Olli & lprot
-# Version:		1.4.2
+# Version:		1.5
 # Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
 #
 ###########################################################################################
@@ -11,6 +11,11 @@
 #
 ###########################################################################################
 screen History About
+keyValue
+    value   String sys 0x00000000 0
+    label   "v1.5 Added a bunch of support for more trains"
+    poll     0
+
 keyValue
     value   String sys 0x00000000 0
     label   "v1.4.2 Added more button remappings and bug fixing"

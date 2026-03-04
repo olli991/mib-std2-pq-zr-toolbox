@@ -55,8 +55,16 @@ script
 	label 	"VOICE>CAR"
 
 script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/rb_voice2app.sh"
+	label 	"VOICE>APP"
+
+script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/rb_voice2nav.sh"
 	label 	"VOICE>NAV"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/rb_voice2mute.sh"
+	label 	"VOICE>MUTE"
 
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/restore_buttons.sh"
