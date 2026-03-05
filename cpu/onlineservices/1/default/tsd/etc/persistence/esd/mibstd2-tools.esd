@@ -181,3 +181,31 @@ keyValue
 script
 	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/util_reboot.sh"
 	label 	"Reboot unit"
+
+keyValue
+	value 	String sys 0x00000000 0
+	label 	""
+	poll 	0
+
+keyValue
+	value 	String sys 0x00000000 0
+	label 	"--- Auto-install from SD on startup ---"
+	poll 	0
+
+keyValue
+	value 	String sys 0x00000000 0
+	label 	"Reinstalls toolbox from SD card automatically after ESD update."
+	poll 	0
+
+keyValue
+	value 	String sys 0x00000000 0
+	label 	"SD card with toolbox must be inserted on first boot after update."
+	poll 	0
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_auto_install.sh"
+	label 	"Activate auto-install on startup"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/deactivate_auto_install.sh"
+	label 	"Deactivate auto-install on startup"
