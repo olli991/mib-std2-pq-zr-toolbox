@@ -42,6 +42,8 @@ case $size in
 		set -A offsets A44E AB32 ;;
 	78254) #MST2_EU_VW_ZR_P0515/516T cpu
 		set -A offsets A482 AB66 ;;
+	67854) #MST2_EU_SK_ZR_P0480T cpuplus
+		set -A offsets 85C0 8CA4 ;;
 esac
 
 if [ -n "$offsets" ]; then
