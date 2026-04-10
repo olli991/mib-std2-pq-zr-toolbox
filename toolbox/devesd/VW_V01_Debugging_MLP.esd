@@ -1,0 +1,146 @@
+#######################
+#version: 2
+#date: 20150227
+#Author: Marc Hoffmann (IAV, VW EECF/1 (extern.marc.hoffmann@volkswagen.de)
+#######################
+screen "Debugging MLP" Main
+#######################
+
+keyValue
+value String per 0x01c100e7 0
+label "---just for testing purposes of MIB logging protocol---"
+
+choice
+value per 0x01c100e7 54
+label "Ethernet:"
+poll 500
+
+choice
+value per 0x01c100e7 250
+label "Switch to MLP:"
+poll 500
+
+keyValue
+value String per 0x01c100e7 76
+label "MU ip adress:"
+poll 5000
+
+#######################
+screen "config" "Debugging MLP" 
+#######################
+
+keyValue
+value String per 0x01c100e7 0
+label "verbosity of trace domains"
+
+keyValue
+value String per 0x01c100e7 0
+label "-2=off -1=min 0=default 1=extended 2=custom"
+
+slider
+value per 0x01c100e7 200
+label "Unknown"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 201
+label "Addressbook"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 202
+label "Audio Management"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 203
+label "Connectivity"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 204
+label "Car Services"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 205
+label "Cluster Instrument"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 206
+label "HMI"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 207
+label "Media"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 208
+label "MirrorLink"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 209
+label "Navigation"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 210
+label "Online Services"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 211
+label "Phone"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 212
+label "Protocols"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 213
+label "RSE"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 214
+label "System"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 215
+label "SDS"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 216
+label "Tuner"
+poll 1000
+limits absolute -2 2
+
+slider
+value per 0x01c100e7 217
+label "Testmode"
+poll 1000
+limits absolute -2 2

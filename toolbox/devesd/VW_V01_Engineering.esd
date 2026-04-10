@@ -1,0 +1,119 @@
+#######################
+screen Engineering Main
+#######################
+#author1: Marc Hoffmann (IAV, VW EECF/1) (extern.marc.hoffmann@volkswagen.de)
+#author2: Hussein Karajoli (Bertrandt, VW EECF/1) (extern.hussein.karajoli@volkswagen.de)
+#version: 12
+#date: 20141208
+#######################
+
+table
+content per 0x01c100e7 53
+label "Display unit"
+poll 2000
+maxrows 1
+orientation horizontal
+columns ( "part no" String 300 ) ( "SW version" String 100 ) ( "HW version" String 100 )
+
+table
+content per 0x01c100e7 42
+label "versions front plate (only PQ)"
+poll 2000
+maxrows 1
+orientation horizontal
+columns ( "Main-uC" String 150 ) ( "Touch-uC" String 150 ) ( "prox-uC" String 150 ) ( "EEPROM version" String 150 )
+
+choice
+value per 0x01c100e7 17
+label "Activate LVDS test I/F (only PQ):"
+poll 1000
+
+table
+content per 0x01c100e7 2
+label "Hardware"
+poll 2000
+maxrows 5
+orientation horizontal
+columns ( "Name" String 150 ) ( "Status" String 120 ) ( "n/a" String 50 ) ( "n/a" String 50 ) ( "Temp" int 80 )
+
+slider
+value per 0x01c100e7 15
+label "manip. syst. temp."
+poll 500
+limits absolute -50 95
+
+slider
+value per 0x01c100e7 16
+label "manip. MOST FOT temp."
+poll 500
+limits absolute -50 95
+
+
+table
+content per 0x01c100e7 10
+label "Microphone voltage level"
+poll 1000
+maxrows 2
+orientation horizontal
+columns ( "Name" String 80 ) ( "Voltage_level" int 100 )
+
+keyValue
+value int per 0x01c100e7 14
+label "HW Fan [rpm]"
+poll 1000
+
+keyValue
+value int per 0x01a000d7 4
+label "Kl.30 vbat [V]"
+poll 500
+
+table
+content per 0x01c100e7 21
+label "eMMC: Memory in kB"
+poll 1000
+maxrows 1
+orientation horizontal
+columns ( "free" int 140 ) ( "used" int 140 ) ( "max" int 140 ) 
+
+keyValue
+value String per 0x01c100e7 25
+label "Gateway_time"
+
+choice
+value per 0x01c100e7 503
+label "manual SWDL:"
+poll 1000
+
+choice
+value per 0x01c100e7 28
+label "Persistence reset:"
+poll 1000
+
+choice
+value per 0x01c100e7 36
+label "Engineering reset:"
+poll 1000
+
+keyValue
+value int per 0x01c100e7 32
+label "Reset counter manual"
+
+keyValue
+value int per 0x01c100e7 33
+label "Reset counter auto"
+
+keyValue
+value String per 0x01c100e7 39
+label "operating hours:"
+poll 10000
+
+keyValue
+value String per 0x01c100e7 44
+label "distance counter:"
+poll 10000
+
+choice
+value per 0x01c100e7 43
+label "reset dist. counter:"
+poll 1000
+

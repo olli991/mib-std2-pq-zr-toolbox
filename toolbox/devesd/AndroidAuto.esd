@@ -1,0 +1,45 @@
+#######################
+screen AndroidAuto Connectivity
+#######################
+# Autor:	Stefan Bosse (EECM/4)
+# Email:	stefan.bosse1@volkswagen.de
+# Date:		20140924
+# Version:	01
+#######################
+
+keyValue
+value String per 0x01b800e1 178
+label "Receiver library version"
+poll 0
+
+choice
+value per 0x01b800e1 179
+label "Accept Video Focus Requests"
+
+choice
+value per 0x01b800e1 180
+label "DDS control"
+
+#######################
+screen "Drive Level" AndroidAuto
+######################
+
+choice
+value per 0x01b800e1 181
+label "No Video Playback"
+
+choice
+value per 0x01b800e1 182
+label "No Text Input"
+
+choice
+value per 0x01b800e1 183
+label "No Voice Input"
+
+choice
+value per 0x01b800e1 184
+label "No Setup/Configuration"
+
+choice
+value per 0x01b800e1 185
+label "Limit Displayed Message Length"

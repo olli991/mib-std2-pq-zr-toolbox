@@ -1,0 +1,137 @@
+#######################
+screen SDSSetup SDS
+#######################
+#  Author:	Struhs, Stefan (EEFH/1)
+#  Email:	stefan.struhs@volkswagen.de
+#  Date:	20130808
+#  Version:	155
+#######################
+
+
+BIOSCtrl
+	value			int per 0x01d700eb 1
+	label			"SDS target medium"
+	entry			"SD1"	0
+	entry			"SD2"	1
+	entry			"USB"	2
+	
+# TTS
+choice
+	value			per 0x01d700eb 30
+	label			"Use pre-recordings"
+	poll			0
+	
+
+# ASR auto adaption
+keyValue
+	value			int per 0x01d700eb 28
+	label			"Supervised profile adaption?"
+	poll			750
+    
+choice
+	value			per 0x01d700eb 33
+	label			"Unsupervised adaptations"
+	poll			0
+
+#button
+#	value			per 0x01d700eb 32 1
+#	label			"Reset unsupervised adaptations"
+#	poll			0
+
+choice
+	value			per 0x01d700eb 32
+	label			"Reset unsupervised adaptations"
+	poll			0
+	
+choice
+	value			hmi 0x01be00df 306
+	label			"Enable PTT barge-in"
+	poll			0
+	
+# High-Only
+choice
+	value			hmi 0x01be00df 36
+	label			"Enable voice barge-in"
+	poll			0
+
+# ASR
+slider
+	value			per 0x01d700eb 62
+	label			"ASR Garbage (ratio)"
+	poll			1500
+	limits			absolute  0 100
+
+# ASR
+slider
+	value			per 0x01d700eb 64	
+	# STS, 06.08.2013: changed label and limits according to avail. parameter
+	label			"ASR max time open (dsec)"
+	poll			1500
+	limits			absolute  1 300
+# ASR
+slider
+	value			per 0x01d700eb 65	
+	# STS, 06.08.2013: changed label and limits according to avail. parameter
+	label			"ASR leading silence (dsec)"
+	poll			1500
+	limits			absolute  1 100
+
+# ASR
+slider
+	value			per 0x01d700eb 66	
+	# STS, 06.08.2013: changed label and limits according to avail. parameter
+	label			"ASR max time utterance (dsec)"
+	poll			1500
+	limits			absolute  3 500
+
+# ASR
+slider
+	value			per 0x01d700eb 67	
+	# STS, 06.08.2013: changed label and limits according to avail. parameter
+	label			"ASR trailing silence (dsec)"
+	poll			1500
+	limits			absolute  1 100
+
+# ASR
+slider
+	value			per 0x01d700eb 68	
+	label			"ASR max n-best before postfilter (length)"
+	poll			1500
+	limits			absolute  1 100
+
+# ASR
+slider
+	value			per 0x01d700eb 69	
+	label			"ASR max n-best 2nd pass (length)"
+	poll			1500
+	limits			absolute  1 1000
+
+
+# ASR
+slider
+	value			per 0x01d700eb 70	
+	# STS, 06.08.2013: changed label and limits according to avail. parameter
+	label			"ASR N-Best accuracy-latency (1/100)"
+	poll			1500
+	limits			absolute  0 150
+
+# ASR
+slider
+	value			per 0x01d700eb 71	
+	# STS, 06.08.2013: changed label and limits according to avail. parameter
+	label			"ASR acoustic accuracy-latency (1/100)"
+	poll			1500
+	limits			absolute  0 100
+
+# ASR
+slider
+	value			per 0x01d700eb 72	
+	# STS, 06.08.2013: changed label and limits according to avail. parameter
+	label			"ASR word penalty (1/100)"
+	poll			1500
+	limits			absolute  0 30
+
+choice
+	value			per 0x01d700eb 73
+	label			"Extra events"
+	poll			1500

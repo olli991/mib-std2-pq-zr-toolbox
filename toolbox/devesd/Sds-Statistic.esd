@@ -1,0 +1,47 @@
+#######################
+screen SDSStatistik SDS
+#######################
+#  Author:	Struhs, Stefan (EEFK/4)
+#  Email:	stefan.struhs@volkswagen.de
+#  Date:	20131128
+#  Version:	156
+#######################
+
+#button
+#	value			per 0x01d700eb 13 1
+#	label			"Reset statistics"
+#	poll 			0
+
+choice
+	value			per 0x01d700eb 13
+	label			"Reset statistics"
+	poll 			1500 #change by St.Struhs 20131128 due to request of supplier TS
+
+table
+	content 		per 0x01d700eb 14
+	label 			"SDS errors"
+	maxrows 		1
+	orientation 	vertical
+	columns ( "Clips" int 80 ) ( "ASR" int 80 ) ( "VO" int 80 )
+	poll			1500	#change by M.Hoffmann 20130612 due to workaround for GEM bug, change by St.Struhs 20131128 cause poll-intervall was to long
+	
+keyValue
+	value			String per 0x01d700eb 63
+	label			"Last recognized command"
+	poll			1500 #change by St.Struhs 20131128 due to request of supplier TS
+
+table
+	content 		per 0x01d700eb 16
+	label			"Last recognition info"
+	maxrows 		1
+	orientation 	vertical
+	columns ( "Micro Voltage" int 100 ) ( "Confidence" int 100 ) ( "Volume level" String 100 ) ( "Signal Quality" int 100 ) ( "Reference Status" int 100 ) ( "FlashG2P" int 100 ) ( "FlashSDS" int 100 ) ( "FlashVO" int 100 )  ( "MemG2P" int 100 ) ( "MemSDS" int 100 ) ( "MemVO" int 100 ) 
+	poll			1500 #change by St.Struhs 20131128 due to request of supplier TS
+	
+table
+	content			per 0x01d700eb 27
+	label			"Available languages"
+	poll			1500 #change by St.Struhs 20131128 due to request of supplier TS
+ 	maxrows			30
+ 	orientation		horizontal
+ 	columns ( "Language" String 120 )

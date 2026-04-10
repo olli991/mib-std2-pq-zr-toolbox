@@ -1,0 +1,109 @@
+# Author:	Adam Wojtowicz
+# Date:		16.9.2015
+# Version:	V02
+
+################################
+screen AM_Smooth_Blend_Settings iboc
+################################
+
+
+###################################
+#AM Audio Control transition time #
+###################################
+
+slider
+value per 0x02c80122 100023
+label "AM BW lo2hi Trans Time (46.4ms)"
+limits absolute 0 330 
+
+slider
+value per 0x02c80122 100024
+label "AM BW hi2lo Trans Time (46.4ms)"
+limits absolute 0 22
+
+
+#########################################
+#AM Audio Control freq idx & hold count #
+#########################################
+
+slider
+value per 0x02c80122 100025
+label "AM BW Hold Count (46.4ms)"
+limits absolute 0 255
+
+slider
+value per 0x02c80122 100026
+label "AM BW lo Freq IDX (344.5Hz)"
+limits absolute 0 42
+
+slider
+value per 0x02c80122 100027
+label "AM BW hi Freq IDX (344.5Hz)"
+limits absolute 1 43
+
+#########################################
+#AM Audio Control freq step size		#
+#########################################
+slider
+value per 0x02c80122 100028
+label "AM BW  Freq Step Up Size"
+limits absolute 1 31
+
+slider
+value per 0x02c80122 100029
+label "AM BW  Freq Step Down Size"
+limits absolute 1 31
+
+###################################
+#AM Audio Control SNR Threshold   #
+###################################
+
+slider
+value per 0x02c80122 100030
+label "AM BW lo2hi SNR Thresh(0.1dB)"
+limits absolute 607 783
+
+slider
+value per 0x02c80122 100031
+label "AM BW hi2lo SNR Thresh(0.1dB)"
+limits absolute 607 783
+
+
+#################################
+#AM Audio Control MS transition #
+#################################
+
+slider
+value per 0x02c80122 100032
+label "AM M2S Trans Time (46.4ms)"
+limits absolute 110 220
+
+slider
+value per 0x02c80122 100033
+label "AM S2M Trans Time (46.4ms)"
+limits absolute 0 22
+
+slider
+value per 0x02c80122 100034
+label "AM MS StereoSep Max (%)"
+limits absolute 0 100
+
+slider
+value per 0x02c80122 100035
+label "AM MS Start BW Cutoff (344.5Hz)"
+limits absolute 0 43
+
+#########################
+#AM Smooth Blend Enable #
+#########################
+
+choice
+value per 0x02c80122 100036
+label "AM Smooth Blend Enable"
+
+#######################################
+# AM Mono to Stereo Transition Enable #
+#######################################
+choice
+value per 0x02c80122 100037
+label "AM Mono to Stereo Trans Enable"

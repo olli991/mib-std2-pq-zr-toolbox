@@ -1,0 +1,104 @@
+#######################
+screen Position-GNSS Navigation
+#######################
+# ns:  		0x01c500e6
+# Author:	Olaf Schmidt (EECF/2), Sebastian Salzer (EECF/2)
+# Email:	extern.olaf.schmidt@volkswagen.de; extern.sebastian.salzer@volkswagen.de
+# Date:		20140604
+# Version:	5
+#######################
+
+slider
+value per 0x01c500e6 149
+label "GNSS System"
+limits absulute 0 4
+
+
+Button
+value  per 0x01c500e6 160 1
+
+label "GNSS Reset"
+
+keyvalue
+value String per 0x01c500e6 151
+label "GNSS Longitude:"
+poll 1000
+
+keyvalue
+value String per 0x01c500e6 152
+label "GNSS Latitude:"
+poll 1000
+
+keyvalue
+value String per 0x01c500e6 153
+label "GNSS Z-Level:"
+poll 1000
+
+keyvalue
+value String per 0x01c500e6 159
+label "GNSS Calibration:"
+poll 1000
+
+keyvalue
+value String per 0x01c500e6 155
+label "GNSS Heading:"
+poll 1000 
+
+keyvalue
+value String per 0x01c500e6 109
+label "DR Heading:"
+poll 1000 
+
+keyvalue
+value String per 0x01c500e6 95
+label "GNSS Speed:"
+poll 1000 
+
+keyvalue
+value String per 0x01c500e6 156
+label "GNSS Date:"
+poll 1000 
+
+keyvalue
+value String per 0x01c500e6 157
+label "GNSS Time:"
+poll 1000 
+
+table
+content per 0x01c500e6 150
+label "GNSS Values"
+poll 1000
+maxrows 1
+orientation vertical
+columns ( "GNSS Type:" String 400 ) ( "ANT. Status:" int 400 ) ( "GNSS Fix Status:" int 400 ) ( "Visible Satellites" int 400 ) ( "Used Satellites" int 400 ) ( "Avaliable Sattelites" int 400 )
+
+table
+content per 0x01c500e6 154
+label "GNSS Quality"
+poll 1000
+maxrows 1
+orientation vertical
+columns ( "HDOP:" int 400 ) ( "PDOP:" int 400 ) ( "VDOP:" int 400 )
+
+## new by TSD T.Foerster @Olaf Schmidt: please adapt the id to the next free id of the navigation address space
+table
+content per 0x01c500e6 600
+label "GNSS SV"
+poll 1000
+maxrows 4
+orientation horizontal
+columns ( "SVID:" int 100 ) ( "SNR:" int 100 )
+
+
+table
+content per 0x01c500e6 162
+label "GNSS Deviation"
+poll 1000
+maxrows 1
+orientation vertical
+columns ( "Horizontal Deviation (mm):" int 400 ) ( "Vertical Deviation (mm):" int 400 ) ( "GNSS north speed (dm/s):" int 400 ) ( "GNSS east speed (dm/s):" int 400 ) ( "GNSS vertical speed (dm/s):" int 400 )
+
+
+
+
+

@@ -1,0 +1,115 @@
+#######################
+screen Power Main
+#######################
+#  Author:	Hille, Frank (extern, EECF/1)
+#  Email:	extern.frank.hille@volkswagen.de
+#  Date:	20141205
+#  Version:	10
+#######################
+
+#*	pwr_Enable timer
+#choice
+#value per 0x01f300fa 1
+#label "Enable timer"
+
+#*	pwr_time_standby
+slider
+value per 0x01f300fa 2
+limits absolute 0 60
+label "Standby (min)"
+poll 3000
+
+#*	pwr_time_mmi_off1
+slider
+value per 0x01f300fa 3
+limits absolute 0 120
+label "MMI Off1 (s)"
+poll 3000
+
+#*	pwr_time_mmi_off2
+slider
+value per 0x01f300fa 4
+limits absolute 0 120
+label "MMI Off2 (s)"
+poll 3000
+
+#*	pwr_time_sleep
+slider
+value per 0x01f300fa 5
+limits absolute 0 720
+label "Sleep (min)"
+poll 3000
+
+#*	pwr_time_power_down_delay
+slider
+value per 0x01f300fa 6
+limits absolute 0 90
+label "Power down delay (min)"
+poll 3000
+
+#*	pwr_time_standby_power_save
+slider
+value per 0x01f300fa 7
+limits absolute 0 120
+label "Power save (s)"
+poll 3000
+
+#*	pwr_time_swdl
+slider
+value per 0x01f300fa 8
+limits absolute 0 60
+label "SWDL (min)"
+poll 3000
+
+#*	pwr_time_bem_shutdown_suspend
+slider
+value per 0x01f300fa 9
+limits absolute 0 3600
+label "BEM shutdown susp. (s)"
+poll 3000
+
+#*	pwr_time_phone_call_limitation
+slider 
+value per 0x01f300fa 15
+limits absolute 0 60 
+label "Phonecall timer (min)" 
+poll 3000 
+
+#*	MIB_High pwr_shutdown_delay, MIB_Pase "Enable DeadDetection" True means enabled, False means disabled. Default is enabled
+#choice
+#value per 0x01f300fa 16
+#label "Enable DeadDetection"
+
+#*	pwr_watchdog_gw_enabled
+choice
+value per 0x01f300fa 10
+label "GW-Watchdog"
+poll 3000
+#pwr_watchdog_gw_enabled
+
+#*	pwr_watchdog_sys_enabled
+choice
+value per 0x01f300fa 11
+label "System-Watchdog"
+poll 3000
+
+#*	pwr_watchdog_q_enabled
+choice
+value per 0x01f300fa 12
+label "Q-Watchdog"
+poll 3000
+
+#*	pwr_restore
+choice
+value per 0x01f300fa 13
+label "Restore Default Timer"
+
+#values are taken from car interface
+#requirement MIB-2_RQ_PWR_1728
+table
+content per 0x01a000d7 3
+label "clamp_state"
+poll 1000
+maxrows 1
+orientation horizontal
+columns ( "cl S" int 60 ) ( "cl 15" int 60 ) ( "cl 58d" int 60 ) ( "cl 58s" int 60 )

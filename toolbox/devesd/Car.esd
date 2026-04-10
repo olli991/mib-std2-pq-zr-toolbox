@@ -1,0 +1,19 @@
+###############
+screen Car Main
+###############
+#  Author:	May, Stefan (EECF/1)
+#  Modified: Hoffmann, Marc (EECF/1) corrction
+#  Email:	extern.stefan.may@volkswagen.de
+#  Date:	20130705
+#  Version:	3
+################
+
+button
+value per 0x01a000d7 199 1
+label "Store CAR-devicelists (BAP/CAN) & devicebusassignment"
+poll 1000
+
+button
+value per 0x01a000d7 198 1
+label "Store CAR menuoperation"
+poll 1000

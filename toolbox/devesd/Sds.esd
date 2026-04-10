@@ -1,0 +1,55 @@
+#######################
+screen SDS Main
+#######################
+#  Author:	Struhs, Stefan (EEFH/1)
+#  Email:	stefan.struhs@volkswagen.de
+#  Date:	20130313
+#  Version:	151
+#######################
+
+# --- Version ---
+keyValue
+	value			String per 0x01d700eb 2
+	label			"Lingware Version"
+	poll			750
+
+keyValue
+	value			String per 0x01d700eb 3
+	label			"TTS Engine Version"
+	poll			750
+
+keyValue
+	value			String per 0x01d700eb 4
+	label			"Speech Component Version"
+	poll			750
+
+keyValue
+	value			String per 0x01d700eb 7
+	label			"ASR Engine Version"
+	poll			750
+	
+BIOSCtrl
+	value			int per 0x01d700eb 1
+	label			"SDS target medium"
+	entry			"SD1"	0
+	entry			"SD2"	1
+	entry			"USB"	2
+	
+# languages
+keyValue
+	value			String per 0x01d700eb 24
+	label			"Active SDS language"
+	poll			750
+
+keyValue
+	value			String per 0x01d700eb 25
+	label			"Active TTS language"
+	poll			750
+	
+#STS, 23.08.2012: KPMweb#5701646, changed on request of Thorsten Ungeraten from PASE from 0x01be00df/308 to 0x44d/11
+#STS, 07.03.2013: on behalf of Tobias Boettger changed key from 11 to 10 for testing
+#STS, 13.03.2013: on behalf of Tobias Boettger changed Namespace + Key
+keyValue		 
+	value			String hmi 0x01be00df 10
+	label			"HMI language:"
+	poll			750

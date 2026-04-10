@@ -1,0 +1,10 @@
+device=cpu
+
+name.default="Engineers personal update"
+name.de_DE="Des Ingenieurs persönliche Aktualisierung"
+Bname.en_GB="Engineers personal update"
+name.en_SA="Engineers personal update"
+version.default=version 111.222.333.44
+version.de_DE=version 111.222.333.44
+version.en_GB=version 111.222.333.44
+version.en_SA=version 111.222.333.44

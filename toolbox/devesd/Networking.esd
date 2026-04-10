@@ -1,0 +1,43 @@
+#######################
+screen Networking Connectivity
+#######################
+# Autor:	Thomas Grummel (EECM/4)
+# Email:	thomas.grummel@volkswagen.de
+# Date:		20130923
+# Version:	06 
+#######################
+
+keyValue
+value String per 0x01b800e1 90
+label "USB Vendor ID Port 1"
+poll 2000
+
+keyValue
+value String per 0x01b800e1 91
+label "USB Device ID Port 1"
+poll 2000
+
+keyValue
+value String per 0x01b800e1 166
+label "USB Vendor ID Port 2"
+poll 2000
+
+keyValue
+value String per 0x01b800e1 167
+label "USB Device ID Port 2"
+poll 2000
+
+choice
+value per 0x01b800e1 92
+label "Allow any USB surfstick"
+poll 2000
+
+choice
+value per 0x01b800e1 168
+label "Traffic shaping active"
+poll 2000
+
+choice
+value per 0x01b800e1 93
+label "MOD via D-Link"
+poll 2000

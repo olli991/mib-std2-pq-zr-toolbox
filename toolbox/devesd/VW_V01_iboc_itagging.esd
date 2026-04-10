@@ -1,0 +1,34 @@
+# Author:	Jorge Mariano
+# Date:	24.04.2012
+# Version:	V01
+# Based on: MIB_Engineering_Diag_Key_Value_Pairs_vxxx.xls
+
+#######################
+screen iTAGGING iboc
+#######################
+
+###Tagging###
+
+###################
+#Tagging Readyness#
+###################
+
+table
+content per 0x02c80122 144
+label "iTagging Readyness"
+poll 700
+maxrows 1
+orientation horizontal
+columns ( "ITAGGING_DATA " int 100 ) ( "AMBIGIOUS_DATA " int 100 )
+
+################
+#iTunes Tagging#
+################
+
+table
+content per 0x02c80122 145
+label "ID3 iTunes Tagging"
+poll 700
+maxrows 1
+orientation vertical
+columns ( "TITLE" String 180 ) ( "ARTIST" String 180 ) ( "ALBUM" String 180 ) ( "GENRE" String 180 ) ( "ITUNESAFFILIATEID" String 180 ) ( "ITUNESSONGID" String 180 ) ( "STOREFRONTID" String 180 ) ( "STATIONURL" String 180 ) ( "PODCASTFEEDURL" int 180 ) ( "UNKNOWNDATA" String 180 )

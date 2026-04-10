@@ -1,0 +1,91 @@
+#######################
+# Author:	Mario Geier, mario.geier@volkswagen.de
+# Date:	2015-11-03
+# Version:	132
+#######################
+#######################
+screen Media Main
+#######################
+# ns: 0x01d600ea
+#######################
+
+table
+content per 0x01d600ea 1
+label "Connected Devices"
+poll 1000
+maxrows 1
+orientation horizontal
+columns ( "Name" String 300 ) ( "Class" String 100 ) ( "Version" String 100 ) ( "Mode" String 100 ) 
+
+#MPL = 6
+keyValue
+value int per 0x01d600ea 6
+label "Repeat Scope Settings"
+poll 3000
+
+#MPL = 7
+slider
+value per 0x01d600ea 7
+limits absolute 5 20
+label "Mix History"
+poll 3000
+
+#MPL = 8
+keyValue
+value int per 0x01d600ea 8
+label "MIX ON/OFF"
+poll 3000
+
+#MPL = 18
+keyValue
+value int per 0x01d600ea 18
+label "Volume SEEK_FW_BW"
+poll 3000
+
+#MPL = 25
+table
+content per 0x01d600ea 25
+label "FileInfo_CODEC"
+poll 1000
+maxrows 1
+orientation horizontal
+columns ( "Codec" String 150 ) ( "Samplerate" int 150 ) ( "Bitrate" int 150 ) ( "Mono_Stereo" int 150 ) 
+
+#######################
+screen USB-Certification Media
+#######################
+# ns: 0x01d600ea
+#######################
+
+keyValue
+    value   String per 0x01d600ea 0
+    label   "== DEVICE MODE ==     (Car Interface in Host Mode)"
+
+script
+   value    sys 1 0x0100 "/ffs/sbin/usbcert_testPacketMode_port1.sh"
+   label   "Enable USB Signal-Integrity Test on USB1 (TestPacketMode)"
+
+script
+   value    sys 1 0x0100 "/ffs/sbin/usbcert_testPacketMode_port2.sh"
+   label   "Enable USB Signal Integrity Test on USB2 (TestPacketMode)"
+
+script
+   value    sys 1 0x0100 "/ffs/sbin/usbcert_testForceEnable_port1.sh"
+   label   "Enable USB Signal-Integrity Test on USB1 (TestForceEnable)"
+   
+script
+   value    sys 1 0x0100 "/ffs/sbin/usbcert_testForceEnable_port2.sh"
+   label   "Enable USB Signal-Integrity Test on USB2 (TestForceEnable)"
+
+    
+keyValue
+    value   String per 0x01d600ea 0
+    label   "== HOST MODE ==     (Car Interface in Device Mode)"
+    
+script
+   value    sys 1 0x0100 "/ffs/sbin/usbcert_signalIntegrity_port1.sh"
+   label   "Prepare USB Signal Integrity Test on USB 1"
+   
+script
+   value    sys 1 0x0100 "/ffs/sbin/usbcert_signalIntegrity_port2.sh"
+   label   "Prepare USB Signal Integrity Test on USB 2"

@@ -1,0 +1,17 @@
+#######################
+screen CarPlay Connectivity
+#######################
+# Autor:	Stefan Bosse (EECM/4)
+# Email:	stefan.bosse1@volkswagen.de
+# Date:		20140924
+# Version:	02
+#######################
+
+keyValue
+value String per 0x01b800e1 176
+label "Communication Plugin version"
+poll 0
+
+choice
+value per 0x01b800e1 177
+label "DDS control"

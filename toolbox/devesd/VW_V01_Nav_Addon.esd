@@ -1,0 +1,65 @@
+#######################
+screen Add-On Navigation
+#######################
+# ns:  		0x01c500e6
+# Author:	Olaf Schmidt (EECF/2), Sebastian Salzer (EECF/2)
+# Email:	extern.olaf.schmidt@volkswagen.de; extern.sebastian.salzer@volkswagen.de
+# Date:		20140604
+
+# Version:	5
+#######################
+
+Button
+value  per 0x01c500e6 55 1
+label "Export memory to SD"
+
+Button
+value  per 0x01c500e6 56 1
+label "Import memory from SD"
+
+Button
+value  per 0x01c500e6 71 1
+label "Export Precompiled Route"
+
+Button
+value  per 0x01c500e6 72 1
+label "Import Precompiled Route"
+
+choice
+value  per 0x01c500e6 70
+label "Record Precompiled Route"
+
+choice
+value  per 0x01c500e6 63
+label "Enable proximity alert"
+
+slider
+value per 0x01c500e6 64
+label "Proximity Range"
+limits absolute 0 255
+
+choice
+value  per 0x01c500e6 60
+label "Enable Navigation Trace2SD"
+
+choice
+value  per 0x01c500e6 65
+label "Enable Position Trace2SD"
+
+choice
+value  per 0x01c500e6 69
+label "Enable TMC Trace2SD"
+
+choice
+value  per 0x01c500e6 166
+label "Show frame rate in map"
+
+
+
+
+
+
+
+
+
+
