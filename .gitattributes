@@ -1,6 +1,0 @@
-# Declare files that will always have LF line endings on checkout.
-*.txt text eol=crlf
-*.sh text eol=lf
-*.xml text eol=lf
-*.ini text eol=lf
-*.py text eol=lf
