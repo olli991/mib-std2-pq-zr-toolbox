@@ -10,6 +10,12 @@ assignees: lprot
 
 **Make sure you've ran one of the remap-functions BEFORE you open up a new issue. This is mandatory for the files you need for this issue**
 
+> Even if the remap failed with an `Unknown file size detected` error, the toolbox still saved your original `configurationmanager.res` into the `/backup/buttons` folder on the SD card — that is the file to attach below.
+
+
+**What is your firmware train?**
+Add your firmware-train like i.e. `MST2_EU_SK_ZR_P0480T` (shown as `ID:` in the remap output). This lets the maintainer label the new file size in the script.
+
 
 **Describe your desired behaviour / problem:**
 What button do you want to remap and what new function should be available?
