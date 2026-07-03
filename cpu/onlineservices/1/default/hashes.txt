@@ -395,8 +395,8 @@ FileSize = "1470"
 Checksum = "b8e87fff7397295958219a3825726ed4a9ab223e"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_traffic2app.sh"
-FileSize = "2067"
-Checksum = "e09e088f7f056f6c2c97f935946c1b8a2b002c07"
+FileSize = "2135"
+Checksum = "35dd50ae35e3199b10c972fdfee0b39a1ca57c43"
 
 FileName = "/tsd/etc/persistence/esd/scripts/rb_voice2app.sh"
 FileSize = "1545"
