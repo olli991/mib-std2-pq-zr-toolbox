@@ -8,6 +8,8 @@ assignees: lprot
 
 ---
 
+**Note:** This template is for **CP / SWAP / SWDL** patching only. If you got the error while **remapping buttons**, do not use this template — the support-dump does not contain the file needed. Use the [*Button Remap addition / firmware not supported*](https://github.com/olli991/mib-std2-pq-zr-toolbox/issues/new?assignees=lprot&labels=&projects=&template=button-remap-addition---firmware-not-supported.md&title=) template instead and attach the `configurationmanager.res` from the SD card `/backup/buttons` folder.
+
 **Which patching process showed the `unknown filesize` error?**
 Please list which patching process showed the error (CP, SWAP, SWDL)
 
