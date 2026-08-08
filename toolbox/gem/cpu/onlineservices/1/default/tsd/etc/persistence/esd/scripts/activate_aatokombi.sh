@@ -7,6 +7,7 @@ JAR_DIR="/tsd/hmi/HMI/jar/"
 JAR=AAtoKombi.jar
 HMI_SH=/tsd/hmi/runHMI.sh
 BU=/tsd/hmi/runHMI.sh.bak
+HOOK_SH=/tsd/etc/persistence/esd/scripts/check_reset.sh
 GAL_DIR=/tsd/lib/sal/gal
 GAL=libext.google.gal.receiver.so
 GAL_BU=$GAL_DIR/$GAL.aatokombi.bak
@@ -48,6 +49,10 @@ if [ ! -f "$GAL_DIR/$GAL" ] && [ ! -f "$GAL_BU" ]; then
 	echo "Aborted. Stock $GAL_DIR/$GAL not found and no backup exists — cannot guarantee a safe restore."
 	exit 1
 fi
+if [ ! -f "$HOOK_SH" ]; then
+	echo "Aborted. $HOOK_SH missing on unit -- toolbox install looks incomplete."
+	exit 1
+fi
 
 # Mount system partition read/write
 . /tsd/etc/persistence/esd/scripts/util_mount.sh
@@ -86,15 +91,29 @@ if [ -z "$DST_SZ" ] || [ "$SRC_SZ" != "$DST_SZ" ]; then
 fi
 echo "GAL receiver patched and verified (size $DST_SZ)."
 
-# --- 3) only now patch runHMI.sh (so a failure above never leaves a dangling bootclasspath) ---
+# --- 3) reset hook FIRST (safety net goes in before the risky patch) ---
+if ! grep -q 'check_reset.sh' ${HMI_SH}; then
+	if [ ! -f $BU ]; then
+		echo "Backup $HMI_SH"
+		cp $HMI_SH $BU 2>&1
+		. /tsd/etc/persistence/esd/scripts/util_backup.sh
+	fi
+	echo "Adding AAtoKombi reset hook to $HMI_SH"
+	sed -i "1a\ksh $HOOK_SH &" $HMI_SH
+	echo "Reset hook installed."
+else
+	echo "Reset hook already present in $HMI_SH."
+fi
+
+# --- 4) only now patch runHMI.sh bootclasspath (so a failure above never leaves a dangling bootclasspath) ---
 if ! grep -q '$BOOTCLASSPATH -Xbootclasspath/p:$MIBJAR/AAtoKombi.jar' ${HMI_SH}; then
 	if [ ! -f $BU ]; then
 		echo "Backup $HMI_SH"
 		cp $HMI_SH $BU 2>&1
+		# Make backup to SD
+		. /tsd/etc/persistence/esd/scripts/util_backup.sh
 	fi
 	echo "Patching $HMI_SH to load $JAR via bootclasspath"
-	# Make backup to SD
-	. /tsd/etc/persistence/esd/scripts/util_backup.sh
 	sed -i 's/\(^BOOTCLASSPATH=.*$\)/\1\nBOOTCLASSPATH="$BOOTCLASSPATH -Xbootclasspath\/p:$MIBJAR\/AAtoKombi.jar"/' $HMI_SH
 	echo "$HMI_SH is patched."
 else
@@ -106,5 +125,6 @@ fi
 
 echo
 echo "Completed. Please reboot the unit to apply changes."
-echo "If something does not work as expected, use the Disable function or restore."
+echo "If something does not work as expected, use the Disable function or restore,"
+echo "or drop an empty file named 'reset' at the root of sd card and reboot."
 exit 0

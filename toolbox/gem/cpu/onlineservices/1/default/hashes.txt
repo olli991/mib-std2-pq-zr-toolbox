@@ -71,8 +71,8 @@ FileSize = "1190"
 Checksum = "d4b7981ca14b363512cbcd8150217b4822f2b1fb"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-nav.esd"
-FileSize = "3115"
-Checksum = "7999ff9342990d49a9539f699600a37730c179fa"
+FileSize = "3237"
+Checksum = "80e0e43dcf853012eab887a87599ab539a309986"
 
 FileName = "/tsd/etc/persistence/esd/mibstd2-network.esd"
 FileSize = "1982"
@@ -98,6 +98,10 @@ FileName = "/tsd/etc/persistence/esd/mibstd2-uninstall.esd"
 FileSize = "1180"
 Checksum = "3f1afc909861c8096290f4c197e2c5adb473d7fa"
 
+FileName = "/tsd/etc/persistence/esd/scripts/activate_aatokombi.sh"
+FileSize = "4814"
+Checksum = "d419c17c5afe95dd5816cf635877f9c343eff6b5"
+
 FileName = "/tsd/etc/persistence/esd/scripts/activate_auto_install.sh"
 FileSize = "1314"
 Checksum = "129e740d37e2d3e087fa6dfe97d4ff0cefb8fcae"
@@ -110,18 +114,6 @@ FileName = "/tsd/etc/persistence/esd/scripts/activate_navignore.sh"
 FileSize = "2125"
 Checksum = "5815dda4816e333b14f0b9e81bbd828e489908fc"
 
-FileName = "/tsd/etc/persistence/esd/scripts/activate_aatokombi.sh"
-FileSize = "4131"
-Checksum = "9b5dfb042b27b839887392989724070012c23aa6"
-
-FileName = "/tsd/etc/persistence/esd/scripts/deactivate_aatokombi.sh"
-FileSize = "2157"
-Checksum = "f45f19452cd64a372e7dcd3495c4ba103fef0927"
-
-FileName = "/tsd/etc/persistence/esd/scripts/dump_aatokombi_sources.sh"
-FileSize = "2167"
-Checksum = "22297d638bf03dbb53bc7a6a1e77aa8fdef7f216"
-
 FileName = "/tsd/etc/persistence/esd/scripts/activate_perm_access.sh"
 FileSize = "1558"
 Checksum = "af47416aab60d06910cca9bca46384c7f3d6c7a6"
@@ -133,6 +125,10 @@ Checksum = "aceb8f764ed992df53fc9f04436ec15e9bbe339f"
 FileName = "/tsd/etc/persistence/esd/scripts/activate_telnet.sh"
 FileSize = "507"
 Checksum = "f557996fc5ca23c8c5a0eebb5191458de3160dc8"
+
+FileName = "/tsd/etc/persistence/esd/scripts/check_reset.sh"
+FileSize = "1694"
+Checksum = "b37edd4c21f94f954c78de094a3d3e0309569c1b"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_carplayicon.sh"
 FileSize = "473"
@@ -210,6 +206,10 @@ FileName = "/tsd/etc/persistence/esd/scripts/custom_script.sh"
 FileSize = "450"
 Checksum = "a9a9b8453414c70699ecaad9bb2339f4ac8d14ed"
 
+FileName = "/tsd/etc/persistence/esd/scripts/deactivate_aatokombi.sh"
+FileSize = "2389"
+Checksum = "ef3eb69417d96265c3088438120e6d3405f4b796"
+
 FileName = "/tsd/etc/persistence/esd/scripts/deactivate_access.sh"
 FileSize = "281"
 Checksum = "0494318adf43bedf4a19bd5d67764485cc71bba1"
@@ -233,6 +233,10 @@ Checksum = "c1f12f8164dcf6e25f4f5b033f502f8519ba1194"
 FileName = "/tsd/etc/persistence/esd/scripts/delete_poi.sh"
 FileSize = "298"
 Checksum = "8ced343f9a289e03cef245e4d4ab31cfe4633b35"
+
+FileName = "/tsd/etc/persistence/esd/scripts/dump_aatokombi_sources.sh"
+FileSize = "2167"
+Checksum = "22297d638bf03dbb53bc7a6a1e77aa8fdef7f216"
 
 FileName = "/tsd/etc/persistence/esd/scripts/dump_all.sh"
 FileSize = "2474"

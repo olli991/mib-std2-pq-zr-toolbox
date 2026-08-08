@@ -6,3 +6,5 @@
 # Custom stuff
 /custom/java/AAtoKombi.jar
 /custom/sal/libext.google.gal.receiver.so
+toolbox/gem/cpu/onlineservices/1/default/hashes_calc.py
+cpu/onlineservices/1/default/hashes_calc.py
