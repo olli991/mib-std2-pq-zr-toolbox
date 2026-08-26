@@ -127,8 +127,8 @@ FileSize = "507"
 Checksum = "f557996fc5ca23c8c5a0eebb5191458de3160dc8"
 
 FileName = "/tsd/etc/persistence/esd/scripts/check_reset.sh"
-FileSize = "1694"
-Checksum = "b37edd4c21f94f954c78de094a3d3e0309569c1b"
+FileSize = "2270"
+Checksum = "a2242dc8966c5e7aa56548aaad694a1b4de94510"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_carplayicon.sh"
 FileSize = "473"
