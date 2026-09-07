@@ -98,7 +98,7 @@ if ! grep -q 'check_reset.sh' ${HMI_SH}; then
 		cp $HMI_SH $BU 2>&1
 		. /tsd/etc/persistence/esd/scripts/util_backup.sh
 	fi
-	echo "Adding AAtoKombi reset hook to $HMI_SH"
+	echo "Adding reset hook to $HMI_SH"
 	sed -i "1a\ksh $HOOK_SH &" $HMI_SH
 	echo "Reset hook installed."
 else

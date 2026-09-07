@@ -28,14 +28,6 @@ else
 	echo "$HMI_SH has no AAtoKombi entry."
 fi
 
-# --- remove the reset-hook source line ---
-if grep -q 'check_reset.sh' ${HMI_SH} 2>/dev/null; then
-	sed -i '/check_reset.sh/d' $HMI_SH
-	echo "Removed reset hook entry from $HMI_SH"
-else
-	echo "$HMI_SH has no reset hook entry."
-fi
-
 if [ -f $JAR_DIR$JAR ]; then
 	rm -f $JAR_DIR$JAR
 	echo "$JAR removed from unit."

@@ -6,21 +6,26 @@ echo
 JAR_DIR="/tsd/hmi/HMI/jar/"
 JAR=NavActiveIgnore.jar
 HMI_SH=/tsd/hmi/runHMI.sh
-BU=/tsd/hmi/runHMI.sh.bak
 
 # Mount system partition in read/write mode
 . /tsd/etc/persistence/esd/scripts/util_mount.sh
 
 echo -ne "-- Remove NavActiveIgnore\n" 
+# Surgically delete ONLY our own line. We deliberately do NOT restore the shared
+# /tsd/hmi/runHMI.sh.bak backup, so other mods that patch runHMI.sh and their 
+# restore point stay intact.
+if grep -q 'NavActiveIgnore.jar' ${HMI_SH} 2>/dev/null; then
+	sed -i '/NavActiveIgnore.jar/d' $HMI_SH
+	echo "Removed NavActiveIgnore bootclasspath entry from $HMI_SH."
+else
+	echo "$HMI_SH has no NavActiveIgnore entry."
+fi
+
 if [ -f $JAR_DIR$JAR ]; then
 	rm -rf $JAR_DIR$JAR 2>&1
 	echo "NavActiveIgnore.jar removed.\n" 
 else
 	echo -ne "File not found - navignore patch is not installed.\n"
-fi
-if [ -f $BU ]; then
-	cp -f $BU $HMI_SH 2>&1
-	echo "Original $HMI_SH has been restored.\n" 
 fi
 
 # Mount system partition in read/only mode

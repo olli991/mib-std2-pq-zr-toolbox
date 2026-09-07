@@ -87,8 +87,8 @@ FileSize = "1180"
 Checksum = "3f1afc909861c8096290f4c197e2c5adb473d7fa"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_aatokombi.sh"
-FileSize = "4814"
-Checksum = "d419c17c5afe95dd5816cf635877f9c343eff6b5"
+FileSize = "4804"
+Checksum = "38e9c9af8f6becb7f380b301a4df8a46b003b14a"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_auto_install.sh"
 FileSize = "1314"
@@ -99,8 +99,8 @@ FileSize = "617"
 Checksum = "8c4d61ed83a28fac358e7e37d87c0df55eb97a89"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_navignore.sh"
-FileSize = "2125"
-Checksum = "5815dda4816e333b14f0b9e81bbd828e489908fc"
+FileSize = "2780"
+Checksum = "345f5f9c9dcd63823827b5c1d615ffbef559899b"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_perm_access.sh"
 FileSize = "1558"
@@ -195,8 +195,8 @@ FileSize = "450"
 Checksum = "a9a9b8453414c70699ecaad9bb2339f4ac8d14ed"
 
 FileName = "/tsd/etc/persistence/esd/scripts/deactivate_aatokombi.sh"
-FileSize = "2389"
-Checksum = "ef3eb69417d96265c3088438120e6d3405f4b796"
+FileSize = "2157"
+Checksum = "f45f19452cd64a372e7dcd3495c4ba103fef0927"
 
 FileName = "/tsd/etc/persistence/esd/scripts/deactivate_access.sh"
 FileSize = "281"
@@ -207,8 +207,8 @@ FileSize = "634"
 Checksum = "6ff5fd79b4b03eb15814ed067fc57564ae13e7ae"
 
 FileName = "/tsd/etc/persistence/esd/scripts/deactivate_navignore.sh"
-FileSize = "823"
-Checksum = "f226e8b392b819d706f32d3d926932ee0c060d6e"
+FileSize = "1115"
+Checksum = "c69e1653a4318d95e4c661d0d3189cacd28e6b95"
 
 FileName = "/tsd/etc/persistence/esd/scripts/deactivate_perm_access.sh"
 FileSize = "963"
