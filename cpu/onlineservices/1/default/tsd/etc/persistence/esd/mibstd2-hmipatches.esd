@@ -1,0 +1,69 @@
+###########################################################################################
+# 
+# Custom Green Engineering Menu screen
+# Author:		n0Live
+# Version:		1.0
+# Disclaimer:   THIS SCREEN WILL VOID YOUR WARRANTY
+#
+###########################################################################################
+#
+# Main -> MIB STD2 Toolbox Main -> Customization -> HMI patches
+#
+###########################################################################################
+screen HMI_patches Customization
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Java patches for the HMI. Jar files are taken from custom/java on SD card."
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "Patches depend on HMI version. Reboot the unit after enabling/disabling."
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+	label	""
+	poll    0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "SpeedWarnFix: restores the 'Speed warning' item in the cluster MFA menu"
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "and its setting in the HMI (lost e.g. after head unit swap) on every boot."
+	poll 	0
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_speedwarnfix.sh"
+	label 	"Enable SpeedWarnFix"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/deactivate_speedwarnfix.sh"
+	label 	"Disable SpeedWarnFix"
+
+keyValue
+    value   String sys 0x00000000 0
+	label	""
+	poll    0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "QiChargeIcon: shows wireless charging status (active/inactive) icon in"
+	poll 	0
+
+keyValue
+    value   String sys 0x00000000 0
+    label   "the status bar, like on MHI2. Requires installed and coded Qi charger."
+	poll 	0
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/activate_qichargeicon.sh"
+	label 	"Enable QiChargeIcon"
+
+script
+	value 	sys 1 0x0100 "/tsd/etc/persistence/esd/scripts/deactivate_qichargeicon.sh"
+	label 	"Disable QiChargeIcon"

@@ -46,6 +46,10 @@ FileName = "/tsd/etc/persistence/esd/mibstd2-history.esd"
 FileSize = "5898"
 Checksum = "f6e18fd2fe3ea773e5deadce2f8c145915c43dca"
 
+FileName = "/tsd/etc/persistence/esd/mibstd2-hmipatches.esd"
+FileSize = "1974"
+Checksum = "5002cca7ddeeffd0addab034d06f12a877eb5396"
+
 FileName = "/tsd/etc/persistence/esd/mibstd2-main.esd"
 FileSize = "968"
 Checksum = "24f309a13a2f117d9ea4c94e9e0513e57913c25f"
@@ -110,13 +114,21 @@ FileName = "/tsd/etc/persistence/esd/scripts/activate_qconn.sh"
 FileSize = "436"
 Checksum = "aceb8f764ed992df53fc9f04436ec15e9bbe339f"
 
+FileName = "/tsd/etc/persistence/esd/scripts/activate_qichargeicon.sh"
+FileSize = "2597"
+Checksum = "d0375f9ee909c1ce6126e1718b09ad8351eab61f"
+
+FileName = "/tsd/etc/persistence/esd/scripts/activate_speedwarnfix.sh"
+FileSize = "2597"
+Checksum = "0731bdeb875693b14de0c7bf91d49f2cf8b5115f"
+
 FileName = "/tsd/etc/persistence/esd/scripts/activate_telnet.sh"
 FileSize = "507"
 Checksum = "f557996fc5ca23c8c5a0eebb5191458de3160dc8"
 
 FileName = "/tsd/etc/persistence/esd/scripts/check_reset.sh"
-FileSize = "2270"
-Checksum = "a2242dc8966c5e7aa56548aaad694a1b4de94510"
+FileSize = "2452"
+Checksum = "4f3aa0bd245545c412fd677862db1526d8ddf6d8"
 
 FileName = "/tsd/etc/persistence/esd/scripts/copy_carplayicon.sh"
 FileSize = "473"
@@ -213,6 +225,14 @@ Checksum = "c69e1653a4318d95e4c661d0d3189cacd28e6b95"
 FileName = "/tsd/etc/persistence/esd/scripts/deactivate_perm_access.sh"
 FileSize = "963"
 Checksum = "d5df1358a578f60c34d4a42c16b4d405063b95b9"
+
+FileName = "/tsd/etc/persistence/esd/scripts/deactivate_qichargeicon.sh"
+FileSize = "1151"
+Checksum = "4ada3e760b0b5d96c2cd6639acd4ec2f59e4f6bd"
+
+FileName = "/tsd/etc/persistence/esd/scripts/deactivate_speedwarnfix.sh"
+FileSize = "1151"
+Checksum = "aca3ef753f55b3bd0cca55a521fb5da93a4fd463"
 
 FileName = "/tsd/etc/persistence/esd/scripts/delete_fec.sh"
 FileSize = "662"

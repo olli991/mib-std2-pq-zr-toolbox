@@ -9,6 +9,8 @@
 DEACT_SCRIPTS="/tsd/etc/persistence/esd/scripts/deactivate_aatokombi.sh"
 # To add another mod's cleanup script in the future, just append it here, e.g.:
 DEACT_SCRIPTS="$DEACT_SCRIPTS /tsd/etc/persistence/esd/scripts/deactivate_navignore.sh"
+DEACT_SCRIPTS="$DEACT_SCRIPTS /tsd/etc/persistence/esd/scripts/deactivate_speedwarnfix.sh"
+DEACT_SCRIPTS="$DEACT_SCRIPTS /tsd/etc/persistence/esd/scripts/deactivate_qichargeicon.sh"
 HMI_SH=/tsd/hmi/runHMI.sh
 BU=/tsd/hmi/runHMI.sh.bak
 SD_BU=/backup/runHMI.sh
