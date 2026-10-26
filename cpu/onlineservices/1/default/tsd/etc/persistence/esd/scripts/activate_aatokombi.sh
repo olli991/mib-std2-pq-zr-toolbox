@@ -114,7 +114,7 @@ if ! grep -q '$BOOTCLASSPATH -Xbootclasspath/p:$MIBJAR/AAtoKombi.jar' ${HMI_SH};
 		. /tsd/etc/persistence/esd/scripts/util_backup.sh
 	fi
 	echo "Patching $HMI_SH to load $JAR via bootclasspath"
-	sed -i 's/\(^BOOTCLASSPATH=.*$\)/\1\nBOOTCLASSPATH="$BOOTCLASSPATH -Xbootclasspath\/p:$MIBJAR\/AAtoKombi.jar"/' $HMI_SH
+	sed -i '/^BOOTCLASSPATH="\$BOOTCLASSPATH/!s/\(^BOOTCLASSPATH=.*$\)/\1\nBOOTCLASSPATH="$BOOTCLASSPATH -Xbootclasspath\/p:$MIBJAR\/AAtoKombi.jar"/' $HMI_SH
 	echo "$HMI_SH is patched."
 else
 	echo "$HMI_SH is already patched."

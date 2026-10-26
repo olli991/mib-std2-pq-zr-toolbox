@@ -103,8 +103,8 @@ FileSize = "1180"
 Checksum = "3f1afc909861c8096290f4c197e2c5adb473d7fa"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_aatokombi.sh"
-FileSize = "4804"
-Checksum = "38e9c9af8f6becb7f380b301a4df8a46b003b14a"
+FileSize = "4838"
+Checksum = "7c933a3039674f7c9d8e8aa245f940232b958b6a"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_auto_install.sh"
 FileSize = "1314"
@@ -115,8 +115,8 @@ FileSize = "617"
 Checksum = "8c4d61ed83a28fac358e7e37d87c0df55eb97a89"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_navignore.sh"
-FileSize = "2780"
-Checksum = "345f5f9c9dcd63823827b5c1d615ffbef559899b"
+FileSize = "2814"
+Checksum = "1c4742fb5cf8c47c1e5b8a2197f11ea200d6270e"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_perm_access.sh"
 FileSize = "1558"
@@ -127,12 +127,12 @@ FileSize = "436"
 Checksum = "aceb8f764ed992df53fc9f04436ec15e9bbe339f"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_qichargeicon.sh"
-FileSize = "2597"
-Checksum = "d0375f9ee909c1ce6126e1718b09ad8351eab61f"
+FileSize = "2631"
+Checksum = "d371abc479ddb08ff47349dc242908f8cb0064e6"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_speedwarnfix.sh"
-FileSize = "2597"
-Checksum = "0731bdeb875693b14de0c7bf91d49f2cf8b5115f"
+FileSize = "2631"
+Checksum = "740b91900c5016f7f4e187d9a8823ffbc99fca7a"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_telnet.sh"
 FileSize = "507"
