@@ -35,7 +35,23 @@ fi
 # Mount system partition in read/write mode
 . /tsd/etc/persistence/esd/scripts/util_mount.sh
 
-# --- reset hook FIRST (safety net goes in before the risky patch) ---
+# --- install the jar FIRST, and verify the copy actually landed (guard against a ro partition) ---
+echo -ne "-- Installing $JAR...\n"
+if [ -f $JAR_DIR$JAR ]; then
+	echo -ne "$JAR already present on unit.\nWill be updated with file from SD now.\n"
+fi
+cp -f $VOLUME/custom/java/$JAR $JAR_DIR$JAR 2>&1
+chmod a+rwx $JAR_DIR$JAR
+JSRC_SZ=$(ls -la $VOLUME/custom/java/$JAR 2>/dev/null | awk '{print $5}')
+JDST_SZ=$(ls -la $JAR_DIR$JAR 2>/dev/null | awk '{print $5}')
+if [ -z "$JDST_SZ" ] || [ "$JSRC_SZ" != "$JDST_SZ" ]; then
+	echo "ERROR: $JAR did not copy (src=$JSRC_SZ dst=$JDST_SZ). Nothing else changed; aborting."
+	. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
+	exit 1
+fi
+echo "$JAR installed."
+
+# --- reset hook BEFORE the runHMI.sh patch (safety net goes in first) ---
 if ! grep -q 'check_reset.sh' ${HMI_SH}; then
 	if [ ! -f $BU ]; then
 		echo "Backup $HMI_SH"
@@ -49,7 +65,7 @@ else
 	echo "Reset hook already present in $HMI_SH."
 fi
 
-echo -ne "-- Installing SpeedWarnFix...\n"
+echo -ne "-- Patching $HMI_SH...\n"
 if ! grep -q '$BOOTCLASSPATH -Xbootclasspath/p:$MIBJAR/SpeedWarnFix.jar' ${HMI_SH}; then
 	if [ ! -f $BU ]; then
 		echo "Backup $HMI_SH"
@@ -63,13 +79,6 @@ if ! grep -q '$BOOTCLASSPATH -Xbootclasspath/p:$MIBJAR/SpeedWarnFix.jar' ${HMI_S
 else
 	echo "$HMI_SH is already patched."
 fi
-
-if [ -f $JAR_DIR$JAR ]; then
-	echo -ne "$JAR already present on unit.\nWill be updated with file from SD now.\n"
-fi
-cp -f $VOLUME/custom/java/$JAR $JAR_DIR$JAR 2>&1
-chmod a+rwx $JAR_DIR$JAR
-echo -ne "$JAR is installed.\n"
 
 # Mount system partition in read/only mode
 . /tsd/etc/persistence/esd/scripts/util_mount_ro.sh

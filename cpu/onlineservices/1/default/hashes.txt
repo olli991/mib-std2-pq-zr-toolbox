@@ -115,12 +115,12 @@ FileSize = "436"
 Checksum = "aceb8f764ed992df53fc9f04436ec15e9bbe339f"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_qichargeicon.sh"
-FileSize = "2631"
-Checksum = "d371abc479ddb08ff47349dc242908f8cb0064e6"
+FileSize = "3107"
+Checksum = "3c9da433910f7807ca807baf80754ea245e7a4a1"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_speedwarnfix.sh"
-FileSize = "2631"
-Checksum = "740b91900c5016f7f4e187d9a8823ffbc99fca7a"
+FileSize = "3107"
+Checksum = "e24ca7f2404de07acd2bbb1276a19b33c0ee7871"
 
 FileName = "/tsd/etc/persistence/esd/scripts/activate_telnet.sh"
 FileSize = "507"

@@ -27,35 +27,6 @@ if grep -q 'AAtoKombi.jar' ${HMI_SH} 2>/dev/null; then
 else
 	echo "$HMI_SH has no AAtoKombi entry."
 fi
-#!/bin/ksh
-# AAtoKombi (MST2 port) uninstaller — restores the unit to stock.
-# Recovery path: runs WITHOUT needing the toolbox SD card. It removes our bootclasspath line and
-# the jar, and restores the stock libgal from the on-device backup.
-JAR_DIR="/tsd/hmi/HMI/jar/"
-JAR=AAtoKombi.jar
-HMI_SH=/tsd/hmi/runHMI.sh
-GAL_DIR=/tsd/lib/sal/gal
-GAL=libext.google.gal.receiver.so
-GAL_BU=$GAL_DIR/$GAL.aatokombi.bak
-
-echo "This script removes AAtoKombi from the unit."
-echo "NOTE: NEVER interrupt the process with -Back- button or by powering off!"
-echo
-
-# Mount system partition read/write (util_mount is self-contained; no SD required)
-. /tsd/etc/persistence/esd/scripts/util_mount.sh
-
-echo -ne "-- Removing AAtoKombi...\n"
-# Surgically delete ONLY our own line. We deliberately do NOT restore the shared
-# /tsd/hmi/runHMI.sh.bak backup, so other mods that patch runHMI.sh (e.g. navignore)
-# and their restore point stay intact. Removing only our line returns runHMI.sh to its
-# pre-AAtoKombi state regardless of what else is installed.
-if grep -q 'AAtoKombi.jar' ${HMI_SH} 2>/dev/null; then
-	sed -i '/AAtoKombi.jar/d' $HMI_SH
-	echo "Removed AAtoKombi bootclasspath entry from $HMI_SH."
-else
-	echo "$HMI_SH has no AAtoKombi entry."
-fi
 
 if [ -f $JAR_DIR$JAR ]; then
 	rm -f $JAR_DIR$JAR
