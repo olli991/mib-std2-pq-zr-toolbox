@@ -3,11 +3,20 @@
 # Installs BOTH required parts:
 #   * AAtoKombi.jar               -> /tsd/hmi/HMI/jar/, loaded via runHMI.sh bootclasspath
 #   * patched libgal (the shim)   -> /tsd/lib/sal/gal/, feeds turn-by-turn to /dev/shmem/aa_nav
+# and, when they are on the SD card, the optional parts:
+#   * libkb_dm.so (next to the libgal in custom/sal/) -> /tsd/lib/aatokombi/, preloaded into
+#     DisplayManager via cpu.conf: the Android Auto map on the cluster. It must come from the same
+#     build as the libgal, so without it on the SD a hook from an earlier install is removed.
+#     If its self check fails on this unit, everything else is installed without it.
+#   * AAtoKombi's own Green Engineering Menu (custom/greenmenu/aatokombi*.esd and
+#     custom/greenmenu/scripts/aatokombi_*.sh) -> /tsd/etc/persistence/esd/ and its scripts/,
+#     the same files the toolbox's "Copy custom Green Engineering Menu" would copy
 JAR_DIR="/tsd/hmi/HMI/jar/"
 JAR=AAtoKombi.jar
 HMI_SH=/tsd/hmi/runHMI.sh
 BU=/tsd/hmi/runHMI.sh.bak
 HOOK_SH=/tsd/etc/persistence/esd/scripts/check_reset.sh
+AKB_UTIL=/tsd/etc/persistence/esd/scripts/util_aatokombi.sh
 GAL_DIR=/tsd/lib/sal/gal
 GAL=libext.google.gal.receiver.so
 GAL_BU=$GAL_DIR/$GAL.aatokombi.bak
@@ -27,6 +36,8 @@ echo
 
 JAR_SRC=$VOLUME/custom/java/$JAR
 GAL_SRC=$VOLUME/custom/sal/$GAL
+DM_SRC=$VOLUME/custom/sal/libkb_dm.so
+MENU_SRC=$VOLUME/custom/greenmenu
 
 # --- pre-flight gates: do NOTHING unless every required input/target is in place ---
 if [ ! -e "$JAR_SRC" ]; then
@@ -49,10 +60,11 @@ if [ ! -f "$GAL_DIR/$GAL" ] && [ ! -f "$GAL_BU" ]; then
 	echo "Aborted. Stock $GAL_DIR/$GAL not found and no backup exists — cannot guarantee a safe restore."
 	exit 1
 fi
-if [ ! -f "$HOOK_SH" ]; then
-	echo "Aborted. $HOOK_SH missing on unit -- toolbox install looks incomplete."
+if [ ! -f "$HOOK_SH" ] || [ ! -f "$AKB_UTIL" ]; then
+	echo "Aborted. $HOOK_SH or $AKB_UTIL missing on unit -- toolbox install looks incomplete."
 	exit 1
 fi
+. $AKB_UTIL
 
 # Mount system partition read/write
 . /tsd/etc/persistence/esd/scripts/util_mount.sh
@@ -91,7 +103,7 @@ if [ -z "$DST_SZ" ] || [ "$SRC_SZ" != "$DST_SZ" ]; then
 fi
 echo "GAL receiver patched and verified (size $DST_SZ)."
 
-# --- 3) reset hook FIRST (safety net goes in before the risky patch) ---
+# --- 3) reset hook FIRST (safety net goes in before the risky patches) ---
 if ! grep -q 'check_reset.sh' ${HMI_SH}; then
 	if [ ! -f $BU ]; then
 		echo "Backup $HMI_SH"
@@ -105,7 +117,35 @@ else
 	echo "Reset hook already present in $HMI_SH."
 fi
 
-# --- 4) only now patch runHMI.sh bootclasspath (so a failure above never leaves a dangling bootclasspath) ---
+# --- 4) optional: DisplayManager hook (Android Auto map on the cluster). A failure here leaves
+#     cpu.conf without the hook and the rest of the install goes on. ---
+echo -ne "-- AA map on the cluster (libkb_dm.so)...\n"
+if [ -f "$DM_SRC" ]; then
+	if akb_dm_install "$DM_SRC"; then
+		echo "DisplayManager hook installed."
+	else
+		echo "Continuing WITHOUT the DisplayManager hook: turn-by-turn on the cluster works,"
+		echo "the Android Auto map on the cluster does not."
+		# a hook from an earlier install would not match the libgal just installed
+		akb_dm_installed && akb_dm_remove
+	fi
+elif akb_dm_installed; then
+	echo "No custom/sal/libkb_dm.so on SD: removing the hook of an earlier install"
+	echo "(it must come from the same build as the libgal)."
+	akb_dm_remove
+else
+	echo "Not on SD (custom/sal/libkb_dm.so) - skipped."
+fi
+
+# --- 5) optional: AAtoKombi's own Green Engineering Menu ---
+echo -ne "-- AAtoKombi menu...\n"
+if ls "$MENU_SRC"/aatokombi*.esd >/dev/null 2>&1; then
+	akb_menu_install "$MENU_SRC"
+else
+	echo "Not on SD (custom/greenmenu/aatokombi*.esd) - skipped, a menu already on the unit stays."
+fi
+
+# --- 6) only now patch runHMI.sh bootclasspath (so a failure above never leaves a dangling bootclasspath) ---
 if ! grep -q '$BOOTCLASSPATH -Xbootclasspath/p:$MIBJAR/AAtoKombi.jar' ${HMI_SH}; then
 	if [ ! -f $BU ]; then
 		echo "Backup $HMI_SH"

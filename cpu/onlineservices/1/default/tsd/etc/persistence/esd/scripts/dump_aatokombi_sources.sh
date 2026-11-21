@@ -2,7 +2,12 @@
 # AAtoKombi "Dump files" — copy the TWO files needed to BUILD the mod for YOUR firmware to the SD:
 #   * MIBHMI.jxe                       (HMI executable -> on your PC becomes MIBHMI.jar)
 #   * libext.google.gal.receiver.so    (STOCK GAL library -> build the patched shim from it)
-# Both land under dump/<train>/<serial>/ .
+# and, for the DisplayManager hook libkb_dm.so (Android Auto map on the cluster), the files whose
+# build it is tied to - it carries their addresses for one firmware build, so for another build
+# they are what the addresses are taken from:
+#   * cpu.conf (+ its stock copy), the DisplayManager binary, libOpenMAXAL.so.1, libtsd.common.so,
+#     libmmrndclient.so.1
+# Everything lands under dump/<train>/<serial>/ .
 #
 # MIBHMI.jxe is a real file on the unit (the JVM loads $IFSDIR/MIBHMI.jxe per runHMI.sh), so we
 # copy it DIRECTLY. If for some unit it isn't found, we fall
@@ -12,7 +17,7 @@
 . /tsd/etc/persistence/esd/scripts/util_info.sh
 
 OUT=$VOLUME/dump/$TRAIN/$SERIAL
-mkdir -p "$OUT/hmi" "$OUT/gal"
+mkdir -p "$OUT/hmi" "$OUT/gal" "$OUT/dm"
 echo "Dumping AAtoKombi build sources to: dump/$TRAIN/$SERIAL/"
 echo
 
@@ -46,8 +51,56 @@ else
 	echo "  ! MISSING: $GAL"
 fi
 
-# fingerprint so you can tell later which libgal a build was made from
+# --- DisplayManager and the libraries the libkb_dm.so hook depends on ---
+CPU=/tsd/etc/system/cpu.conf
+CPU_STOCK=/tsd/var/aatokombi/cpu.conf.stock
+echo "== DisplayManager (for libkb_dm.so) =="
+DMBIN=
+LIBPATH=
+rm -f "$OUT/dm/PATHS.txt"
+if [ -f "$CPU" ]; then
+	cp -f "$CPU" "$OUT/dm/cpu.conf" 2>&1
+	# cpu.conf.stock is the copy from before the hook was installed
+	[ -f "$CPU_STOCK" ] && cp -f "$CPU_STOCK" "$OUT/dm/cpu.conf.stock" 2>&1
+	for x in $(sed -n '/^service iMX6.DispMg/,/^service /{s/^ *command  *\([^ ]*\).*/\1/p;}' $CPU); do
+		DMBIN=$x; break
+	done
+	for x in $(sed -n '/^service iMX6.DispMg/,/^service /{s/^ *envar  *LD_LIBRARY_PATH  *\([^ ]*\).*/\1/p;}' $CPU); do
+		LIBPATH=$(echo $x | sed 's/:/ /g'); break
+	done
+else
+	echo "  ! MISSING: $CPU"
+fi
+if [ -n "$DMBIN" ] && [ -f "$DMBIN" ]; then
+	echo "  + ${DMBIN##*/} ($DMBIN)"
+	cp -f "$DMBIN" "$OUT/dm/${DMBIN##*/}" 2>&1
+else
+	echo "  ! DisplayManager binary not found (service iMX6.DispMg in cpu.conf: '$DMBIN')"
+fi
+# a library: first in the service's LD_LIBRARY_PATH, then in the usual places, then a search
+# that stays off /net and /media
+for LIB in libOpenMAXAL.so.1 libtsd.common.so libmmrndclient.so.1; do
+	F=
+	for d in $LIBPATH /lib /usr/lib /lib/dll /tsd/lib /usr/lib/graphics/imx6x; do
+		if [ -f "$d/$LIB" ]; then F=$d/$LIB; break; fi
+	done
+	[ -n "$F" ] || F=$(find /lib /usr /tsd/lib /tsd/bin -name "$LIB" 2>/dev/null | head -1)
+	if [ -n "$F" ] && [ -f "$F" ]; then
+		echo "  + $LIB ($F)"
+		cp -f "$F" "$OUT/dm/$LIB" 2>&1
+		echo "$LIB $F" >> "$OUT/dm/PATHS.txt"
+	else
+		echo "  ! MISSING: $LIB"
+	fi
+done
+[ -n "$DMBIN" ] && echo "displaymanager $DMBIN" >> "$OUT/dm/PATHS.txt"
+
+# fingerprint so you can tell later which files a build was made from
 cksum "$OUT/gal/libext.google.gal.receiver.so" > "$OUT/STOCK_INFO.txt" 2>&1
+for f in "$OUT"/dm/*; do
+	case "$f" in *.txt|*/cpu.conf*) continue ;; esac
+	[ -f "$f" ] && cksum "$f" >> "$OUT/STOCK_INFO.txt" 2>&1
+done
 sync
 
 echo
