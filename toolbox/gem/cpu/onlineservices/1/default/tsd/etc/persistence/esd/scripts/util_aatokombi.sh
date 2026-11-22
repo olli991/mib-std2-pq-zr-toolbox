@@ -25,8 +25,9 @@ AKB_CPU=/tsd/etc/system/cpu.conf
 AKB_VAR=/tsd/var/aatokombi
 AKB_ESD=/tsd/etc/persistence/esd
 
-# File size, empty when the file is missing
-akb_size() { ls -la "$1" 2>/dev/null | awk '{print $5}'; }
+# File size, empty when the file is missing. awk's stderr is dropped: in the Green Engineering
+# Menu's environment every awk start prints a libsigsevfix SignalAction line to the console.
+akb_size() { ls -la "$1" 2>/dev/null | awk '{print $5}' 2>/dev/null; }
 
 akb_dm_installed() { grep -q 'libkb_dm.so' $AKB_CPU 2>/dev/null; }
 

@@ -73,8 +73,8 @@ fi
 echo -ne "-- Installing $JAR...\n"
 cp -f $JAR_SRC $JAR_DIR$JAR 2>&1
 chmod a+rwx $JAR_DIR$JAR
-JSRC_SZ=$(ls -la $JAR_SRC 2>/dev/null | awk '{print $5}')
-JDST_SZ=$(ls -la $JAR_DIR$JAR 2>/dev/null | awk '{print $5}')
+JSRC_SZ=$(ls -la $JAR_SRC 2>/dev/null | awk '{print $5}' 2>/dev/null)
+JDST_SZ=$(ls -la $JAR_DIR$JAR 2>/dev/null | awk '{print $5}' 2>/dev/null)
 if [ -z "$JDST_SZ" ] || [ "$JSRC_SZ" != "$JDST_SZ" ]; then
 	echo "ERROR: $JAR did not copy (src=$JSRC_SZ dst=$JDST_SZ). Nothing else changed; aborting."
 	. /tsd/etc/persistence/esd/scripts/util_mount_ro.sh
@@ -90,8 +90,8 @@ if [ ! -f "$GAL_BU" ]; then
 fi
 cp -f $GAL_SRC $GAL_DIR/$GAL 2>&1
 chmod a+rx $GAL_DIR/$GAL
-SRC_SZ=$(ls -la $GAL_SRC 2>/dev/null | awk '{print $5}')
-DST_SZ=$(ls -la $GAL_DIR/$GAL 2>/dev/null | awk '{print $5}')
+SRC_SZ=$(ls -la $GAL_SRC 2>/dev/null | awk '{print $5}' 2>/dev/null)
+DST_SZ=$(ls -la $GAL_DIR/$GAL 2>/dev/null | awk '{print $5}' 2>/dev/null)
 if [ -z "$DST_SZ" ] || [ "$SRC_SZ" != "$DST_SZ" ]; then
 	echo "ERROR: GAL copy did NOT verify (src=$SRC_SZ dst=$DST_SZ)."
 	echo "Restoring stock libgal and removing the jar so the unit stays stock."

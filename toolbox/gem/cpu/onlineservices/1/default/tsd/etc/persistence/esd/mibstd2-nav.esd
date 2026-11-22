@@ -65,17 +65,17 @@ keyValue
 
 keyValue
     value   String sys 0x00000000 0
-    label   "Enabling requires AAtoKombi.jar in custom/java and the patched libgal in custom/sal."
+    label   "Enabling requires AAtoKombi.jar in custom/java and libgal in custom/sal."
 	poll 	0
 
 keyValue
     value   String sys 0x00000000 0
-    label   "Optional: libkb_dm.so in custom/sal (Android Auto map on the cluster)"
+    label   "Optional: libkb_dm.so in custom/sal (Android Auto map on the cluster) and"
 	poll 	0
 
 keyValue
     value   String sys 0x00000000 0
-    label   "and the AAtoKombi menu: custom/greenmenu/aatokombi*.esd + scripts/aatokombi_*.sh"
+    label   "AAtoKombi menu: custom/greenmenu/aatokombi*.esd + scripts/aatokombi_*.sh"
 	poll 	0
 
 script

@@ -39,8 +39,8 @@ fi
 if [ -f "$GAL_BU" ]; then
 	cp -f $GAL_BU $GAL_DIR/$GAL 2>&1
 	chmod a+rx $GAL_DIR/$GAL
-	BAK_SZ=$(ls -la $GAL_BU 2>/dev/null | awk '{print $5}')
-	NEW_SZ=$(ls -la $GAL_DIR/$GAL 2>/dev/null | awk '{print $5}')
+	BAK_SZ=$(ls -la $GAL_BU 2>/dev/null | awk '{print $5}' 2>/dev/null)
+	NEW_SZ=$(ls -la $GAL_DIR/$GAL 2>/dev/null | awk '{print $5}' 2>/dev/null)
 	if [ -n "$NEW_SZ" ] && [ "$BAK_SZ" = "$NEW_SZ" ]; then
 		rm -f $GAL_BU
 		echo "Restored original GAL receiver library."
