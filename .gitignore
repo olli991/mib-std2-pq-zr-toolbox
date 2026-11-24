@@ -6,5 +6,8 @@
 # Custom stuff
 /custom/java/AAtoKombi.jar
 /custom/sal/libext.google.gal.receiver.so
+/custom/sal/libkb_dm.so
+/custom/greenmenu/aatokombi*.esd
+/custom/greenmenu/scripts/aatokombi_*.sh
 toolbox/gem/cpu/onlineservices/1/default/hashes_calc.py
 cpu/onlineservices/1/default/hashes_calc.py
